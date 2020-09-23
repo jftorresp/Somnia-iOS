@@ -15,6 +15,7 @@
 		B13CC2D7251BAE5700A25D60 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B13CC2D5251BAE5700A25D60 /* LaunchScreen.storyboard */; };
 		B13CC2E2251BAE5700A25D60 /* SomniaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13CC2E1251BAE5700A25D60 /* SomniaTests.swift */; };
 		B13CC2ED251BAE5700A25D60 /* SomniaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13CC2EC251BAE5700A25D60 /* SomniaUITests.swift */; };
+		B17E6633251BD61400C4DC72 /* Sleep.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17E6632251BD61400C4DC72 /* Sleep.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		B13CC2E8251BAE5700A25D60 /* SomniaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SomniaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B13CC2EC251BAE5700A25D60 /* SomniaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SomniaUITests.swift; sourceTree = "<group>"; };
 		B13CC2EE251BAE5700A25D60 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B17E6632251BD61400C4DC72 /* Sleep.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sleep.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,8 +101,8 @@
 		B13CC2C9251BAE5600A25D60 /* Somnia */ = {
 			isa = PBXGroup;
 			children = (
-				B13CC2FD251BAF6900A25D60 /* Models */,
-				B13CC2FE251BAF6E00A25D60 /* Views */,
+				B17E662E251BD52E00C4DC72 /* Models */,
+				B17E662D251BD52700C4DC72 /* Views */,
 				B13CC2FF251BAF7800A25D60 /* Controllers */,
 				B13CC2CA251BAE5600A25D60 /* AppDelegate.swift */,
 				B13CC2CC251BAE5600A25D60 /* SceneDelegate.swift */,
@@ -129,14 +131,15 @@
 			path = SomniaUITests;
 			sourceTree = "<group>";
 		};
-		B13CC2FD251BAF6900A25D60 /* Models */ = {
+		B13CC2FF251BAF7800A25D60 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				B13CC2CE251BAE5600A25D60 /* ViewController.swift */,
 			);
-			path = Models;
+			path = Controllers;
 			sourceTree = "<group>";
 		};
-		B13CC2FE251BAF6E00A25D60 /* Views */ = {
+		B17E662D251BD52700C4DC72 /* Views */ = {
 			isa = PBXGroup;
 			children = (
 				B13CC2D0251BAE5600A25D60 /* Main.storyboard */,
@@ -144,12 +147,12 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
-		B13CC2FF251BAF7800A25D60 /* Controllers */ = {
+		B17E662E251BD52E00C4DC72 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				B13CC2CE251BAE5600A25D60 /* ViewController.swift */,
+				B17E6632251BD61400C4DC72 /* Sleep.swift */,
 			);
-			path = Controllers;
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -285,6 +288,7 @@
 				B13CC2CF251BAE5600A25D60 /* ViewController.swift in Sources */,
 				B13CC2CB251BAE5600A25D60 /* AppDelegate.swift in Sources */,
 				B13CC2CD251BAE5600A25D60 /* SceneDelegate.swift in Sources */,
+				B17E6633251BD61400C4DC72 /* Sleep.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
