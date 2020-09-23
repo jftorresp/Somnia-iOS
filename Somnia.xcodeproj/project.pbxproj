@@ -99,10 +99,11 @@
 		B13CC2C9251BAE5600A25D60 /* Somnia */ = {
 			isa = PBXGroup;
 			children = (
+				B13CC2FD251BAF6900A25D60 /* Models */,
+				B13CC2FE251BAF6E00A25D60 /* Views */,
+				B13CC2FF251BAF7800A25D60 /* Controllers */,
 				B13CC2CA251BAE5600A25D60 /* AppDelegate.swift */,
 				B13CC2CC251BAE5600A25D60 /* SceneDelegate.swift */,
-				B13CC2CE251BAE5600A25D60 /* ViewController.swift */,
-				B13CC2D0251BAE5600A25D60 /* Main.storyboard */,
 				B13CC2D3251BAE5700A25D60 /* Assets.xcassets */,
 				B13CC2D5251BAE5700A25D60 /* LaunchScreen.storyboard */,
 				B13CC2D8251BAE5700A25D60 /* Info.plist */,
@@ -126,6 +127,29 @@
 				B13CC2EE251BAE5700A25D60 /* Info.plist */,
 			);
 			path = SomniaUITests;
+			sourceTree = "<group>";
+		};
+		B13CC2FD251BAF6900A25D60 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		B13CC2FE251BAF6E00A25D60 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				B13CC2D0251BAE5600A25D60 /* Main.storyboard */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		B13CC2FF251BAF7800A25D60 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				B13CC2CE251BAE5600A25D60 /* ViewController.swift */,
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -437,6 +461,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6F4WNP3H89;
 				INFOPLIST_FILE = Somnia/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -455,6 +480,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6F4WNP3H89;
 				INFOPLIST_FILE = Somnia/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
