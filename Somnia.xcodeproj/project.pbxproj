@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		37F462DA251C1E76004A16EF /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F462D9251C1E76004A16EF /* User.swift */; };
+		37F462DC251C1EE2004A16EF /* SleepLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F462DB251C1EE2004A16EF /* SleepLog.swift */; };
 		B13CC2CB251BAE5600A25D60 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13CC2CA251BAE5600A25D60 /* AppDelegate.swift */; };
 		B13CC2CD251BAE5600A25D60 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13CC2CC251BAE5600A25D60 /* SceneDelegate.swift */; };
 		B13CC2CF251BAE5600A25D60 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13CC2CE251BAE5600A25D60 /* ViewController.swift */; };
@@ -36,6 +38,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		37F462D9251C1E76004A16EF /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		37F462DB251C1EE2004A16EF /* SleepLog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SleepLog.swift; sourceTree = "<group>"; };
 		B13CC2C7251BAE5600A25D60 /* Somnia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Somnia.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B13CC2CA251BAE5600A25D60 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B13CC2CC251BAE5600A25D60 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -151,6 +155,8 @@
 			isa = PBXGroup;
 			children = (
 				B17E6632251BD61400C4DC72 /* Sleep.swift */,
+				37F462D9251C1E76004A16EF /* User.swift */,
+				37F462DB251C1EE2004A16EF /* SleepLog.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -285,9 +291,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				37F462DC251C1EE2004A16EF /* SleepLog.swift in Sources */,
 				B13CC2CF251BAE5600A25D60 /* ViewController.swift in Sources */,
 				B13CC2CB251BAE5600A25D60 /* AppDelegate.swift in Sources */,
 				B13CC2CD251BAE5600A25D60 /* SceneDelegate.swift in Sources */,
+				37F462DA251C1E76004A16EF /* User.swift in Sources */,
 				B17E6633251BD61400C4DC72 /* Sleep.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
