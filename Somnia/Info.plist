@@ -49,11 +49,30 @@
 	<array>
 		<string>armv7</string>
 	</array>
+	<key>UIStatusBarStyle</key>
+	<string>UIStatusBarStyleLightContent</string>
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
+	</array>
+	<key>UIAppFonts</key>
+	<array>
+		<string>HaboroSoft-NorBol.ttf</string>
+		<string>HaboroSoft-NorBolIt.ttf</string>
+		<string>HaboroSoft-NorBoo.ttf</string>
+		<string>HaboroSoft-NorDem.ttf</string>
+		<string>HaboroSoft-NorBooIt.ttf</string>
+		<string>HaboroSoft-NorDemIt.ttf</string>
+		<string>HaboroSoft-NorExB.ttf</string>
+		<string>HaboroSoft-NorExBIt.ttf</string>
+		<string>HaboroSoft-NorLig.ttf</string>
+		<string>HaboroSoft-NorMed.ttf</string>
+		<string>HaboroSoft-NorMedIt.ttf</string>
+		<string>HaboroSoft-NorLigIt.ttf</string>
+		<string>HaboroSoft-NorReg.ttf</string>
+		<string>HaboroSoft-NorRegIt.ttf</string>
 	</array>
 	<key>UISupportedInterfaceOrientations~ipad</key>
 	<array>

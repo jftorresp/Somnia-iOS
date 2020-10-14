@@ -3,15 +3,18 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		0D6537B25F60BF278BDAF1DD /* Pods_Somnia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 953090904602BEE0E86CEE3D /* Pods_Somnia.framework */; };
+		378630F525355CBC00773BFA /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 378630F425355CBC00773BFA /* SignUpViewController.swift */; };
 		37F462DA251C1E76004A16EF /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F462D9251C1E76004A16EF /* User.swift */; };
 		37F462DC251C1EE2004A16EF /* SleepLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F462DB251C1EE2004A16EF /* SleepLog.swift */; };
 		3CE3441CE9244DA3C171AF88 /* Pods_Somnia_SomniaUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F05C4CD45FA97AECD4525F4 /* Pods_Somnia_SomniaUITests.framework */; };
 		8128FC462706DA88B1BA92D0 /* Pods_SomniaTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8195529EFDE598A6274557B4 /* Pods_SomniaTests.framework */; };
+		B103D21B2534D1F200F5F301 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B103D21A2534D1F200F5F301 /* GradientView.swift */; };
+		B103D2202534DF5D00F5F301 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B103D21F2534DF5D00F5F301 /* Constants.swift */; };
 		B13CC2CB251BAE5600A25D60 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13CC2CA251BAE5600A25D60 /* AppDelegate.swift */; };
 		B13CC2CD251BAE5600A25D60 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13CC2CC251BAE5600A25D60 /* SceneDelegate.swift */; };
 		B13CC2CF251BAE5600A25D60 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13CC2CE251BAE5600A25D60 /* ViewController.swift */; };
@@ -22,6 +25,20 @@
 		B13CC2ED251BAE5700A25D60 /* SomniaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13CC2EC251BAE5700A25D60 /* SomniaUITests.swift */; };
 		B1770954251D2769006CEEF7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B1770953251D2769006CEEF7 /* GoogleService-Info.plist */; };
 		B17E6633251BD61400C4DC72 /* Sleep.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17E6632251BD61400C4DC72 /* Sleep.swift */; };
+		B1803811253501ED00D03B19 /* HaboroSoft-NorLigIt.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B1803803253501EA00D03B19 /* HaboroSoft-NorLigIt.ttf */; };
+		B1803812253501ED00D03B19 /* HaboroSoft-NorLig.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B1803804253501EA00D03B19 /* HaboroSoft-NorLig.ttf */; };
+		B1803813253501ED00D03B19 /* HaboroSoft-NorDemIt.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B1803805253501EA00D03B19 /* HaboroSoft-NorDemIt.ttf */; };
+		B1803814253501ED00D03B19 /* HaboroSoft-NorExB.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B1803806253501EA00D03B19 /* HaboroSoft-NorExB.ttf */; };
+		B1803815253501ED00D03B19 /* HaboroSoft-NorDem.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B1803807253501EB00D03B19 /* HaboroSoft-NorDem.ttf */; };
+		B1803816253501ED00D03B19 /* HaboroSoft-NorMed.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B1803808253501EB00D03B19 /* HaboroSoft-NorMed.ttf */; };
+		B1803817253501ED00D03B19 /* HaboroSoft-NorRegIt.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B1803809253501EB00D03B19 /* HaboroSoft-NorRegIt.ttf */; };
+		B1803818253501ED00D03B19 /* HaboroSoft-NorExBIt.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B180380A253501EB00D03B19 /* HaboroSoft-NorExBIt.ttf */; };
+		B1803819253501ED00D03B19 /* HaboroSoft-NorReg.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B180380B253501EC00D03B19 /* HaboroSoft-NorReg.ttf */; };
+		B180381A253501ED00D03B19 /* HaboroSoft-NorBol.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B180380C253501EC00D03B19 /* HaboroSoft-NorBol.ttf */; };
+		B180381B253501ED00D03B19 /* HaboroSoft-NorMedIt.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B180380D253501EC00D03B19 /* HaboroSoft-NorMedIt.ttf */; };
+		B180381C253501ED00D03B19 /* HaboroSoft-NorBolIt.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B180380E253501ED00D03B19 /* HaboroSoft-NorBolIt.ttf */; };
+		B180381D253501ED00D03B19 /* HaboroSoft-NorBoo.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B180380F253501ED00D03B19 /* HaboroSoft-NorBoo.ttf */; };
+		B180381E253501ED00D03B19 /* HaboroSoft-NorBooIt.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B1803810253501ED00D03B19 /* HaboroSoft-NorBooIt.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,12 +59,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		378630F425355CBC00773BFA /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		37F462D9251C1E76004A16EF /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		37F462DB251C1EE2004A16EF /* SleepLog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SleepLog.swift; sourceTree = "<group>"; };
 		4F05C4CD45FA97AECD4525F4 /* Pods_Somnia_SomniaUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Somnia_SomniaUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		66826680ABA779084AA30186 /* Pods-Somnia.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Somnia.release.xcconfig"; path = "Target Support Files/Pods-Somnia/Pods-Somnia.release.xcconfig"; sourceTree = "<group>"; };
 		8195529EFDE598A6274557B4 /* Pods_SomniaTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SomniaTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		953090904602BEE0E86CEE3D /* Pods_Somnia.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Somnia.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B103D21A2534D1F200F5F301 /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
+		B103D21F2534DF5D00F5F301 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		B13CC2C7251BAE5600A25D60 /* Somnia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Somnia.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B13CC2CA251BAE5600A25D60 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B13CC2CC251BAE5600A25D60 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -64,6 +84,20 @@
 		B13CC2EE251BAE5700A25D60 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B1770953251D2769006CEEF7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		B17E6632251BD61400C4DC72 /* Sleep.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sleep.swift; sourceTree = "<group>"; };
+		B1803803253501EA00D03B19 /* HaboroSoft-NorLigIt.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "HaboroSoft-NorLigIt.ttf"; sourceTree = "<group>"; };
+		B1803804253501EA00D03B19 /* HaboroSoft-NorLig.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "HaboroSoft-NorLig.ttf"; sourceTree = "<group>"; };
+		B1803805253501EA00D03B19 /* HaboroSoft-NorDemIt.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "HaboroSoft-NorDemIt.ttf"; sourceTree = "<group>"; };
+		B1803806253501EA00D03B19 /* HaboroSoft-NorExB.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "HaboroSoft-NorExB.ttf"; sourceTree = "<group>"; };
+		B1803807253501EB00D03B19 /* HaboroSoft-NorDem.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "HaboroSoft-NorDem.ttf"; sourceTree = "<group>"; };
+		B1803808253501EB00D03B19 /* HaboroSoft-NorMed.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "HaboroSoft-NorMed.ttf"; sourceTree = "<group>"; };
+		B1803809253501EB00D03B19 /* HaboroSoft-NorRegIt.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "HaboroSoft-NorRegIt.ttf"; sourceTree = "<group>"; };
+		B180380A253501EB00D03B19 /* HaboroSoft-NorExBIt.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "HaboroSoft-NorExBIt.ttf"; sourceTree = "<group>"; };
+		B180380B253501EC00D03B19 /* HaboroSoft-NorReg.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "HaboroSoft-NorReg.ttf"; sourceTree = "<group>"; };
+		B180380C253501EC00D03B19 /* HaboroSoft-NorBol.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "HaboroSoft-NorBol.ttf"; sourceTree = "<group>"; };
+		B180380D253501EC00D03B19 /* HaboroSoft-NorMedIt.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "HaboroSoft-NorMedIt.ttf"; sourceTree = "<group>"; };
+		B180380E253501ED00D03B19 /* HaboroSoft-NorBolIt.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "HaboroSoft-NorBolIt.ttf"; sourceTree = "<group>"; };
+		B180380F253501ED00D03B19 /* HaboroSoft-NorBoo.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "HaboroSoft-NorBoo.ttf"; sourceTree = "<group>"; };
+		B1803810253501ED00D03B19 /* HaboroSoft-NorBooIt.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "HaboroSoft-NorBooIt.ttf"; sourceTree = "<group>"; };
 		B25EA38043EA23738E04F630 /* Pods-Somnia-SomniaUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Somnia-SomniaUITests.debug.xcconfig"; path = "Target Support Files/Pods-Somnia-SomniaUITests/Pods-Somnia-SomniaUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		C7C9E6E97C8C1B6AC5D05531 /* Pods-Somnia.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Somnia.debug.xcconfig"; path = "Target Support Files/Pods-Somnia/Pods-Somnia.debug.xcconfig"; sourceTree = "<group>"; };
 		C8B4696A515AA6CB8102DEB9 /* Pods-Somnia-SomniaUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Somnia-SomniaUITests.release.xcconfig"; path = "Target Support Files/Pods-Somnia-SomniaUITests/Pods-Somnia-SomniaUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -109,7 +143,6 @@
 				E0D4DACD5407EE3FCB96444B /* Pods-SomniaTests.debug.xcconfig */,
 				CD00A6F1244BCF468D9498B5 /* Pods-SomniaTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -154,9 +187,11 @@
 				B13CC2CA251BAE5600A25D60 /* AppDelegate.swift */,
 				B13CC2CC251BAE5600A25D60 /* SceneDelegate.swift */,
 				B13CC2D3251BAE5700A25D60 /* Assets.xcassets */,
+				B1803802253501CE00D03B19 /* Fonts */,
 				B13CC2D5251BAE5700A25D60 /* LaunchScreen.storyboard */,
 				B13CC2D8251BAE5700A25D60 /* Info.plist */,
 				B1770953251D2769006CEEF7 /* GoogleService-Info.plist */,
+				B103D21F2534DF5D00F5F301 /* Constants.swift */,
 			);
 			path = Somnia;
 			sourceTree = "<group>";
@@ -183,6 +218,7 @@
 			isa = PBXGroup;
 			children = (
 				B13CC2CE251BAE5600A25D60 /* ViewController.swift */,
+				378630F425355CBC00773BFA /* SignUpViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -191,6 +227,7 @@
 			isa = PBXGroup;
 			children = (
 				B13CC2D0251BAE5600A25D60 /* Main.storyboard */,
+				B103D21A2534D1F200F5F301 /* GradientView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -203,6 +240,27 @@
 				37F462DB251C1EE2004A16EF /* SleepLog.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		B1803802253501CE00D03B19 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				B180380C253501EC00D03B19 /* HaboroSoft-NorBol.ttf */,
+				B180380E253501ED00D03B19 /* HaboroSoft-NorBolIt.ttf */,
+				B180380F253501ED00D03B19 /* HaboroSoft-NorBoo.ttf */,
+				B1803810253501ED00D03B19 /* HaboroSoft-NorBooIt.ttf */,
+				B1803807253501EB00D03B19 /* HaboroSoft-NorDem.ttf */,
+				B1803805253501EA00D03B19 /* HaboroSoft-NorDemIt.ttf */,
+				B1803806253501EA00D03B19 /* HaboroSoft-NorExB.ttf */,
+				B180380A253501EB00D03B19 /* HaboroSoft-NorExBIt.ttf */,
+				B1803804253501EA00D03B19 /* HaboroSoft-NorLig.ttf */,
+				B1803803253501EA00D03B19 /* HaboroSoft-NorLigIt.ttf */,
+				B1803808253501EB00D03B19 /* HaboroSoft-NorMed.ttf */,
+				B180380D253501EC00D03B19 /* HaboroSoft-NorMedIt.ttf */,
+				B180380B253501EC00D03B19 /* HaboroSoft-NorReg.ttf */,
+				B1803809253501EB00D03B19 /* HaboroSoft-NorRegIt.ttf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -313,10 +371,24 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B180381C253501ED00D03B19 /* HaboroSoft-NorBolIt.ttf in Resources */,
 				B13CC2D7251BAE5700A25D60 /* LaunchScreen.storyboard in Resources */,
+				B180381A253501ED00D03B19 /* HaboroSoft-NorBol.ttf in Resources */,
 				B1770954251D2769006CEEF7 /* GoogleService-Info.plist in Resources */,
+				B1803818253501ED00D03B19 /* HaboroSoft-NorExBIt.ttf in Resources */,
+				B180381B253501ED00D03B19 /* HaboroSoft-NorMedIt.ttf in Resources */,
+				B1803817253501ED00D03B19 /* HaboroSoft-NorRegIt.ttf in Resources */,
 				B13CC2D4251BAE5700A25D60 /* Assets.xcassets in Resources */,
+				B1803814253501ED00D03B19 /* HaboroSoft-NorExB.ttf in Resources */,
+				B1803819253501ED00D03B19 /* HaboroSoft-NorReg.ttf in Resources */,
 				B13CC2D2251BAE5600A25D60 /* Main.storyboard in Resources */,
+				B180381E253501ED00D03B19 /* HaboroSoft-NorBooIt.ttf in Resources */,
+				B1803815253501ED00D03B19 /* HaboroSoft-NorDem.ttf in Resources */,
+				B180381D253501ED00D03B19 /* HaboroSoft-NorBoo.ttf in Resources */,
+				B1803816253501ED00D03B19 /* HaboroSoft-NorMed.ttf in Resources */,
+				B1803812253501ED00D03B19 /* HaboroSoft-NorLig.ttf in Resources */,
+				B1803811253501ED00D03B19 /* HaboroSoft-NorLigIt.ttf in Resources */,
+				B1803813253501ED00D03B19 /* HaboroSoft-NorDemIt.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -447,7 +519,10 @@
 				37F462DC251C1EE2004A16EF /* SleepLog.swift in Sources */,
 				B13CC2CF251BAE5600A25D60 /* ViewController.swift in Sources */,
 				B13CC2CB251BAE5600A25D60 /* AppDelegate.swift in Sources */,
+				B103D2202534DF5D00F5F301 /* Constants.swift in Sources */,
 				B13CC2CD251BAE5600A25D60 /* SceneDelegate.swift in Sources */,
+				B103D21B2534D1F200F5F301 /* GradientView.swift in Sources */,
+				378630F525355CBC00773BFA /* SignUpViewController.swift in Sources */,
 				37F462DA251C1E76004A16EF /* User.swift in Sources */,
 				B17E6633251BD61400C4DC72 /* Sleep.swift in Sources */,
 			);
@@ -626,17 +701,21 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 6F4WNP3H89;
+				DEVELOPMENT_TEAM = 2V3L462997;
 				INFOPLIST_FILE = Somnia/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MACH_O_TYPE = mh_execute;
 				PRODUCT_BUNDLE_IDENTIFIER = com.caps.Somnia;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -646,17 +725,21 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 6F4WNP3H89;
+				DEVELOPMENT_TEAM = 2V3L462997;
 				INFOPLIST_FILE = Somnia/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MACH_O_TYPE = mh_execute;
 				PRODUCT_BUNDLE_IDENTIFIER = com.caps.Somnia;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
