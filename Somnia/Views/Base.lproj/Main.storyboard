@@ -37,7 +37,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="unk-tk-xXG">
-                                <rect key="frame" x="82" y="382" width="250" height="281"/>
+                                <rect key="frame" x="82" y="437" width="250" height="226"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="7Hi-Ga-ASw">
                                         <rect key="frame" x="0.0" y="0.0" width="250" height="128"/>
@@ -86,21 +86,8 @@
                                             <segue destination="9Xf-wQ-Swn" kind="presentation" identifier="LoginToMenu" modalPresentationStyle="fullScreen" id="uZ8-mm-Dwq"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zet-vz-hWZ">
-                                        <rect key="frame" x="0.0" y="198" width="250" height="40"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="40" id="LiV-er-7yK"/>
-                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="250" id="cdh-Kx-Uia"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="HaboroSoft-NorMed" family="HaboroSoft-NorMed" pointSize="19"/>
-                                        <state key="normal" title="Login with Facebook"/>
-                                        <connections>
-                                            <action selector="loginFbPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5nw-y2-dYt"/>
-                                        </connections>
-                                    </button>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="BUA-1E-y8V">
-                                        <rect key="frame" x="31" y="253" width="188.5" height="28"/>
+                                        <rect key="frame" x="31" y="198" width="188.5" height="28"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Don't have an account?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1qB-c0-3vL">
                                                 <rect key="frame" x="0.0" y="6.5" width="138.5" height="15.5"/>
@@ -123,7 +110,7 @@
                                 </subviews>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Somnia" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ipt-Of-6n9">
-                                <rect key="frame" x="142.5" y="199.5" width="129" height="44.5"/>
+                                <rect key="frame" x="142.5" y="254.5" width="129" height="44.5"/>
                                 <fontDescription key="fontDescription" name="HaboroSoft-NorDem" family="HaboroSoft-NorDem" pointSize="38"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -142,9 +129,9 @@
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="emailTextField" destination="bIP-8q-j1X" id="YDw-hd-Ixi"/>
-                        <outlet property="facebookButton" destination="Zet-vz-hWZ" id="icx-f7-f90"/>
                         <outlet property="loginButton" destination="0dJ-AE-DLP" id="oZi-mN-QwH"/>
                         <outlet property="passwordTextField" destination="7ni-OI-XlE" id="b06-uG-hvj"/>
+                        <outlet property="verticalStackView" destination="unk-tk-xXG" id="JEd-g8-H3x"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -356,7 +343,7 @@
             <color red="0.016000000759959221" green="0.85100001096725464" blue="0.56099998950958252" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="MidBlue">
-            <color red="0.20000000000000001" green="0.4392156862745098" blue="0.65098039215686276" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.20000000298023224" green="0.43900001049041748" blue="0.65100002288818359" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

@@ -7,13 +7,18 @@
 
 import UIKit
 import Firebase
+import FBSDKLoginKit
 
 class LoginViewController: UIViewController {
+    func loginButtonDidLogOut(_ loginButton: FBLoginButton) {
+        <#code#>
+    }
     
+
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var loginButton: UIButton!
-    @IBOutlet weak var facebookButton: UIButton!
+    @IBOutlet weak var verticalStackView: UIStackView!
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
@@ -22,10 +27,15 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let facebookButton = FBLoginButton()
+        
+        verticalStackView.insertArrangedSubview(facebookButton, at: 2)
+        
         loginButton.layer.cornerRadius = 10
-        facebookButton.layer.cornerRadius = 10
         emailTextField.layer.cornerRadius = 10
         passwordTextField.layer.cornerRadius = 10
+        
+        
         
         // Do any additional setup after loading the view.
     }
@@ -50,9 +60,12 @@ class LoginViewController: UIViewController {
         }
     }
     
-    @IBAction func loginFbPressed(_ sender: UIButton) {
-    }
-    
-    
+//    func loginButton(_ loginButton: FBSDKLoginButton!, didCompleteWith result: FBSDKLoginManagerLoginResult!, error: Error!) {
+//      if let error = error {
+//        print(error.localizedDescription)
+//        return
+//      }
+//      // ...
+//    }
 }
 
