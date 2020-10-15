@@ -7,13 +7,15 @@
 
 import UIKit
 import Firebase
+import FBSDKLoginKit
 
 class LoginViewController: UIViewController {
     
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var loginButton: UIButton!
-    @IBOutlet weak var facebookButton: UIButton!
+    @IBOutlet weak var verticalStackView: UIStackView!
+    @IBOutlet weak var fbButton: UIButton!
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
@@ -21,12 +23,13 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+                
         loginButton.layer.cornerRadius = 10
-        facebookButton.layer.cornerRadius = 10
+        fbButton.layer.cornerRadius = 10
         emailTextField.layer.cornerRadius = 10
         passwordTextField.layer.cornerRadius = 10
         
+    
         // Do any additional setup after loading the view.
     }
     
@@ -50,9 +53,34 @@ class LoginViewController: UIViewController {
         }
     }
     
-    @IBAction func loginFbPressed(_ sender: UIButton) {
+    
+    @IBAction func fbButtonPressed(_ sender: UIButton) {
+        
+        let loginManager = LoginManager()
+        loginManager.logOut()
+        loginManager.logIn(permissions: [.email], viewController: self) { (result) in
+            
+            switch result {
+            
+            case .success(granted: let granted, declined: let declined, token: let token):
+                
+                let credential = FacebookAuthProvider.credential(withAccessToken: token.tokenString)
+                
+                Auth.auth().signIn(with: credential) { (result, error) in
+                    if let e = error {
+                        print(e)
+                    } else {
+                        self.performSegue(withIdentifier: "LoginToMenu", sender: self)
+                        // loginManager.logOut()
+                    }
+                }
+                
+            case .cancelled:
+                break
+            case .failed(_):
+                break
+            }
+        }
     }
-    
-    
 }
 
