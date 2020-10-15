@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Firebase
 
 class SignUpViewController: UIViewController {
     
@@ -28,6 +29,22 @@ class SignUpViewController: UIViewController {
     
     @IBAction func signUpPressed(_ sender: UIButton) {
         
+        if let email = emailTextField.text, let password = passwordTextField.text, let repeatPassword = repeatPassTextField.text {
+            
+            if password == repeatPassword {
+                Auth.auth().createUser(withEmail: email, password: password) { authResult, error in
+                    if let e = error{
+                        // Should be a pop-up or message to the user
+                        print("Error creating the user, \(e.localizedDescription)")
+                    } else {
+                        // Navigate to the Alarms view controller
+                        self.performSegue(withIdentifier: "RegisterToMenu", sender: self)
+                    }
+                }
+            } else {
+                print("Passwords are not equal.")
+            }
+        }
     }
 }
 

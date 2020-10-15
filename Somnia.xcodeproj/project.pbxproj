@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		0D6537B25F60BF278BDAF1DD /* Pods_Somnia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 953090904602BEE0E86CEE3D /* Pods_Somnia.framework */; };
 		378630F525355CBC00773BFA /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 378630F425355CBC00773BFA /* SignUpViewController.swift */; };
+		3799660C2538934D00503213 /* AlarmsNewUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3799660B2538934D00503213 /* AlarmsNewUserViewController.swift */; };
 		37F462DA251C1E76004A16EF /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F462D9251C1E76004A16EF /* User.swift */; };
 		37F462DC251C1EE2004A16EF /* SleepLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F462DB251C1EE2004A16EF /* SleepLog.swift */; };
 		3CE3441CE9244DA3C171AF88 /* Pods_Somnia_SomniaUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F05C4CD45FA97AECD4525F4 /* Pods_Somnia_SomniaUITests.framework */; };
@@ -17,7 +18,7 @@
 		B103D2202534DF5D00F5F301 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B103D21F2534DF5D00F5F301 /* Constants.swift */; };
 		B13CC2CB251BAE5600A25D60 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13CC2CA251BAE5600A25D60 /* AppDelegate.swift */; };
 		B13CC2CD251BAE5600A25D60 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13CC2CC251BAE5600A25D60 /* SceneDelegate.swift */; };
-		B13CC2CF251BAE5600A25D60 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13CC2CE251BAE5600A25D60 /* ViewController.swift */; };
+		B13CC2CF251BAE5600A25D60 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13CC2CE251BAE5600A25D60 /* LoginViewController.swift */; };
 		B13CC2D2251BAE5600A25D60 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B13CC2D0251BAE5600A25D60 /* Main.storyboard */; };
 		B13CC2D4251BAE5700A25D60 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B13CC2D3251BAE5700A25D60 /* Assets.xcassets */; };
 		B13CC2D7251BAE5700A25D60 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B13CC2D5251BAE5700A25D60 /* LaunchScreen.storyboard */; };
@@ -60,6 +61,7 @@
 
 /* Begin PBXFileReference section */
 		378630F425355CBC00773BFA /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		3799660B2538934D00503213 /* AlarmsNewUserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmsNewUserViewController.swift; sourceTree = "<group>"; };
 		37F462D9251C1E76004A16EF /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		37F462DB251C1EE2004A16EF /* SleepLog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SleepLog.swift; sourceTree = "<group>"; };
 		4F05C4CD45FA97AECD4525F4 /* Pods_Somnia_SomniaUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Somnia_SomniaUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -71,7 +73,7 @@
 		B13CC2C7251BAE5600A25D60 /* Somnia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Somnia.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B13CC2CA251BAE5600A25D60 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B13CC2CC251BAE5600A25D60 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		B13CC2CE251BAE5600A25D60 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		B13CC2CE251BAE5600A25D60 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		B13CC2D1251BAE5600A25D60 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B13CC2D3251BAE5700A25D60 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B13CC2D6251BAE5700A25D60 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -217,8 +219,9 @@
 		B13CC2FF251BAF7800A25D60 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				B13CC2CE251BAE5600A25D60 /* ViewController.swift */,
+				B13CC2CE251BAE5600A25D60 /* LoginViewController.swift */,
 				378630F425355CBC00773BFA /* SignUpViewController.swift */,
+				3799660B2538934D00503213 /* AlarmsNewUserViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -516,8 +519,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3799660C2538934D00503213 /* AlarmsNewUserViewController.swift in Sources */,
 				37F462DC251C1EE2004A16EF /* SleepLog.swift in Sources */,
-				B13CC2CF251BAE5600A25D60 /* ViewController.swift in Sources */,
+				B13CC2CF251BAE5600A25D60 /* LoginViewController.swift in Sources */,
 				B13CC2CB251BAE5600A25D60 /* AppDelegate.swift in Sources */,
 				B103D2202534DF5D00F5F301 /* Constants.swift in Sources */,
 				B13CC2CD251BAE5600A25D60 /* SceneDelegate.swift in Sources */,
