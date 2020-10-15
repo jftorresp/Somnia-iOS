@@ -10,10 +10,6 @@ import Firebase
 import FBSDKLoginKit
 
 class LoginViewController: UIViewController {
-    func loginButtonDidLogOut(_ loginButton: FBLoginButton) {
-        <#code#>
-    }
-    
 
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
