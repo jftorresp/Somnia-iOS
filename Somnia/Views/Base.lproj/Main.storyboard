@@ -41,10 +41,10 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="unk-tk-xXG">
-                                <rect key="frame" x="82" y="382" width="250" height="281"/>
+                                <rect key="frame" x="82" y="378" width="250" height="285"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="7Hi-Ga-ASw">
-                                        <rect key="frame" x="0.0" y="0.0" width="250" height="128"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="7Hi-Ga-ASw">
+                                        <rect key="frame" x="0.0" y="0.0" width="250" height="132"/>
                                         <subviews>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bIP-8q-j1X">
                                                 <rect key="frame" x="0.0" y="0.0" width="250" height="40"/>
@@ -57,7 +57,7 @@
                                                 <textInputTraits key="textInputTraits" textContentType="email"/>
                                             </textField>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7ni-OI-XlE">
-                                                <rect key="frame" x="0.0" y="50" width="250" height="40"/>
+                                                <rect key="frame" x="0.0" y="52" width="250" height="40"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="250" id="2k5-wD-itf"/>
@@ -67,7 +67,7 @@
                                                 <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
                                             </textField>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="top" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h4B-ZC-Fz9">
-                                                <rect key="frame" x="0.0" y="100" width="250" height="28"/>
+                                                <rect key="frame" x="0.0" y="104" width="250" height="28"/>
                                                 <fontDescription key="fontDescription" name="HaboroSoft-NorLig" family="HaboroSoft-NorLig" pointSize="13"/>
                                                 <state key="normal" title="Forgot password?">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -76,7 +76,7 @@
                                         </subviews>
                                     </stackView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0dJ-AE-DLP">
-                                        <rect key="frame" x="0.0" y="143" width="250" height="40"/>
+                                        <rect key="frame" x="0.0" y="147" width="250" height="40"/>
                                         <color key="backgroundColor" name="Green"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="I9V-W0-GZP"/>
@@ -90,21 +90,23 @@
                                             <segue destination="9Xf-wQ-Swn" kind="presentation" identifier="LoginToMenu" modalPresentationStyle="fullScreen" id="uZ8-mm-Dwq"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zet-vz-hWZ">
-                                        <rect key="frame" x="0.0" y="198" width="250" height="40"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0bp-Mw-2rD">
+                                        <rect key="frame" x="0.0" y="202" width="250" height="40"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="40" id="LiV-er-7yK"/>
-                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="250" id="cdh-Kx-Uia"/>
+                                            <constraint firstAttribute="height" constant="40" id="UsU-0G-rnH"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="250" id="vvt-4c-jVO"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="HaboroSoft-NorMed" family="HaboroSoft-NorMed" pointSize="19"/>
-                                        <state key="normal" title="Login with Facebook"/>
+                                        <fontDescription key="fontDescription" name="HaboroSoft-NorMed" family="HaboroSoft-NorMed" pointSize="18"/>
+                                        <state key="normal" title="  Login with Facebook" image="facebook">
+                                            <color key="titleColor" systemColor="linkColor"/>
+                                        </state>
                                         <connections>
-                                            <action selector="loginFbPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5nw-y2-dYt"/>
+                                            <action selector="fbButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="7GM-wB-XeS"/>
                                         </connections>
                                     </button>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="BUA-1E-y8V">
-                                        <rect key="frame" x="31" y="253" width="188.5" height="28"/>
+                                        <rect key="frame" x="31" y="257" width="188.5" height="28"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Don't have an account?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1qB-c0-3vL">
                                                 <rect key="frame" x="0.0" y="6.5" width="138.5" height="15.5"/>
@@ -127,7 +129,7 @@
                                 </subviews>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Somnia" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ipt-Of-6n9">
-                                <rect key="frame" x="142.5" y="199.5" width="129" height="44.5"/>
+                                <rect key="frame" x="142.5" y="195.5" width="129" height="44.5"/>
                                 <fontDescription key="fontDescription" name="HaboroSoft-NorDem" family="HaboroSoft-NorDem" pointSize="38"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -146,9 +148,10 @@
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="emailTextField" destination="bIP-8q-j1X" id="YDw-hd-Ixi"/>
-                        <outlet property="facebookButton" destination="Zet-vz-hWZ" id="icx-f7-f90"/>
+                        <outlet property="fbButton" destination="0bp-Mw-2rD" id="DSD-3l-wHl"/>
                         <outlet property="loginButton" destination="0dJ-AE-DLP" id="oZi-mN-QwH"/>
                         <outlet property="passwordTextField" destination="7ni-OI-XlE" id="b06-uG-hvj"/>
+                        <outlet property="verticalStackView" destination="unk-tk-xXG" id="JEd-g8-H3x"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -168,7 +171,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="wzA-Pv-zD6">
-                                <rect key="frame" x="82" y="454" width="250" height="200"/>
+                                <rect key="frame" x="82" y="449" width="250" height="205"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hBh-rc-6zt">
                                         <rect key="frame" x="0.0" y="0.0" width="250" height="40"/>
@@ -180,33 +183,28 @@
                                         <fontDescription key="fontDescription" name="HaboroSoft-NorReg" family="HaboroSoft-NorReg" pointSize="18"/>
                                         <textInputTraits key="textInputTraits" textContentType="email"/>
                                     </textField>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="UhO-na-kxk">
-                                        <rect key="frame" x="0.0" y="55" width="250" height="90"/>
-                                        <subviews>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tpL-xC-Z3s">
-                                                <rect key="frame" x="0.0" y="0.0" width="250" height="40"/>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="250" id="dxp-Ne-Xnj"/>
-                                                    <constraint firstAttribute="height" constant="40" id="qBc-MU-CfU"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" name="HaboroSoft-NorReg" family="HaboroSoft-NorReg" pointSize="18"/>
-                                                <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
-                                            </textField>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Repeat password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8u0-4h-7ig">
-                                                <rect key="frame" x="0.0" y="50" width="250" height="40"/>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="250" id="RAZ-or-nGZ"/>
-                                                    <constraint firstAttribute="height" constant="40" id="VDj-nJ-x5n"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" name="HaboroSoft-NorReg" family="HaboroSoft-NorReg" pointSize="18"/>
-                                                <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
-                                            </textField>
-                                        </subviews>
-                                    </stackView>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tpL-xC-Z3s">
+                                        <rect key="frame" x="0.0" y="55" width="250" height="40"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="250" id="dxp-Ne-Xnj"/>
+                                            <constraint firstAttribute="height" constant="40" id="qBc-MU-CfU"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="HaboroSoft-NorReg" family="HaboroSoft-NorReg" pointSize="18"/>
+                                        <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Repeat password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8u0-4h-7ig">
+                                        <rect key="frame" x="0.0" y="110" width="250" height="40"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="250" id="RAZ-or-nGZ"/>
+                                            <constraint firstAttribute="height" constant="40" id="VDj-nJ-x5n"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="HaboroSoft-NorReg" family="HaboroSoft-NorReg" pointSize="18"/>
+                                        <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
+                                    </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vfg-UI-JbM">
-                                        <rect key="frame" x="0.0" y="160" width="250" height="40"/>
+                                        <rect key="frame" x="0.0" y="165" width="250" height="40"/>
                                         <color key="backgroundColor" name="Green"/>
                                         <constraints>
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="250" id="gxj-M7-2MY"/>
@@ -223,7 +221,7 @@
                                 </subviews>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Somnia" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MYD-8h-12d">
-                                <rect key="frame" x="142.5" y="271.5" width="129" height="44.5"/>
+                                <rect key="frame" x="142.5" y="266.5" width="129" height="44.5"/>
                                 <fontDescription key="fontDescription" name="HaboroSoft-NorDem" family="HaboroSoft-NorDem" pointSize="38"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -419,6 +417,7 @@
         <image name="alarm" catalog="system" width="124" height="128"/>
         <image name="background-2" width="1125" height="2436"/>
         <image name="chart.bar" catalog="system" width="128" height="90"/>
+        <image name="facebook" width="25" height="25"/>
         <image name="moon.fill" catalog="system" width="128" height="121"/>
         <image name="person.circle" catalog="system" width="128" height="121"/>
         <image name="square.and.arrow.down" catalog="system" width="121" height="128"/>
@@ -431,6 +430,9 @@
         <namedColor name="MidBlue">
             <color red="0.20000000298023224" green="0.43900001049041748" blue="0.65100002288818359" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
+        <systemColor name="linkColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
