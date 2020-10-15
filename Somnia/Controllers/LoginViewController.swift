@@ -6,8 +6,9 @@
 //
 
 import UIKit
+import Firebase
 
-class ViewController: UIViewController {
+class LoginViewController: UIViewController {
     
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
@@ -29,17 +30,29 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-//    override func viewDidLayoutSubviews() {
-//        view.setGradientBackground(colorOne: UIColor(named: K.BrandColors.darkBlue)!, colorTwo: UIColor(named: K.BrandColors.blue)!)
-//    }
+    //    override func viewDidLayoutSubviews() {
+    //        view.setGradientBackground(colorOne: UIColor(named: K.BrandColors.darkBlue)!, colorTwo: UIColor(named: K.BrandColors.blue)!)
+    //    }
     
     
     @IBAction func loginPressed(_ sender: UIButton) {
+        
+        if let email = emailTextField.text, let password = passwordTextField.text {
+            Auth.auth().signIn(withEmail: email, password: password) { [weak self] authResult, error in
+                if let e = error {
+                    print("Error login the user, \(e.localizedDescription)")
+                } else {
+                    // Navigate to Alarms view controller
+                    self?.performSegue(withIdentifier: "LoginToMenu", sender: self)
+                }
+                
+            }
+        }
     }
     
     @IBAction func loginFbPressed(_ sender: UIButton) {
     }
     
-
+    
 }
 
