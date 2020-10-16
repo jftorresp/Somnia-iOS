@@ -41,10 +41,10 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="unk-tk-xXG">
-                                <rect key="frame" x="82" y="384" width="250" height="279"/>
+                                <rect key="frame" x="82" y="378" width="250" height="285"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="7Hi-Ga-ASw">
-                                        <rect key="frame" x="0.0" y="0.0" width="250" height="129"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="250" height="132"/>
                                         <subviews>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bIP-8q-j1X">
                                                 <rect key="frame" x="0.0" y="0.0" width="250" height="40"/>
@@ -67,7 +67,7 @@
                                                 <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
                                             </textField>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="top" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h4B-ZC-Fz9">
-                                                <rect key="frame" x="0.0" y="104" width="250" height="25"/>
+                                                <rect key="frame" x="0.0" y="104" width="250" height="28"/>
                                                 <fontDescription key="fontDescription" name="HaboroSoft-NorLig" family="HaboroSoft-NorLig" pointSize="13"/>
                                                 <state key="normal" title="Forgot password?">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -76,7 +76,7 @@
                                         </subviews>
                                     </stackView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0dJ-AE-DLP">
-                                        <rect key="frame" x="0.0" y="144" width="250" height="40"/>
+                                        <rect key="frame" x="0.0" y="147" width="250" height="40"/>
                                         <color key="backgroundColor" name="Green"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="I9V-W0-GZP"/>
@@ -91,7 +91,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0bp-Mw-2rD">
-                                        <rect key="frame" x="0.0" y="199" width="250" height="40"/>
+                                        <rect key="frame" x="0.0" y="202" width="250" height="40"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="UsU-0G-rnH"/>
@@ -106,16 +106,16 @@
                                         </connections>
                                     </button>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="BUA-1E-y8V">
-                                        <rect key="frame" x="38.5" y="254" width="173.5" height="25"/>
+                                        <rect key="frame" x="31" y="257" width="188.5" height="28"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Don't have an account?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1qB-c0-3vL">
-                                                <rect key="frame" x="0.0" y="6" width="127.5" height="13"/>
+                                                <rect key="frame" x="0.0" y="6.5" width="138.5" height="15.5"/>
                                                 <fontDescription key="fontDescription" name="HaboroSoft-NorLig" family="HaboroSoft-NorLig" pointSize="13"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RH8-he-MJW">
-                                                <rect key="frame" x="132.5" y="0.0" width="41" height="25"/>
+                                                <rect key="frame" x="143.5" y="0.0" width="45" height="28"/>
                                                 <fontDescription key="fontDescription" name="HaboroSoft-NorLig" family="HaboroSoft-NorLig" pointSize="13"/>
                                                 <state key="normal" title="Sign up">
                                                     <color key="titleColor" name="Green"/>
@@ -129,7 +129,7 @@
                                 </subviews>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Somnia" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ipt-Of-6n9">
-                                <rect key="frame" x="145.5" y="208" width="123.5" height="38"/>
+                                <rect key="frame" x="142.5" y="195.5" width="129" height="44.5"/>
                                 <fontDescription key="fontDescription" name="HaboroSoft-NorDem" family="HaboroSoft-NorDem" pointSize="38"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -221,7 +221,7 @@
                                 </subviews>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Somnia" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MYD-8h-12d">
-                                <rect key="frame" x="145.5" y="273" width="123.5" height="38"/>
+                                <rect key="frame" x="142.5" y="266.5" width="129" height="44.5"/>
                                 <fontDescription key="fontDescription" name="HaboroSoft-NorDem" family="HaboroSoft-NorDem" pointSize="38"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -253,7 +253,7 @@
             <objects>
                 <viewController id="XEb-Ox-3uG" customClass="StatsViewController" customModule="Somnia" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="hBC-NU-r4R">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Your Sleep Stats" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UQG-8S-N1x">
@@ -266,7 +266,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You don´t have any stats, go ahead and set some Alarms to start analyzing your app" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8bA-g4-YIw">
-                                <rect key="frame" x="70.5" y="376.5" width="273" height="60"/>
+                                <rect key="frame" x="70.5" y="371.5" width="273" height="70"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="273" id="i68-dS-Grb"/>
                                 </constraints>
@@ -295,7 +295,7 @@
             <objects>
                 <viewController id="POK-IB-npQ" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="mcl-uD-K7T">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="TMR-Ah-N51"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -311,26 +311,26 @@
             <objects>
                 <viewController id="q6A-yE-Uqh" customClass="AlarmsNewUserViewController" customModule="Somnia" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="F5q-Sw-Tvi">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="18" translatesAutoresizingMaskIntoConstraints="NO" id="cAb-aE-Mqa">
                                 <rect key="frame" x="20" y="364" width="374" height="96"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="You don't have any alarms yet." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zng-pZ-NkS">
-                                        <rect key="frame" x="68" y="0.0" width="238.5" height="24"/>
+                                        <rect key="frame" x="63.5" y="0.0" width="247" height="18"/>
                                         <fontDescription key="fontDescription" name="HaboroSoft-NorDem" family="HaboroSoft-NorDem" pointSize="18"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <color key="highlightedColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Press the + button to create a new one." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ESo-sG-nYH">
-                                        <rect key="frame" x="34.5" y="42" width="305.5" height="18"/>
+                                        <rect key="frame" x="28" y="36" width="318" height="21"/>
                                         <fontDescription key="fontDescription" name="HaboroSoft-NorDem" family="HaboroSoft-NorDem" pointSize="18"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <color key="highlightedColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Press the        button to import your alarms." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JP1-oT-Adz">
-                                        <rect key="frame" x="18.5" y="78" width="337" height="18"/>
+                                        <rect key="frame" x="12" y="75" width="350" height="21"/>
                                         <fontDescription key="fontDescription" name="HaboroSoft-NorDem" family="HaboroSoft-NorDem" pointSize="18"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <color key="highlightedColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -395,7 +395,7 @@
             <objects>
                 <viewController id="RpM-Q7-Adm" customClass="SleepViewController" customModule="Somnia" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="s6D-ds-Jsm">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="background-2" translatesAutoresizingMaskIntoConstraints="NO" id="dnR-GC-bkf">
@@ -403,13 +403,13 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time to sleep?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="htq-kJ-PMD">
-                                <rect key="frame" x="0.0" y="265" width="414" height="28"/>
+                                <rect key="frame" x="0.0" y="265" width="414" height="33"/>
                                 <fontDescription key="fontDescription" name="HaboroSoft-NorBol" family="HaboroSoft-NorBol" pointSize="28"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4lk-YG-rmf">
-                                <rect key="frame" x="0.0" y="328" width="414" height="22"/>
+                                <rect key="frame" x="0.0" y="333" width="414" height="26"/>
                                 <fontDescription key="fontDescription" name="HaboroSoft-NorDem" family="HaboroSoft-NorDem" pointSize="22"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -466,28 +466,28 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Analyzing your sleep" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L7f-56-rQd">
-                                <rect key="frame" x="0.0" y="358" width="414" height="30"/>
+                                <rect key="frame" x="0.0" y="358" width="414" height="35"/>
                                 <fontDescription key="fontDescription" name="HaboroSoft-NorBol" family="HaboroSoft-NorBol" pointSize="30"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="22" translatesAutoresizingMaskIntoConstraints="NO" id="TrV-qv-yoH">
-                                <rect key="frame" x="97.5" y="414" width="219" height="50"/>
+                                <rect key="frame" x="82.5" y="419" width="249" height="58.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="I'ts" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hFc-GH-46o">
-                                        <rect key="frame" x="0.0" y="0.0" width="46" height="50"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="49" height="58.5"/>
                                         <fontDescription key="fontDescription" name="HaboroSoft-NorMed" family="HaboroSoft-NorMed" pointSize="36"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12:18" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hCa-60-D6H">
-                                        <rect key="frame" x="68" y="0.0" width="98" height="50"/>
+                                        <rect key="frame" x="71" y="0.0" width="125.5" height="58.5"/>
                                         <fontDescription key="fontDescription" name="HaboroSoft-NorMed" family="HaboroSoft-NorMed" pointSize="50"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="AM" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gbd-zx-rNN">
-                                        <rect key="frame" x="188" y="0.0" width="31" height="50"/>
+                                        <rect key="frame" x="218.5" y="0.0" width="30.5" height="58.5"/>
                                         <fontDescription key="fontDescription" name="HaboroSoft-NorMed" family="HaboroSoft-NorMed" pointSize="20"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -495,13 +495,13 @@
                                 </subviews>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Need some help?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SeD-oe-cHz">
-                                <rect key="frame" x="0.0" y="516" width="414" height="20"/>
+                                <rect key="frame" x="0.0" y="529.5" width="414" height="23.5"/>
                                 <fontDescription key="fontDescription" name="HaboroSoft-NorReg" family="HaboroSoft-NorReg" pointSize="20"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="FSy-DK-TsL">
-                                <rect key="frame" x="79" y="544" width="256" height="66"/>
+                                <rect key="frame" x="79" y="561" width="256" height="66"/>
                                 <color key="backgroundColor" name="Green"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="66" id="fid-RM-xul"/>
@@ -516,7 +516,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Press the moon for three seconds to stop the analysis" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5BI-RW-0vV">
-                                <rect key="frame" x="58" y="675" width="298" height="40"/>
+                                <rect key="frame" x="58" y="692" width="298" height="47"/>
                                 <fontDescription key="fontDescription" name="HaboroSoft-NorReg" family="HaboroSoft-NorReg" pointSize="20"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -559,7 +559,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WPx-WJ-jVh">
-                                <rect key="frame" x="20" y="68" width="15" height="33"/>
+                                <rect key="frame" x="20" y="68" width="15.5" height="33"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="27"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal">
@@ -574,7 +574,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Recently played" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kO1-uc-Sgc">
-                                        <rect key="frame" x="17" y="8" width="197" height="28"/>
+                                        <rect key="frame" x="17" y="8" width="197" height="65.5"/>
                                         <fontDescription key="fontDescription" name="HaboroSoft-NorDem" family="HaboroSoft-NorDem" pointSize="28"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -589,7 +589,7 @@
                                 <viewLayoutGuide key="frameLayoutGuide" id="4aw-IP-dhr"/>
                             </scrollView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sleep - Activities" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qcu-r4-is5">
-                                <rect key="frame" x="43.5" y="68" width="270.5" height="36"/>
+                                <rect key="frame" x="44" y="68" width="270" height="42"/>
                                 <fontDescription key="fontDescription" name="HaboroSoft-NorBol" family="HaboroSoft-NorBol" pointSize="36"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
