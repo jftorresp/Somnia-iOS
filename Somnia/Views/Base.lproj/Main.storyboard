@@ -14,6 +14,9 @@
         <array key="HaboroSoft-NorBol.ttf">
             <string>HaboroSoft-NorBol</string>
         </array>
+        <array key="HaboroSoft-NorBoo.ttf">
+            <string>HaboroSoft-NorBoo</string>
+        </array>
         <array key="HaboroSoft-NorDem.ttf">
             <string>HaboroSoft-NorDem</string>
         </array>
@@ -332,6 +335,7 @@
                                 </state>
                                 <connections>
                                     <action selector="AddAlarmAction:" destination="q6A-yE-Uqh" eventType="touchUpInside" id="dtY-cx-jps"/>
+                                    <segue destination="hIf-lH-TQo" kind="show" id="dd1-PU-i38"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cn7-ah-tSo" userLabel="ImportAlarmsButton">
@@ -357,6 +361,7 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Alarms" image="alarm" catalog="system" id="e04-Iv-Ntf"/>
+                    <navigationItem key="navigationItem" id="q27-XN-EhW"/>
                     <connections>
                         <outlet property="AddAlarmsButton" destination="R0c-8r-bXZ" id="0PZ-4T-H0b"/>
                         <outlet property="ImportAlarmsButton" destination="cn7-ah-tSo" id="kY1-4S-p3c"/>
@@ -411,9 +416,133 @@
             </objects>
             <point key="canvasLocation" x="1774" y="280"/>
         </scene>
+        <!--NewAlarm-->
+        <scene sceneID="llP-YG-46Q">
+            <objects>
+                <viewController id="hIf-lH-TQo" userLabel="NewAlarm" customClass="NewAlarmViewController" customModule="Somnia" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="bdy-rb-ABa">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="1" translatesAutoresizingMaskIntoConstraints="NO" id="CP4-Bd-LzV">
+                                <rect key="frame" x="110" y="275" width="194" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <segments>
+                                    <segment title="Before"/>
+                                    <segment title="Exact"/>
+                                </segments>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </segmentedControl>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="K0H-03-Hep">
+                                <rect key="frame" x="0.0" y="9" width="414" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" name="Darkblue"/>
+                                <color key="tintColor" name="Darkblue"/>
+                                <color key="barTintColor" name="Darkblue"/>
+                                <textAttributes key="titleTextAttributes">
+                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </textAttributes>
+                                <items>
+                                    <navigationItem title="Add an alarm" id="F7j-6s-VMu">
+                                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="gyU-hy-IM1">
+                                            <color key="tintColor" name="Green"/>
+                                            <connections>
+                                                <action selector="cancelAction:" destination="hIf-lH-TQo" id="csq-fK-EUj"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" title="Add" style="plain" id="VBG-Mb-QTz">
+                                            <color key="tintColor" name="Green"/>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <datePicker contentMode="scaleToFill" fixedFrame="YES" highlighted="YES" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="1" style="wheels" translatesAutoresizingMaskIntoConstraints="NO" id="DWg-bD-JuF">
+                                <rect key="frame" x="0.0" y="105" width="414" height="162"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="textColor">
+                                        <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </datePicker>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="I want to..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NTt-Yb-02l">
+                                <rect key="frame" x="179" y="314" width="56" height="13"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="HaboroSoft-NorLig" family="HaboroSoft-NorLig" pointSize="13"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Repeat" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mNS-tT-5la">
+                                <rect key="frame" x="29" y="355" width="77" height="28"/>
+                                <fontDescription key="fontDescription" name="HaboroSoft-NorBoo" family="HaboroSoft-NorBoo" pointSize="24"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="ZyU-iB-z6e">
+                                <rect key="frame" x="29" y="391" width="360" height="30"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3A3-2u-tau">
+                                        <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
+                                        <state key="normal" title="M"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xG6-3G-DjS">
+                                        <rect key="frame" x="55" y="0.0" width="30" height="30"/>
+                                        <state key="normal" title="T"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hnl-4R-zF2">
+                                        <rect key="frame" x="110" y="0.0" width="30" height="30"/>
+                                        <state key="normal" title="W"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZJM-Bl-SKq">
+                                        <rect key="frame" x="165" y="0.0" width="30" height="30"/>
+                                        <state key="normal" title="T"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x4n-WV-wgr">
+                                        <rect key="frame" x="220" y="0.0" width="30" height="30"/>
+                                        <state key="normal" title="F"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yXp-oZ-wR6">
+                                        <rect key="frame" x="275" y="0.0" width="30" height="30"/>
+                                        <state key="normal" title="S"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hCY-6c-zGS">
+                                        <rect key="frame" x="330" y="0.0" width="30" height="30"/>
+                                        <state key="normal" title="S"/>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="U7Y-LD-cm6"/>
+                        <color key="backgroundColor" name="Darkblue"/>
+                        <constraints>
+                            <constraint firstItem="mNS-tT-5la" firstAttribute="leading" secondItem="U7Y-LD-cm6" secondAttribute="leading" constant="29" id="E8e-Ic-AQW"/>
+                            <constraint firstItem="mNS-tT-5la" firstAttribute="top" secondItem="bdy-rb-ABa" secondAttribute="topMargin" constant="355" id="UaE-Td-cGN"/>
+                            <constraint firstItem="ZyU-iB-z6e" firstAttribute="leading" secondItem="U7Y-LD-cm6" secondAttribute="leading" constant="29" id="dnn-Gf-jRe"/>
+                            <constraint firstItem="ZyU-iB-z6e" firstAttribute="top" secondItem="mNS-tT-5la" secondAttribute="bottom" constant="8" id="ud0-ko-QrC"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Title" id="Xjw-jy-748"/>
+                    <connections>
+                        <outlet property="BeforeExact" destination="CP4-Bd-LzV" id="JNZ-iO-hwW"/>
+                        <outlet property="CancelButton" destination="gyU-hy-IM1" id="N4Z-hi-Y9x"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KoI-w5-Gop" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4321.739130434783" y="-573.21428571428567"/>
+        </scene>
+        <!--Storyboard Reference-->
+        <scene sceneID="nEi-V4-3J1">
+            <objects>
+                <viewControllerPlaceholder id="pcf-Oh-hgb" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hna-pR-XWR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4266" y="-918"/>
+        </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="uZ8-mm-Dwq"/>
+        <segue reference="RUv-Lz-KpJ"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="alarm" catalog="system" width="124" height="128"/>
