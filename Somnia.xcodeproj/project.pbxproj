@@ -39,6 +39,7 @@
 		B180381C253501ED00D03B19 /* HaboroSoft-NorBolIt.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B180380E253501ED00D03B19 /* HaboroSoft-NorBolIt.ttf */; };
 		B180381D253501ED00D03B19 /* HaboroSoft-NorBoo.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B180380F253501ED00D03B19 /* HaboroSoft-NorBoo.ttf */; };
 		B180381E253501ED00D03B19 /* HaboroSoft-NorBooIt.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B1803810253501ED00D03B19 /* HaboroSoft-NorBooIt.ttf */; };
+		B1E48D6E25392145003AC54F /* StatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E48D6D25392145003AC54F /* StatsViewController.swift */; };
 		C7B4E39D4FAB11D33EBFCD40 /* Pods_SomniaTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1253AF9471B4E293BA45EAA3 /* Pods_SomniaTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -103,6 +104,7 @@
 		B180380E253501ED00D03B19 /* HaboroSoft-NorBolIt.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "HaboroSoft-NorBolIt.ttf"; sourceTree = "<group>"; };
 		B180380F253501ED00D03B19 /* HaboroSoft-NorBoo.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "HaboroSoft-NorBoo.ttf"; sourceTree = "<group>"; };
 		B1803810253501ED00D03B19 /* HaboroSoft-NorBooIt.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "HaboroSoft-NorBooIt.ttf"; sourceTree = "<group>"; };
+		B1E48D6D25392145003AC54F /* StatsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsViewController.swift; sourceTree = "<group>"; };
 		C35A060D7C84FB700D3E8FB2 /* Pods_Somnia_SomniaUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Somnia_SomniaUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D4BBFD7F0C7395513F9FC4D4 /* Pods-SomniaTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SomniaTests.release.xcconfig"; path = "Target Support Files/Pods-SomniaTests/Pods-SomniaTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -222,6 +224,7 @@
 				B13CC2CE251BAE5600A25D60 /* LoginViewController.swift */,
 				378630F425355CBC00773BFA /* SignUpViewController.swift */,
 				3799660B2538934D00503213 /* AlarmsNewUserViewController.swift */,
+				B1E48D6D25392145003AC54F /* StatsViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -520,6 +523,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3799660C2538934D00503213 /* AlarmsNewUserViewController.swift in Sources */,
+				B1E48D6E25392145003AC54F /* StatsViewController.swift in Sources */,
 				37F462DC251C1EE2004A16EF /* SleepLog.swift in Sources */,
 				B13CC2CF251BAE5600A25D60 /* LoginViewController.swift in Sources */,
 				B13CC2CB251BAE5600A25D60 /* AppDelegate.swift in Sources */,
