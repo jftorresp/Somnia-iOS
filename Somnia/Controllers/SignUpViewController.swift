@@ -48,8 +48,6 @@ class SignUpViewController: UIViewController {
                         print("Error creating the user, \(e.localizedDescription)")
                     } else {
                         // Navigate to the Alarms view controller
-                        self.performSegue(withIdentifier: K.Segues.registerToMenu, sender: self)
-                        
                         if let emailPersisted = Auth.auth().currentUser?.email {
                             self.db.collection(K.FStore.usersCollection).addDocument(data: [K.FStore.userKey : emailPersisted]) { (error) in
                                 if let e = error {
@@ -61,8 +59,12 @@ class SignUpViewController: UIViewController {
                         }
                     }
                 }
+                
+                self.performSegue(withIdentifier: K.Segues.registerToMenu, sender: self)
+
             } else {
                 print("Unable to register user")
+                signUpButton.isEnabled = false
             }
         }
     }

@@ -47,6 +47,9 @@ class LoginViewController: UIViewController {
             
             Auth.auth().signIn(withEmail: email, password: password) { [weak self] authResult, error in
                 if let e = error {
+                    
+                    self?.loginButton.isEnabled = false
+                    
                     let err = e as NSError
                     switch err.code {
                     case AuthErrorCode.wrongPassword.rawValue:

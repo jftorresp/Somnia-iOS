@@ -87,6 +87,7 @@
                                         <state key="normal" title="Login"/>
                                         <connections>
                                             <action selector="loginPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dQA-t5-gYR"/>
+                                            <segue destination="9Xf-wQ-Swn" kind="presentation" identifier="LoginToMenu" modalPresentationStyle="fullScreen" modalTransitionStyle="coverVertical" id="0rg-xS-k4X"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0bp-Mw-2rD">
@@ -215,7 +216,7 @@
                                         <state key="normal" title="Sign up"/>
                                         <connections>
                                             <action selector="signUpPressed:" destination="34A-Ao-ll5" eventType="touchUpInside" id="ifG-hv-85u"/>
-                                            <segue destination="9Xf-wQ-Swn" kind="presentation" modalPresentationStyle="fullScreen" modalTransitionStyle="coverVertical" id="HgR-CW-Htz"/>
+                                            <segue destination="9Xf-wQ-Swn" kind="presentation" identifier="RegisterToMenu" modalPresentationStyle="fullScreen" modalTransitionStyle="coverVertical" id="HgR-CW-Htz"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -411,6 +412,9 @@
             <point key="canvasLocation" x="1774" y="280"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="HgR-CW-Htz"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="alarm" catalog="system" width="124" height="128"/>
         <image name="background-2" width="1125" height="2436"/>
