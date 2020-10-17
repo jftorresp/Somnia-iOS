@@ -26,6 +26,8 @@
 		B13CC2D7251BAE5700A25D60 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B13CC2D5251BAE5700A25D60 /* LaunchScreen.storyboard */; };
 		B13CC2E2251BAE5700A25D60 /* SomniaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13CC2E1251BAE5700A25D60 /* SomniaTests.swift */; };
 		B13CC2ED251BAE5700A25D60 /* SomniaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13CC2EC251BAE5700A25D60 /* SomniaUITests.swift */; };
+		B146080C253A6422004AE54D /* NewAlarmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B146080B253A6422004AE54D /* NewAlarmViewController.swift */; };
+		B146082C253A66C9004AE54D /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B146082B253A66C9004AE54D /* ProfileViewController.swift */; };
 		B1770954251D2769006CEEF7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B1770953251D2769006CEEF7 /* GoogleService-Info.plist */; };
 		B17E6633251BD61400C4DC72 /* Sleep.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17E6632251BD61400C4DC72 /* Sleep.swift */; };
 		B1803811253501ED00D03B19 /* HaboroSoft-NorLigIt.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B1803803253501EA00D03B19 /* HaboroSoft-NorLigIt.ttf */; };
@@ -94,6 +96,8 @@
 		B13CC2E8251BAE5700A25D60 /* SomniaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SomniaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B13CC2EC251BAE5700A25D60 /* SomniaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SomniaUITests.swift; sourceTree = "<group>"; };
 		B13CC2EE251BAE5700A25D60 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B146080B253A6422004AE54D /* NewAlarmViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewAlarmViewController.swift; sourceTree = "<group>"; };
+		B146082B253A66C9004AE54D /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		B1770953251D2769006CEEF7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		B17E6632251BD61400C4DC72 /* Sleep.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sleep.swift; sourceTree = "<group>"; };
 		B1803803253501EA00D03B19 /* HaboroSoft-NorLigIt.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "HaboroSoft-NorLigIt.ttf"; sourceTree = "<group>"; };
@@ -234,6 +238,8 @@
 				B1123108253925C20024DD7D /* SleepViewController.swift */,
 				B112310D25392F750024DD7D /* SleepTwoViewController.swift */,
 				B1123112253937A40024DD7D /* SleepActivitiesViewController.swift */,
+				B146080B253A6422004AE54D /* NewAlarmViewController.swift */,
+				B146082B253A66C9004AE54D /* ProfileViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -534,8 +540,10 @@
 				B1123109253925C20024DD7D /* SleepViewController.swift in Sources */,
 				3799660C2538934D00503213 /* AlarmsNewUserViewController.swift in Sources */,
 				B1E48D6E25392145003AC54F /* StatsViewController.swift in Sources */,
+				B146080C253A6422004AE54D /* NewAlarmViewController.swift in Sources */,
 				B112310E25392F750024DD7D /* SleepTwoViewController.swift in Sources */,
 				37F462DC251C1EE2004A16EF /* SleepLog.swift in Sources */,
+				B146082C253A66C9004AE54D /* ProfileViewController.swift in Sources */,
 				B13CC2CF251BAE5600A25D60 /* LoginViewController.swift in Sources */,
 				B13CC2CB251BAE5600A25D60 /* AppDelegate.swift in Sources */,
 				B103D2202534DF5D00F5F301 /* Constants.swift in Sources */,
