@@ -23,7 +23,7 @@ class NewAlarmViewController: UIViewController {
     @IBOutlet weak var dayStack: UIStackView!
     @IBOutlet weak var descriptionTxt: UITextField!
     
-    
+    var currentId: String = ""
     
     let db = Firestore.firestore()
     
@@ -33,7 +33,25 @@ class NewAlarmViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-                
+        
+        if let emailPersisted = Auth.auth().currentUser?.email {
+            db.collection(K.FStore.usersCollection).whereField("email", isEqualTo: emailPersisted)
+                .getDocuments() { [self] (querySnapshot, err) in
+                    if let err = err {
+                        print("Error getting documents: \(err)")
+                    } else {
+                        let documents = querySnapshot!.documents
+                        for i in 0 ..< documents.count-1 {
+                            self.currentId = String(documents[i].documentID)
+                        }
+                        self.currentId = documents[0].documentID
+                    }
+                }
+        }
+        else {
+            print("Not a user logged in")
+        }
+        
         dayStack.layer.cornerRadius=6
         descriptionTxt.layer.cornerRadius=6
         UIDatePicker.appearance().tintColor = UIColor.white
@@ -58,11 +76,14 @@ class NewAlarmViewController: UIViewController {
     
     @IBAction func addAction(_ sender: UIBarButtonItem) {
         
-        let currentId = getCurrenUserId()
-        
         let repeatDic = ["1": mondayButton.isSelected, "2": tuesdayButton.isSelected, "3": wednesdayButton.isSelected, "4": thursdayButton.isSelected, "5": fridayButton.isSelected, "6": saturdayButton.isSelected, "7": sundayButton.isSelected]
         
-        db.collection(K.FStore.alarmsCollection).addDocument(data: ["alarm_date": datePicker.date, "createdBy": currentId, "description": descriptionTxt.text!, "exact": beforeExact.titleForSegment(at: beforeExact.selectedSegmentIndex)!, "repeat": repeatDic]) { (error) in
+        var isExact = false
+        if beforeExact.titleForSegment(at: beforeExact.selectedSegmentIndex)! == "Exact"{
+            isExact = true
+        }
+        
+        db.collection(K.FStore.alarmsCollection).addDocument(data: ["alarm_date": datePicker.date, "createdBy": currentId, "description": descriptionTxt.text!, "exact": isExact, "repeat": repeatDic]) { (error) in
             
             if let e = error {
                 print("Error adding the user to the database, \(e.localizedDescription)")
@@ -135,25 +156,4 @@ class NewAlarmViewController: UIViewController {
     //        }
     //    }
     
-    func getCurrenUserId() -> String {
-        
-        var currentId = ""
-        
-        if let emailPersisted = Auth.auth().currentUser?.email {
-            db.collection(K.FStore.usersCollection).whereField("email", isEqualTo: emailPersisted)
-                .getDocuments() { (querySnapshot, err) in
-                    if let err = err {
-                        print("Error getting documents: \(err)")
-                    } else {
-                        let documents = querySnapshot!.documents
-                        for i in 0 ..< documents.count {
-                            currentId = documents[i].documentID
-                        }
-                    }
-                }
-        } else {
-            print("Not a user logged in")
-        }
-        return currentId
-    }
 }

@@ -6,7 +6,7 @@ target 'Somnia' do
   use_frameworks!
 
   # Pods for Somnia
-  
+
   pod 'Firebase/Analytics'
   pod 'Firebase/Auth'
   pod 'Firebase/Firestore'
