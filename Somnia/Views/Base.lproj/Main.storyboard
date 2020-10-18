@@ -907,6 +907,9 @@
                                         </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" title="Add" id="FTQ-zP-0P6">
                                             <color key="tintColor" name="Green"/>
+                                            <connections>
+                                                <action selector="addAction:" destination="ern-Lr-2qx" id="OYf-Ws-7ag"/>
+                                            </connections>
                                         </barButtonItem>
                                     </navigationItem>
                                 </items>

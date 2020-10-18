@@ -17,6 +17,7 @@ struct K {
     
     struct FStore {
         static let usersCollection = "users"
+        static let alarmsCollection = "alarms"
         static let userKey = "email"
     }
     
