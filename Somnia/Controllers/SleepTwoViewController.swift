@@ -27,24 +27,23 @@ class SleepTwoViewController: UIViewController {
         sleepActButton.layer.masksToBounds = false
         sleepActButton.titleLabel?.textAlignment = .center
         sleepActButton.layer.cornerRadius = sleepActButton.frame.size.width / 12
-        
-        let date = Date()
-        let calendar = Calendar.current
-        let hour = calendar.component(.hour, from: date)
-        let minutes = calendar.component(.minute, from: date)
-        
+                
         let formatter = DateFormatter()
         formatter.locale = Locale(identifier: "en_US_POSIX")
         formatter.dateFormat = "a"
         formatter.amSymbol = "AM"
         formatter.pmSymbol = "PM"
         
-        let dateString = formatter.string(from: Date())
+        let formatter2 = DateFormatter()
+        formatter2.locale = Locale(identifier: "en_US_POSIX")
+        formatter2.dateFormat = "HH:mm"
         
-        hourLabel.text = "\(hour):\(minutes)"
+        let dateString = formatter.string(from: Date())
+        let dateString2 = formatter2.string(from: Date())
+        
+        hourLabel.text = dateString2
         hour2Label.text = dateString
         
-
         // Do any additional setup after loading the view.
     }
     

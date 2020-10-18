@@ -11,6 +11,10 @@ class SleepViewController: UIViewController {
     
     @IBOutlet weak var sleepLabel: UILabel!
     @IBOutlet weak var sleepButton: UIButton!
+    @IBOutlet weak var sleepView: UIView!
+    @IBOutlet weak var datePicker: UIDatePicker!
+    @IBOutlet weak var imageView: UIImageView!
+    
         
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
@@ -25,6 +29,17 @@ class SleepViewController: UIViewController {
         sleepButton.layer.shadowRadius = 0.0
         sleepButton.layer.masksToBounds = false
         sleepButton.layer.cornerRadius = sleepButton.frame.size.width / 12
+        
+        sleepView.layer.cornerRadius = 12
+        imageView.layer.cornerRadius = 12
+        datePicker.layer.cornerRadius = 12
+        datePicker.setValue(UIColor(named: K.BrandColors.green), forKeyPath: "textColor")
+        
+        sleepView.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.15).cgColor
+        sleepView.layer.shadowOffset = CGSize(width: 0.0, height: 4.0)
+        sleepView.layer.shadowOpacity = 1.0
+        sleepView.layer.shadowRadius = 0.0
+        sleepView.layer.masksToBounds = false
         
         // Do any additional setup after loading the view.
     }

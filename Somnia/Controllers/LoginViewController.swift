@@ -9,7 +9,7 @@ import UIKit
 import Firebase
 import FBSDKLoginKit
 
-class LoginViewController: UIViewController {
+class LoginViewController: UIViewController{
     
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
@@ -27,7 +27,7 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-                
+                        
         loginButton.layer.cornerRadius = 10
         fbButton.layer.cornerRadius = 10
         emailTextField.layer.cornerRadius = 10
@@ -122,4 +122,5 @@ class LoginViewController: UIViewController {
     }
     
 }
+
 

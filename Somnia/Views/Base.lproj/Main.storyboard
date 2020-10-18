@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -305,7 +305,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="18" translatesAutoresizingMaskIntoConstraints="NO" id="cAb-aE-Mqa">
-                                <rect key="frame" x="20" y="364" width="374" height="96"/>
+                                <rect key="frame" x="20" y="364" width="374" height="94"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You don't have any alarms yet." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zng-pZ-NkS">
                                         <rect key="frame" x="63.5" y="0.0" width="247" height="50"/>
@@ -317,14 +317,13 @@
                                         <color key="highlightedColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Press the + button to create a new one." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ESo-sG-nYH">
-                                        <rect key="frame" x="28" y="68" width="318" height="28"/>
+                                        <rect key="frame" x="28" y="68" width="318" height="26"/>
                                         <fontDescription key="fontDescription" name="HaboroSoft-NorDem" family="HaboroSoft-NorDem" pointSize="18"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <color key="highlightedColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </label>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="ESo-sG-nYH" firstAttribute="top" secondItem="zng-pZ-NkS" secondAttribute="bottom" constant="18" id="5QK-bw-TWU"/>
                                     <constraint firstAttribute="width" constant="374" id="dnb-uK-AwD"/>
                                 </constraints>
                             </stackView>
@@ -359,7 +358,7 @@
                             <constraint firstItem="IYI-dy-mJI" firstAttribute="top" secondItem="ZGj-in-rQr" secondAttribute="top" constant="22" id="K2o-V4-Cah"/>
                             <constraint firstItem="cAb-aE-Mqa" firstAttribute="top" secondItem="ZGj-in-rQr" secondAttribute="top" constant="320" id="VsD-xd-EZk"/>
                             <constraint firstItem="R0c-8r-bXZ" firstAttribute="top" secondItem="ZGj-in-rQr" secondAttribute="top" constant="13" id="di4-Nj-hdP"/>
-                            <constraint firstItem="ZGj-in-rQr" firstAttribute="bottom" secondItem="cAb-aE-Mqa" secondAttribute="bottom" constant="353" id="kYp-ln-Yky"/>
+                            <constraint firstItem="ZGj-in-rQr" firstAttribute="bottom" secondItem="cAb-aE-Mqa" secondAttribute="bottom" constant="355" id="kYp-ln-Yky"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Alarms" image="alarm" catalog="system" id="e04-Iv-Ntf"/>
@@ -367,6 +366,7 @@
                         <outlet property="AddAlarmsButton" destination="R0c-8r-bXZ" id="0PZ-4T-H0b"/>
                         <outlet property="labelOne" destination="zng-pZ-NkS" id="G1j-4V-i9z"/>
                         <outlet property="labelTwo" destination="ESo-sG-nYH" id="zXD-n4-bXk"/>
+                        <outlet property="selectedtVStack" destination="cAb-aE-Mqa" id="g0T-Cb-C3U"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5xr-Jt-0rV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -385,20 +385,20 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="897"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time to sleep?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="htq-kJ-PMD">
-                                <rect key="frame" x="0.0" y="265" width="414" height="33"/>
-                                <fontDescription key="fontDescription" name="HaboroSoft-NorBol" family="HaboroSoft-NorBol" pointSize="28"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Time to sleep?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="htq-kJ-PMD">
+                                <rect key="frame" x="0.0" y="194" width="414" height="32"/>
+                                <fontDescription key="fontDescription" name="HaboroSoft-NorBol" family="HaboroSoft-NorBol" pointSize="32"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4lk-YG-rmf">
-                                <rect key="frame" x="0.0" y="333" width="414" height="26"/>
-                                <fontDescription key="fontDescription" name="HaboroSoft-NorDem" family="HaboroSoft-NorDem" pointSize="22"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="You don´t have an alarm set for today or tomorrow" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4lk-YG-rmf">
+                                <rect key="frame" x="30" y="241" width="354" height="36"/>
+                                <fontDescription key="fontDescription" name="HaboroSoft-NorDem" family="HaboroSoft-NorDem" pointSize="18"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QoJ-Kg-Nk6">
-                                <rect key="frame" x="91" y="583" width="232" height="46"/>
+                                <rect key="frame" x="80" y="617" width="254" height="46"/>
                                 <color key="backgroundColor" name="Green"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="46" id="nxn-m7-waV"/>
@@ -412,24 +412,69 @@
                                     <segue destination="wLJ-NV-Wb2" kind="presentation" modalPresentationStyle="fullScreen" id="Mod-ig-cve"/>
                                 </connections>
                             </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g9p-hb-KEp">
+                                <rect key="frame" x="80" y="328" width="254" height="269"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sun_asset" translatesAutoresizingMaskIntoConstraints="NO" id="5Z9-te-k1J">
+                                        <rect key="frame" x="0.0" y="0.0" width="254" height="90"/>
+                                        <color key="backgroundColor" name="Yellow"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="90" id="YKH-9W-bCr"/>
+                                        </constraints>
+                                        <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="default"/>
+                                    </imageView>
+                                    <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="1" style="wheels" translatesAutoresizingMaskIntoConstraints="NO" id="RFP-YU-BN8">
+                                        <rect key="frame" x="0.0" y="90" width="254" height="179"/>
+                                        <color key="backgroundColor" name="Blue"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </datePicker>
+                                </subviews>
+                                <color key="backgroundColor" name="Blue"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="RFP-YU-BN8" secondAttribute="trailing" id="1wF-pW-a2p"/>
+                                    <constraint firstAttribute="trailing" secondItem="5Z9-te-k1J" secondAttribute="trailing" id="2Cx-Xg-TGy"/>
+                                    <constraint firstAttribute="bottom" secondItem="RFP-YU-BN8" secondAttribute="bottom" id="FW3-ny-hVF"/>
+                                    <constraint firstItem="RFP-YU-BN8" firstAttribute="leading" secondItem="g9p-hb-KEp" secondAttribute="leading" id="WyF-NX-XRB"/>
+                                    <constraint firstItem="RFP-YU-BN8" firstAttribute="top" secondItem="5Z9-te-k1J" secondAttribute="top" constant="90" id="hox-1C-zH7"/>
+                                    <constraint firstAttribute="height" constant="269" id="mKM-lU-evp"/>
+                                    <constraint firstItem="5Z9-te-k1J" firstAttribute="top" secondItem="g9p-hb-KEp" secondAttribute="top" id="nI5-Kz-ufz"/>
+                                    <constraint firstItem="5Z9-te-k1J" firstAttribute="leading" secondItem="g9p-hb-KEp" secondAttribute="leading" id="wIf-I0-jrZ"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="At what time do you wanna wake up?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="flU-jv-Boh">
+                                <rect key="frame" x="30" y="290" width="354" height="18"/>
+                                <fontDescription key="fontDescription" name="HaboroSoft-NorDem" family="HaboroSoft-NorDem" pointSize="18"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="FjC-mc-i7S"/>
                         <constraints>
+                            <constraint firstItem="flU-jv-Boh" firstAttribute="top" secondItem="4lk-YG-rmf" secondAttribute="bottom" constant="13" id="8FJ-q2-cky"/>
                             <constraint firstItem="htq-kJ-PMD" firstAttribute="leading" secondItem="FjC-mc-i7S" secondAttribute="leading" id="BLd-IK-OKO"/>
                             <constraint firstItem="FjC-mc-i7S" firstAttribute="trailing" secondItem="htq-kJ-PMD" secondAttribute="trailing" id="DvL-7e-Xth"/>
-                            <constraint firstItem="FjC-mc-i7S" firstAttribute="bottom" secondItem="QoJ-Kg-Nk6" secondAttribute="bottom" constant="184" id="Gb0-Yt-Xha"/>
-                            <constraint firstItem="htq-kJ-PMD" firstAttribute="top" secondItem="FjC-mc-i7S" secondAttribute="top" constant="221" id="HIa-o5-rkk"/>
-                            <constraint firstItem="FjC-mc-i7S" firstAttribute="trailing" secondItem="4lk-YG-rmf" secondAttribute="trailing" id="IYC-Zs-Xlv"/>
-                            <constraint firstItem="4lk-YG-rmf" firstAttribute="leading" secondItem="FjC-mc-i7S" secondAttribute="leading" id="aZN-PD-zRX"/>
-                            <constraint firstItem="QoJ-Kg-Nk6" firstAttribute="leading" secondItem="FjC-mc-i7S" secondAttribute="leading" constant="91" id="eNI-16-S2Y"/>
-                            <constraint firstItem="FjC-mc-i7S" firstAttribute="trailing" secondItem="QoJ-Kg-Nk6" secondAttribute="trailing" constant="91" id="ryv-Zq-d3n"/>
-                            <constraint firstItem="4lk-YG-rmf" firstAttribute="top" secondItem="htq-kJ-PMD" secondAttribute="bottom" constant="35" id="y4y-mh-9vg"/>
+                            <constraint firstItem="FjC-mc-i7S" firstAttribute="bottom" secondItem="QoJ-Kg-Nk6" secondAttribute="bottom" constant="150" id="Gb0-Yt-Xha"/>
+                            <constraint firstItem="g9p-hb-KEp" firstAttribute="leading" secondItem="FjC-mc-i7S" secondAttribute="leading" constant="80" id="H5I-cg-K08"/>
+                            <constraint firstItem="htq-kJ-PMD" firstAttribute="top" secondItem="FjC-mc-i7S" secondAttribute="top" constant="150" id="HIa-o5-rkk"/>
+                            <constraint firstItem="FjC-mc-i7S" firstAttribute="trailing" secondItem="4lk-YG-rmf" secondAttribute="trailing" constant="30" id="IYC-Zs-Xlv"/>
+                            <constraint firstItem="FjC-mc-i7S" firstAttribute="trailing" secondItem="g9p-hb-KEp" secondAttribute="trailing" constant="80" id="Ise-1T-GyM"/>
+                            <constraint firstItem="flU-jv-Boh" firstAttribute="leading" secondItem="FjC-mc-i7S" secondAttribute="leading" constant="30" id="MQt-oN-zSE"/>
+                            <constraint firstItem="4lk-YG-rmf" firstAttribute="leading" secondItem="FjC-mc-i7S" secondAttribute="leading" constant="30" id="aZN-PD-zRX"/>
+                            <constraint firstItem="QoJ-Kg-Nk6" firstAttribute="leading" secondItem="FjC-mc-i7S" secondAttribute="leading" constant="80" id="eNI-16-S2Y"/>
+                            <constraint firstItem="FjC-mc-i7S" firstAttribute="trailing" secondItem="QoJ-Kg-Nk6" secondAttribute="trailing" constant="80" id="ryv-Zq-d3n"/>
+                            <constraint firstItem="g9p-hb-KEp" firstAttribute="top" secondItem="flU-jv-Boh" secondAttribute="bottom" constant="20" id="vKW-tc-UhW"/>
+                            <constraint firstItem="FjC-mc-i7S" firstAttribute="trailing" secondItem="flU-jv-Boh" secondAttribute="trailing" constant="30" id="wIi-1N-QVT"/>
+                            <constraint firstItem="QoJ-Kg-Nk6" firstAttribute="top" secondItem="g9p-hb-KEp" secondAttribute="bottom" constant="20" id="wKQ-36-zJU"/>
+                            <constraint firstItem="4lk-YG-rmf" firstAttribute="top" secondItem="htq-kJ-PMD" secondAttribute="bottom" constant="15" id="y4y-mh-9vg"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Sleep" image="moon.fill" catalog="system" id="aAW-9d-Ah3"/>
                     <connections>
+                        <outlet property="datePicker" destination="RFP-YU-BN8" id="2ve-mr-aeu"/>
+                        <outlet property="imageView" destination="5Z9-te-k1J" id="Wuq-ze-bxB"/>
                         <outlet property="sleepButton" destination="QoJ-Kg-Nk6" id="R9d-6a-yT8"/>
                         <outlet property="sleepLabel" destination="4lk-YG-rmf" id="zxD-nh-RkC"/>
+                        <outlet property="sleepView" destination="g9p-hb-KEp" id="NOs-ij-Bni"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DNP-Lz-exj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -455,22 +500,22 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="22" translatesAutoresizingMaskIntoConstraints="NO" id="TrV-qv-yoH">
-                                <rect key="frame" x="82.5" y="419" width="249" height="58.5"/>
+                                <rect key="frame" x="80" y="419" width="254" height="61"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="I'ts" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hFc-GH-46o">
-                                        <rect key="frame" x="0.0" y="0.0" width="49" height="58.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="49" height="61"/>
                                         <fontDescription key="fontDescription" name="HaboroSoft-NorMed" family="HaboroSoft-NorMed" pointSize="36"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12:18" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hCa-60-D6H">
-                                        <rect key="frame" x="71" y="0.0" width="125.5" height="58.5"/>
-                                        <fontDescription key="fontDescription" name="HaboroSoft-NorMed" family="HaboroSoft-NorMed" pointSize="50"/>
+                                        <rect key="frame" x="71" y="0.0" width="130.5" height="61"/>
+                                        <fontDescription key="fontDescription" name="HaboroSoft-NorMed" family="HaboroSoft-NorMed" pointSize="52"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="AM" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gbd-zx-rNN">
-                                        <rect key="frame" x="218.5" y="0.0" width="30.5" height="58.5"/>
+                                        <rect key="frame" x="223.5" y="0.0" width="30.5" height="61"/>
                                         <fontDescription key="fontDescription" name="HaboroSoft-NorMed" family="HaboroSoft-NorMed" pointSize="20"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -478,13 +523,13 @@
                                 </subviews>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Need some help?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SeD-oe-cHz">
-                                <rect key="frame" x="0.0" y="529.5" width="414" height="23.5"/>
+                                <rect key="frame" x="0.0" y="532" width="414" height="23.5"/>
                                 <fontDescription key="fontDescription" name="HaboroSoft-NorReg" family="HaboroSoft-NorReg" pointSize="20"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="FSy-DK-TsL">
-                                <rect key="frame" x="79" y="561" width="256" height="66"/>
+                                <rect key="frame" x="79" y="563.5" width="256" height="66"/>
                                 <color key="backgroundColor" name="Green"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="66" id="fid-RM-xul"/>
@@ -499,7 +544,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Press the moon for three seconds to stop the analysis" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5BI-RW-0vV">
-                                <rect key="frame" x="58" y="692" width="298" height="47"/>
+                                <rect key="frame" x="58" y="694.5" width="298" height="47"/>
                                 <fontDescription key="fontDescription" name="HaboroSoft-NorReg" family="HaboroSoft-NorReg" pointSize="20"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -1156,7 +1201,7 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="0rg-xS-k4X"/>
-        <segue reference="A94-j7-NwZ"/>
+        <segue reference="Mod-ig-cve"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="alarm" catalog="system" width="124" height="128"/>
@@ -1173,6 +1218,10 @@
         <image name="play.fill" catalog="system" width="116" height="128"/>
         <image name="profile-banner" width="400" height="300"/>
         <image name="shake" width="452" height="452"/>
+        <image name="sun_asset" width="204" height="196"/>
+        <namedColor name="Blue">
+            <color red="0.14900000393390656" green="0.125" blue="0.60000002384185791" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <namedColor name="Darkblue">
             <color red="0.086000002920627594" green="0.075000002980232239" blue="0.34900000691413879" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

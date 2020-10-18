@@ -7,6 +7,7 @@
 
 import UIKit
 import Firebase
+import CoreLocation
 
 class AlarmsNewUserViewController: UIViewController, NewAlarmViewControllerDelegate {
     
@@ -18,6 +19,8 @@ class AlarmsNewUserViewController: UIViewController, NewAlarmViewControllerDeleg
     @IBOutlet weak var AddAlarmsButton: UIButton!
     @IBOutlet weak var labelOne: UILabel!
     @IBOutlet weak var labelTwo: UILabel!
+    @IBOutlet weak var selectedtVStack: UIStackView!
+    
     
     var alarms: [Alarm] = []
     
@@ -30,6 +33,8 @@ class AlarmsNewUserViewController: UIViewController, NewAlarmViewControllerDeleg
     
     var currentId: String = ""
     
+    let locationManager = CLLocationManager()
+    
     let db = Firestore.firestore()
     
     @IBAction func AddAlarmAction(_ sender: UIButton) {
@@ -38,6 +43,11 @@ class AlarmsNewUserViewController: UIViewController, NewAlarmViewControllerDeleg
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        locationManager.delegate = self
+        // Display pop-out to user to allow use of location
+        locationManager.requestWhenInUseAuthorization()
+        locationManager.requestLocation()
                 
         print("ID: \(currentId)")
         userDocuments()
@@ -48,9 +58,12 @@ class AlarmsNewUserViewController: UIViewController, NewAlarmViewControllerDeleg
         alarmV.descRepeatLabel?.text = "Chao"
         alarmV.translatesAutoresizingMaskIntoConstraints = false
         
-        view.addSubview(alarmV)
-        addConstraints()
-        print(loadAlarms())
+        otherAlarms.text = "Hello"
+        
+        selectedtVStack.removeArrangedSubview(labelTwo)
+        selectedtVStack.removeArrangedSubview(labelOne)
+        selectedtVStack.addSubview(alarmV)
+        
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
@@ -194,12 +207,22 @@ class AlarmsNewUserViewController: UIViewController, NewAlarmViewControllerDeleg
         
         // Add constraints
         constraints.append(alarmV.widthAnchor.constraint(equalTo: view.widthAnchor))
-        
-        constraints.append(alarmV.centerXAnchor.constraint(equalTo: view.centerXAnchor))
-        constraints.append(alarmV.centerYAnchor.constraint(equalTo: view.centerYAnchor))
+        constraints.append(alarmV.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.5))
         
         // Activate
         NSLayoutConstraint.activate(constraints)
+    }
+    
+}
+
+extension AlarmsNewUserViewController: CLLocationManagerDelegate {
+        
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        print(error)
     }
     
 }
