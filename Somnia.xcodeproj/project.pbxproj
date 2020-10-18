@@ -18,6 +18,8 @@
 		B1123109253925C20024DD7D /* SleepViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1123108253925C20024DD7D /* SleepViewController.swift */; };
 		B112310E25392F750024DD7D /* SleepTwoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B112310D25392F750024DD7D /* SleepTwoViewController.swift */; };
 		B1123113253937A40024DD7D /* SleepActivitiesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1123112253937A40024DD7D /* SleepActivitiesViewController.swift */; };
+		B13016AE253CC9130011090B /* AlarmElement.xib in Resources */ = {isa = PBXBuildFile; fileRef = B13016AD253CC9130011090B /* AlarmElement.xib */; };
+		B13016B3253CCB750011090B /* AlarmElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13016B2253CCB750011090B /* AlarmElement.swift */; };
 		B13CC2CB251BAE5600A25D60 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13CC2CA251BAE5600A25D60 /* AppDelegate.swift */; };
 		B13CC2CD251BAE5600A25D60 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13CC2CC251BAE5600A25D60 /* SceneDelegate.swift */; };
 		B13CC2CF251BAE5600A25D60 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13CC2CE251BAE5600A25D60 /* LoginViewController.swift */; };
@@ -83,6 +85,8 @@
 		B1123108253925C20024DD7D /* SleepViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SleepViewController.swift; sourceTree = "<group>"; };
 		B112310D25392F750024DD7D /* SleepTwoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SleepTwoViewController.swift; sourceTree = "<group>"; };
 		B1123112253937A40024DD7D /* SleepActivitiesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SleepActivitiesViewController.swift; sourceTree = "<group>"; };
+		B13016AD253CC9130011090B /* AlarmElement.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AlarmElement.xib; sourceTree = "<group>"; };
+		B13016B2253CCB750011090B /* AlarmElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmElement.swift; sourceTree = "<group>"; };
 		B13CC2C7251BAE5600A25D60 /* Somnia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Somnia.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B13CC2CA251BAE5600A25D60 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B13CC2CC251BAE5600A25D60 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -251,6 +255,8 @@
 			children = (
 				B13CC2D0251BAE5600A25D60 /* Main.storyboard */,
 				B103D21A2534D1F200F5F301 /* GradientView.swift */,
+				B13016AD253CC9130011090B /* AlarmElement.xib */,
+				B13016B2253CCB750011090B /* AlarmElement.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -395,6 +401,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B13016AE253CC9130011090B /* AlarmElement.xib in Resources */,
 				B180381C253501ED00D03B19 /* HaboroSoft-NorBolIt.ttf in Resources */,
 				B13CC2D7251BAE5700A25D60 /* LaunchScreen.storyboard in Resources */,
 				B180381A253501ED00D03B19 /* HaboroSoft-NorBol.ttf in Resources */,
@@ -542,6 +549,7 @@
 			files = (
 				B1123109253925C20024DD7D /* SleepViewController.swift in Sources */,
 				3799660C2538934D00503213 /* AlarmsNewUserViewController.swift in Sources */,
+				B13016B3253CCB750011090B /* AlarmElement.swift in Sources */,
 				B1E48D6E25392145003AC54F /* StatsViewController.swift in Sources */,
 				B146080C253A6422004AE54D /* NewAlarmViewController.swift in Sources */,
 				B112310E25392F750024DD7D /* SleepTwoViewController.swift in Sources */,

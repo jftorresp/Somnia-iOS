@@ -21,15 +21,19 @@ class AlarmsNewUserViewController: UIViewController, NewAlarmViewControllerDeleg
     
     var alarms: [Alarm] = []
     
-    var label1: UILabel!
-    var label2: UILabel!
-    var label3: UILabel!
+    var otherAlarms = UILabel()
+    var editButton = UIButton()
+    var horizontalStack = UIStackView()
+    var verticalStack = UIStackView()
+    var bigVertical = UIStackView()
+    var alarmV = AlarmElement()
     
     var currentId: String = ""
     
     let db = Firestore.firestore()
     
     @IBAction func AddAlarmAction(_ sender: UIButton) {
+        
     }
     
     override func viewDidLoad() {
@@ -37,7 +41,16 @@ class AlarmsNewUserViewController: UIViewController, NewAlarmViewControllerDeleg
                 
         print("ID: \(currentId)")
         userDocuments()
-        loadAlarms()
+        
+        alarmV.hourLabel?.text = "Hola"
+        alarmV.timeLabel?.text = "Como vas"
+        alarmV.onOffSwitch?.isOn = true
+        alarmV.descRepeatLabel?.text = "Chao"
+        alarmV.translatesAutoresizingMaskIntoConstraints = false
+        
+        view.addSubview(alarmV)
+        addConstraints()
+        print(loadAlarms())
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
@@ -54,8 +67,6 @@ class AlarmsNewUserViewController: UIViewController, NewAlarmViewControllerDeleg
     func doSomethingWith(date: Date, description: String, repeatWhen: [String: Bool], exact: Bool, createdBy: String) {
         // Do something here after receiving data from destination view controller
         
-        labelOne.text = ""
-        labelTwo.text = ""
         print(date)
         print(description)
         print(repeatWhen)
@@ -96,9 +107,74 @@ class AlarmsNewUserViewController: UIViewController, NewAlarmViewControllerDeleg
                             
                         }
                     }
+                    self.createAlarmsView()
                     print("Lista alarmas 2: \(self.alarms)")
                 }
             }
+    }
+    
+    func createAlarmsView() {
+        
+        labelOne.text = ""
+        labelTwo.text = ""
+        
+        horizontalStack.axis = .horizontal
+        horizontalStack.alignment = .fill
+        horizontalStack.distribution = .fill
+        horizontalStack.spacing = 20
+        otherAlarms.text = "Other Alarms"
+        otherAlarms.font = UIFont(name: "HaboroSoft-NorMed",size: 24.0)
+        otherAlarms.textColor = UIColor.white
+        editButton.setImage(UIImage(named: "pencil"), for: .normal)
+        editButton.tintColor = UIColor.black
+        
+        horizontalStack.translatesAutoresizingMaskIntoConstraints = false
+        horizontalStack.addSubview(otherAlarms)
+        horizontalStack.addSubview(editButton)
+                
+        verticalStack.axis = .vertical
+        verticalStack.alignment = .fill
+        verticalStack.distribution = .fill
+        verticalStack.spacing = 8
+        verticalStack.translatesAutoresizingMaskIntoConstraints = false
+        
+        let formatter = DateFormatter()
+        formatter.locale = Locale(identifier: "en_US_POSIX")
+        formatter.dateFormat = "HH:MM"
+        
+        let formatter2 = DateFormatter()
+        formatter2.locale = Locale(identifier: "en_US_POSIX")
+        formatter2.dateFormat = "a"
+        formatter2.amSymbol = "AM"
+        formatter2.pmSymbol = "PM"
+        
+        for alarm in alarms {
+            
+            let alarmView = AlarmElement()
+            let hourString = formatter.string(from: alarm.alarm_date)
+            let timeString = formatter2.string(from: alarm.alarm_date)
+
+            alarmView.hourLabel?.text = "Hola"
+            alarmView.timeLabel?.text = "Como vas"
+            alarmView.onOffSwitch?.isOn = false
+            alarmView.descRepeatLabel?.text = "Chao"
+            
+            verticalStack.addSubview(alarmView)
+        }
+        
+        
+        
+        bigVertical.axis = .vertical
+        bigVertical.alignment = .fill
+        bigVertical.distribution = .fill
+        bigVertical.spacing = 10
+        bigVertical.translatesAutoresizingMaskIntoConstraints = false
+        
+        bigVertical.addSubview(horizontalStack)
+        bigVertical.addSubview(verticalStack)
+        
+        self.view.addSubview(alarmV)
+        
     }
     
     func userDocuments() {
@@ -111,6 +187,19 @@ class AlarmsNewUserViewController: UIViewController, NewAlarmViewControllerDeleg
                 }
             }
         }
+    }
+    
+    func addConstraints() {
+        var constraints = [NSLayoutConstraint]()
+        
+        // Add constraints
+        constraints.append(alarmV.widthAnchor.constraint(equalTo: view.widthAnchor))
+        
+        constraints.append(alarmV.centerXAnchor.constraint(equalTo: view.centerXAnchor))
+        constraints.append(alarmV.centerYAnchor.constraint(equalTo: view.centerYAnchor))
+        
+        // Activate
+        NSLayoutConstraint.activate(constraints)
     }
     
 }
