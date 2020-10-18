@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3716A225253CCEE30037D976 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3716A224253CCEE30037D976 /* GameViewController.swift */; };
 		378630F525355CBC00773BFA /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 378630F425355CBC00773BFA /* SignUpViewController.swift */; };
 		3799660C2538934D00503213 /* AlarmsNewUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3799660B2538934D00503213 /* AlarmsNewUserViewController.swift */; };
 		37F462DA251C1E76004A16EF /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F462D9251C1E76004A16EF /* User.swift */; };
@@ -70,6 +71,7 @@
 
 /* Begin PBXFileReference section */
 		162AB8C53FF041C6CDC46BAB /* Pods_SomniaTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SomniaTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3716A224253CCEE30037D976 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		378630F425355CBC00773BFA /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		3799660B2538934D00503213 /* AlarmsNewUserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmsNewUserViewController.swift; sourceTree = "<group>"; };
 		37F462D9251C1E76004A16EF /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -246,6 +248,7 @@
 				B1123112253937A40024DD7D /* SleepActivitiesViewController.swift */,
 				B146080B253A6422004AE54D /* NewAlarmViewController.swift */,
 				B146082B253A66C9004AE54D /* ProfileViewController.swift */,
+				3716A224253CCEE30037D976 /* GameViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -552,6 +555,7 @@
 				B13016B3253CCB750011090B /* AlarmElement.swift in Sources */,
 				B1E48D6E25392145003AC54F /* StatsViewController.swift in Sources */,
 				B146080C253A6422004AE54D /* NewAlarmViewController.swift in Sources */,
+				3716A225253CCEE30037D976 /* GameViewController.swift in Sources */,
 				B112310E25392F750024DD7D /* SleepTwoViewController.swift in Sources */,
 				37F462DC251C1EE2004A16EF /* SleepLog.swift in Sources */,
 				B146082C253A66C9004AE54D /* ProfileViewController.swift in Sources */,
