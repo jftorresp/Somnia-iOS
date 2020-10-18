@@ -7,12 +7,12 @@
 
 import Foundation
 
-struct Alarm: Codable {
+struct Alarm {
     
-    let alarm_date: Date?
-    let createdBy: String?
-    let description: String?
-    let exact: Bool?
-    let repeat_day: [Int: Bool]?
+    let alarm_date: Date
+    let createdBy: String
+    let description: String
+    let exact: Bool
+    let repeat_day: [String: Bool]
     
 }

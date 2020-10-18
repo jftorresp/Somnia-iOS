@@ -8,7 +8,7 @@
 import UIKit
 import Firebase
 
-class NewAlarmViewController: UIViewController {
+class NewAlarmViewController: UIViewController{
     
     @IBOutlet weak var datePicker: UIDatePicker!
     @IBOutlet weak var cancelButton: UIBarButtonItem!
@@ -22,6 +22,9 @@ class NewAlarmViewController: UIViewController {
     @IBOutlet weak var sundayButton: UIButton!
     @IBOutlet weak var dayStack: UIStackView!
     @IBOutlet weak var descriptionTxt: UITextField!
+    @IBOutlet weak var iWantToLabel: UILabel!
+    
+    weak var delegate : NewAlarmViewControllerDelegate?
     
     var currentId: String = ""
     
@@ -33,6 +36,8 @@ class NewAlarmViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        iWantToLabel.text = "I want to wake up exactly at this hour"
         
         if let emailPersisted = Auth.auth().currentUser?.email {
             db.collection(K.FStore.usersCollection).whereField("email", isEqualTo: emailPersisted)
@@ -51,7 +56,7 @@ class NewAlarmViewController: UIViewController {
         else {
             print("Not a user logged in")
         }
-        
+                
         dayStack.layer.cornerRadius=6
         descriptionTxt.layer.cornerRadius=6
         UIDatePicker.appearance().tintColor = UIColor.white
@@ -93,6 +98,10 @@ class NewAlarmViewController: UIViewController {
         }
         
         dismiss(animated: true, completion: nil)
+        
+        if let delegate = delegate{
+            delegate.doSomethingWith(date: datePicker.date, description: descriptionTxt.text!, repeatWhen: repeatDic, exact: isExact, createdBy: currentId)
+        }
     }
     
     @IBAction func mondayAction(_ sender: UIButton) {
@@ -144,16 +153,18 @@ class NewAlarmViewController: UIViewController {
         else{sundayButton.isSelected=false}
     }
     
+    @IBAction func beforeExactChanged(_ sender: UISegmentedControl) {
+        if beforeExact.titleForSegment(at: beforeExact.selectedSegmentIndex)! == "Exact"{
+            iWantToLabel.text = "I want to wake up exactly at this hour"
+        } else {
+            iWantToLabel.text = "I want to wake up smoothly (30 min time window)"
+        }
+    }
+    
     //MARK: - Send info to AlarmsNeUserViewController
     
-    //    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-    //        if segue.identifier == "AddAlarmToAlarm" {
-    //            let destinationVC = segue.destination as! AlarmsNewUserViewController
-    //            destinationVC.date = datePicker.date
-    //            destinationVC.exactOrBefore = beforeExact.titleForSegment(at: beforeExact.selectedSegmentIndex)!
-    //            destinationVC.desc = descriptionTxt.text!
-    //            destinationVC.repeatDic = [1: mondayButton.isSelected, 2: tuesdayButton.isSelected, 3: wednesdayButton.isSelected, 4: thursdayButton.isSelected, 5: fridayButton.isSelected, 6: saturdayButton.isSelected, 7: sundayButton.isSelected]
-    //        }
-    //    }
-    
+}
+
+protocol NewAlarmViewControllerDelegate : NSObjectProtocol{
+    func doSomethingWith(date: Date, description: String, repeatWhen: [String: Bool], exact: Bool, createdBy: String)
 }

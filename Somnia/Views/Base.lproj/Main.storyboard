@@ -345,7 +345,7 @@
                                 </state>
                                 <connections>
                                     <action selector="AddAlarmAction:" destination="q6A-yE-Uqh" eventType="touchUpInside" id="dtY-cx-jps"/>
-                                    <segue destination="ern-Lr-2qx" kind="show" id="7U7-ON-Ouy"/>
+                                    <segue destination="ern-Lr-2qx" kind="show" identifier="AddAlarmToAlarm" id="7U7-ON-Ouy"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -365,6 +365,8 @@
                     <tabBarItem key="tabBarItem" title="Alarms" image="alarm" catalog="system" id="e04-Iv-Ntf"/>
                     <connections>
                         <outlet property="AddAlarmsButton" destination="R0c-8r-bXZ" id="0PZ-4T-H0b"/>
+                        <outlet property="labelOne" destination="zng-pZ-NkS" id="G1j-4V-i9z"/>
+                        <outlet property="labelTwo" destination="ESo-sG-nYH" id="zXD-n4-bXk"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5xr-Jt-0rV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -887,6 +889,9 @@
                                     <segment title="Exact"/>
                                 </segments>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <action selector="beforeExactChanged:" destination="ern-Lr-2qx" eventType="valueChanged" id="JCD-b2-ede"/>
+                                </connections>
                             </segmentedControl>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g3C-uy-8r6">
                                 <rect key="frame" x="0.0" y="-3.5" width="414" height="56"/>
@@ -1075,6 +1080,7 @@
                         <outlet property="dayStack" destination="nUH-iZ-7wQ" id="mU5-cJ-z0L"/>
                         <outlet property="descriptionTxt" destination="6yZ-3g-MQy" id="kYu-Ih-Xra"/>
                         <outlet property="fridayButton" destination="qaQ-9Z-fTH" id="upk-wZ-h1T"/>
+                        <outlet property="iWantToLabel" destination="kG7-HS-ufc" id="TYb-uN-Hdv"/>
                         <outlet property="mondayButton" destination="HYi-C1-sV5" id="Xif-sz-rJa"/>
                         <outlet property="saturdayButton" destination="EDT-JQ-zh6" id="sXy-d2-C8c"/>
                         <outlet property="sundayButton" destination="DJw-AO-K5h" id="plr-k1-zdx"/>

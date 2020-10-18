@@ -18,6 +18,7 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var fbButton: UIButton!
     @IBOutlet weak var errorStackView: UIStackView!
     
+    
     let db = Firestore.firestore()
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
@@ -110,8 +111,6 @@ class LoginViewController: UIViewController {
             }
         }
     }
-    
-    
     
     func addErrorLabel(_ content: String) {
         let label = UILabel()
