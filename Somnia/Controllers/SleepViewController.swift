@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Firebase
 
 class SleepViewController: UIViewController {
     
@@ -15,6 +16,12 @@ class SleepViewController: UIViewController {
     @IBOutlet weak var datePicker: UIDatePicker!
     @IBOutlet weak var imageView: UIImageView!
     
+    @IBOutlet weak var timeLabel: UILabel!
+    var label = UILabel()
+    
+    var alarms = [String]()
+    let db = Firestore.firestore()
+    
         
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
@@ -22,6 +29,46 @@ class SleepViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        let formatter = DateFormatter()
+        formatter.dateFormat = "HH:mm a" // "a" prints "pm" or "am"
+        
+        formatter.amSymbol = "AM"
+        formatter.pmSymbol = "PM"
+        
+        if(AlarmsNewUserViewController.closest != nil){
+            sleepView.isHidden=true
+            sleepView.removeFromSuperview()
+            let hourString = formatter.string(from:AlarmsNewUserViewController.closest.alarm_date)
+            
+            sleepLabel.text = "You have an alarm set up at "
+            
+            timeLabel.text = hourString
+            timeLabel.textColor = UIColor.white
+            timeLabel.font = UIFont(name: "HaboroSoft-NorBol", size: 40.0)
+            
+            
+        }
+        
+        
+        
+        print("Esta es la closest en sleep view: \(AlarmsNewUserViewController.closest)")
+        
+//        if let emailPersisted = Auth.auth().currentUser?.email {
+//            db.collection(K.FStore.alarmsCollection).whereField("email", isEqualTo: emailPersisted)
+//                .getDocuments() { [self] (querySnapshot, err) in
+//                    if let err = err {
+//                        print("Error getting documents: \(err)")
+//                    } else {
+//                        let documents = querySnapshot!.documents
+//                        for i in 0 ..< documents.count-1 {
+//                            print("Estos son los datos: \(documents[i].data())")
+//                        }
+//                    }
+//                }
+//        }
+//        else {
+//            print("Not a user logged in")
+//        }
         
         sleepButton.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.25).cgColor
         sleepButton.layer.shadowOffset = CGSize(width: 0.0, height: 4.0)

@@ -7,6 +7,7 @@
 
 import UIKit
 import Firebase
+import UserNotifications
 
 class NewAlarmViewController: UIViewController{
     
@@ -39,23 +40,15 @@ class NewAlarmViewController: UIViewController{
         
         iWantToLabel.text = "I want to wake up exactly at this hour"
         
-        if let emailPersisted = Auth.auth().currentUser?.email {
-            db.collection(K.FStore.usersCollection).whereField("email", isEqualTo: emailPersisted)
-                .getDocuments() { [self] (querySnapshot, err) in
-                    if let err = err {
-                        print("Error getting documents: \(err)")
-                    } else {
-                        let documents = querySnapshot!.documents
-                        for i in 0 ..< documents.count-1 {
-                            self.currentId = String(documents[i].documentID)
-                        }
-                        self.currentId = documents[0].documentID
+        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound], completionHandler: { success, error in
+                    if success {
+                        // schedule test
+//                        self.scheduleTest()
                     }
-                }
-        }
-        else {
-            print("Not a user logged in")
-        }
+                    else if error != nil {
+                        print("error occurred")
+                    }
+                })
                 
         dayStack.layer.cornerRadius=6
         descriptionTxt.layer.cornerRadius=6
@@ -88,14 +81,33 @@ class NewAlarmViewController: UIViewController{
             isExact = true
         }
         
-        db.collection(K.FStore.alarmsCollection).addDocument(data: ["alarm_date": datePicker.date, "createdBy": currentId, "description": descriptionTxt.text!, "exact": isExact, "repeat": repeatDic]) { (error) in
-            
-            if let e = error {
-                print("Error adding the user to the database, \(e.localizedDescription)")
-            } else {
-                print("Successfully saved data")
+        if let id = Auth.auth().currentUser?.uid{
+            db.collection(K.FStore.alarmsCollection).addDocument(data: ["alarm_date": datePicker.date, "createdBy": id, "description": descriptionTxt.text!, "exact": isExact, "repeat": repeatDic]) { (error) in
+                
+                if let e = error {
+                    print("Error adding the user to the database, \(e.localizedDescription)")
+                } else {
+                    print("Successfully saved data")
+                }
             }
         }
+        
+        let content = UNMutableNotificationContent()
+                        content.title = "Alarm!"
+                        content.sound = UNNotificationSound(named: UNNotificationSoundName(rawValue: "relaxing_birds.mp3"))
+                        content.body = descriptionTxt.text ?? ""
+
+        let targetDate = datePicker.date
+        let trigger = UNCalendarNotificationTrigger(dateMatching: Calendar.current.dateComponents([.year, .month, .day, .hour, .minute, .second],
+                                                                                                                  from: targetDate),
+                                                                    repeats: false)
+
+                        let request = UNNotificationRequest(identifier: "some_long_id", content: content, trigger: trigger)
+                        UNUserNotificationCenter.current().add(request, withCompletionHandler: { error in
+                            if error != nil {
+                                print("something went wrong")
+                            }
+                        })
         
         dismiss(animated: true, completion: nil)
         

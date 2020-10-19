@@ -475,6 +475,7 @@
                         <outlet property="sleepButton" destination="QoJ-Kg-Nk6" id="R9d-6a-yT8"/>
                         <outlet property="sleepLabel" destination="4lk-YG-rmf" id="zxD-nh-RkC"/>
                         <outlet property="sleepView" destination="g9p-hb-KEp" id="NOs-ij-Bni"/>
+                        <outlet property="timeLabel" destination="flU-jv-Boh" id="sWq-28-dp6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DNP-Lz-exj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -502,7 +503,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="22" translatesAutoresizingMaskIntoConstraints="NO" id="TrV-qv-yoH">
                                 <rect key="frame" x="80" y="419" width="254" height="61"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="I'ts" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hFc-GH-46o">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="It's" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hFc-GH-46o">
                                         <rect key="frame" x="0.0" y="0.0" width="49" height="61"/>
                                         <fontDescription key="fontDescription" name="HaboroSoft-NorMed" family="HaboroSoft-NorMed" pointSize="36"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1200,7 +1201,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="0rg-xS-k4X"/>
+        <segue reference="HgR-CW-Htz"/>
         <segue reference="Mod-ig-cve"/>
     </inferredMetricsTieBreakers>
     <resources>

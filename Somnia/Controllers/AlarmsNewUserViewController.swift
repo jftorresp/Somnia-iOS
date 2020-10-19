@@ -24,6 +24,8 @@ class AlarmsNewUserViewController: UIViewController, NewAlarmViewControllerDeleg
     
     var alarms: [Alarm] = []
     
+    static var closest : Alarm = Alarm(alarm_date: Date(), createdBy: "", description: "", exact: false, repeat_day: [:])
+    
     var otherAlarms = UILabel()
     var editButton = UIButton()
     var horizontalStack = UIStackView()
@@ -31,26 +33,25 @@ class AlarmsNewUserViewController: UIViewController, NewAlarmViewControllerDeleg
     var bigVertical = UIStackView()
     var alarmV = AlarmElement()
     
-    var currentId: String = ""
+   
+    static var currentIdGlobal: String = ""
+    
     
     let locationManager = CLLocationManager()
     
     let db = Firestore.firestore()
     
+    
+    
     @IBAction func AddAlarmAction(_ sender: UIButton) {
+        
         
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        locationManager.delegate = self
-        // Display pop-out to user to allow use of location
-        locationManager.requestWhenInUseAuthorization()
-        locationManager.requestLocation()
                 
-        print("ID: \(currentId)")
-        userDocuments()
+        loadAlarms()
         
         alarmV.hourLabel?.text = "Hola"
         alarmV.timeLabel?.text = "Como vas"
@@ -63,6 +64,14 @@ class AlarmsNewUserViewController: UIViewController, NewAlarmViewControllerDeleg
         selectedtVStack.removeArrangedSubview(labelTwo)
         selectedtVStack.removeArrangedSubview(labelOne)
         selectedtVStack.addSubview(alarmV)
+        
+        locationManager.delegate = self
+        // Display pop-out to user to allow use of location
+        locationManager.requestWhenInUseAuthorization()
+        locationManager.requestLocation()
+        
+        
+//        AlarmsNewUserViewController.closest = closer()
         
     }
     
@@ -89,41 +98,47 @@ class AlarmsNewUserViewController: UIViewController, NewAlarmViewControllerDeleg
     
     func loadAlarms(){
         
-        db.collection(K.FStore.alarmsCollection)
-            .whereField("createdBy", isEqualTo: "EmlbKGMmDfOgZXbvTRHB")
-            .addSnapshotListener { (querySnapshot, error) in
-                
-                self.alarms = []
-                
-                if let e = error {
-                    print("There was an issue retrieving data from Firestore. \(e)")
-                } else {
-                    for document in querySnapshot!.documents {
-                        
-                        let data = document.data()
-                        
-                        let date = data["alarm_date"] as? Timestamp
-                        let description = data["description"] as? String
-                        let repeated = data["repeat"] as? [String: Bool]
-                        let exact = data["exact"] as? Bool
-                        let userId = data["createdBy"] as? String
-                        
-                        if let dateCorrect = date?.dateValue(), let descriptionCorrect = description, let repeatedCorrect = repeated, let exactCorrect = exact, let userIdCorrect = userId {
+        if let id = Auth.auth().currentUser?.uid{
+            db.collection(K.FStore.alarmsCollection)
+                .whereField("createdBy", isEqualTo: id)
+                .addSnapshotListener { (querySnapshot, error) in
+                    
+                    self.alarms = []
+                    
+                    if let e = error {
+                        print("There was an issue retrieving data from Firestore. \(e)")
+                    } else {
+                        for document in querySnapshot!.documents {
                             
-                            let newAlarm = Alarm(alarm_date: dateCorrect, createdBy: userIdCorrect, description: descriptionCorrect, exact: exactCorrect, repeat_day: repeatedCorrect)
-                            print("Alarms 2: \(newAlarm)")
-                            self.alarms.append(newAlarm)
-                        }
-                        
-                        // Fetch main thread and run the code inside
-                        DispatchQueue.main.async {
+                            let data = document.data()
                             
+                            let date = data["alarm_date"] as? Timestamp
+                            let description = data["description"] as? String
+                            let repeated = data["repeat"] as? [String: Bool]
+                            let exact = data["exact"] as? Bool
+                            let userId = data["createdBy"] as? String
+                            
+                            if let dateCorrect = date?.dateValue(), let descriptionCorrect = description, let repeatedCorrect = repeated, let exactCorrect = exact, let userIdCorrect = userId {
+                                
+                                let newAlarm = Alarm(alarm_date: dateCorrect, createdBy: userIdCorrect, description: descriptionCorrect, exact: exactCorrect, repeat_day: repeatedCorrect)
+                                print("Alarms 2: \(newAlarm)")
+                                self.alarms.append(newAlarm)
+                            }
+                            
+                            // Fetch main thread and run the code inside
+                            DispatchQueue.main.async {
+                                
+                            }
                         }
+                        self.createAlarmsView()
+                        print("Lista alarmas 2: \(self.alarms)")
+                        AlarmsNewUserViewController.closest=self.closer()
+                        print("Este es closest en load: \(AlarmsNewUserViewController.closest)")
                     }
-                    self.createAlarmsView()
-                    print("Lista alarmas 2: \(self.alarms)")
                 }
-            }
+        }
+        
+        
     }
     
     func createAlarmsView() {
@@ -190,17 +205,6 @@ class AlarmsNewUserViewController: UIViewController, NewAlarmViewControllerDeleg
         
     }
     
-    func userDocuments() {
-        db.collection(K.FStore.usersCollection).getDocuments() { (querySnapshot, err) in
-            if let err = err {
-                print("Error getting documents: \(err)")
-            } else {
-                for document in querySnapshot!.documents {
-                    print("\(document.documentID) => \(document.data())")
-                }
-            }
-        }
-    }
     
     func addConstraints() {
         var constraints = [NSLayoutConstraint]()
@@ -223,6 +227,20 @@ extension AlarmsNewUserViewController: CLLocationManagerDelegate {
     
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
         print(error)
+    }
+    
+    func closer() -> Alarm{
+        print("este es el length del arreglo de alarmas: \(alarms.count)")
+        var menor = Double.infinity
+        var rta = Alarm(alarm_date: Date(), createdBy: "", description: "", exact: false, repeat_day: [:])
+        for alarm in alarms{
+            if(menor > alarm.alarm_date.timeIntervalSinceNow && alarm.alarm_date.timeIntervalSinceNow > 0  ){
+                menor = alarm.alarm_date.timeIntervalSinceNow
+                rta = alarm
+            }
+        }
+        print("rta de closer: \(rta)")
+        return rta
     }
     
 }

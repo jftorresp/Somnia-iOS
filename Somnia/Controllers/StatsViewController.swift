@@ -15,6 +15,7 @@ class StatsViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        print("Esto es el id en stats: \(AlarmsNewUserViewController.currentIdGlobal)")
 
         // Do any additional setup after loading the view.
     }

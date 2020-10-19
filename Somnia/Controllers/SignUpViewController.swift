@@ -48,8 +48,10 @@ class SignUpViewController: UIViewController {
                         print("Error creating the user, \(e.localizedDescription)")
                     } else {
                         // Navigate to the Alarms view controller
-                        if let emailPersisted = Auth.auth().currentUser?.email {
-                            self.db.collection(K.FStore.usersCollection).addDocument(data: [K.FStore.userKey : emailPersisted]) { (error) in
+                        if let emailPersisted = Auth.auth().currentUser?.email, let id = Auth.auth().currentUser?.uid{
+                            self.db.collection(K.FStore.usersCollection)
+                                .document(id)
+                                .setData([K.FStore.userKey : emailPersisted]) { (error) in
                                 if let e = error {
                                     print("Error adding the user to the database, \(e.localizedDescription)")
                                 } else {

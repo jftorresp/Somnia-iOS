@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		3716A225253CCEE30037D976 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3716A224253CCEE30037D976 /* GameViewController.swift */; };
 		378630F525355CBC00773BFA /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 378630F425355CBC00773BFA /* SignUpViewController.swift */; };
+		37972E9F253D2EA100E2D3EB /* relaxing_birds.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 37972E9E253D2EA100E2D3EB /* relaxing_birds.mp3 */; };
 		3799660C2538934D00503213 /* AlarmsNewUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3799660B2538934D00503213 /* AlarmsNewUserViewController.swift */; };
 		37F462DA251C1E76004A16EF /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F462D9251C1E76004A16EF /* User.swift */; };
 		37F462DC251C1EE2004A16EF /* SleepLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F462DB251C1EE2004A16EF /* SleepLog.swift */; };
@@ -73,6 +74,7 @@
 		162AB8C53FF041C6CDC46BAB /* Pods_SomniaTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SomniaTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3716A224253CCEE30037D976 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		378630F425355CBC00773BFA /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		37972E9E253D2EA100E2D3EB /* relaxing_birds.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = relaxing_birds.mp3; sourceTree = "<group>"; };
 		3799660B2538934D00503213 /* AlarmsNewUserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmsNewUserViewController.swift; sourceTree = "<group>"; };
 		37F462D9251C1E76004A16EF /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		37F462DB251C1EE2004A16EF /* SleepLog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SleepLog.swift; sourceTree = "<group>"; };
@@ -178,6 +180,14 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		37972E9A253D2CBC00E2D3EB /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				37972E9E253D2EA100E2D3EB /* relaxing_birds.mp3 */,
+			);
+			path = Sounds;
+			sourceTree = "<group>";
+		};
 		B13CC2BE251BAE5600A25D60 = {
 			isa = PBXGroup;
 			children = (
@@ -203,6 +213,7 @@
 		B13CC2C9251BAE5600A25D60 /* Somnia */ = {
 			isa = PBXGroup;
 			children = (
+				37972E9A253D2CBC00E2D3EB /* Sounds */,
 				B17E662E251BD52E00C4DC72 /* Models */,
 				B17E662D251BD52700C4DC72 /* Views */,
 				B13CC2FF251BAF7800A25D60 /* Controllers */,
@@ -413,6 +424,7 @@
 				B180381B253501ED00D03B19 /* HaboroSoft-NorMedIt.ttf in Resources */,
 				B1803817253501ED00D03B19 /* HaboroSoft-NorRegIt.ttf in Resources */,
 				B13CC2D4251BAE5700A25D60 /* Assets.xcassets in Resources */,
+				37972E9F253D2EA100E2D3EB /* relaxing_birds.mp3 in Resources */,
 				B1803814253501ED00D03B19 /* HaboroSoft-NorExB.ttf in Resources */,
 				B1803819253501ED00D03B19 /* HaboroSoft-NorReg.ttf in Resources */,
 				B13CC2D2251BAE5600A25D60 /* Main.storyboard in Resources */,
