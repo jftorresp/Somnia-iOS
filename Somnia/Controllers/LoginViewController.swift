@@ -90,9 +90,11 @@ class LoginViewController: UIViewController{
                     if let e = error {
                         print("Error with Facebook login, \(e.localizedDescription)")
                     } else {
-//                        self.performSegue(withIdentifier: K.Segues.loginToMenu, sender: self)
-                        if let emailPersisted = Auth.auth().currentUser?.email {
-                            self.db.collection(K.FStore.usersCollection).addDocument(data: [K.FStore.userKey : emailPersisted]) { (error) in
+                      self.performSegue(withIdentifier: K.Segues.loginToMenu, sender: self)
+                        if let emailPersisted = Auth.auth().currentUser?.email, let id = Auth.auth().currentUser?.uid {
+                            self.db.collection(K.FStore.usersCollection)
+                                .document(id)
+                                .setData([K.FStore.userKey : emailPersisted]) { (error) in
                                 if let e = error {
                                     print("Error adding the user to the database, \(e.localizedDescription)")
                                 } else {

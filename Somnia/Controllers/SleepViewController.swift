@@ -35,7 +35,7 @@ class SleepViewController: UIViewController {
         formatter.amSymbol = "AM"
         formatter.pmSymbol = "PM"
         
-        if(AlarmsNewUserViewController.closest != nil){
+        if(AlarmsNewUserViewController.closest.description != "not"){
             sleepView.isHidden=true
             sleepView.removeFromSuperview()
             let hourString = formatter.string(from:AlarmsNewUserViewController.closest.alarm_date)
@@ -45,11 +45,7 @@ class SleepViewController: UIViewController {
             timeLabel.text = hourString
             timeLabel.textColor = UIColor.white
             timeLabel.font = UIFont(name: "HaboroSoft-NorBol", size: 40.0)
-            
-            
         }
-        
-        
         
         print("Esta es la closest en sleep view: \(AlarmsNewUserViewController.closest)")
         

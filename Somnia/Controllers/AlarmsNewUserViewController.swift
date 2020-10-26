@@ -61,9 +61,11 @@ class AlarmsNewUserViewController: UIViewController, NewAlarmViewControllerDeleg
         
         otherAlarms.text = "Hello"
         
-        selectedtVStack.removeArrangedSubview(labelTwo)
-        selectedtVStack.removeArrangedSubview(labelOne)
-        selectedtVStack.addSubview(alarmV)
+        if(AlarmsNewUserViewController.closest.description != "not") {
+            selectedtVStack.removeFromSuperview()
+        }
+        
+//        selectedtVStack.addSubview(alarmV)
         
         locationManager.delegate = self
         // Display pop-out to user to allow use of location
@@ -130,9 +132,8 @@ class AlarmsNewUserViewController: UIViewController, NewAlarmViewControllerDeleg
                                 
                             }
                         }
-                        self.createAlarmsView()
                         print("Lista alarmas 2: \(self.alarms)")
-                        AlarmsNewUserViewController.closest=self.closer()
+                        AlarmsNewUserViewController.closest = self.closer()
                         print("Este es closest en load: \(AlarmsNewUserViewController.closest)")
                     }
                 }
@@ -179,8 +180,8 @@ class AlarmsNewUserViewController: UIViewController, NewAlarmViewControllerDeleg
         for alarm in alarms {
             
             let alarmView = AlarmElement()
-            let hourString = formatter.string(from: alarm.alarm_date)
-            let timeString = formatter2.string(from: alarm.alarm_date)
+//            let hourString = formatter.string(from: alarm.alarm_date)
+//            let timeString = formatter2.string(from: alarm.alarm_date)
 
             alarmView.hourLabel?.text = "Hola"
             alarmView.timeLabel?.text = "Como vas"
@@ -217,6 +218,21 @@ class AlarmsNewUserViewController: UIViewController, NewAlarmViewControllerDeleg
         NSLayoutConstraint.activate(constraints)
     }
     
+    func closer() -> Alarm {
+        print("este es el length del arreglo de alarmas: \(alarms.count)")
+        var menor = Double.infinity
+        var rta = Alarm(alarm_date: Date(), createdBy: "", description: "not", exact: false, repeat_day: [:])
+        for alarm in alarms{
+            if(menor > alarm.alarm_date.timeIntervalSinceNow || alarm.alarm_date.timeIntervalSinceNow > 0  ){
+                menor = alarm.alarm_date.timeIntervalSinceNow
+                print("Encontré el menor")
+                rta = alarm
+            }
+        }
+        print("rta de closer: \(rta)")
+        return rta
+    }
+    
 }
 
 extension AlarmsNewUserViewController: CLLocationManagerDelegate {
@@ -227,20 +243,6 @@ extension AlarmsNewUserViewController: CLLocationManagerDelegate {
     
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
         print(error)
-    }
-    
-    func closer() -> Alarm{
-        print("este es el length del arreglo de alarmas: \(alarms.count)")
-        var menor = Double.infinity
-        var rta = Alarm(alarm_date: Date(), createdBy: "", description: "", exact: false, repeat_day: [:])
-        for alarm in alarms{
-            if(menor > alarm.alarm_date.timeIntervalSinceNow && alarm.alarm_date.timeIntervalSinceNow > 0  ){
-                menor = alarm.alarm_date.timeIntervalSinceNow
-                rta = alarm
-            }
-        }
-        print("rta de closer: \(rta)")
-        return rta
     }
     
 }
