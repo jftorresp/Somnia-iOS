@@ -25,7 +25,7 @@ class LoginViewController: UIViewController{
     let difCredLabel = UILabel()
     let emailUsedLabel = UILabel()
     let otherErrorLabel = UILabel()
-    
+        
     let db = Firestore.firestore()
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
@@ -164,6 +164,7 @@ extension LoginViewController: UITextFieldDelegate {
     }
     
 }
+
 
 
 

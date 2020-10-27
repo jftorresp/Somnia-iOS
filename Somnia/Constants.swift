@@ -22,6 +22,8 @@ struct K {
         static let usersCollection = "users"
         static let alarmsCollection = "alarms"
         static let userKey = "email"
+        static let lat = "lat"
+        static let lon = "lon"
     }
     
     struct Segues {

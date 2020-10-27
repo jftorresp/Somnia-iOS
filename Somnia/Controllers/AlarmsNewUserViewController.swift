@@ -7,7 +7,6 @@
 
 import UIKit
 import Firebase
-import CoreLocation
 
 class AlarmsNewUserViewController: UIViewController, NewAlarmViewControllerDelegate {
     
@@ -36,12 +35,7 @@ class AlarmsNewUserViewController: UIViewController, NewAlarmViewControllerDeleg
    
     static var currentIdGlobal: String = ""
     
-    
-    let locationManager = CLLocationManager()
-    
     let db = Firestore.firestore()
-    
-    
     
     @IBAction func AddAlarmAction(_ sender: UIButton) {
         
@@ -66,12 +60,6 @@ class AlarmsNewUserViewController: UIViewController, NewAlarmViewControllerDeleg
         }
         
 //        selectedtVStack.addSubview(alarmV)
-        
-        locationManager.delegate = self
-        // Display pop-out to user to allow use of location
-        locationManager.requestWhenInUseAuthorization()
-        locationManager.requestLocation()
-        
         
 //        AlarmsNewUserViewController.closest = closer()
         
@@ -166,18 +154,6 @@ class AlarmsNewUserViewController: UIViewController, NewAlarmViewControllerDeleg
         }
         print("rta de closer: \(rta)")
         return rta
-    }
-    
-}
-
-extension AlarmsNewUserViewController: CLLocationManagerDelegate {
-        
-    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-
-    }
-    
-    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
-        print(error)
     }
     
 }

@@ -45,11 +45,11 @@ class SignUpTwoViewController: UIViewController {
             let nickname = nicknameLabel.text,
             let gender = genderSegmentedControl.titleForSegment(at: genderSegmentedControl.selectedSegmentIndex),
             let age = Int(ageLabel.text ?? "N/A"),
-            let ocupation = ocupationSegControl.titleForSegment(at: ocupationSegControl.selectedSegmentIndex) {
+            let occupation = ocupationSegControl.titleForSegment(at: ocupationSegControl.selectedSegmentIndex) {
             
             self.db.collection(K.FStore.usersCollection)
                 .document(id)
-                .updateData(["full name" : fullName, "nickname" : nickname, "gender" : gender, "age" : age, "ocupation" : ocupation  ]) { (error) in
+                .updateData(["fullname" : fullName, "nickname" : nickname, "gender" : gender, "age" : age, "occupation" : occupation  ]) { (error) in
                     if let e = error {
                         print("Error updating the user to the database, \(e.localizedDescription)")
                     } else {
