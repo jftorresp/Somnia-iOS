@@ -82,7 +82,7 @@ class NewAlarmViewController: UIViewController{
         }
         
         if let id = Auth.auth().currentUser?.uid{
-            db.collection(K.FStore.alarmsCollection).addDocument(data: ["alarm_date": datePicker.date, "createdBy": id, "description": descriptionTxt.text!, "exact": isExact, "repeat": repeatDic]) { (error) in
+            db.collection(K.FStore.alarmsCollection).addDocument(data: ["alarm_date": datePicker.date, "createdBy": id, "description": descriptionTxt.text!, "exact": isExact, "isActive": true, "repeat": repeatDic]) { (error) in
                 
                 if let e = error {
                     print("Error adding the user to the database, \(e.localizedDescription)")

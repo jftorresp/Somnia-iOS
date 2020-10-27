@@ -100,7 +100,7 @@ class AlarmsNewUserViewController: UIViewController, NewAlarmViewControllerDeleg
     
     func loadAlarms(){
         
-        if let id = Auth.auth().currentUser?.uid{
+        if let id = Auth.auth().currentUser?.uid {
             db.collection(K.FStore.alarmsCollection)
                 .whereField("createdBy", isEqualTo: id)
                 .addSnapshotListener { (querySnapshot, error) in
@@ -141,72 +141,7 @@ class AlarmsNewUserViewController: UIViewController, NewAlarmViewControllerDeleg
         
         
     }
-    
-    func createAlarmsView() {
         
-        labelOne.text = ""
-        labelTwo.text = ""
-        
-        horizontalStack.axis = .horizontal
-        horizontalStack.alignment = .fill
-        horizontalStack.distribution = .fill
-        horizontalStack.spacing = 20
-        otherAlarms.text = "Other Alarms"
-        otherAlarms.font = UIFont(name: "HaboroSoft-NorMed",size: 24.0)
-        otherAlarms.textColor = UIColor.white
-        editButton.setImage(UIImage(named: "pencil"), for: .normal)
-        editButton.tintColor = UIColor.black
-        
-        horizontalStack.translatesAutoresizingMaskIntoConstraints = false
-        horizontalStack.addSubview(otherAlarms)
-        horizontalStack.addSubview(editButton)
-                
-        verticalStack.axis = .vertical
-        verticalStack.alignment = .fill
-        verticalStack.distribution = .fill
-        verticalStack.spacing = 8
-        verticalStack.translatesAutoresizingMaskIntoConstraints = false
-        
-        let formatter = DateFormatter()
-        formatter.locale = Locale(identifier: "en_US_POSIX")
-        formatter.dateFormat = "HH:MM"
-        
-        let formatter2 = DateFormatter()
-        formatter2.locale = Locale(identifier: "en_US_POSIX")
-        formatter2.dateFormat = "a"
-        formatter2.amSymbol = "AM"
-        formatter2.pmSymbol = "PM"
-        
-        for alarm in alarms {
-            
-            let alarmView = AlarmElement()
-//            let hourString = formatter.string(from: alarm.alarm_date)
-//            let timeString = formatter2.string(from: alarm.alarm_date)
-
-            alarmView.hourLabel?.text = "Hola"
-            alarmView.timeLabel?.text = "Como vas"
-            alarmView.onOffSwitch?.isOn = false
-            alarmView.descRepeatLabel?.text = "Chao"
-            
-            verticalStack.addSubview(alarmView)
-        }
-        
-        
-        
-        bigVertical.axis = .vertical
-        bigVertical.alignment = .fill
-        bigVertical.distribution = .fill
-        bigVertical.spacing = 10
-        bigVertical.translatesAutoresizingMaskIntoConstraints = false
-        
-        bigVertical.addSubview(horizontalStack)
-        bigVertical.addSubview(verticalStack)
-        
-        self.view.addSubview(alarmV)
-        
-    }
-    
-    
     func addConstraints() {
         var constraints = [NSLayoutConstraint]()
         

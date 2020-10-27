@@ -7,6 +7,9 @@
 
 struct K {
     
+    static let homeVC = "HomeVC"
+    static let signUpVC = "SignUpVC"
+    
     struct BrandColors {
         static let darkBlue = "Darkblue"
         static let blue = "Blue"
@@ -23,7 +26,8 @@ struct K {
     
     struct Segues {
         static let registerToMenu = "RegisterToMenu"
-        static let loginToMenu = "LoginToMenu"
+        static let signUpComplete = "SignUpComplete"
     }
+    
     
 }

@@ -8,6 +8,7 @@
 import UIKit
 import Firebase
 import FBSDKCoreKit
+import IQKeyboardManagerSwift
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -21,8 +22,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         )
         
         FirebaseApp.configure()
-        let db = Firestore.firestore()
-        print(db)
+        _ = Firestore.firestore()
+        IQKeyboardManager.shared.enable = true
         
         return true
     }

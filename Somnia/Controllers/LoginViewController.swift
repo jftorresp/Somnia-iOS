@@ -18,7 +18,6 @@ class LoginViewController: UIViewController{
     @IBOutlet weak var fbButton: UIButton!
     @IBOutlet weak var errorStackView: UIStackView!
     
-    
     let db = Firestore.firestore()
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
@@ -27,54 +26,62 @@ class LoginViewController: UIViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-                        
+        
         loginButton.layer.cornerRadius = 10
         fbButton.layer.cornerRadius = 10
         emailTextField.layer.cornerRadius = 10
         passwordTextField.layer.cornerRadius = 10
         
-
+        emailTextField.tag = 0
+        passwordTextField.tag = 1
+        
+        emailTextField.delegate = self
+        passwordTextField.delegate = self
+        
         // Do any additional setup after loading the view.
     }
     
-    //    override func viewDidLayoutSubviews() {
-    //        view.setGradientBackground(colorOne: UIColor(named: K.BrandColors.darkBlue)!, colorTwo: UIColor(named: K.BrandColors.blue)!)
-    //    }
-    
-    
     @IBAction func loginPressed(_ sender: UIButton) {
         
-        if let email = emailTextField.text, let password = passwordTextField.text {
-            
-            Auth.auth().signIn(withEmail: email, password: password) { [weak self] authResult, error in
-                if let e = error {
-                    
-                    self?.loginButton.isEnabled = false
-                    
-                    let err = e as NSError
-                    switch err.code {
-                    case AuthErrorCode.wrongPassword.rawValue:
-                        self?.addErrorLabel("Wrong password")
-                    case AuthErrorCode.invalidEmail.rawValue:
-                        self?.addErrorLabel("Invalid email")
-                    case AuthErrorCode.accountExistsWithDifferentCredential.rawValue:
-                        self?.addErrorLabel("accountExistsWithDifferentCredential")
-                    case AuthErrorCode.emailAlreadyInUse.rawValue: //<- Your Error
-                        self?.addErrorLabel("The email is alreay in use")
-                    default:
-                        self?.addErrorLabel(err.localizedDescription)
-                    }
-                } else {
-                    // Navigate to Alarms view controller
-                    self?.performSegue(withIdentifier: K.Segues.loginToMenu, sender: self)
-                }
+        
+        if isValidEmail(emailTextField.text!) == false {
+            addErrorLabel("Email is not valid")
+        } else {
+            if let email = emailTextField.text, let password = passwordTextField.text {
                 
+                Auth.auth().signIn(withEmail: email, password: password) { authResult, error in
+                    if let e = error {
+                                                
+                        let err = e as NSError
+                        switch err.code {
+                        case AuthErrorCode.wrongPassword.rawValue:
+                            self.addErrorLabel("Wrong password")
+                        case AuthErrorCode.invalidEmail.rawValue:
+                            self.addErrorLabel("Invalid email")
+                        case AuthErrorCode.accountExistsWithDifferentCredential.rawValue:
+                            self.addErrorLabel("accountExistsWithDifferentCredential")
+                        case AuthErrorCode.emailAlreadyInUse.rawValue: //<- Your Error
+                            self.addErrorLabel("The email is alreay in use")
+                        default:
+                            self.addErrorLabel(err.localizedDescription)
+                        }
+                    } else {
+                        // Navigate to Alarms view controller
+                        self.transitionToHome()
+                    }
+                }
             }
         }
     }
+    
+    func isValidEmail(_ email: String) -> Bool {
+        let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
         
+        let emailPred = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
+        return emailPred.evaluate(with: email)
+    }
+    
     @IBAction func fbButtonPressed(_ sender: UIButton) {
-        
         
         let loginManager = LoginManager()
         loginManager.logOut()
@@ -90,19 +97,20 @@ class LoginViewController: UIViewController{
                     if let e = error {
                         print("Error with Facebook login, \(e.localizedDescription)")
                     } else {
-                      self.performSegue(withIdentifier: K.Segues.loginToMenu, sender: self)
+                        
                         if let emailPersisted = Auth.auth().currentUser?.email, let id = Auth.auth().currentUser?.uid {
                             self.db.collection(K.FStore.usersCollection)
                                 .document(id)
                                 .setData([K.FStore.userKey : emailPersisted]) { (error) in
-                                if let e = error {
-                                    print("Error adding the user to the database, \(e.localizedDescription)")
-                                } else {
-                                    print("Successfully saved data")
+                                    if let e = error {
+                                        print("Error adding the user to the database, \(e.localizedDescription)")
+                                    } else {
+                                        print("Successfully saved data")
+                                    }
                                 }
-                            }
+                            
                         }
-                        // loginManager.logOut()
+                        self.transitionToHome()
                     }
                 }
                 
@@ -123,6 +131,36 @@ class LoginViewController: UIViewController{
         errorStackView.insertArrangedSubview(label, at: 3)
     }
     
+    func transitionToHome() {
+        
+        let homeViewController = storyboard?.instantiateViewController(identifier: K.homeVC) as? AlarmsNewUserViewController
+        
+        view.window?.rootViewController = homeViewController
+        view.window?.makeKeyAndVisible()
+    }
+    
 }
+
+//MARK: - LoginViewController TextFieldDelegate
+
+extension LoginViewController: UITextFieldDelegate {
+    
+    //Funciones que permite el protocolo de UITextFieldDelegate
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        
+        if let nextField = textField.superview?.viewWithTag(textField.tag + 1) as? UITextField {
+            nextField.becomeFirstResponder()
+        } else {
+            // Not found, so remove keyboard.
+            textField.resignFirstResponder()
+        }
+        
+        return true
+    }
+
+}
+
+
 
 
