@@ -18,6 +18,14 @@ class LoginViewController: UIViewController{
     @IBOutlet weak var fbButton: UIButton!
     @IBOutlet weak var errorStackView: UIStackView!
     
+    // Error labels
+    
+    let invalidEmailLabel = UILabel()
+    let passwordLabel = UILabel()
+    let difCredLabel = UILabel()
+    let emailUsedLabel = UILabel()
+    let otherErrorLabel = UILabel()
+    
     let db = Firestore.firestore()
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
@@ -43,43 +51,40 @@ class LoginViewController: UIViewController{
     
     @IBAction func loginPressed(_ sender: UIButton) {
         
+        invalidEmailLabel.text = ""
+        passwordLabel.text = ""
+        difCredLabel.text = ""
+        emailUsedLabel.text = ""
+        otherErrorLabel.text = ""
         
-        if isValidEmail(emailTextField.text!) == false {
-            addErrorLabel("Email is not valid")
-        } else {
-            if let email = emailTextField.text, let password = passwordTextField.text {
-                
-                Auth.auth().signIn(withEmail: email, password: password) { authResult, error in
-                    if let e = error {
-                                                
-                        let err = e as NSError
-                        switch err.code {
-                        case AuthErrorCode.wrongPassword.rawValue:
-                            self.addErrorLabel("Wrong password")
-                        case AuthErrorCode.invalidEmail.rawValue:
-                            self.addErrorLabel("Invalid email")
-                        case AuthErrorCode.accountExistsWithDifferentCredential.rawValue:
-                            self.addErrorLabel("accountExistsWithDifferentCredential")
-                        case AuthErrorCode.emailAlreadyInUse.rawValue: //<- Your Error
-                            self.addErrorLabel("The email is alreay in use")
-                        default:
-                            self.addErrorLabel(err.localizedDescription)
-                        }
-                    } else {
-                        // Navigate to Alarms view controller
-                        self.transitionToHome()
+        if let email = emailTextField.text, let password = passwordTextField.text {
+            
+            Auth.auth().signIn(withEmail: email, password: password) { authResult, error in
+                if let e = error {
+                    
+                    let err = e as NSError
+                    switch err.code {
+                    case AuthErrorCode.wrongPassword.rawValue:
+                        self.addErrorLabel(self.passwordLabel, "Wrong password")
+                    case AuthErrorCode.invalidEmail.rawValue:
+                        self.addErrorLabel(self.invalidEmailLabel, "Invalid email")
+                    case AuthErrorCode.accountExistsWithDifferentCredential.rawValue:
+                        self.addErrorLabel(self.difCredLabel, "accountExistsWithDifferentCredential")
+                    case AuthErrorCode.emailAlreadyInUse.rawValue: //<- Your Error
+                        self.addErrorLabel(self.emailUsedLabel, "The email is alreay in use")
+                    default:
+                        self.addErrorLabel(self.otherErrorLabel, err.localizedDescription)
                     }
+                } else {
+                    // Navigate to Alarms view controller
+                    self.transitionToHome()
                 }
             }
         }
+        
     }
     
-    func isValidEmail(_ email: String) -> Bool {
-        let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
-        
-        let emailPred = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
-        return emailPred.evaluate(with: email)
-    }
+    
     
     @IBAction func fbButtonPressed(_ sender: UIButton) {
         
@@ -122,8 +127,7 @@ class LoginViewController: UIViewController{
         }
     }
     
-    func addErrorLabel(_ content: String) {
-        let label = UILabel()
+    func addErrorLabel(_ label: UILabel, _ content: String) {
         
         label.text = content
         label.textColor = #colorLiteral(red: 0.7450980544, green: 0.1568627506, blue: 0.07450980693, alpha: 1)
@@ -158,7 +162,7 @@ extension LoginViewController: UITextFieldDelegate {
         
         return true
     }
-
+    
 }
 
 
