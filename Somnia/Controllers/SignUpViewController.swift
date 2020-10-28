@@ -7,7 +7,6 @@
 
 import UIKit
 import Firebase
-import CoreLocation
 
 class SignUpViewController: UIViewController {
     
@@ -22,11 +21,6 @@ class SignUpViewController: UIViewController {
     let passwordLabel = UILabel()
     let password2Label = UILabel()
     let repeatEmailLabel = UILabel()
-    
-    let locationManager = CLLocationManager()
-    var currentLocation : CLLocation!
-    var lat: Double?
-    var lon: Double?
     
     var exists = false
     
@@ -46,18 +40,8 @@ class SignUpViewController: UIViewController {
         repeatPassTextField.layer.cornerRadius = 10
         signUpButton.layer.cornerRadius = 10
         
-        locationManager.delegate = self
-        // Display pop-out to user to allow use of location
-        locationManager.requestWhenInUseAuthorization()
-        locationManager.requestLocation()
-        
-        if (CLLocationManager.authorizationStatus() == CLAuthorizationStatus.authorizedWhenInUse ||
-                CLLocationManager.authorizationStatus() ==  .authorizedAlways) {
-            
-            currentLocation = locationManager.location
-            lat = Double(currentLocation.coordinate.latitude)
-            lon = Double(currentLocation.coordinate.longitude)
-        }
+        print(LoginViewController.lat)
+        print(LoginViewController.lon)
         
     }
     
@@ -66,30 +50,43 @@ class SignUpViewController: UIViewController {
         emailLabel.text = ""
         passwordLabel.text = ""
         password2Label.text = ""
+        repeatEmailLabel.text = ""
+        
         
         if let email = emailTextField.text, let password = passwordTextField.text, let password2 = repeatPassTextField.text {
             
-            if validations(email, password, password2) == 3 {
+            if validations(email, password, password2) == 3 {                
                 Auth.auth().createUser(withEmail: email, password: password) { [self] authResult, error in
                     if let e = error{
                         // Should be a pop-up or message to the user
-                        print("Error creating the user, \(e.localizedDescription)")
+                        let err = e as NSError
+                        switch err.code {
+                        case AuthErrorCode.emailAlreadyInUse.rawValue:
+                            repeatEmailLabel.text = "Email already in use"
+                            repeatEmailLabel.textColor = #colorLiteral(red: 0.7450980544, green: 0.1568627506, blue: 0.07450980693, alpha: 1)
+                            repeatEmailLabel.font = UIFont(name: "HaboroSoft-NorLig",size: 13.0)
+                            verticalStackView.insertArrangedSubview(repeatEmailLabel, at: 3)
+                        default:
+                            print(e.localizedDescription)
+                        }
                     } else {
                         // Navigate to the Alarms view controller
-                        if let emailPersisted = Auth.auth().currentUser?.email, let id = Auth.auth().currentUser?.uid, let latitude = lat, let longitude = lon {
+                        
+                        if let emailPersisted = Auth.auth().currentUser?.email, let id = Auth.auth().currentUser?.uid, let latitude = LoginViewController.lat, let longitude = LoginViewController.lon {
                             self.db.collection(K.FStore.usersCollection)
                                 .document(id)
                                 .setData([K.FStore.userKey : emailPersisted, K.FStore.lat: latitude, K.FStore.lon: longitude]) { (error) in
                                     if let e = error {
-                                        print("Error adding the user to the database, \(e.localizedDescription)")
+                                        print(e.localizedDescription)
+                                        
                                     } else {
                                         print("Successfully saved data")
+                                        transitionToHome()
                                     }
                                 }
                         }
                     }
                 }
-                transitionToHome()
             }
         }
     }
@@ -103,32 +100,10 @@ class SignUpViewController: UIViewController {
         return emailPred.evaluate(with: email)
     }
     
-    func isPasswordValid(_ password : String) -> Bool{
-        if(password.count > 7 && password.count < 17) {
-        } else {
-            return false
-        }
-        let nonUpperCase = CharacterSet(charactersIn: "ABCDEFGHIJKLMNOPQRSTUVWXYZ").inverted
-        let letters = password.components(separatedBy: nonUpperCase)
-        let strUpper: String = letters.joined()
-        
-        let smallLetterRegEx  = ".*[a-z]+.*"
-        let samlltest = NSPredicate(format:"SELF MATCHES %@", smallLetterRegEx)
-        let smallresult = samlltest.evaluate(with: password)
-        
-        let numberRegEx  = ".*[0-9]+.*"
-        let numbertest = NSPredicate(format:"SELF MATCHES %@", numberRegEx)
-        let numberresult = numbertest.evaluate(with: password)
-        
-        let regex = try! NSRegularExpression(pattern: ".*[^A-Za-z0-9].*", options: NSRegularExpression.Options())
-        var isSpecial :Bool = false
-        if regex.firstMatch(in: password, options: NSRegularExpression.MatchingOptions(), range:NSMakeRange(0, password.count)) != nil {
-            print("could not handle special characters")
-            isSpecial = true
-        }else{
-            isSpecial = false
-        }
-        return (strUpper.count >= 1) && smallresult && numberresult && isSpecial
+    func isValidPassword(_ password: String) -> Bool {
+        let passwordRegex = "^(?=.*\\d)(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z!@#$%^&*()\\-_=+{}|?>.<,:;~`’]{8,}$"
+        let passPred = NSPredicate(format: "SELF MATCHES %@", passwordRegex)
+        return passPred.evaluate(with: password)
     }
     
     func equalPasswords(_ pass1: String, _ pass2: String) -> Bool {
@@ -151,7 +126,7 @@ class SignUpViewController: UIViewController {
             verticalStackView.insertArrangedSubview(emailLabel, at: 3)
         }
         
-        if isPasswordValid(password) == true {
+        if isValidPassword(password) == true {
             count += 1
         } else {
             passwordLabel.text = "The password must have at least 8 characters,\n a number, a capital letter and special character"
@@ -201,16 +176,4 @@ extension SignUpViewController: UITextFieldDelegate {
         
         return true
     }
-}
-
-extension SignUpViewController: CLLocationManagerDelegate {
-    
-    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        
-    }
-    
-    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
-        print(error)
-    }
-    
 }

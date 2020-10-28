@@ -13,10 +13,14 @@ class SignUpTwoViewController: UIViewController {
     @IBOutlet weak var signUpView: UIView!
     @IBOutlet weak var fullNameLabel: UITextField!
     @IBOutlet weak var nicknameLabel: UITextField!
-    @IBOutlet weak var genderSegmentedControl: UISegmentedControl!
     @IBOutlet weak var ageLabel: UITextField!
-    @IBOutlet weak var ocupationSegControl: UISegmentedControl!
     @IBOutlet weak var signUpButton: UIButton!
+    @IBOutlet weak var genderDropDown: UIButton!
+    @IBOutlet weak var occupationDropDown: UIButton!
+    
+    let transparentView = UIView()
+    let tableView = UITableView()
+    var selectedButton = UIButton()
     
     let db = Firestore.firestore()
     
@@ -35,6 +39,10 @@ class SignUpTwoViewController: UIViewController {
         signUpView.layer.cornerRadius = signUpView.frame.size.width / 12
         
         signUpButton.layer.cornerRadius = 10.0
+        genderDropDown.layer.cornerRadius = 10
+        occupationDropDown.layer.cornerRadius = 10
+        
+
         
     }
     
@@ -43,9 +51,9 @@ class SignUpTwoViewController: UIViewController {
         if  let fullName = fullNameLabel.text,
             let id = Auth.auth().currentUser?.uid,
             let nickname = nicknameLabel.text,
-            let gender = genderSegmentedControl.titleForSegment(at: genderSegmentedControl.selectedSegmentIndex),
+            let gender = nicknameLabel.text,
             let age = Int(ageLabel.text ?? "N/A"),
-            let occupation = ocupationSegControl.titleForSegment(at: ocupationSegControl.selectedSegmentIndex) {
+            let occupation = nicknameLabel.text {
             
             self.db.collection(K.FStore.usersCollection)
                 .document(id)
@@ -61,5 +69,41 @@ class SignUpTwoViewController: UIViewController {
         self.performSegue(withIdentifier: K.Segues.registerToMenu, sender: self)
     }
     
+    @IBAction func genderPressed(_ sender: Any) {
+        selectedButton = genderDropDown
+        addTransparentView(frames: genderDropDown.frame)
+    }
+    
+    @IBAction func occupationPressed(_ sender: Any) {
+        selectedButton = occupationDropDown
+        addTransparentView(frames: occupationDropDown.frame)
+    }
+    
+    func addTransparentView(frames: CGRect) {
+        transparentView.frame = view.window?.frame ?? self.view.frame
+        self.view.addSubview(transparentView)
+        
+        tableView.frame = CGRect(x: frames.origin.x, y: frames.origin.y + frames.height, width: frames.width, height: 0)
+        signUpView.addSubview(tableView)
+        tableView.layer.cornerRadius = 10
+        
+        transparentView.backgroundColor = UIColor.black.withAlphaComponent(0.1)
+        
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(removeTransparentView))
+        transparentView.addGestureRecognizer(tapGesture)
+        
+        UIView.animate(withDuration: 0.4, delay: 0.0, usingSpringWithDamping: 1.0, initialSpringVelocity: 1.0, options: .curveEaseInOut, animations: {
+            self.transparentView.alpha = 0.5
+            self.tableView.frame = CGRect(x: frames.origin.x, y: frames.origin.y + frames.height, width: frames.width, height: 200)
+        }, completion: nil)
+    }
+    
+    @objc func removeTransparentView() {
+        let frames = selectedButton.frame
+        UIView.animate(withDuration: 0.4, delay: 0.0, usingSpringWithDamping: 1.0, initialSpringVelocity: 1.0, options: .curveEaseInOut, animations: {
+            self.transparentView.alpha = 0
+            self.tableView.frame = CGRect(x: frames.origin.x, y: frames.origin.y + frames.height, width: frames.width, height: 0)
+        }, completion: nil)
+    }
 }
 

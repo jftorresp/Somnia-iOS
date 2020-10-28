@@ -8,8 +8,9 @@
 import UIKit
 import Firebase
 import FBSDKLoginKit
+import CoreLocation
 
-class LoginViewController: UIViewController{
+class LoginViewController: UIViewController {
     
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
@@ -27,6 +28,11 @@ class LoginViewController: UIViewController{
     let otherErrorLabel = UILabel()
         
     let db = Firestore.firestore()
+    
+    let locationManager = CLLocationManager()
+    static var currentLocation : CLLocation!
+    static var lat: Double?
+    static var lon: Double?
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
@@ -46,7 +52,15 @@ class LoginViewController: UIViewController{
         emailTextField.delegate = self
         passwordTextField.delegate = self
         
-        // Do any additional setup after loading the view.
+        // Display pop-out to user to allow use of location
+        locationManager.requestWhenInUseAuthorization()
+        locationManager.requestWhenInUseAuthorization()
+        
+        if CLLocationManager.locationServicesEnabled() {
+            locationManager.delegate = self
+            locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
+            locationManager.startUpdatingLocation()
+        }
     }
     
     @IBAction func loginPressed(_ sender: UIButton) {
@@ -161,6 +175,20 @@ extension LoginViewController: UITextFieldDelegate {
         }
         
         return true
+    }
+    
+}
+
+extension LoginViewController: CLLocationManagerDelegate {
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        guard let locValue: CLLocationCoordinate2D = manager.location?.coordinate else { return }
+        LoginViewController.lat = locValue.latitude
+        LoginViewController.lon = locValue.longitude
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        print(error)
     }
     
 }
