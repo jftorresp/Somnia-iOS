@@ -10,6 +10,7 @@ struct K {
     static let homeVC = "HomeVC"
     static let signUpVC = "SignUpVC"
     static let tabBar = "tabBar"
+    static let loginVC = "LoginVC"
     
     struct BrandColors {
         static let darkBlue = "Darkblue"

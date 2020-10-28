@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Firebase
 
 class ProfileViewController: UIViewController {
     
@@ -17,10 +18,10 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var profileBannerView: UIView!
     @IBOutlet weak var profileBannerImage: UIImageView!
     
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         award1View.layer.cornerRadius = 15
         award2View.layer.cornerRadius = 15
         log1View.layer.cornerRadius = 15
@@ -30,12 +31,31 @@ class ProfileViewController: UIViewController {
         profileBannerImage.layer.cornerRadius = 15
         // Do any additional setup after loading the view.
         
-//        let email = Auth.auth().currentUser?.email
-//
-//        let emailLabel = UILabel()
-//        emailLabel.text = email
-//        emailLabel.textColor = UIColor.white
-//
-//        profileInfoView.addSubview(emailLabel)
+        //        let email = Auth.auth().currentUser?.email
+        //
+        //        let emailLabel = UILabel()
+        //        emailLabel.text = email
+        //        emailLabel.textColor = UIColor.white
+        //
+        //        profileInfoView.addSubview(emailLabel)
+    }
+    
+    @IBAction func logOutPressed(_ sender: UIButton) {
+        do {
+            try Auth.auth().signOut()
+            
+            if Auth.auth().currentUser == nil {
+                if let loginVC = storyboard?.instantiateViewController(identifier: K.loginVC) as? LoginViewController {
+                    
+                    UserDefaults.standard.removeObject(forKey: "user_uid_key")
+                    UserDefaults.standard.synchronize()
+                    view.window?.rootViewController = loginVC
+                    view.window?.makeKeyAndVisible()
+                }
+            }
+        } catch  {
+            print("Unable to log out")
+            
+        }
     }
 }

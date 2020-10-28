@@ -10,11 +10,6 @@ import Firebase
 
 class AlarmsNewUserViewController: UIViewController, NewAlarmViewControllerDelegate {
     
-    //    var exactOrBefore: String?
-    //    var date: Date?
-    //    var repeatDic: [Int: Bool]?
-    //    var desc: String?
-    //
     @IBOutlet weak var AddAlarmsButton: UIButton!
     @IBOutlet weak var labelOne: UILabel!    
     @IBOutlet weak var stackViewAlarms: UIStackView!
@@ -36,9 +31,7 @@ class AlarmsNewUserViewController: UIViewController, NewAlarmViewControllerDeleg
     var horizontalStack = UIStackView()
     var verticalStack = UIStackView()
     var bigVertical = UIStackView()
-    var alarmV = AlarmElement()
-    
-   
+       
     static var currentIdGlobal: String = ""
     
     let db = Firestore.firestore()
@@ -57,6 +50,8 @@ class AlarmsNewUserViewController: UIViewController, NewAlarmViewControllerDeleg
         } else {
             stackViewAlarms.isHidden = false
             tomorrowLabel.isHidden = false
+            bedtimeView.layer.cornerRadius = 10
+            expectedView.layer.cornerRadius = 10
             print("entre false appear")
         }
     }
@@ -66,15 +61,6 @@ class AlarmsNewUserViewController: UIViewController, NewAlarmViewControllerDeleg
                 
         loadAlarms()
         
-        bedtimeView.layer.cornerRadius = 10
-        expectedView.layer.cornerRadius = 10
-        
-        alarmV.hourLabel?.text = "Hola"
-        alarmV.timeLabel?.text = "Como vas"
-        alarmV.onOffSwitch?.isOn = true
-        alarmV.descRepeatLabel?.text = "Chao"
-        alarmV.translatesAutoresizingMaskIntoConstraints = false
-                
         if(AlarmsNewUserViewController.closest.description == "not") {
             stackViewAlarms.isHidden = true
             tomorrowLabel.isHidden = true
@@ -86,6 +72,9 @@ class AlarmsNewUserViewController: UIViewController, NewAlarmViewControllerDeleg
             labelOne.text = "Other Alarms"
             labelOne.textAlignment = .left
             labelOne.font = UIFont(name: "HaboroSoft-NorMed",size: 24.0)
+
+            bedtimeView.layer.cornerRadius = 10
+            expectedView.layer.cornerRadius = 10
 
             print("entre false load")
         }
@@ -152,17 +141,6 @@ class AlarmsNewUserViewController: UIViewController, NewAlarmViewControllerDeleg
         
         
     }
-        
-    func addConstraints() {
-        var constraints = [NSLayoutConstraint]()
-        
-        // Add constraints
-        constraints.append(alarmV.widthAnchor.constraint(equalTo: view.widthAnchor))
-        constraints.append(alarmV.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.5))
-        
-        // Activate
-        NSLayoutConstraint.activate(constraints)
-    }
     
     func closer() -> Alarm {
         print("este es el length del arreglo de alarmas: \(alarms.count)")
@@ -178,7 +156,6 @@ class AlarmsNewUserViewController: UIViewController, NewAlarmViewControllerDeleg
         print("rta de closer: \(rta)")
         return rta
     }
-    
 }
 
 

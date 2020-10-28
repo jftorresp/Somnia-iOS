@@ -50,6 +50,18 @@ class LoginViewController: UIViewController {
         return .lightContent
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        
+        // Check if the user is logged in
+        if UserDefaults.standard.object(forKey: "user_uid_key") != nil {
+            // send them to a new view controller or do whatever you want
+            let homeViewController = storyboard?.instantiateViewController(identifier: K.tabBar) as? UITabBarController
+            
+            view.window?.rootViewController = homeViewController
+            view.window?.makeKeyAndVisible()
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -122,6 +134,8 @@ class LoginViewController: UIViewController {
                     } else {
                         // Navigate to Alarms view controller
                         self.transitionToHome()
+                        UserDefaults.standard.set(Auth.auth().currentUser!.uid, forKey: "user_uid_key")
+                        UserDefaults.standard.synchronize()
                     }
                 }
             }
