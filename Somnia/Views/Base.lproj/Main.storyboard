@@ -471,15 +471,15 @@
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="7:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iMg-Bh-BX6">
-                                                <rect key="frame" x="33" y="135" width="68" height="34"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="23:59" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iMg-Bh-BX6">
+                                                <rect key="frame" x="8" y="135" width="93" height="34"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" name="HaboroSoft-NorDem" family="HaboroSoft-NorDem" pointSize="34"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="AM" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L6F-lI-rFO">
-                                                <rect key="frame" x="106" y="142" width="38" height="24"/>
+                                                <rect key="frame" x="97" y="142" width="38" height="24"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" name="HaboroSoft-NorDem" family="HaboroSoft-NorDem" pointSize="24"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -522,6 +522,11 @@
                                     </view>
                                 </subviews>
                             </stackView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="FUc-TN-BzA">
+                                <rect key="frame" x="20" y="437" width="374" height="376"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="separatorColor" name="Darkblue"/>
+                            </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="ZGj-in-rQr"/>
                         <color key="backgroundColor" name="Darkblue"/>
@@ -535,10 +540,14 @@
                             <constraint firstItem="IYI-dy-mJI" firstAttribute="leading" secondItem="ZGj-in-rQr" secondAttribute="leading" constant="20" id="I7r-jA-0No"/>
                             <constraint firstItem="R0c-8r-bXZ" firstAttribute="leading" secondItem="IYI-dy-mJI" secondAttribute="trailing" constant="212.5" id="IiQ-x4-G4k"/>
                             <constraint firstItem="ZGj-in-rQr" firstAttribute="trailing" secondItem="R0c-8r-bXZ" secondAttribute="trailing" constant="20" id="JaS-M9-1tz"/>
+                            <constraint firstItem="ZGj-in-rQr" firstAttribute="trailing" secondItem="FUc-TN-BzA" secondAttribute="trailing" constant="20" id="JpT-kR-Fqz"/>
                             <constraint firstItem="IYI-dy-mJI" firstAttribute="top" secondItem="ZGj-in-rQr" secondAttribute="top" constant="22" id="K2o-V4-Cah"/>
+                            <constraint firstItem="FUc-TN-BzA" firstAttribute="bottom" secondItem="ZGj-in-rQr" secondAttribute="bottom" id="KU9-3c-0wu"/>
                             <constraint firstItem="ZcL-A4-v9B" firstAttribute="leading" secondItem="ZGj-in-rQr" secondAttribute="leading" constant="20" id="R0A-3q-vSq"/>
                             <constraint firstItem="Anf-vt-6ga" firstAttribute="leading" secondItem="ZGj-in-rQr" secondAttribute="leading" constant="20" id="RIt-hd-O3t"/>
+                            <constraint firstItem="FUc-TN-BzA" firstAttribute="leading" secondItem="ZGj-in-rQr" secondAttribute="leading" constant="20" id="RST-76-c5f"/>
                             <constraint firstItem="zng-pZ-NkS" firstAttribute="leading" secondItem="ZGj-in-rQr" secondAttribute="leading" constant="20" id="aqk-hi-f16"/>
+                            <constraint firstItem="FUc-TN-BzA" firstAttribute="top" secondItem="zng-pZ-NkS" secondAttribute="bottom" constant="6" id="b8a-T6-4Ul"/>
                             <constraint firstItem="ZGj-in-rQr" firstAttribute="trailing" secondItem="ZcL-A4-v9B" secondAttribute="trailing" constant="251" id="dEd-vm-2Sa"/>
                             <constraint firstItem="R0c-8r-bXZ" firstAttribute="top" secondItem="ZGj-in-rQr" secondAttribute="top" constant="13" id="di4-Nj-hdP"/>
                             <constraint firstAttribute="bottomMargin" secondItem="ZcL-A4-v9B" secondAttribute="bottom" constant="673" id="qij-0T-SQC"/>
@@ -556,6 +565,7 @@
                         <outlet property="expectedView" destination="74q-vm-dg6" id="bsq-32-0f7"/>
                         <outlet property="labelOne" destination="zng-pZ-NkS" id="G1j-4V-i9z"/>
                         <outlet property="stackViewAlarms" destination="Anf-vt-6ga" id="VCd-NB-JPA"/>
+                        <outlet property="tableView" destination="FUc-TN-BzA" id="l1h-Ox-JjP"/>
                         <outlet property="tomorrowLabel" destination="ZcL-A4-v9B" id="B7p-rq-BBW"/>
                     </connections>
                 </viewController>

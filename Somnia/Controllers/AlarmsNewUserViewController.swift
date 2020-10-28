@@ -20,18 +20,13 @@ class AlarmsNewUserViewController: UIViewController, NewAlarmViewControllerDeleg
     @IBOutlet weak var tomorrowLabel: UILabel!
     @IBOutlet weak var expectedView: UIView!
     @IBOutlet weak var bedtimeView: UIView!
+    @IBOutlet weak var tableView: UITableView!
     
     
     var alarms: [Alarm] = []
     
     static var closest : Alarm = Alarm(alarm_date: Date(), createdBy: "", description: "", exact: false, repeat_day: [:])
-    
-    var otherAlarms = UILabel()
-    var editButton = UIButton()
-    var horizontalStack = UIStackView()
-    var verticalStack = UIStackView()
-    var bigVertical = UIStackView()
-       
+           
     static var currentIdGlobal: String = ""
     
     let db = Firestore.firestore()
@@ -43,6 +38,16 @@ class AlarmsNewUserViewController: UIViewController, NewAlarmViewControllerDeleg
         
     override func viewDidAppear(_ animated: Bool) {
         
+        let formatter = DateFormatter()
+        let formatter2 = DateFormatter()
+        formatter.dateFormat = "HH:mm" // "a" prints "pm" or "am"
+        formatter2.dateFormat = "a"
+        
+        formatter2.amSymbol = "AM"
+        formatter2.pmSymbol = "PM"
+        let hourString = formatter.string(from:AlarmsNewUserViewController.closest.alarm_date)
+        let amString = formatter2.string(from: AlarmsNewUserViewController.closest.alarm_date)
+        
         if(AlarmsNewUserViewController.closest.description == "not") {
             stackViewAlarms.isHidden = true
             tomorrowLabel.isHidden = true
@@ -52,12 +57,20 @@ class AlarmsNewUserViewController: UIViewController, NewAlarmViewControllerDeleg
             tomorrowLabel.isHidden = false
             bedtimeView.layer.cornerRadius = 10
             expectedView.layer.cornerRadius = 10
+            expectedHourLabel.text = hourString
+            amExpectedLabel.text = amString
+            
             print("entre false appear")
         }
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        tableView.delegate = self
+        tableView.dataSource = self
+        
+        tableView.register(UINib(nibName: K.cellNibName, bundle: nil), forCellReuseIdentifier: K.cellIdentifier)
                 
         loadAlarms()
         
@@ -129,6 +142,12 @@ class AlarmsNewUserViewController: UIViewController, NewAlarmViewControllerDeleg
                                 let newAlarm = Alarm(alarm_date: dateCorrect, createdBy: userIdCorrect, description: descriptionCorrect, exact: exactCorrect, repeat_day: repeatedCorrect)
                                 print("Alarms 2: \(newAlarm)")
                                 self.alarms.append(newAlarm)
+                                
+                                DispatchQueue.main.async {
+                                    self.tableView.reloadData()
+                                    let indexPath = IndexPath(row: self.alarms.count - 1, section: 0)
+                                    self.tableView.scrollToRow(at: indexPath, at: .top, animated: true)
+                                }
                             }
                             
                         }
@@ -156,6 +175,36 @@ class AlarmsNewUserViewController: UIViewController, NewAlarmViewControllerDeleg
         print("rta de closer: \(rta)")
         return rta
     }
+}
+
+extension AlarmsNewUserViewController: UITableViewDelegate, UITableViewDataSource {
+
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return alarms.count
+    }
+
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let alarm = alarms[indexPath.row]
+        
+        let formatter = DateFormatter()
+        let formatter2 = DateFormatter()
+        formatter.dateFormat = "HH:mm" // "a" prints "pm" or "am"
+        formatter2.dateFormat = "a"
+        
+        formatter2.amSymbol = "AM"
+        formatter2.pmSymbol = "PM"
+        let hourString = formatter.string(from:alarm.alarm_date)
+        let amString = formatter2.string(from: alarm.alarm_date)
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: K.cellIdentifier, for: indexPath) as! AlarmCell
+        cell.hourLabel.text = hourString
+        cell.amLabel.text = amString
+        cell.descriptionLabel.text = "\(alarm.description), \(alarm.getRepeatDays())"
+
+        return cell
+    }
+        
 }
 
 

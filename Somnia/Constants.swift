@@ -11,6 +11,8 @@ struct K {
     static let signUpVC = "SignUpVC"
     static let tabBar = "tabBar"
     static let loginVC = "LoginVC"
+    static let cellIdentifier = "alarmCell"
+    static let cellNibName = "AlarmCell"
     
     struct BrandColors {
         static let darkBlue = "Darkblue"
