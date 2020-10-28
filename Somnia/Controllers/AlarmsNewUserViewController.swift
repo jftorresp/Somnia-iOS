@@ -21,6 +21,7 @@ class AlarmsNewUserViewController: UIViewController, NewAlarmViewControllerDeleg
     @IBOutlet weak var expectedView: UIView!
     @IBOutlet weak var bedtimeView: UIView!
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var editButLabel: UIButton!
     
     
     var alarms: [Alarm] = []
@@ -51,10 +52,12 @@ class AlarmsNewUserViewController: UIViewController, NewAlarmViewControllerDeleg
         if(AlarmsNewUserViewController.closest.description == "not") {
             stackViewAlarms.isHidden = true
             tomorrowLabel.isHidden = true
+            editButLabel.isHidden = true
             print("entre true appear")
         } else {
             stackViewAlarms.isHidden = false
             tomorrowLabel.isHidden = false
+            editButLabel.isHidden = false
             bedtimeView.layer.cornerRadius = 10
             expectedView.layer.cornerRadius = 10
             expectedHourLabel.text = hourString
@@ -113,6 +116,10 @@ class AlarmsNewUserViewController: UIViewController, NewAlarmViewControllerDeleg
         print(repeatWhen)
         print(exact)
         print(createdBy)
+    }
+    
+    
+    @IBAction func editPressed(_ sender: UIButton) {
     }
     
     func loadAlarms(){
