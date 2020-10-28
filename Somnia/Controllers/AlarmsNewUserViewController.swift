@@ -16,9 +16,15 @@ class AlarmsNewUserViewController: UIViewController, NewAlarmViewControllerDeleg
     //    var desc: String?
     //
     @IBOutlet weak var AddAlarmsButton: UIButton!
-    @IBOutlet weak var labelOne: UILabel!
-    @IBOutlet weak var labelTwo: UILabel!
-    @IBOutlet weak var selectedtVStack: UIStackView!
+    @IBOutlet weak var labelOne: UILabel!    
+    @IBOutlet weak var stackViewAlarms: UIStackView!
+    @IBOutlet weak var expectedHourLabel: UILabel!
+    @IBOutlet weak var amExpectedLabel: UILabel!
+    @IBOutlet weak var bedtimeHourLabel: UILabel!
+    @IBOutlet weak var amBedtimeLabel: UILabel!
+    @IBOutlet weak var tomorrowLabel: UILabel!
+    @IBOutlet weak var expectedView: UIView!
+    @IBOutlet weak var bedtimeView: UIView!
     
     
     var alarms: [Alarm] = []
@@ -41,28 +47,49 @@ class AlarmsNewUserViewController: UIViewController, NewAlarmViewControllerDeleg
         
         
     }
+        
+    override func viewDidAppear(_ animated: Bool) {
+        
+        if(AlarmsNewUserViewController.closest.description == "not") {
+            stackViewAlarms.isHidden = true
+            tomorrowLabel.isHidden = true
+            print("entre true appear")
+        } else {
+            stackViewAlarms.isHidden = false
+            tomorrowLabel.isHidden = false
+            print("entre false appear")
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
                 
         loadAlarms()
         
+        bedtimeView.layer.cornerRadius = 10
+        expectedView.layer.cornerRadius = 10
+        
         alarmV.hourLabel?.text = "Hola"
         alarmV.timeLabel?.text = "Como vas"
         alarmV.onOffSwitch?.isOn = true
         alarmV.descRepeatLabel?.text = "Chao"
         alarmV.translatesAutoresizingMaskIntoConstraints = false
-        
-        otherAlarms.text = "Hello"
-        
-        if(AlarmsNewUserViewController.closest.description != "not") {
-            selectedtVStack.removeFromSuperview()
+                
+        if(AlarmsNewUserViewController.closest.description == "not") {
+            stackViewAlarms.isHidden = true
+            tomorrowLabel.isHidden = true
+
+            print("entre true load")
+        } else {
+            stackViewAlarms.isHidden = false
+            tomorrowLabel.isHidden = false
+            labelOne.text = "Other Alarms"
+            labelOne.textAlignment = .left
+            labelOne.font = UIFont(name: "HaboroSoft-NorMed",size: 24.0)
+
+            print("entre false load")
         }
-        
-//        selectedtVStack.addSubview(alarmV)
-        
-//        AlarmsNewUserViewController.closest = closer()
-        
+    
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
@@ -115,10 +142,6 @@ class AlarmsNewUserViewController: UIViewController, NewAlarmViewControllerDeleg
                                 self.alarms.append(newAlarm)
                             }
                             
-                            // Fetch main thread and run the code inside
-                            DispatchQueue.main.async {
-                                
-                            }
                         }
                         print("Lista alarmas 2: \(self.alarms)")
                         AlarmsNewUserViewController.closest = self.closer()

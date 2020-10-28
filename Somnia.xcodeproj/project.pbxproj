@@ -50,6 +50,7 @@
 		B180381C253501ED00D03B19 /* HaboroSoft-NorBolIt.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B180380E253501ED00D03B19 /* HaboroSoft-NorBolIt.ttf */; };
 		B180381D253501ED00D03B19 /* HaboroSoft-NorBoo.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B180380F253501ED00D03B19 /* HaboroSoft-NorBoo.ttf */; };
 		B180381E253501ED00D03B19 /* HaboroSoft-NorBooIt.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B1803810253501ED00D03B19 /* HaboroSoft-NorBooIt.ttf */; };
+		B19F98CC2549E86600AB52A0 /* NetworkMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B19F98CB2549E86600AB52A0 /* NetworkMonitor.swift */; };
 		B1E48D6E25392145003AC54F /* StatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E48D6D25392145003AC54F /* StatsViewController.swift */; };
 		BC1F50EC2D7AD523E09AD1F2 /* Pods_SomniaTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 815778AB88E701F3C9412CAC /* Pods_SomniaTests.framework */; };
 /* End PBXBuildFile section */
@@ -128,6 +129,7 @@
 		B180380E253501ED00D03B19 /* HaboroSoft-NorBolIt.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "HaboroSoft-NorBolIt.ttf"; sourceTree = "<group>"; };
 		B180380F253501ED00D03B19 /* HaboroSoft-NorBoo.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "HaboroSoft-NorBoo.ttf"; sourceTree = "<group>"; };
 		B1803810253501ED00D03B19 /* HaboroSoft-NorBooIt.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "HaboroSoft-NorBooIt.ttf"; sourceTree = "<group>"; };
+		B19F98CB2549E86600AB52A0 /* NetworkMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkMonitor.swift; sourceTree = "<group>"; };
 		B1E48D6D25392145003AC54F /* StatsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -285,6 +287,7 @@
 				37F462D9251C1E76004A16EF /* User.swift */,
 				37F462DB251C1EE2004A16EF /* SleepLog.swift */,
 				B111B316253BC1B700D1C00E /* Alarm.swift */,
+				B19F98CB2549E86600AB52A0 /* NetworkMonitor.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -578,6 +581,7 @@
 				B111B317253BC1B700D1C00E /* Alarm.swift in Sources */,
 				B13CC2CB251BAE5600A25D60 /* AppDelegate.swift in Sources */,
 				B103D2202534DF5D00F5F301 /* Constants.swift in Sources */,
+				B19F98CC2549E86600AB52A0 /* NetworkMonitor.swift in Sources */,
 				B13CC2CD251BAE5600A25D60 /* SceneDelegate.swift in Sources */,
 				B103D21B2534D1F200F5F301 /* GradientView.swift in Sources */,
 				B135FAD82547838500D45AD1 /* SignUpTwoViewController.swift in Sources */,

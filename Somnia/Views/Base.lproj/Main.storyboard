@@ -418,31 +418,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="18" translatesAutoresizingMaskIntoConstraints="NO" id="cAb-aE-Mqa">
-                                <rect key="frame" x="20" y="364" width="374" height="94"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You don't have any alarms yet." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zng-pZ-NkS">
-                                        <rect key="frame" x="63.5" y="0.0" width="247" height="50"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="50" id="SIZ-lg-x7z"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="HaboroSoft-NorDem" family="HaboroSoft-NorDem" pointSize="18"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <color key="highlightedColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Press the + button to create a new one." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ESo-sG-nYH">
-                                        <rect key="frame" x="28" y="68" width="318" height="26"/>
-                                        <fontDescription key="fontDescription" name="HaboroSoft-NorDem" family="HaboroSoft-NorDem" pointSize="18"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <color key="highlightedColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    </label>
-                                </subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You don't have any alarms yet. Press the + button to create a new one." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zng-pZ-NkS">
+                                <rect key="frame" x="20" y="381" width="374" height="50"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="374" id="dnb-uK-AwD"/>
+                                    <constraint firstAttribute="height" constant="50" id="SIZ-lg-x7z"/>
                                 </constraints>
-                            </stackView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Alarms" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IYI-dy-mJI">
-                                <rect key="frame" x="20" y="66" width="132" height="49"/>
+                                <fontDescription key="fontDescription" name="HaboroSoft-NorDem" family="HaboroSoft-NorDem" pointSize="18"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="highlightedColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Alarms" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IYI-dy-mJI">
+                                <rect key="frame" x="20" y="66" width="132" height="42"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="132" id="u6L-Cb-age"/>
                                 </constraints>
@@ -461,31 +447,121 @@
                                     <segue destination="ern-Lr-2qx" kind="show" identifier="AddAlarmToAlarm" id="7U7-ON-Ouy"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="For Tomorrow" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZcL-A4-v9B">
+                                <rect key="frame" x="20" y="116" width="143" height="24"/>
+                                <fontDescription key="fontDescription" name="HaboroSoft-NorMed" family="HaboroSoft-NorMed" pointSize="24"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Anf-vt-6ga">
+                                <rect key="frame" x="20" y="150" width="374" height="175"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="74q-vm-dg6">
+                                        <rect key="frame" x="0.0" y="0.0" width="177" height="175"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="alarm" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="Fxs-xe-UMA">
+                                                <rect key="frame" x="50" y="9" width="76" height="75"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Expected wake up hour" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tvd-IP-ven">
+                                                <rect key="frame" x="15" y="92" width="148" height="40"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" name="HaboroSoft-NorReg" family="HaboroSoft-NorReg" pointSize="18"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="7:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iMg-Bh-BX6">
+                                                <rect key="frame" x="33" y="135" width="68" height="34"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" name="HaboroSoft-NorDem" family="HaboroSoft-NorDem" pointSize="34"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="AM" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L6F-lI-rFO">
+                                                <rect key="frame" x="106" y="142" width="38" height="24"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" name="HaboroSoft-NorDem" family="HaboroSoft-NorDem" pointSize="24"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" name="Darkgreen"/>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AJA-kw-K31">
+                                        <rect key="frame" x="197" y="0.0" width="177" height="175"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="zzz" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="3mO-fF-8AQ">
+                                                <rect key="frame" x="50" y="9" width="76" height="75"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Suggested bedtime hour" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vls-SA-sMz">
+                                                <rect key="frame" x="14" y="92" width="148" height="40"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" name="HaboroSoft-NorReg" family="HaboroSoft-NorReg" pointSize="18"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="11:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Db-R2-hgC">
+                                                <rect key="frame" x="30" y="135" width="73" height="34"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" name="HaboroSoft-NorDem" family="HaboroSoft-NorDem" pointSize="34"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="AM" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e9S-UG-pDY">
+                                                <rect key="frame" x="109" y="142" width="38" height="24"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" name="HaboroSoft-NorDem" family="HaboroSoft-NorDem" pointSize="24"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" name="MidBlue"/>
+                                    </view>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="ZGj-in-rQr"/>
                         <color key="backgroundColor" name="Darkblue"/>
                         <constraints>
-                            <constraint firstItem="cAb-aE-Mqa" firstAttribute="centerX" secondItem="F5q-Sw-Tvi" secondAttribute="centerX" id="Aoo-sY-JKC"/>
+                            <constraint firstItem="ZGj-in-rQr" firstAttribute="trailing" secondItem="Anf-vt-6ga" secondAttribute="trailing" constant="20" id="3VR-SG-Dnq"/>
+                            <constraint firstItem="ZGj-in-rQr" firstAttribute="bottom" secondItem="zng-pZ-NkS" secondAttribute="bottom" constant="382" id="5E8-9u-OwL"/>
+                            <constraint firstItem="ZcL-A4-v9B" firstAttribute="top" secondItem="IYI-dy-mJI" secondAttribute="bottom" constant="8" id="9zP-dp-SYF"/>
+                            <constraint firstItem="zng-pZ-NkS" firstAttribute="top" secondItem="Anf-vt-6ga" secondAttribute="bottom" constant="56" id="F5q-0K-MgM"/>
+                            <constraint firstItem="ZGj-in-rQr" firstAttribute="trailing" secondItem="zng-pZ-NkS" secondAttribute="trailing" constant="20" id="FvY-d0-6Dd"/>
+                            <constraint firstItem="zng-pZ-NkS" firstAttribute="top" secondItem="Anf-vt-6ga" secondAttribute="bottom" constant="56" id="HX1-tr-IRJ"/>
                             <constraint firstItem="IYI-dy-mJI" firstAttribute="leading" secondItem="ZGj-in-rQr" secondAttribute="leading" constant="20" id="I7r-jA-0No"/>
                             <constraint firstItem="R0c-8r-bXZ" firstAttribute="leading" secondItem="IYI-dy-mJI" secondAttribute="trailing" constant="212.5" id="IiQ-x4-G4k"/>
                             <constraint firstItem="ZGj-in-rQr" firstAttribute="trailing" secondItem="R0c-8r-bXZ" secondAttribute="trailing" constant="20" id="JaS-M9-1tz"/>
                             <constraint firstItem="IYI-dy-mJI" firstAttribute="top" secondItem="ZGj-in-rQr" secondAttribute="top" constant="22" id="K2o-V4-Cah"/>
-                            <constraint firstItem="cAb-aE-Mqa" firstAttribute="top" secondItem="ZGj-in-rQr" secondAttribute="top" constant="320" id="VsD-xd-EZk"/>
+                            <constraint firstItem="ZcL-A4-v9B" firstAttribute="leading" secondItem="ZGj-in-rQr" secondAttribute="leading" constant="20" id="R0A-3q-vSq"/>
+                            <constraint firstItem="Anf-vt-6ga" firstAttribute="leading" secondItem="ZGj-in-rQr" secondAttribute="leading" constant="20" id="RIt-hd-O3t"/>
+                            <constraint firstItem="zng-pZ-NkS" firstAttribute="leading" secondItem="ZGj-in-rQr" secondAttribute="leading" constant="20" id="aqk-hi-f16"/>
+                            <constraint firstItem="ZGj-in-rQr" firstAttribute="trailing" secondItem="ZcL-A4-v9B" secondAttribute="trailing" constant="251" id="dEd-vm-2Sa"/>
                             <constraint firstItem="R0c-8r-bXZ" firstAttribute="top" secondItem="ZGj-in-rQr" secondAttribute="top" constant="13" id="di4-Nj-hdP"/>
-                            <constraint firstItem="ZGj-in-rQr" firstAttribute="bottom" secondItem="cAb-aE-Mqa" secondAttribute="bottom" constant="355" id="kYp-ln-Yky"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="ZcL-A4-v9B" secondAttribute="bottom" constant="673" id="qij-0T-SQC"/>
+                            <constraint firstItem="Anf-vt-6ga" firstAttribute="top" secondItem="ZcL-A4-v9B" secondAttribute="bottom" constant="10" id="vUv-g1-XWd"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Alarms" image="alarm" catalog="system" id="e04-Iv-Ntf"/>
                     <connections>
                         <outlet property="AddAlarmsButton" destination="R0c-8r-bXZ" id="0PZ-4T-H0b"/>
+                        <outlet property="amBedtimeLabel" destination="e9S-UG-pDY" id="9dV-w8-SkR"/>
+                        <outlet property="amExpectedLabel" destination="L6F-lI-rFO" id="87S-2V-JCZ"/>
+                        <outlet property="bedtimeHourLabel" destination="6Db-R2-hgC" id="jcO-kX-cEU"/>
+                        <outlet property="bedtimeView" destination="AJA-kw-K31" id="rss-yB-5YI"/>
+                        <outlet property="expectedHourLabel" destination="iMg-Bh-BX6" id="aHR-xj-lQO"/>
+                        <outlet property="expectedView" destination="74q-vm-dg6" id="bsq-32-0f7"/>
                         <outlet property="labelOne" destination="zng-pZ-NkS" id="G1j-4V-i9z"/>
-                        <outlet property="labelTwo" destination="ESo-sG-nYH" id="zXD-n4-bXk"/>
-                        <outlet property="selectedtVStack" destination="cAb-aE-Mqa" id="g0T-Cb-C3U"/>
+                        <outlet property="stackViewAlarms" destination="Anf-vt-6ga" id="VCd-NB-JPA"/>
+                        <outlet property="tomorrowLabel" destination="ZcL-A4-v9B" id="B7p-rq-BBW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5xr-Jt-0rV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2771" y="-512"/>
+            <point key="canvasLocation" x="2769.5652173913045" y="-512.27678571428567"/>
         </scene>
         <!--Sleep-->
         <scene sceneID="d3F-7g-pDR">
@@ -755,10 +831,10 @@
             </objects>
             <point key="canvasLocation" x="4986.9565217391309" y="158.70535714285714"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--tabBar-->
         <scene sceneID="k0n-By-DAN">
             <objects>
-                <tabBarController id="9Xf-wQ-Swn" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="tabBar" title="tabBar" id="9Xf-wQ-Swn" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="QuH-4n-D9u">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -1357,11 +1433,15 @@
         <image name="profile-banner" width="400" height="300"/>
         <image name="shake" width="452" height="452"/>
         <image name="sun_asset" width="204" height="196"/>
+        <image name="zzz" catalog="system" width="121" height="128"/>
         <namedColor name="Blue">
             <color red="0.14900000393390656" green="0.125" blue="0.60000002384185791" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="Darkblue">
             <color red="0.086000002920627594" green="0.075000002980232239" blue="0.34900000691413879" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="Darkgreen">
+            <color red="0.019999999552965164" green="0.63099998235702515" blue="0.51800000667572021" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="Green">
             <color red="0.016000000759959221" green="0.85100001096725464" blue="0.56099998950958252" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

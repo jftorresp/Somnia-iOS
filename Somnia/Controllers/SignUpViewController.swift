@@ -16,7 +16,16 @@ class SignUpViewController: UIViewController {
     @IBOutlet weak var signUpButton: UIButton!
     @IBOutlet weak var verticalStackView: UIStackView!
     
+    // Network
+    
+    let networkMonitor = NetworkMonitor()
+    
+    // Firestore
+    
     let db = Firestore.firestore()
+    
+    // Validations labels
+    
     let emailLabel = UILabel()
     let passwordLabel = UILabel()
     let password2Label = UILabel()
@@ -26,6 +35,7 @@ class SignUpViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         
         emailTextField.delegate = self
         passwordTextField.delegate = self
@@ -44,6 +54,8 @@ class SignUpViewController: UIViewController {
     
     @IBAction func signUpPressed(_ sender: UIButton) {
         
+        networkMonitor.startMonitoring()
+        
         emailLabel.text = ""
         passwordLabel.text = ""
         password2Label.text = ""
@@ -52,35 +64,49 @@ class SignUpViewController: UIViewController {
         
         if let email = emailTextField.text, let password = passwordTextField.text, let password2 = repeatPassTextField.text {
             
-            if validations(email, password, password2) == 3 {
-                Auth.auth().createUser(withEmail: email, password: password) { [self] authResult, error in
-                    if let e = error{
-                        // Should be a pop-up or message to the user
-                        let err = e as NSError
-                        switch err.code {
-                        case AuthErrorCode.emailAlreadyInUse.rawValue:
-                            repeatEmailLabel.text = "Email already in use"
-                            repeatEmailLabel.textColor = #colorLiteral(red: 0.7450980544, green: 0.1568627506, blue: 0.07450980693, alpha: 1)
-                            repeatEmailLabel.font = UIFont(name: "HaboroSoft-NorLig",size: 13.0)
-                            verticalStackView.insertArrangedSubview(repeatEmailLabel, at: 3)
-                        default:
-                            print(e.localizedDescription)
-                        }
-                    } else {
-                        // Navigate to the Alarms view controller
-                        
-                        if let emailPersisted = Auth.auth().currentUser?.email, let id = Auth.auth().currentUser?.uid, let latitude = LoginViewController.lat, let longitude = LoginViewController.lon {
-                            self.db.collection(K.FStore.usersCollection)
-                                .document(id)
-                                .setData([K.FStore.userKey : emailPersisted, K.FStore.lat: latitude, K.FStore.lon: longitude]) { (error) in
-                                    if let e = error {
-                                        print(e.localizedDescription)
-                                        
-                                    } else {
-                                        print("Successfully saved data")
-                                        transitionToHome()
+            if NetworkMonitor.connected == false {
+                let dialogMessage = UIAlertController(title: "No connection", message: "It seems that you don´t have connection, try later.", preferredStyle: .alert)
+                
+                // Create OK button with action handler
+                let ok = UIAlertAction(title: "OK", style: .default, handler: { (action) -> Void in
+                    print("Ok button tapped")
+                })
+                
+                //Add OK button to a dialog message
+                dialogMessage.addAction(ok)
+                // Present Alert to
+                self.present(dialogMessage, animated: true, completion: nil)
+            } else {
+                if validations(email, password, password2) == 3 {
+                    Auth.auth().createUser(withEmail: email, password: password) { [self] authResult, error in
+                        if let e = error{
+                            // Should be a pop-up or message to the user
+                            let err = e as NSError
+                            switch err.code {
+                            case AuthErrorCode.emailAlreadyInUse.rawValue:
+                                repeatEmailLabel.text = "Email already in use"
+                                repeatEmailLabel.textColor = #colorLiteral(red: 0.7450980544, green: 0.1568627506, blue: 0.07450980693, alpha: 1)
+                                repeatEmailLabel.font = UIFont(name: "HaboroSoft-NorLig",size: 13.0)
+                                verticalStackView.insertArrangedSubview(repeatEmailLabel, at: 3)
+                            default:
+                                print(e.localizedDescription)
+                            }
+                        } else {
+                            // Navigate to the Alarms view controller
+                            
+                            if let emailPersisted = Auth.auth().currentUser?.email, let id = Auth.auth().currentUser?.uid, let latitude = LoginViewController.lat, let longitude = LoginViewController.lon {
+                                self.db.collection(K.FStore.usersCollection)
+                                    .document(id)
+                                    .setData([K.FStore.userKey : emailPersisted, K.FStore.lat: latitude, K.FStore.lon: longitude]) { (error) in
+                                        if let e = error {
+                                            print(e.localizedDescription)
+                                            
+                                        } else {
+                                            print("Successfully saved data")
+                                            transitionToHome()
+                                        }
                                     }
-                                }
+                            }
                         }
                     }
                 }

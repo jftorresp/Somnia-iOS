@@ -12,12 +12,18 @@ import CoreLocation
 
 class LoginViewController: UIViewController {
     
+    // Outlets
+    
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var loginButton: UIButton!
     @IBOutlet weak var verticalStackView: UIStackView!
     @IBOutlet weak var fbButton: UIButton!
     @IBOutlet weak var errorStackView: UIStackView!
+    
+    // Network
+    
+    let networkMonitor = NetworkMonitor()
     
     // Error labels
     
@@ -26,13 +32,19 @@ class LoginViewController: UIViewController {
     let difCredLabel = UILabel()
     let emailUsedLabel = UILabel()
     let otherErrorLabel = UILabel()
-        
+    
+    // Firestore
+    
     let db = Firestore.firestore()
+    
+    // Location
     
     let locationManager = CLLocationManager()
     static var currentLocation : CLLocation!
     static var lat: Double?
     static var lon: Double?
+    
+    // Set status bar to white
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
@@ -40,6 +52,7 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         
         loginButton.layer.cornerRadius = 10
         fbButton.layer.cornerRadius = 10
@@ -61,9 +74,13 @@ class LoginViewController: UIViewController {
             locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
             locationManager.startUpdatingLocation()
         }
+        
     }
     
+    
     @IBAction func loginPressed(_ sender: UIButton) {
+        
+        networkMonitor.startMonitoring()
         
         invalidEmailLabel.text = ""
         passwordLabel.text = ""
@@ -73,32 +90,47 @@ class LoginViewController: UIViewController {
         
         if let email = emailTextField.text, let password = passwordTextField.text {
             
-            Auth.auth().signIn(withEmail: email, password: password) { authResult, error in
-                if let e = error {
-                    
-                    let err = e as NSError
-                    switch err.code {
-                    case AuthErrorCode.wrongPassword.rawValue:
-                        self.addErrorLabel(self.passwordLabel, "Wrong password")
-                    case AuthErrorCode.invalidEmail.rawValue:
-                        self.addErrorLabel(self.invalidEmailLabel, "Invalid email")
-                    case AuthErrorCode.accountExistsWithDifferentCredential.rawValue:
-                        self.addErrorLabel(self.difCredLabel, "accountExistsWithDifferentCredential")
-                    case AuthErrorCode.emailAlreadyInUse.rawValue: //<- Your Error
-                        self.addErrorLabel(self.emailUsedLabel, "The email is alreay in use")
-                    default:
-                        self.addErrorLabel(self.otherErrorLabel, err.localizedDescription)
+            if NetworkMonitor.connected == false {
+                let dialogMessage = UIAlertController(title: "No connection", message: "It seems that you don´t have connection, try later.", preferredStyle: .alert)
+                
+                // Create OK button with action handler
+                let ok = UIAlertAction(title: "OK", style: .default, handler: { (action) -> Void in
+                    print("Ok button tapped")
+                })
+                
+                //Add OK button to a dialog message
+                dialogMessage.addAction(ok)
+                // Present Alert to
+                self.present(dialogMessage, animated: true, completion: nil)
+            } else {
+                Auth.auth().signIn(withEmail: email, password: password) { authResult, error in
+                    if let e = error {
+                        
+                        let err = e as NSError
+                        switch err.code {
+                        case AuthErrorCode.wrongPassword.rawValue:
+                            self.addErrorLabel(self.passwordLabel, "Wrong password")
+                        case AuthErrorCode.invalidEmail.rawValue:
+                            self.addErrorLabel(self.invalidEmailLabel, "Invalid email")
+                        case AuthErrorCode.accountExistsWithDifferentCredential.rawValue:
+                            self.addErrorLabel(self.difCredLabel, "accountExistsWithDifferentCredential")
+                        case AuthErrorCode.emailAlreadyInUse.rawValue: //<- Your Error
+                            self.addErrorLabel(self.emailUsedLabel, "The email is alreay in use")
+                        default:
+                            self.addErrorLabel(self.otherErrorLabel, err.localizedDescription)
+                        }
+                    } else {
+                        // Navigate to Alarms view controller
+                        self.transitionToHome()
                     }
-                } else {
-                    // Navigate to Alarms view controller
-                    self.transitionToHome()
                 }
             }
+            
+            
         }
         
     }
-    
-    
+
     
     @IBAction func fbButtonPressed(_ sender: UIButton) {
         
@@ -151,7 +183,7 @@ class LoginViewController: UIViewController {
     
     func transitionToHome() {
         
-        let homeViewController = storyboard?.instantiateViewController(identifier: K.homeVC) as? AlarmsNewUserViewController
+        let homeViewController = storyboard?.instantiateViewController(identifier: K.tabBar) as? UITabBarController
         
         view.window?.rootViewController = homeViewController
         view.window?.makeKeyAndVisible()
