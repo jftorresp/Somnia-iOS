@@ -8,6 +8,10 @@
 import UIKit
 import Firebase
 
+class CellClass: UITableViewCell {
+    
+}
+
 class SignUpTwoViewController: UIViewController {
     
     @IBOutlet weak var signUpView: UIView!
@@ -24,12 +28,18 @@ class SignUpTwoViewController: UIViewController {
     
     let db = Firestore.firestore()
     
+    var dataSource = [String]()
+    
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.register(CellClass.self, forCellReuseIdentifier: "Cell")
         
         signUpView.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.25).cgColor
         signUpView.layer.shadowOffset = CGSize(width: 0.0, height: 4.0)
@@ -41,9 +51,6 @@ class SignUpTwoViewController: UIViewController {
         signUpButton.layer.cornerRadius = 10.0
         genderDropDown.layer.cornerRadius = 10
         occupationDropDown.layer.cornerRadius = 10
-        
-
-        
     }
     
     @IBAction func signUpPressed(_ sender: UIButton) {
@@ -51,9 +58,9 @@ class SignUpTwoViewController: UIViewController {
         if  let fullName = fullNameLabel.text,
             let id = Auth.auth().currentUser?.uid,
             let nickname = nicknameLabel.text,
-            let gender = nicknameLabel.text,
+            let gender = genderDropDown.titleLabel?.text,
             let age = Int(ageLabel.text ?? "N/A"),
-            let occupation = nicknameLabel.text {
+            let occupation = occupationDropDown.titleLabel?.text {
             
             self.db.collection(K.FStore.usersCollection)
                 .document(id)
@@ -70,31 +77,35 @@ class SignUpTwoViewController: UIViewController {
     }
     
     @IBAction func genderPressed(_ sender: Any) {
+        dataSource = ["Male", "Female", "Genderqueer/Non-binary", "Other", "Prefer not to disclose"]
         selectedButton = genderDropDown
         addTransparentView(frames: genderDropDown.frame)
     }
     
     @IBAction func occupationPressed(_ sender: Any) {
+        dataSource = ["Student", "Worker", "Independent", "Unemployed", "Other"]
         selectedButton = occupationDropDown
         addTransparentView(frames: occupationDropDown.frame)
     }
     
     func addTransparentView(frames: CGRect) {
-        transparentView.frame = view.window?.frame ?? self.view.frame
-        self.view.addSubview(transparentView)
         
-        tableView.frame = CGRect(x: frames.origin.x, y: frames.origin.y + frames.height, width: frames.width, height: 0)
+        transparentView.frame = view.window?.frame ?? self.view.frame
+        signUpView.addSubview(transparentView)
+        
+        tableView.frame = CGRect(x: frames.origin.x + 20 , y: frames.origin.y + frames.height, width: frames.width, height: 0)
         signUpView.addSubview(tableView)
         tableView.layer.cornerRadius = 10
         
-        transparentView.backgroundColor = UIColor.black.withAlphaComponent(0.1)
+        transparentView.backgroundColor = UIColor.black.withAlphaComponent(0)
+        tableView.reloadData()
         
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(removeTransparentView))
         transparentView.addGestureRecognizer(tapGesture)
         
         UIView.animate(withDuration: 0.4, delay: 0.0, usingSpringWithDamping: 1.0, initialSpringVelocity: 1.0, options: .curveEaseInOut, animations: {
             self.transparentView.alpha = 0.5
-            self.tableView.frame = CGRect(x: frames.origin.x, y: frames.origin.y + frames.height, width: frames.width, height: 200)
+            self.tableView.frame = CGRect(x: frames.origin.x + 20, y: frames.origin.y + frames.height + 10, width: frames.width, height: 200)
         }, completion: nil)
     }
     
@@ -102,8 +113,33 @@ class SignUpTwoViewController: UIViewController {
         let frames = selectedButton.frame
         UIView.animate(withDuration: 0.4, delay: 0.0, usingSpringWithDamping: 1.0, initialSpringVelocity: 1.0, options: .curveEaseInOut, animations: {
             self.transparentView.alpha = 0
-            self.tableView.frame = CGRect(x: frames.origin.x, y: frames.origin.y + frames.height, width: frames.width, height: 0)
+            self.tableView.frame = CGRect(x: frames.origin.x + 20, y: frames.origin.y + frames.height + 10, width: frames.width, height: 0)
         }, completion: nil)
     }
+}
+
+extension SignUpTwoViewController: UITableViewDelegate, UITableViewDataSource {
+
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return dataSource.count
+    }
+
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
+        cell.textLabel?.text = dataSource[indexPath.row]
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if selectedButton == genderDropDown {
+            genderDropDown.setTitle(dataSource[indexPath.row], for: .normal)
+
+        }
+        if selectedButton == occupationDropDown {
+            occupationDropDown.setTitle(dataSource[indexPath.row], for: .normal)
+        }
+        removeTransparentView()
+    }
+    
 }
 

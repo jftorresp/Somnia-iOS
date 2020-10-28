@@ -40,9 +40,6 @@ class SignUpViewController: UIViewController {
         repeatPassTextField.layer.cornerRadius = 10
         signUpButton.layer.cornerRadius = 10
         
-        print(LoginViewController.lat)
-        print(LoginViewController.lon)
-        
     }
     
     @IBAction func signUpPressed(_ sender: UIButton) {
@@ -55,7 +52,7 @@ class SignUpViewController: UIViewController {
         
         if let email = emailTextField.text, let password = passwordTextField.text, let password2 = repeatPassTextField.text {
             
-            if validations(email, password, password2) == 3 {                
+            if validations(email, password, password2) == 3 {
                 Auth.auth().createUser(withEmail: email, password: password) { [self] authResult, error in
                     if let e = error{
                         // Should be a pop-up or message to the user
