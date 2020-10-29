@@ -26,9 +26,9 @@ class SleepViewController: UIViewController {
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
     }
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    
+    override func viewDidAppear(_ animated: Bool) {
+        print("Esta es la closest en sleep view: \(AlarmsNewUserViewController.closest)")
         let formatter = DateFormatter()
         formatter.dateFormat = "HH:mm a" // "a" prints "pm" or "am"
         
@@ -36,8 +36,6 @@ class SleepViewController: UIViewController {
         formatter.pmSymbol = "PM"
         
         if(AlarmsNewUserViewController.closest.description != "not"){
-            sleepView.isHidden=true
-            sleepView.removeFromSuperview()
             let hourString = formatter.string(from:AlarmsNewUserViewController.closest.alarm_date)
             
             sleepLabel.text = "You have an alarm set up at "
@@ -47,25 +45,19 @@ class SleepViewController: UIViewController {
             timeLabel.font = UIFont(name: "HaboroSoft-NorBol", size: 40.0)
         }
         
+
+    }
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        if(AlarmsNewUserViewController.closest.description != "not"){
+            sleepView.isHidden=true
+            sleepView.removeFromSuperview()
+        }
+
         print("Esta es la closest en sleep view: \(AlarmsNewUserViewController.closest)")
-        
-//        if let emailPersisted = Auth.auth().currentUser?.email {
-//            db.collection(K.FStore.alarmsCollection).whereField("email", isEqualTo: emailPersisted)
-//                .getDocuments() { [self] (querySnapshot, err) in
-//                    if let err = err {
-//                        print("Error getting documents: \(err)")
-//                    } else {
-//                        let documents = querySnapshot!.documents
-//                        for i in 0 ..< documents.count-1 {
-//                            print("Estos son los datos: \(documents[i].data())")
-//                        }
-//                    }
-//                }
-//        }
-//        else {
-//            print("Not a user logged in")
-//        }
-        
+                
         sleepButton.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.25).cgColor
         sleepButton.layer.shadowOffset = CGSize(width: 0.0, height: 4.0)
         sleepButton.layer.shadowOpacity = 1.0

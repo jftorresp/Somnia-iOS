@@ -28,6 +28,8 @@ struct K {
         static let userKey = "email"
         static let lat = "lat"
         static let lon = "lon"
+        static let dateField = "alarm_date"
+        static let createdByField = "createdBy"
     }
     
     struct Segues {

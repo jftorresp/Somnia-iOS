@@ -65,6 +65,7 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        networkMonitor.startMonitoring()
         
         loginButton.layer.cornerRadius = 10
         fbButton.layer.cornerRadius = 10

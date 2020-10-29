@@ -126,7 +126,8 @@ class AlarmsNewUserViewController: UIViewController, NewAlarmViewControllerDeleg
         
         if let id = Auth.auth().currentUser?.uid {
             db.collection(K.FStore.alarmsCollection)
-                .whereField("createdBy", isEqualTo: id)
+                .whereField(K.FStore.createdByField, isEqualTo: id)
+                .order(by: K.FStore.dateField, descending: true)
                 .addSnapshotListener { (querySnapshot, error) in
                     
                     self.alarms = []
@@ -173,13 +174,13 @@ class AlarmsNewUserViewController: UIViewController, NewAlarmViewControllerDeleg
         var menor = Double.infinity
         var rta = Alarm(alarm_date: Date(), createdBy: "", description: "not", exact: false, repeat_day: [:])
         for alarm in alarms{
-            if(menor > alarm.alarm_date.timeIntervalSinceNow || alarm.alarm_date.timeIntervalSinceNow > 0  ){
+            if(menor > alarm.alarm_date.timeIntervalSinceNow && alarm.alarm_date.timeIntervalSinceNow > 0  ){
                 menor = alarm.alarm_date.timeIntervalSinceNow
                 print("Encontré el menor")
                 rta = alarm
             }
         }
-        print("rta de closer: \(rta)")
+        print("Closest Alarm: \(rta)")
         return rta
     }
 }
@@ -196,7 +197,7 @@ extension AlarmsNewUserViewController: UITableViewDelegate, UITableViewDataSourc
         
         let formatter = DateFormatter()
         let formatter2 = DateFormatter()
-        formatter.dateFormat = "HH:mm" // "a" prints "pm" or "am"
+        formatter.dateFormat = "HH:mm " // "a" prints "pm" or "am"
         formatter2.dateFormat = "a"
         
         formatter2.amSymbol = "AM"
