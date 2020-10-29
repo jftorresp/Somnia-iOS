@@ -26,7 +26,7 @@ class AlarmsNewUserViewController: UIViewController, NewAlarmViewControllerDeleg
     
     var alarms: [Alarm] = []
     
-    static var closest : Alarm = Alarm(alarm_date: Date(), createdBy: "", description: "", exact: false, repeat_day: [:])
+    static var closest : Alarm = Alarm(alarm_date: Date(), createdBy: "", description: "not", exact: false, repeat_day: [:])
            
     static var currentIdGlobal: String = ""
     
@@ -38,6 +38,7 @@ class AlarmsNewUserViewController: UIViewController, NewAlarmViewControllerDeleg
     }
         
     override func viewDidAppear(_ animated: Bool) {
+        
         
         let formatter = DateFormatter()
         let formatter2 = DateFormatter()
@@ -53,6 +54,7 @@ class AlarmsNewUserViewController: UIViewController, NewAlarmViewControllerDeleg
             stackViewAlarms.isHidden = true
             tomorrowLabel.isHidden = true
             editButLabel.isHidden = true
+            labelOne.text = "You don't have any alarms yet. Press the + button to create a new one."
             print("entre true appear")
         } else {
             stackViewAlarms.isHidden = false
@@ -62,6 +64,9 @@ class AlarmsNewUserViewController: UIViewController, NewAlarmViewControllerDeleg
             expectedView.layer.cornerRadius = 10
             expectedHourLabel.text = hourString
             amExpectedLabel.text = amString
+            labelOne.text = "Other Alarms"
+            labelOne.textAlignment = .left
+            labelOne.font = UIFont(name: "HaboroSoft-NorMed",size: 24.0)
             
             print("entre false appear")
         }
@@ -76,11 +81,11 @@ class AlarmsNewUserViewController: UIViewController, NewAlarmViewControllerDeleg
         tableView.register(UINib(nibName: K.cellNibName, bundle: nil), forCellReuseIdentifier: K.cellIdentifier)
                 
         loadAlarms()
-        
+        print("Este es el closest \(AlarmsNewUserViewController.closest)")
         if(AlarmsNewUserViewController.closest.description == "not") {
             stackViewAlarms.isHidden = true
             tomorrowLabel.isHidden = true
-
+            labelOne.text = "You don't have any alarms yet. Press the + button to create a new one."
             print("entre true load")
         } else {
             stackViewAlarms.isHidden = false

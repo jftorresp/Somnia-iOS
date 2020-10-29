@@ -11,7 +11,7 @@ import FBSDKCoreKit
 import IQKeyboardManagerSwift
 
 @main
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterDelegate {
     
     var window: UIWindow?
     
@@ -54,5 +54,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // If any sessions were discarded while the application was not running, this will be called shortly after application:didFinishLaunchingWithOptions.
         // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
     }
+    
+    // This function will be called right after user tap on the notification
+      func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
+        
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        if  let screenVC = storyboard.instantiateViewController(withIdentifier: "AlarmTriggeredViewController") as? AlarmTriggeredViewController {
+
+                // set the view controller as root
+                self.window?.rootViewController = screenVC
+            }
+        // tell the app that we have finished processing the user’s action / response
+        completionHandler()
+      }
 }
 

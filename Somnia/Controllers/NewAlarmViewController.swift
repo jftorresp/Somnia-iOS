@@ -71,6 +71,19 @@ class NewAlarmViewController: UIViewController{
     @IBAction func cancelAction(_ sender: UIBarButtonItem) {
         dismiss(animated: true, completion: nil)
     }
+
+    func startOfHour(myDate: Date) -> Date?
+    {
+            let calendar = Calendar.current
+
+            var components = calendar.dateComponents([.year, .month, .day, .hour, .minute, .second], from: myDate)
+
+            components.second = 0
+
+            return calendar.date(from: components)
+    }
+
+    
     
     @IBAction func addAction(_ sender: UIBarButtonItem) {
         
@@ -80,6 +93,7 @@ class NewAlarmViewController: UIViewController{
         if beforeExact.titleForSegment(at: beforeExact.selectedSegmentIndex)! == "Exact"{
             isExact = true
         }
+        
         
         if let id = Auth.auth().currentUser?.uid{
             db.collection(K.FStore.alarmsCollection).addDocument(data: ["alarm_date": datePicker.date, "createdBy": id, "description": descriptionTxt.text!, "exact": isExact, "isActive": true, "repeat": repeatDic]) { (error) in
@@ -98,8 +112,11 @@ class NewAlarmViewController: UIViewController{
                         content.body = descriptionTxt.text ?? ""
 
         let targetDate = datePicker.date
+        
+       
+        var newDate = startOfHour(myDate: targetDate)!
         let trigger = UNCalendarNotificationTrigger(dateMatching: Calendar.current.dateComponents([.year, .month, .day, .hour, .minute, .second],
-                                                                                                                  from: targetDate),
+                                                                                                                  from: newDate),
                                                                     repeats: false)
 
                         let request = UNNotificationRequest(identifier: "some_long_id", content: content, trigger: trigger)
@@ -110,6 +127,8 @@ class NewAlarmViewController: UIViewController{
                         })
         
         dismiss(animated: true, completion: nil)
+        
+        
         
         if let delegate = delegate{
             delegate.doSomethingWith(date: datePicker.date, description: descriptionTxt.text!, repeatWhen: repeatDic, exact: isExact, createdBy: currentId)
@@ -172,6 +191,8 @@ class NewAlarmViewController: UIViewController{
             iWantToLabel.text = "I want to wake up smoothly (30 min time window)"
         }
     }
+    
+    
     
     //MARK: - Send info to AlarmsNeUserViewController
     
