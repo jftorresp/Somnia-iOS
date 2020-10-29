@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		29D9C5D98EA3A0CB63466C9A /* Pods_Somnia_SomniaUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B4668D9106992FEB5590238 /* Pods_Somnia_SomniaUITests.framework */; };
 		3716A225253CCEE30037D976 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3716A224253CCEE30037D976 /* GameViewController.swift */; };
+		3742C96A254B53DF001DEF67 /* AlarmTriggeredViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3742C969254B53DF001DEF67 /* AlarmTriggeredViewController.swift */; };
 		378630F525355CBC00773BFA /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 378630F425355CBC00773BFA /* SignUpViewController.swift */; };
 		37972E9F253D2EA100E2D3EB /* relaxing_birds.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 37972E9E253D2EA100E2D3EB /* relaxing_birds.mp3 */; };
 		3799660C2538934D00503213 /* AlarmsNewUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3799660B2538934D00503213 /* AlarmsNewUserViewController.swift */; };
@@ -79,6 +80,7 @@
 		23E50EE7ACCA9F3CCEBE55A2 /* Pods-Somnia.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Somnia.debug.xcconfig"; path = "Target Support Files/Pods-Somnia/Pods-Somnia.debug.xcconfig"; sourceTree = "<group>"; };
 		2C3C3FEF2F96E0C2247BC86E /* Pods-Somnia.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Somnia.release.xcconfig"; path = "Target Support Files/Pods-Somnia/Pods-Somnia.release.xcconfig"; sourceTree = "<group>"; };
 		3716A224253CCEE30037D976 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		3742C969254B53DF001DEF67 /* AlarmTriggeredViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmTriggeredViewController.swift; sourceTree = "<group>"; };
 		378630F425355CBC00773BFA /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		37972E9E253D2EA100E2D3EB /* relaxing_birds.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = relaxing_birds.mp3; sourceTree = "<group>"; };
 		3799660B2538934D00503213 /* AlarmsNewUserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmsNewUserViewController.swift; sourceTree = "<group>"; };
@@ -265,6 +267,7 @@
 				B146082B253A66C9004AE54D /* ProfileViewController.swift */,
 				3716A224253CCEE30037D976 /* GameViewController.swift */,
 				B135FAD72547838500D45AD1 /* SignUpTwoViewController.swift */,
+				3742C969254B53DF001DEF67 /* AlarmTriggeredViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -570,6 +573,7 @@
 			files = (
 				B1123109253925C20024DD7D /* SleepViewController.swift in Sources */,
 				3799660C2538934D00503213 /* AlarmsNewUserViewController.swift in Sources */,
+				3742C96A254B53DF001DEF67 /* AlarmTriggeredViewController.swift in Sources */,
 				B1E48D6E25392145003AC54F /* StatsViewController.swift in Sources */,
 				B146080C253A6422004AE54D /* NewAlarmViewController.swift in Sources */,
 				3716A225253CCEE30037D976 /* GameViewController.swift in Sources */,
