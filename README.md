@@ -60,7 +60,7 @@ We would love you for the contribution to **Somnia App**, check the ``LICENSE`` 
 
 Juan Felipe Torres – [github](https://github.com/jftorresp?) – jf.torresp@uniandes.edu.co
 
-Nicolás Cobos - [github](https://github.com/ncobos?) – n.cobodl@uniandes.edu.co
+Nicolás Cobos - [github](https://github.com/ncobos?) – n.cobos@uniandes.edu.co
 
 Distributed under the MIT license. See ``LICENSE`` for more information.
 
