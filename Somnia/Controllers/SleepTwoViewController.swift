@@ -22,7 +22,7 @@ class SleepTwoViewController: UIViewController {
     let networkMonitor = NetworkMonitor()
     
     let storage = Storage.storage()
-    let cachesDirectory = FileManager.default.urls(for: .documentDirectory, in: .allDomainsMask).first
+    let documentsURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
     
     let alarmFiles =  ["relaxing_birds.mp3", "sound_2.mp3", "sound_3.mp3"]
     
@@ -97,7 +97,8 @@ class SleepTwoViewController: UIViewController {
     
     func downloadAlarms(reference: StorageReference){
         
-        let localURL = URL(string: "\(cachesDirectory?.absoluteString ?? "")alarm_sounds/relaxing_birds.mp3")!
+        let localURL = URL(string: "\(documentsURL.absoluteString ?? "")alarm_sounds/relaxing_birds.mp3")!
+        print("La URL ES: \(localURL)")
         let downloadTask = reference.write(toFile: localURL as URL) { url, error in
             if let error = error {
                 // Uh-oh, an error occurred!
@@ -111,21 +112,39 @@ class SleepTwoViewController: UIViewController {
     
     @objc func alarmShouldSound() {
         let date = Date()
-        print("1 \( date.timeIntervalSince1970.rounded()), 2 \(AlarmsNewUserViewController.closest.alarm_date.timeIntervalSince1970.rounded())")
+        let fileManager2 = FileManager.default
+        var audioPlayer: AVAudioPlayer?
+        
+        do {
+            let fileURLs = try FileManager.default.contentsOfDirectory(at: documentsURL, includingPropertiesForKeys: nil)
+            
+            // process files
+        } catch {
+            print("Error while enumerating files \(documentsURL.path): \(error.localizedDescription)")
+        }
+       
         if date.timeIntervalSince1970.rounded() == AlarmsNewUserViewController.closest.alarm_date.timeIntervalSince1970.rounded() {
-            let path = "\(cachesDirectory?.absoluteString ?? "")alarm_sounds/relaxing_birds.mp3"
+            let path = "\(documentsURL.absoluteString )alarm_sounds/relaxing_birds.mp3"
             let url = URL(fileURLWithPath: path)
+            print("url del sound: \(url)")
             
             do {
-                SleepTwoViewController.alarmSound = try AVAudioPlayer(contentsOf: url)
-                SleepTwoViewController.alarmSound?.play()
-                SleepTwoViewController.alarmSound?.numberOfLoops = -1
+                print("entré en el do")
                 let alarmTriggeredVC = storyboard?.instantiateViewController(identifier: K.alarmTriggered) as? AlarmTriggeredViewController
                 
                 view.window?.rootViewController = alarmTriggeredVC
                 view.window?.makeKeyAndVisible()
+                
+                audioPlayer = try AVAudioPlayer(contentsOf: url)
+                audioPlayer?.play()
+                audioPlayer?.numberOfLoops = -1
+//                SleepTwoViewController.alarmSound = try AVAudioPlayer(contentsOf: url)
+//                SleepTwoViewController.alarmSound?.play()
+//                SleepTwoViewController.alarmSound?.numberOfLoops = -1
+//
+               
             } catch {
-                // couldn't load file :(
+                print("couldn't load file :(")
             }
         }
     }

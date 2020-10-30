@@ -93,10 +93,12 @@ class NewAlarmViewController: UIViewController{
         if beforeExact.titleForSegment(at: beforeExact.selectedSegmentIndex)! == "Exact"{
             isExact = true
         }
+        let targetDate = datePicker.date
         
+        var newDate = startOfHour(myDate: targetDate)!
         
         if let id = Auth.auth().currentUser?.uid{
-            db.collection(K.FStore.alarmsCollection).addDocument(data: ["alarm_date": datePicker.date, "createdBy": id, "description": descriptionTxt.text!, "exact": isExact, "isActive": true, "repeat": repeatDic]) { (error) in
+            db.collection(K.FStore.alarmsCollection).addDocument(data: ["alarm_date": newDate, "createdBy": id, "description": descriptionTxt.text!, "exact": isExact, "isActive": true, "repeat": repeatDic]) { (error) in
                 
                 if let e = error {
                     print("Error adding the user to the database, \(e.localizedDescription)")
@@ -111,10 +113,7 @@ class NewAlarmViewController: UIViewController{
                         content.sound = UNNotificationSound(named: UNNotificationSoundName(rawValue: "relaxing_birds.mp3"))
                         content.body = descriptionTxt.text ?? ""
 
-        let targetDate = datePicker.date
-        
-       
-        var newDate = startOfHour(myDate: targetDate)!
+      
         let trigger = UNCalendarNotificationTrigger(dateMatching: Calendar.current.dateComponents([.year, .month, .day, .hour, .minute, .second],
                                                                                                                   from: newDate),
                                                                     repeats: false)
