@@ -25,6 +25,7 @@ class AlarmsNewUserViewController: UIViewController {
     
     
     var alarms: [Alarm] = []
+    let cachesDirectory = FileManager.default.urls(for: .cachesDirectory, in: .allDomainsMask).first
     
     static var closest : Alarm = Alarm(alarm_date: Date().addingTimeInterval(-10000000000000), createdBy: "", description: "not", exact: false, repeat_day: [:])
            
@@ -38,6 +39,8 @@ class AlarmsNewUserViewController: UIViewController {
     }
         
     override func viewDidAppear(_ animated: Bool) {
+        
+        print("Alarms Appear: \(alarms.count)")
         
         let formatter = DateFormatter()
         let formatter2 = DateFormatter()
@@ -72,19 +75,20 @@ class AlarmsNewUserViewController: UIViewController {
         }
         
     }
-    
+        
     override func viewDidLoad() {
         super.viewDidLoad()
                 
+        loadAlarms()
+
         tableView.delegate = self
         tableView.dataSource = self
         
         tableView.register(UINib(nibName: K.cellNibName, bundle: nil), forCellReuseIdentifier: K.cellIdentifier)
-                
-        loadAlarms()
-        print("LOAD CLOSER \(AlarmsNewUserViewController.closest)")
+         
+        print("Ejecuto loadAlarms: \(alarms.count)")
         
-        if(AlarmsNewUserViewController.closest.description == "not" || alarms.count == 0) {
+        if(AlarmsNewUserViewController.closest.description == "not" && alarms.count == 0) {
             stackViewAlarms.isHidden = true
             tomorrowLabel.isHidden = true
             labelOne.text = "You don't have any alarms yet. Press the + button to create a new one."
@@ -160,7 +164,6 @@ class AlarmsNewUserViewController: UIViewController {
         var menor = Double.infinity
         var rta = Alarm(alarm_date: Date().addingTimeInterval(-10000000000000), createdBy: "", description: "not", exact: false, repeat_day: [:])
         for alarm in alarms {
-            print(alarm.alarm_date.timeIntervalSinceNow)
             if(menor > alarm.alarm_date.timeIntervalSinceNow && alarm.alarm_date.timeIntervalSinceNow > 0  ) {
                 menor = alarm.alarm_date.timeIntervalSinceNow
                 print("Encontré el menor")
@@ -180,7 +183,7 @@ extension AlarmsNewUserViewController: UITableViewDelegate, UITableViewDataSourc
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
+                
         let alarm = alarms[indexPath.row]
         
         let formatter = DateFormatter()
@@ -199,6 +202,10 @@ extension AlarmsNewUserViewController: UITableViewDelegate, UITableViewDataSourc
         cell.descriptionLabel.text = "\(alarm.description), \(alarm.getRepeatDays())"
 
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
     }
         
 }
