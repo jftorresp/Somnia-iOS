@@ -1,5 +1,5 @@
 # Somnia 😴
-> Somnia is an app that helps you in the process of sleeping and waking up.
+> Somnia is an app that helps you in the process of sleeping and waking up and provides a complete and personalized sleep cycle.
 
 [![Swift Version][swift-image]][swift-url]
 [![Build Status][travis-image]][travis-url]
@@ -47,7 +47,7 @@ use_frameworks!
 
 Then run `pod install` to add all the libraries to your Xcode project. Then you have to open the app following the xcworkspace file.
 
-#### Buidl & Run
+#### Build & Run
 1. After installing the pods, open Xcode and hit `command B` to Build the app.
 2. Then hit `command R`or the 'play' button to run the app.
 3. Congratulations your app is running!
