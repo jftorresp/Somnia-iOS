@@ -78,7 +78,6 @@ class AlarmsNewUserViewController: UIViewController {
         
     override func viewDidLoad() {
         super.viewDidLoad()
-                
         loadAlarms()
 
         tableView.delegate = self
@@ -147,6 +146,7 @@ class AlarmsNewUserViewController: UIViewController {
                                     self.tableView.reloadData()
                                     let indexPath = IndexPath(row: self.alarms.count - 1, section: 0)
                                     self.tableView.scrollToRow(at: indexPath, at: .top, animated: true)
+                                    self.viewDidAppear(true)
                                 }
                             }
                             

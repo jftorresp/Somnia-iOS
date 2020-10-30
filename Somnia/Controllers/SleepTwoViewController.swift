@@ -22,7 +22,7 @@ class SleepTwoViewController: UIViewController {
     let networkMonitor = NetworkMonitor()
     
     let storage = Storage.storage()
-    let cachesDirectory = FileManager.default.urls(for: .cachesDirectory, in: .allDomainsMask).first
+    let cachesDirectory = FileManager.default.urls(for: .documentDirectory, in: .allDomainsMask).first
     
     let alarmFiles =  ["relaxing_birds.mp3", "sound_2.mp3", "sound_3.mp3"]
     
