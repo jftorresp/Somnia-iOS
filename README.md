@@ -29,11 +29,19 @@ One to two paragraph statement about your product and what it does.
 
 ## Installation
 
+The first thing to do is cloning the project. You have to copy the HTTPS url of the repository in the Clone button. Then in your terminal type:
+
+ ```
+ git clone https://gitlab.com/isis3510_202020_team1/ios.git 
+ ```
+
+In the location on your device where you want to save the project. Then using the command `cd /yourPath` you acces the route where you cloned the repository. 
+
 #### CocoaPods
 
 You have to add Pods to your project by creating a Podfile with the command `pod init` in terminal. You can use [CocoaPods](http://cocoapods.org/) to install all the different dependencies of the app by adding it to your `Podfile`:
 
-```ruby
+```
 platform :ios, '9.0'
 use_frameworks!
   pod 'Firebase/Analytics'
