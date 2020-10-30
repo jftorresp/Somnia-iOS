@@ -7,15 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		29D9C5D98EA3A0CB63466C9A /* Pods_Somnia_SomniaUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B4668D9106992FEB5590238 /* Pods_Somnia_SomniaUITests.framework */; };
 		3716A225253CCEE30037D976 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3716A224253CCEE30037D976 /* GameViewController.swift */; };
 		3742C96A254B53DF001DEF67 /* AlarmTriggeredViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3742C969254B53DF001DEF67 /* AlarmTriggeredViewController.swift */; };
 		378630F525355CBC00773BFA /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 378630F425355CBC00773BFA /* SignUpViewController.swift */; };
-		37972E9F253D2EA100E2D3EB /* relaxing_birds.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 37972E9E253D2EA100E2D3EB /* relaxing_birds.mp3 */; };
 		3799660C2538934D00503213 /* AlarmsNewUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3799660B2538934D00503213 /* AlarmsNewUserViewController.swift */; };
 		37F462DA251C1E76004A16EF /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F462D9251C1E76004A16EF /* User.swift */; };
 		37F462DC251C1EE2004A16EF /* SleepLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F462DB251C1EE2004A16EF /* SleepLog.swift */; };
-		57E419A05210ACF8A3D3A874 /* Pods_Somnia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73D3E38F61DBC62597800651 /* Pods_Somnia.framework */; };
+		39B0E0E68F57CB4998479018 /* Pods_Somnia_SomniaUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F948DF2A753CDC56F94490E7 /* Pods_Somnia_SomniaUITests.framework */; };
+		A23E78CEBEDD32C660898E6F /* Pods_Somnia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB4BBE0F350AE1557018FBEE /* Pods_Somnia.framework */; };
+		A93A34D45458DDCFC798561A /* Pods_SomniaTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1054048B7D0D2D792983D17E /* Pods_SomniaTests.framework */; };
 		B103D21B2534D1F200F5F301 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B103D21A2534D1F200F5F301 /* GradientView.swift */; };
 		B103D2202534DF5D00F5F301 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B103D21F2534DF5D00F5F301 /* Constants.swift */; };
 		B111B317253BC1B700D1C00E /* Alarm.swift in Sources */ = {isa = PBXBuildFile; fileRef = B111B316253BC1B700D1C00E /* Alarm.swift */; };
@@ -53,7 +53,6 @@
 		B180381E253501ED00D03B19 /* HaboroSoft-NorBooIt.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B1803810253501ED00D03B19 /* HaboroSoft-NorBooIt.ttf */; };
 		B19F98CC2549E86600AB52A0 /* NetworkMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B19F98CB2549E86600AB52A0 /* NetworkMonitor.swift */; };
 		B1E48D6E25392145003AC54F /* StatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E48D6D25392145003AC54F /* StatsViewController.swift */; };
-		BC1F50EC2D7AD523E09AD1F2 /* Pods_SomniaTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 815778AB88E701F3C9412CAC /* Pods_SomniaTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,22 +73,18 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		007E075C39F01B65EC442822 /* Pods-SomniaTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SomniaTests.debug.xcconfig"; path = "Target Support Files/Pods-SomniaTests/Pods-SomniaTests.debug.xcconfig"; sourceTree = "<group>"; };
-		07144C834E981138D0EF493D /* Pods-SomniaTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SomniaTests.release.xcconfig"; path = "Target Support Files/Pods-SomniaTests/Pods-SomniaTests.release.xcconfig"; sourceTree = "<group>"; };
-		142E404A5053BCAD1E4030C9 /* Pods-Somnia-SomniaUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Somnia-SomniaUITests.debug.xcconfig"; path = "Target Support Files/Pods-Somnia-SomniaUITests/Pods-Somnia-SomniaUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		23E50EE7ACCA9F3CCEBE55A2 /* Pods-Somnia.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Somnia.debug.xcconfig"; path = "Target Support Files/Pods-Somnia/Pods-Somnia.debug.xcconfig"; sourceTree = "<group>"; };
-		2C3C3FEF2F96E0C2247BC86E /* Pods-Somnia.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Somnia.release.xcconfig"; path = "Target Support Files/Pods-Somnia/Pods-Somnia.release.xcconfig"; sourceTree = "<group>"; };
+		1054048B7D0D2D792983D17E /* Pods_SomniaTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SomniaTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		178F3A4261A087F999A514D9 /* Pods-Somnia-SomniaUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Somnia-SomniaUITests.release.xcconfig"; path = "Target Support Files/Pods-Somnia-SomniaUITests/Pods-Somnia-SomniaUITests.release.xcconfig"; sourceTree = "<group>"; };
+		1EA3600F0826C5774342D385 /* Pods-Somnia.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Somnia.debug.xcconfig"; path = "Target Support Files/Pods-Somnia/Pods-Somnia.debug.xcconfig"; sourceTree = "<group>"; };
+		20DB3C103468AFC94F75271E /* Pods-SomniaTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SomniaTests.debug.xcconfig"; path = "Target Support Files/Pods-SomniaTests/Pods-SomniaTests.debug.xcconfig"; sourceTree = "<group>"; };
 		3716A224253CCEE30037D976 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		3742C969254B53DF001DEF67 /* AlarmTriggeredViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmTriggeredViewController.swift; sourceTree = "<group>"; };
 		378630F425355CBC00773BFA /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
-		37972E9E253D2EA100E2D3EB /* relaxing_birds.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = relaxing_birds.mp3; sourceTree = "<group>"; };
 		3799660B2538934D00503213 /* AlarmsNewUserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmsNewUserViewController.swift; sourceTree = "<group>"; };
 		37F462D9251C1E76004A16EF /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		37F462DB251C1EE2004A16EF /* SleepLog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SleepLog.swift; sourceTree = "<group>"; };
-		73D3E38F61DBC62597800651 /* Pods_Somnia.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Somnia.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		815778AB88E701F3C9412CAC /* Pods_SomniaTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SomniaTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		9B4668D9106992FEB5590238 /* Pods_Somnia_SomniaUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Somnia_SomniaUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		A67A3589301F87846902282D /* Pods-Somnia-SomniaUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Somnia-SomniaUITests.release.xcconfig"; path = "Target Support Files/Pods-Somnia-SomniaUITests/Pods-Somnia-SomniaUITests.release.xcconfig"; sourceTree = "<group>"; };
+		5D0A49027CB64A05B5E2D895 /* Pods-Somnia-SomniaUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Somnia-SomniaUITests.debug.xcconfig"; path = "Target Support Files/Pods-Somnia-SomniaUITests/Pods-Somnia-SomniaUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		94AFAF561B0800EB5EC40709 /* Pods-Somnia.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Somnia.release.xcconfig"; path = "Target Support Files/Pods-Somnia/Pods-Somnia.release.xcconfig"; sourceTree = "<group>"; };
 		B103D21A2534D1F200F5F301 /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		B103D21F2534DF5D00F5F301 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		B111B316253BC1B700D1C00E /* Alarm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alarm.swift; sourceTree = "<group>"; };
@@ -133,6 +128,9 @@
 		B1803810253501ED00D03B19 /* HaboroSoft-NorBooIt.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "HaboroSoft-NorBooIt.ttf"; sourceTree = "<group>"; };
 		B19F98CB2549E86600AB52A0 /* NetworkMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkMonitor.swift; sourceTree = "<group>"; };
 		B1E48D6D25392145003AC54F /* StatsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsViewController.swift; sourceTree = "<group>"; };
+		B6B51B4EEF9FFFDCCAAA761A /* Pods-SomniaTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SomniaTests.release.xcconfig"; path = "Target Support Files/Pods-SomniaTests/Pods-SomniaTests.release.xcconfig"; sourceTree = "<group>"; };
+		CB4BBE0F350AE1557018FBEE /* Pods_Somnia.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Somnia.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F948DF2A753CDC56F94490E7 /* Pods_Somnia_SomniaUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Somnia_SomniaUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,7 +138,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				57E419A05210ACF8A3D3A874 /* Pods_Somnia.framework in Frameworks */,
+				A23E78CEBEDD32C660898E6F /* Pods_Somnia.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -148,7 +146,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BC1F50EC2D7AD523E09AD1F2 /* Pods_SomniaTests.framework in Frameworks */,
+				A93A34D45458DDCFC798561A /* Pods_SomniaTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -156,19 +154,19 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				29D9C5D98EA3A0CB63466C9A /* Pods_Somnia_SomniaUITests.framework in Frameworks */,
+				39B0E0E68F57CB4998479018 /* Pods_Somnia_SomniaUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		1B8078E81221483EB8C1F8DB /* Frameworks */ = {
+		24B669BB04426417E9248DA3 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				73D3E38F61DBC62597800651 /* Pods_Somnia.framework */,
-				9B4668D9106992FEB5590238 /* Pods_Somnia_SomniaUITests.framework */,
-				815778AB88E701F3C9412CAC /* Pods_SomniaTests.framework */,
+				CB4BBE0F350AE1557018FBEE /* Pods_Somnia.framework */,
+				F948DF2A753CDC56F94490E7 /* Pods_Somnia_SomniaUITests.framework */,
+				1054048B7D0D2D792983D17E /* Pods_SomniaTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -176,12 +174,12 @@
 		347F867AB779E080A3F1EAB9 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				23E50EE7ACCA9F3CCEBE55A2 /* Pods-Somnia.debug.xcconfig */,
-				2C3C3FEF2F96E0C2247BC86E /* Pods-Somnia.release.xcconfig */,
-				142E404A5053BCAD1E4030C9 /* Pods-Somnia-SomniaUITests.debug.xcconfig */,
-				A67A3589301F87846902282D /* Pods-Somnia-SomniaUITests.release.xcconfig */,
-				007E075C39F01B65EC442822 /* Pods-SomniaTests.debug.xcconfig */,
-				07144C834E981138D0EF493D /* Pods-SomniaTests.release.xcconfig */,
+				1EA3600F0826C5774342D385 /* Pods-Somnia.debug.xcconfig */,
+				94AFAF561B0800EB5EC40709 /* Pods-Somnia.release.xcconfig */,
+				5D0A49027CB64A05B5E2D895 /* Pods-Somnia-SomniaUITests.debug.xcconfig */,
+				178F3A4261A087F999A514D9 /* Pods-Somnia-SomniaUITests.release.xcconfig */,
+				20DB3C103468AFC94F75271E /* Pods-SomniaTests.debug.xcconfig */,
+				B6B51B4EEF9FFFDCCAAA761A /* Pods-SomniaTests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -189,7 +187,6 @@
 		37972E9A253D2CBC00E2D3EB /* Sounds */ = {
 			isa = PBXGroup;
 			children = (
-				37972E9E253D2EA100E2D3EB /* relaxing_birds.mp3 */,
 			);
 			path = Sounds;
 			sourceTree = "<group>";
@@ -202,7 +199,7 @@
 				B13CC2EB251BAE5700A25D60 /* SomniaUITests */,
 				B13CC2C8251BAE5600A25D60 /* Products */,
 				347F867AB779E080A3F1EAB9 /* Pods */,
-				1B8078E81221483EB8C1F8DB /* Frameworks */,
+				24B669BB04426417E9248DA3 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -323,11 +320,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B13CC2F1251BAE5700A25D60 /* Build configuration list for PBXNativeTarget "Somnia" */;
 			buildPhases = (
-				BB323162D76632DC2642F548 /* [CP] Check Pods Manifest.lock */,
+				04749783D59B237E96496F14 /* [CP] Check Pods Manifest.lock */,
 				B13CC2C3251BAE5600A25D60 /* Sources */,
 				B13CC2C4251BAE5600A25D60 /* Frameworks */,
 				B13CC2C5251BAE5600A25D60 /* Resources */,
-				EB7BFD391A929F3FE454F527 /* [CP] Embed Pods Frameworks */,
+				4117E08B10D4C7FF4871065A /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -342,7 +339,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B13CC2F4251BAE5700A25D60 /* Build configuration list for PBXNativeTarget "SomniaTests" */;
 			buildPhases = (
-				4516C4F76A41AA37B46EECE7 /* [CP] Check Pods Manifest.lock */,
+				56DFE65433610A4FAAFE4B63 /* [CP] Check Pods Manifest.lock */,
 				B13CC2D9251BAE5700A25D60 /* Sources */,
 				B13CC2DA251BAE5700A25D60 /* Frameworks */,
 				B13CC2DB251BAE5700A25D60 /* Resources */,
@@ -361,11 +358,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B13CC2F7251BAE5700A25D60 /* Build configuration list for PBXNativeTarget "SomniaUITests" */;
 			buildPhases = (
-				ECBE46498B45CF704FB39B1E /* [CP] Check Pods Manifest.lock */,
+				1F4E855B779C854E739F320F /* [CP] Check Pods Manifest.lock */,
 				B13CC2E4251BAE5700A25D60 /* Sources */,
 				B13CC2E5251BAE5700A25D60 /* Frameworks */,
 				B13CC2E6251BAE5700A25D60 /* Resources */,
-				FA7C88157372B10A405804B1 /* [CP] Embed Pods Frameworks */,
+				825992E5A484C334B03AFEED /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -432,7 +429,6 @@
 				B180381B253501ED00D03B19 /* HaboroSoft-NorMedIt.ttf in Resources */,
 				B1803817253501ED00D03B19 /* HaboroSoft-NorRegIt.ttf in Resources */,
 				B13CC2D4251BAE5700A25D60 /* Assets.xcassets in Resources */,
-				37972E9F253D2EA100E2D3EB /* relaxing_birds.mp3 in Resources */,
 				B1803814253501ED00D03B19 /* HaboroSoft-NorExB.ttf in Resources */,
 				B1803819253501ED00D03B19 /* HaboroSoft-NorReg.ttf in Resources */,
 				B13CC2D2251BAE5600A25D60 /* Main.storyboard in Resources */,
@@ -464,29 +460,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		4516C4F76A41AA37B46EECE7 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-SomniaTests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		BB323162D76632DC2642F548 /* [CP] Check Pods Manifest.lock */ = {
+		04749783D59B237E96496F14 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -508,24 +482,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		EB7BFD391A929F3FE454F527 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Somnia/Pods-Somnia-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Somnia/Pods-Somnia-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Somnia/Pods-Somnia-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		ECBE46498B45CF704FB39B1E /* [CP] Check Pods Manifest.lock */ = {
+		1F4E855B779C854E739F320F /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -547,7 +504,46 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		FA7C88157372B10A405804B1 /* [CP] Embed Pods Frameworks */ = {
+		4117E08B10D4C7FF4871065A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Somnia/Pods-Somnia-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Somnia/Pods-Somnia-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Somnia/Pods-Somnia-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		56DFE65433610A4FAAFE4B63 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SomniaTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		825992E5A484C334B03AFEED /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -765,7 +761,7 @@
 		};
 		B13CC2F2251BAE5700A25D60 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 23E50EE7ACCA9F3CCEBE55A2 /* Pods-Somnia.debug.xcconfig */;
+			baseConfigurationReference = 1EA3600F0826C5774342D385 /* Pods-Somnia.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -789,7 +785,7 @@
 		};
 		B13CC2F3251BAE5700A25D60 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2C3C3FEF2F96E0C2247BC86E /* Pods-Somnia.release.xcconfig */;
+			baseConfigurationReference = 94AFAF561B0800EB5EC40709 /* Pods-Somnia.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -813,7 +809,7 @@
 		};
 		B13CC2F5251BAE5700A25D60 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 007E075C39F01B65EC442822 /* Pods-SomniaTests.debug.xcconfig */;
+			baseConfigurationReference = 20DB3C103468AFC94F75271E /* Pods-SomniaTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -835,7 +831,7 @@
 		};
 		B13CC2F6251BAE5700A25D60 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 07144C834E981138D0EF493D /* Pods-SomniaTests.release.xcconfig */;
+			baseConfigurationReference = B6B51B4EEF9FFFDCCAAA761A /* Pods-SomniaTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -857,7 +853,7 @@
 		};
 		B13CC2F8251BAE5700A25D60 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 142E404A5053BCAD1E4030C9 /* Pods-Somnia-SomniaUITests.debug.xcconfig */;
+			baseConfigurationReference = 5D0A49027CB64A05B5E2D895 /* Pods-Somnia-SomniaUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -877,7 +873,7 @@
 		};
 		B13CC2F9251BAE5700A25D60 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A67A3589301F87846902282D /* Pods-Somnia-SomniaUITests.release.xcconfig */;
+			baseConfigurationReference = 178F3A4261A087F999A514D9 /* Pods-Somnia-SomniaUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

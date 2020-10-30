@@ -9,6 +9,7 @@ struct K {
     
     static let homeVC = "HomeVC"
     static let signUpVC = "SignUpVC"
+    static let alarmTriggered = "AlarmTriggeredViewController"
     static let tabBar = "tabBar"
     static let loginVC = "LoginVC"
     static let cellIdentifier = "alarmCell"

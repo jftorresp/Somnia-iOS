@@ -10,7 +10,7 @@ import Firebase
 import FBSDKLoginKit
 import CoreLocation
 
-class LoginViewController: UIViewController {
+class LoginViewController: UIViewController, UNUserNotificationCenterDelegate {
     
     // Outlets
     
@@ -55,6 +55,8 @@ class LoginViewController: UIViewController {
         // Check if the user is logged in
         if UserDefaults.standard.object(forKey: "user_uid_key") != nil {
             // send them to a new view controller or do whatever you want
+            
+            
             let homeViewController = storyboard?.instantiateViewController(identifier: K.tabBar) as? UITabBarController
             
             view.window?.rootViewController = homeViewController
@@ -204,6 +206,18 @@ class LoginViewController: UIViewController {
         view.window?.makeKeyAndVisible()
     }
     
+    func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
+        
+        if  let screenVC = storyboard?.instantiateViewController(withIdentifier: "AlarmTriggeredViewController") as? AlarmTriggeredViewController{
+            
+            // set the view controller as root
+            view.window?.rootViewController = screenVC
+            view.window?.makeKeyAndVisible()
+            // tell the app that we have finished processing the user’s action / response
+            completionHandler()
+        }
+    }
+    
 }
 
 //MARK: - LoginViewController TextFieldDelegate
@@ -239,6 +253,8 @@ extension LoginViewController: CLLocationManagerDelegate {
     }
     
 }
+
+
 
 
 

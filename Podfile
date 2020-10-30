@@ -12,6 +12,7 @@ target 'Somnia' do
   pod 'Firebase/Firestore'
   pod 'FBSDKLoginKit'
   pod 'IQKeyboardManagerSwift'
+  pod 'Firebase/Storage'
 
   target 'SomniaTests' do
     inherit! :search_paths

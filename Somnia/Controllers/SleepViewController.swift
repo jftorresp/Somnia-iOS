@@ -35,7 +35,7 @@ class SleepViewController: UIViewController {
         formatter.amSymbol = "AM"
         formatter.pmSymbol = "PM"
         
-        if(AlarmsNewUserViewController.closest.description != "not"){
+        if(AlarmsNewUserViewController.closest.description != "not") {
             let hourString = formatter.string(from:AlarmsNewUserViewController.closest.alarm_date)
             
             sleepLabel.text = "You have an alarm set up at "
@@ -43,6 +43,7 @@ class SleepViewController: UIViewController {
             timeLabel.text = hourString
             timeLabel.textColor = UIColor.white
             timeLabel.font = UIFont(name: "HaboroSoft-NorBol", size: 40.0)
+            sleepView.isHidden = true
         }
         
 
@@ -51,31 +52,31 @@ class SleepViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if(AlarmsNewUserViewController.closest.description != "not"){
-            sleepView.isHidden=true
-            sleepView.removeFromSuperview()
-        }
-
         print("Esta es la closest en sleep view: \(AlarmsNewUserViewController.closest)")
-                
-        sleepButton.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.25).cgColor
-        sleepButton.layer.shadowOffset = CGSize(width: 0.0, height: 4.0)
-        sleepButton.layer.shadowOpacity = 1.0
-        sleepButton.layer.shadowRadius = 0.0
-        sleepButton.layer.masksToBounds = false
-        sleepButton.layer.cornerRadius = sleepButton.frame.size.width / 12
         
-        sleepView.layer.cornerRadius = 12
-        imageView.layer.cornerRadius = 12
-        datePicker.layer.cornerRadius = 12
-        datePicker.setValue(UIColor(named: K.BrandColors.green), forKeyPath: "textColor")
-        
-        sleepView.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.15).cgColor
-        sleepView.layer.shadowOffset = CGSize(width: 0.0, height: 4.0)
-        sleepView.layer.shadowOpacity = 1.0
-        sleepView.layer.shadowRadius = 0.0
-        sleepView.layer.masksToBounds = false
-        
+        if(AlarmsNewUserViewController.closest.description == "not"){
+            sleepView.isHidden = false
+
+        }
+            
+            sleepButton.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.25).cgColor
+            sleepButton.layer.shadowOffset = CGSize(width: 0.0, height: 4.0)
+            sleepButton.layer.shadowOpacity = 1.0
+            sleepButton.layer.shadowRadius = 0.0
+            sleepButton.layer.masksToBounds = false
+            sleepButton.layer.cornerRadius = sleepButton.frame.size.width / 12
+            
+            sleepView.layer.cornerRadius = 12
+            imageView.layer.cornerRadius = 12
+            datePicker.layer.cornerRadius = 12
+            datePicker.setValue(UIColor(named: K.BrandColors.green), forKeyPath: "textColor")
+            
+            sleepView.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.15).cgColor
+            sleepView.layer.shadowOffset = CGSize(width: 0.0, height: 4.0)
+            sleepView.layer.shadowOpacity = 1.0
+            sleepView.layer.shadowRadius = 0.0
+            sleepView.layer.masksToBounds = false
+    
         // Do any additional setup after loading the view.
     }
     

@@ -15,6 +15,8 @@ class AlarmTriggeredViewController: UIViewController {
     
     
     @IBAction func gameButtonAction(_ sender: UIButton) {
+        
+        SleepTwoViewController.alarmSound?.stop()
     }
     
     override func viewDidLoad() {

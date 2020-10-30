@@ -25,6 +25,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         
         FirebaseApp.configure()
         _ = Firestore.firestore()
+        _ = Storage.storage()
+        
+        print("Closer en App delegate: \(AlarmsNewUserViewController.closest)")
         IQKeyboardManager.shared.enable = true
         
         return true
@@ -56,16 +59,4 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     }
     
     // This function will be called right after user tap on the notification
-      func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
-        
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        if  let screenVC = storyboard.instantiateViewController(withIdentifier: "AlarmTriggeredViewController") as? AlarmTriggeredViewController {
-
-                // set the view controller as root
-                self.window?.rootViewController = screenVC
-            }
-        // tell the app that we have finished processing the user’s action / response
-        completionHandler()
-      }
 }
-

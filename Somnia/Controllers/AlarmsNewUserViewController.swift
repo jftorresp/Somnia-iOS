@@ -8,7 +8,7 @@
 import UIKit
 import Firebase
 
-class AlarmsNewUserViewController: UIViewController, NewAlarmViewControllerDelegate {
+class AlarmsNewUserViewController: UIViewController {
     
     @IBOutlet weak var AddAlarmsButton: UIButton!
     @IBOutlet weak var labelOne: UILabel!    
@@ -26,7 +26,7 @@ class AlarmsNewUserViewController: UIViewController, NewAlarmViewControllerDeleg
     
     var alarms: [Alarm] = []
     
-    static var closest : Alarm = Alarm(alarm_date: Date(), createdBy: "", description: "not", exact: false, repeat_day: [:])
+    static var closest : Alarm = Alarm(alarm_date: Date().addingTimeInterval(-10000000000000), createdBy: "", description: "not", exact: false, repeat_day: [:])
            
     static var currentIdGlobal: String = ""
     
@@ -39,7 +39,6 @@ class AlarmsNewUserViewController: UIViewController, NewAlarmViewControllerDeleg
         
     override func viewDidAppear(_ animated: Bool) {
         
-        
         let formatter = DateFormatter()
         let formatter2 = DateFormatter()
         formatter.dateFormat = "HH:mm" // "a" prints "pm" or "am"
@@ -50,7 +49,7 @@ class AlarmsNewUserViewController: UIViewController, NewAlarmViewControllerDeleg
         let hourString = formatter.string(from:AlarmsNewUserViewController.closest.alarm_date)
         let amString = formatter2.string(from: AlarmsNewUserViewController.closest.alarm_date)
         
-        if(AlarmsNewUserViewController.closest.description == "not") {
+        if(AlarmsNewUserViewController.closest.description == "not" && alarms.count == 0) {
             stackViewAlarms.isHidden = true
             tomorrowLabel.isHidden = true
             editButLabel.isHidden = true
@@ -69,20 +68,23 @@ class AlarmsNewUserViewController: UIViewController, NewAlarmViewControllerDeleg
             labelOne.font = UIFont(name: "HaboroSoft-NorMed",size: 24.0)
             
             print("entre false appear")
+            print(AlarmsNewUserViewController.closest)
         }
+        
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+                
         tableView.delegate = self
         tableView.dataSource = self
         
         tableView.register(UINib(nibName: K.cellNibName, bundle: nil), forCellReuseIdentifier: K.cellIdentifier)
                 
         loadAlarms()
-        print("Este es el closest \(AlarmsNewUserViewController.closest)")
-        if(AlarmsNewUserViewController.closest.description == "not") {
+        print("LOAD CLOSER \(AlarmsNewUserViewController.closest)")
+        
+        if(AlarmsNewUserViewController.closest.description == "not" || alarms.count == 0) {
             stackViewAlarms.isHidden = true
             tomorrowLabel.isHidden = true
             labelOne.text = "You don't have any alarms yet. Press the + button to create a new one."
@@ -105,29 +107,11 @@ class AlarmsNewUserViewController: UIViewController, NewAlarmViewControllerDeleg
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
     }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "AddAlarmToAlarm" {
-            let destinationVC = segue.destination as! NewAlarmViewController
-            destinationVC.delegate = self
-        }
-    }
-    
-    func doSomethingWith(date: Date, description: String, repeatWhen: [String: Bool], exact: Bool, createdBy: String) {
-        // Do something here after receiving data from destination view controller
         
-        print(date)
-        print(description)
-        print(repeatWhen)
-        print(exact)
-        print(createdBy)
-    }
-    
-    
     @IBAction func editPressed(_ sender: UIButton) {
     }
     
-    func loadAlarms(){
+    func loadAlarms() {
         
         if let id = Auth.auth().currentUser?.uid {
             db.collection(K.FStore.alarmsCollection)
@@ -153,7 +137,6 @@ class AlarmsNewUserViewController: UIViewController, NewAlarmViewControllerDeleg
                             if let dateCorrect = date?.dateValue(), let descriptionCorrect = description, let repeatedCorrect = repeated, let exactCorrect = exact, let userIdCorrect = userId {
                                 
                                 let newAlarm = Alarm(alarm_date: dateCorrect, createdBy: userIdCorrect, description: descriptionCorrect, exact: exactCorrect, repeat_day: repeatedCorrect)
-                                print("Alarms 2: \(newAlarm)")
                                 self.alarms.append(newAlarm)
                                 
                                 DispatchQueue.main.async {
@@ -164,9 +147,8 @@ class AlarmsNewUserViewController: UIViewController, NewAlarmViewControllerDeleg
                             }
                             
                         }
-                        print("Lista alarmas 2: \(self.alarms)")
                         AlarmsNewUserViewController.closest = self.closer()
-                        print("Este es closest en load: \(AlarmsNewUserViewController.closest)")
+                        print("CLOSER: \(self.closer())")
                     }
                 }
         }
@@ -175,11 +157,11 @@ class AlarmsNewUserViewController: UIViewController, NewAlarmViewControllerDeleg
     }
     
     func closer() -> Alarm {
-        print("este es el length del arreglo de alarmas: \(alarms.count)")
         var menor = Double.infinity
-        var rta = Alarm(alarm_date: Date(), createdBy: "", description: "not", exact: false, repeat_day: [:])
-        for alarm in alarms{
-            if(menor > alarm.alarm_date.timeIntervalSinceNow && alarm.alarm_date.timeIntervalSinceNow > 0  ){
+        var rta = Alarm(alarm_date: Date().addingTimeInterval(-10000000000000), createdBy: "", description: "not", exact: false, repeat_day: [:])
+        for alarm in alarms {
+            print(alarm.alarm_date.timeIntervalSinceNow)
+            if(menor > alarm.alarm_date.timeIntervalSinceNow && alarm.alarm_date.timeIntervalSinceNow > 0  ) {
                 menor = alarm.alarm_date.timeIntervalSinceNow
                 print("Encontré el menor")
                 rta = alarm
@@ -188,6 +170,7 @@ class AlarmsNewUserViewController: UIViewController, NewAlarmViewControllerDeleg
         print("Closest Alarm: \(rta)")
         return rta
     }
+    
 }
 
 extension AlarmsNewUserViewController: UITableViewDelegate, UITableViewDataSource {
