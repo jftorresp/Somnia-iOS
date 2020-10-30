@@ -1,5 +1,5 @@
 # Somnia 😴
-> Somnia is an app that helps you in the process of sleeping and waking app.
+> Somnia is an app that helps you in the process of sleeping and waking up.
 
 [![Swift Version][swift-image]][swift-url]
 [![Build Status][travis-image]][travis-url]
