@@ -57,8 +57,9 @@ Then run `pod install` to add all the libraries to your Xcode project. Then you 
 
 #### Build & Run
 1. After installing the pods, open Xcode and hit `command B` to Build the app.
-2. Then hit `command R`or the 'play' button to run the app.
-3. Congratulations your app is running!
+2. Select a device in the emulator on the top-left corner of Xcode (preferably iPhone 11) or connect your iOS device to install the app on it.
+3. Then hit `command R`or the 'play' button to run the app.
+4. Congratulations your app is running!
 
 ## Contribute
 
