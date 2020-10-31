@@ -97,9 +97,9 @@ class SleepTwoViewController: UIViewController {
     
     func downloadAlarms(reference: StorageReference){
         
-        let localURL = URL(string: "\(documentsURL.absoluteString ?? "")alarm_sounds/relaxing_birds.mp3")!
+        let localURL = URL(string: "\(documentsURL.absoluteString)alarm_sounds/relaxing_birds.mp3")!
         print("La URL ES: \(localURL)")
-        let downloadTask = reference.write(toFile: localURL as URL) { url, error in
+        _ = reference.write(toFile: localURL as URL) { url, error in
             if let error = error {
                 // Uh-oh, an error occurred!
                 print("Error saving file, \(error)")
@@ -112,37 +112,21 @@ class SleepTwoViewController: UIViewController {
     
     @objc func alarmShouldSound() {
         let date = Date()
-        let fileManager2 = FileManager.default
-        var audioPlayer: AVAudioPlayer?
-        
-        do {
-            let fileURLs = try FileManager.default.contentsOfDirectory(at: documentsURL, includingPropertiesForKeys: nil)
-            
-            // process files
-        } catch {
-            print("Error while enumerating files \(documentsURL.path): \(error.localizedDescription)")
-        }
-       
+
         if date.timeIntervalSince1970.rounded() == AlarmsNewUserViewController.closest.alarm_date.timeIntervalSince1970.rounded() {
-            let path = "\(documentsURL.absoluteString )alarm_sounds/relaxing_birds.mp3"
+//            let path = "\(documentsURL.absoluteString )alarm_sounds/relaxing_birds.mp3"
+            let path = Bundle.main.path(forResource: "relaxing_birds.mp3", ofType: nil)!
             let url = URL(fileURLWithPath: path)
-            print("url del sound: \(url)")
-            
+
             do {
-                print("entré en el do")
+                SleepTwoViewController.alarmSound = try AVAudioPlayer(contentsOf: url)
+                SleepTwoViewController.alarmSound.play()
+                SleepTwoViewController.alarmSound.numberOfLoops = -1
+                
                 let alarmTriggeredVC = storyboard?.instantiateViewController(identifier: K.alarmTriggered) as? AlarmTriggeredViewController
                 
                 view.window?.rootViewController = alarmTriggeredVC
                 view.window?.makeKeyAndVisible()
-                
-                audioPlayer = try AVAudioPlayer(contentsOf: url)
-                audioPlayer?.play()
-                audioPlayer?.numberOfLoops = -1
-//                SleepTwoViewController.alarmSound = try AVAudioPlayer(contentsOf: url)
-//                SleepTwoViewController.alarmSound?.play()
-//                SleepTwoViewController.alarmSound?.numberOfLoops = -1
-//
-               
             } catch {
                 print("couldn't load file :(")
             }
@@ -152,15 +136,5 @@ class SleepTwoViewController: UIViewController {
     @IBAction func sleepActPressed(_ sender: Any) {
         
     }
-    
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destination.
-     // Pass the selected object to the new view controller.
-     }
-     */
-    
+        
 }

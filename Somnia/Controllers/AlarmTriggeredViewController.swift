@@ -13,6 +13,9 @@ class AlarmTriggeredViewController: UIViewController {
     @IBOutlet weak var ampmLabel: UILabel!
     @IBOutlet weak var gameButton: UIButton!
     
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
     
     @IBAction func gameButtonAction(_ sender: UIButton) {
         
@@ -26,6 +29,8 @@ class AlarmTriggeredViewController: UIViewController {
         let formatter2 = DateFormatter()
         formatter.dateFormat = "HH:mm " // "a" prints "pm" or "am"
         formatter2.dateFormat = "a"
+        
+        gameButton.layer.cornerRadius = 12
         
         formatter2.amSymbol = "AM"
         formatter2.pmSymbol = "PM"

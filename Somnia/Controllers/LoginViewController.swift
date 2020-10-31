@@ -43,6 +43,7 @@ class LoginViewController: UIViewController, UNUserNotificationCenterDelegate {
     static var currentLocation : CLLocation!
     static var lat: Double?
     static var lon: Double?
+    var nickname = ""
     
     // Set status bar to white
     
@@ -66,7 +67,7 @@ class LoginViewController: UIViewController, UNUserNotificationCenterDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+                
         networkMonitor.startMonitoring()
         
         loginButton.layer.cornerRadius = 10
@@ -139,6 +140,12 @@ class LoginViewController: UIViewController, UNUserNotificationCenterDelegate {
                         self.transitionToHome()
                         UserDefaults.standard.set(Auth.auth().currentUser!.uid, forKey: "user_uid_key")
                         UserDefaults.standard.synchronize()
+                        
+                        self.getUsernickName()
+
+                        UserDefaults.standard.set(self.nickname, forKey: "nickname")
+                        UserDefaults.standard.synchronize()
+                        
                     }
                 }
             }
@@ -147,7 +154,7 @@ class LoginViewController: UIViewController, UNUserNotificationCenterDelegate {
         }
         
     }
-
+    
     
     @IBAction func fbButtonPressed(_ sender: UIButton) {
         
@@ -218,6 +225,25 @@ class LoginViewController: UIViewController, UNUserNotificationCenterDelegate {
         }
     }
     
+    func getUsernickName() {
+        
+        if let email = Auth.auth().currentUser?.email {
+            db.collection(K.FStore.usersCollection)
+                .whereField("email", isEqualTo: email)
+                .addSnapshotListener { (querySnapshot, error) in
+                    
+                    if let e = error {
+                        print("There was an issue retrieving data from Firestore. \(e)")
+                    } else {
+                        for document in querySnapshot!.documents {
+                            
+                            let data = document.data()
+                            self.nickname = (data["nickname"] as? String)!
+                        }
+                    }
+                }
+        }
+    }
 }
 
 //MARK: - LoginViewController TextFieldDelegate

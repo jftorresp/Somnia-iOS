@@ -25,18 +25,18 @@ class SignUpTwoViewController: UIViewController {
     let transparentView = UIView()
     let tableView = UITableView()
     var selectedButton = UIButton()
-    
+        
     let db = Firestore.firestore()
     
     var dataSource = [String]()
-    
+        
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+                
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(CellClass.self, forCellReuseIdentifier: "Cell")
@@ -55,6 +55,7 @@ class SignUpTwoViewController: UIViewController {
     
     @IBAction func signUpPressed(_ sender: UIButton) {
         
+        
         if  let fullName = fullNameLabel.text,
             let id = Auth.auth().currentUser?.uid,
             let nickname = nicknameLabel.text,
@@ -69,6 +70,8 @@ class SignUpTwoViewController: UIViewController {
                         print("Error updating the user to the database, \(e.localizedDescription)")
                     } else {
                         print("Successfully updated data")
+                        UserDefaults.standard.set(nickname, forKey: "nickname")
+                        UserDefaults.standard.synchronize()
                     }
                 }
         }

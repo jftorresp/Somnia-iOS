@@ -95,7 +95,7 @@ class NewAlarmViewController: UIViewController{
         }
         let targetDate = datePicker.date
         
-        var newDate = startOfHour(myDate: targetDate)!
+        let newDate = startOfHour(myDate: targetDate)!
         
         if let id = Auth.auth().currentUser?.uid{
             db.collection(K.FStore.alarmsCollection).addDocument(data: ["alarm_date": newDate, "createdBy": id, "description": descriptionTxt.text!, "exact": isExact, "isActive": true, "repeat": repeatDic]) { (error) in

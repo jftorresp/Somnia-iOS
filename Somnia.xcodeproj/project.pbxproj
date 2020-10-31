@@ -31,6 +31,8 @@
 		B13CC2D7251BAE5700A25D60 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B13CC2D5251BAE5700A25D60 /* LaunchScreen.storyboard */; };
 		B13CC2E2251BAE5700A25D60 /* SomniaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13CC2E1251BAE5700A25D60 /* SomniaTests.swift */; };
 		B13CC2ED251BAE5700A25D60 /* SomniaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13CC2EC251BAE5700A25D60 /* SomniaUITests.swift */; };
+		B13E13CC254CD3A000208EA8 /* relaxing_birds.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B13E13CB254CD3A000208EA8 /* relaxing_birds.mp3 */; };
+		B13E13D1254CDCA200208EA8 /* FeedbackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13E13D0254CDCA200208EA8 /* FeedbackViewController.swift */; };
 		B146080C253A6422004AE54D /* NewAlarmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B146080B253A6422004AE54D /* NewAlarmViewController.swift */; };
 		B146082C253A66C9004AE54D /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B146082B253A66C9004AE54D /* ProfileViewController.swift */; };
 		B1746B82254A209300A434B2 /* AlarmCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1746B80254A209300A434B2 /* AlarmCell.swift */; };
@@ -106,6 +108,8 @@
 		B13CC2E8251BAE5700A25D60 /* SomniaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SomniaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B13CC2EC251BAE5700A25D60 /* SomniaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SomniaUITests.swift; sourceTree = "<group>"; };
 		B13CC2EE251BAE5700A25D60 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B13E13CB254CD3A000208EA8 /* relaxing_birds.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = relaxing_birds.mp3; sourceTree = "<group>"; };
+		B13E13D0254CDCA200208EA8 /* FeedbackViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackViewController.swift; sourceTree = "<group>"; };
 		B146080B253A6422004AE54D /* NewAlarmViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewAlarmViewController.swift; sourceTree = "<group>"; };
 		B146082B253A66C9004AE54D /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		B1746B80254A209300A434B2 /* AlarmCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmCell.swift; sourceTree = "<group>"; };
@@ -187,6 +191,7 @@
 		37972E9A253D2CBC00E2D3EB /* Sounds */ = {
 			isa = PBXGroup;
 			children = (
+				B13E13CB254CD3A000208EA8 /* relaxing_birds.mp3 */,
 			);
 			path = Sounds;
 			sourceTree = "<group>";
@@ -265,6 +270,7 @@
 				3716A224253CCEE30037D976 /* GameViewController.swift */,
 				B135FAD72547838500D45AD1 /* SignUpTwoViewController.swift */,
 				3742C969254B53DF001DEF67 /* AlarmTriggeredViewController.swift */,
+				B13E13D0254CDCA200208EA8 /* FeedbackViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -430,6 +436,7 @@
 				B1803817253501ED00D03B19 /* HaboroSoft-NorRegIt.ttf in Resources */,
 				B13CC2D4251BAE5700A25D60 /* Assets.xcassets in Resources */,
 				B1803814253501ED00D03B19 /* HaboroSoft-NorExB.ttf in Resources */,
+				B13E13CC254CD3A000208EA8 /* relaxing_birds.mp3 in Resources */,
 				B1803819253501ED00D03B19 /* HaboroSoft-NorReg.ttf in Resources */,
 				B13CC2D2251BAE5600A25D60 /* Main.storyboard in Resources */,
 				B180381E253501ED00D03B19 /* HaboroSoft-NorBooIt.ttf in Resources */,
@@ -576,6 +583,7 @@
 				B112310E25392F750024DD7D /* SleepTwoViewController.swift in Sources */,
 				37F462DC251C1EE2004A16EF /* SleepLog.swift in Sources */,
 				B146082C253A66C9004AE54D /* ProfileViewController.swift in Sources */,
+				B13E13D1254CDCA200208EA8 /* FeedbackViewController.swift in Sources */,
 				B13CC2CF251BAE5600A25D60 /* LoginViewController.swift in Sources */,
 				B111B317253BC1B700D1C00E /* Alarm.swift in Sources */,
 				B13CC2CB251BAE5600A25D60 /* AppDelegate.swift in Sources */,

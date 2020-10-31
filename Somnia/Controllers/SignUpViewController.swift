@@ -36,6 +36,7 @@ class SignUpViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        networkMonitor.startMonitoring()
         
         emailTextField.delegate = self
         passwordTextField.delegate = self

@@ -14,6 +14,7 @@ struct K {
     static let loginVC = "LoginVC"
     static let cellIdentifier = "alarmCell"
     static let cellNibName = "AlarmCell"
+    static let feedbackVC = "FeedbackVC"
     
     struct BrandColors {
         static let darkBlue = "Darkblue"
@@ -26,6 +27,7 @@ struct K {
     struct FStore {
         static let usersCollection = "users"
         static let alarmsCollection = "alarms"
+        static let analysisCollection = "analysis"
         static let userKey = "email"
         static let lat = "lat"
         static let lon = "lon"

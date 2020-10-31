@@ -16,7 +16,7 @@ class GameViewController: UIViewController{
     var timeOfLastShake = 0
     var timer = Timer()
     var timerCountDown : Timer!
-    var scoreGame = 0
+    static var scoreGame = 0
     
     @IBOutlet weak var countDownLabel: UILabel!
     var count = 15
@@ -26,6 +26,10 @@ class GameViewController: UIViewController{
         countDownLabel.text = String(count)
         timerCountDown = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(fireTimer), userInfo: nil, repeats: true)
 
+    }
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
     }
 
     func update() {
@@ -46,8 +50,8 @@ class GameViewController: UIViewController{
        print(motion)
        if motion == .motionShake {
           print("shake was detected")
-        scoreGame = scoreGame+1
-        scoreLabel.text = String(scoreGame)
+        GameViewController.scoreGame = GameViewController.scoreGame+1
+        scoreLabel.text = String(GameViewController.scoreGame)
        }
     }
     
@@ -83,6 +87,11 @@ class GameViewController: UIViewController{
         if(count > 0) {
         count = count-1
         countDownLabel.text = String(count)
+        } else {
+            let feedbackVC = storyboard?.instantiateViewController(identifier: K.feedbackVC) as? FeedbackViewController
+            
+            view.window?.rootViewController = feedbackVC
+            view.window?.makeKeyAndVisible()
         }
     }
 }

@@ -17,10 +17,15 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var profileInfoView: UIView!
     @IBOutlet weak var profileBannerView: UIView!
     @IBOutlet weak var profileBannerImage: UIImageView!
+    @IBOutlet weak var helloNicknameLabel: UILabel!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if let nickname = UserDefaults.standard.object(forKey: "nickname") {
+            helloNicknameLabel.text = "Hello \(nickname)!"
+        }
         
         award1View.layer.cornerRadius = 15
         award2View.layer.cornerRadius = 15
@@ -29,15 +34,6 @@ class ProfileViewController: UIViewController {
         profileInfoView.layer.cornerRadius = 15
         profileBannerView.layer.cornerRadius = 15
         profileBannerImage.layer.cornerRadius = 15
-        // Do any additional setup after loading the view.
-        
-        //        let email = Auth.auth().currentUser?.email
-        //
-        //        let emailLabel = UILabel()
-        //        emailLabel.text = email
-        //        emailLabel.textColor = UIColor.white
-        //
-        //        profileInfoView.addSubview(emailLabel)
     }
     
     @IBAction func logOutPressed(_ sender: UIButton) {
@@ -48,6 +44,8 @@ class ProfileViewController: UIViewController {
                 if let loginVC = storyboard?.instantiateViewController(identifier: K.loginVC) as? LoginViewController {
                     
                     UserDefaults.standard.removeObject(forKey: "user_uid_key")
+                    UserDefaults.standard.synchronize()
+                    UserDefaults.standard.removeObject(forKey: "nickname")
                     UserDefaults.standard.synchronize()
                     view.window?.rootViewController = loginVC
                     view.window?.makeKeyAndVisible()
