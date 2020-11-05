@@ -58,7 +58,7 @@ class FeedbackViewController: UIViewController {
     
     func sendScoreDB(mood: String) {
         
-        if let id = Auth.auth().currentUser?.uid{
+        if let id = Auth.auth().currentUser?.uid {
             db.collection(K.FStore.analysisCollection).addDocument(data: ["createdBy": id, "deep": 0, "duration": 0, "hourStage": ["1": "", "2": ""], "light": 0, "nightDate": Date(), "rem": 0, "snorePercentage": 0, "totalEvents": 0, "totalSnores": 0, "wake": 0, "score": GameViewController.scoreGame, "mood": mood]) { (error) in
                 
                 if let e = error {

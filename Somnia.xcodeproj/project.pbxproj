@@ -12,7 +12,6 @@
 		378630F525355CBC00773BFA /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 378630F425355CBC00773BFA /* SignUpViewController.swift */; };
 		3799660C2538934D00503213 /* AlarmsNewUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3799660B2538934D00503213 /* AlarmsNewUserViewController.swift */; };
 		37F462DA251C1E76004A16EF /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F462D9251C1E76004A16EF /* User.swift */; };
-		37F462DC251C1EE2004A16EF /* SleepLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F462DB251C1EE2004A16EF /* SleepLog.swift */; };
 		39B0E0E68F57CB4998479018 /* Pods_Somnia_SomniaUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F948DF2A753CDC56F94490E7 /* Pods_Somnia_SomniaUITests.framework */; };
 		A23E78CEBEDD32C660898E6F /* Pods_Somnia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB4BBE0F350AE1557018FBEE /* Pods_Somnia.framework */; };
 		A93A34D45458DDCFC798561A /* Pods_SomniaTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1054048B7D0D2D792983D17E /* Pods_SomniaTests.framework */; };
@@ -38,7 +37,6 @@
 		B1746B82254A209300A434B2 /* AlarmCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1746B80254A209300A434B2 /* AlarmCell.swift */; };
 		B1746B83254A209300A434B2 /* AlarmCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B1746B81254A209300A434B2 /* AlarmCell.xib */; };
 		B1770954251D2769006CEEF7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B1770953251D2769006CEEF7 /* GoogleService-Info.plist */; };
-		B17E6633251BD61400C4DC72 /* Sleep.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17E6632251BD61400C4DC72 /* Sleep.swift */; };
 		B1803811253501ED00D03B19 /* HaboroSoft-NorLigIt.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B1803803253501EA00D03B19 /* HaboroSoft-NorLigIt.ttf */; };
 		B1803812253501ED00D03B19 /* HaboroSoft-NorLig.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B1803804253501EA00D03B19 /* HaboroSoft-NorLig.ttf */; };
 		B1803813253501ED00D03B19 /* HaboroSoft-NorDemIt.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B1803805253501EA00D03B19 /* HaboroSoft-NorDemIt.ttf */; };
@@ -54,6 +52,7 @@
 		B180381D253501ED00D03B19 /* HaboroSoft-NorBoo.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B180380F253501ED00D03B19 /* HaboroSoft-NorBoo.ttf */; };
 		B180381E253501ED00D03B19 /* HaboroSoft-NorBooIt.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B1803810253501ED00D03B19 /* HaboroSoft-NorBooIt.ttf */; };
 		B19F98CC2549E86600AB52A0 /* NetworkMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B19F98CB2549E86600AB52A0 /* NetworkMonitor.swift */; };
+		B1B244D725538B75004942EA /* Analysis.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1B244D625538B75004942EA /* Analysis.swift */; };
 		B1E48D6E25392145003AC54F /* StatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E48D6D25392145003AC54F /* StatsViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -84,7 +83,6 @@
 		378630F425355CBC00773BFA /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		3799660B2538934D00503213 /* AlarmsNewUserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmsNewUserViewController.swift; sourceTree = "<group>"; };
 		37F462D9251C1E76004A16EF /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
-		37F462DB251C1EE2004A16EF /* SleepLog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SleepLog.swift; sourceTree = "<group>"; };
 		5D0A49027CB64A05B5E2D895 /* Pods-Somnia-SomniaUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Somnia-SomniaUITests.debug.xcconfig"; path = "Target Support Files/Pods-Somnia-SomniaUITests/Pods-Somnia-SomniaUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		94AFAF561B0800EB5EC40709 /* Pods-Somnia.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Somnia.release.xcconfig"; path = "Target Support Files/Pods-Somnia/Pods-Somnia.release.xcconfig"; sourceTree = "<group>"; };
 		B103D21A2534D1F200F5F301 /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
@@ -115,7 +113,6 @@
 		B1746B80254A209300A434B2 /* AlarmCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmCell.swift; sourceTree = "<group>"; };
 		B1746B81254A209300A434B2 /* AlarmCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AlarmCell.xib; sourceTree = "<group>"; };
 		B1770953251D2769006CEEF7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		B17E6632251BD61400C4DC72 /* Sleep.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sleep.swift; sourceTree = "<group>"; };
 		B1803803253501EA00D03B19 /* HaboroSoft-NorLigIt.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "HaboroSoft-NorLigIt.ttf"; sourceTree = "<group>"; };
 		B1803804253501EA00D03B19 /* HaboroSoft-NorLig.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "HaboroSoft-NorLig.ttf"; sourceTree = "<group>"; };
 		B1803805253501EA00D03B19 /* HaboroSoft-NorDemIt.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "HaboroSoft-NorDemIt.ttf"; sourceTree = "<group>"; };
@@ -131,6 +128,7 @@
 		B180380F253501ED00D03B19 /* HaboroSoft-NorBoo.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "HaboroSoft-NorBoo.ttf"; sourceTree = "<group>"; };
 		B1803810253501ED00D03B19 /* HaboroSoft-NorBooIt.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "HaboroSoft-NorBooIt.ttf"; sourceTree = "<group>"; };
 		B19F98CB2549E86600AB52A0 /* NetworkMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkMonitor.swift; sourceTree = "<group>"; };
+		B1B244D625538B75004942EA /* Analysis.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Analysis.swift; sourceTree = "<group>"; };
 		B1E48D6D25392145003AC54F /* StatsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsViewController.swift; sourceTree = "<group>"; };
 		B6B51B4EEF9FFFDCCAAA761A /* Pods-SomniaTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SomniaTests.release.xcconfig"; path = "Target Support Files/Pods-SomniaTests/Pods-SomniaTests.release.xcconfig"; sourceTree = "<group>"; };
 		CB4BBE0F350AE1557018FBEE /* Pods_Somnia.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Somnia.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -289,11 +287,10 @@
 		B17E662E251BD52E00C4DC72 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				B17E6632251BD61400C4DC72 /* Sleep.swift */,
 				37F462D9251C1E76004A16EF /* User.swift */,
-				37F462DB251C1EE2004A16EF /* SleepLog.swift */,
 				B111B316253BC1B700D1C00E /* Alarm.swift */,
 				B19F98CB2549E86600AB52A0 /* NetworkMonitor.swift */,
+				B1B244D625538B75004942EA /* Analysis.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -581,12 +578,12 @@
 				B146080C253A6422004AE54D /* NewAlarmViewController.swift in Sources */,
 				3716A225253CCEE30037D976 /* GameViewController.swift in Sources */,
 				B112310E25392F750024DD7D /* SleepTwoViewController.swift in Sources */,
-				37F462DC251C1EE2004A16EF /* SleepLog.swift in Sources */,
 				B146082C253A66C9004AE54D /* ProfileViewController.swift in Sources */,
 				B13E13D1254CDCA200208EA8 /* FeedbackViewController.swift in Sources */,
 				B13CC2CF251BAE5600A25D60 /* LoginViewController.swift in Sources */,
 				B111B317253BC1B700D1C00E /* Alarm.swift in Sources */,
 				B13CC2CB251BAE5600A25D60 /* AppDelegate.swift in Sources */,
+				B1B244D725538B75004942EA /* Analysis.swift in Sources */,
 				B103D2202534DF5D00F5F301 /* Constants.swift in Sources */,
 				B19F98CC2549E86600AB52A0 /* NetworkMonitor.swift in Sources */,
 				B13CC2CD251BAE5600A25D60 /* SceneDelegate.swift in Sources */,
@@ -595,7 +592,6 @@
 				378630F525355CBC00773BFA /* SignUpViewController.swift in Sources */,
 				B1746B82254A209300A434B2 /* AlarmCell.swift in Sources */,
 				37F462DA251C1E76004A16EF /* User.swift in Sources */,
-				B17E6633251BD61400C4DC72 /* Sleep.swift in Sources */,
 				B1123113253937A40024DD7D /* SleepActivitiesViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
