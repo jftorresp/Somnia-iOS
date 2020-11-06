@@ -1,14 +1,15 @@
 //
-//  SleepSound.swift
+//  Stories.swift
 //  Somnia
 //
-//  Created by Juan Felipe Torres on 5/11/20.
+//  Created by Juan Felipe Torres on 6/11/20.
 //
 
 import Foundation
 import AVFoundation
 
-class SleepSound {
+
+class Stories {
     let name: String
     let fileName: String
     let image: String

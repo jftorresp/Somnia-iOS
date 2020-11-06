@@ -22,6 +22,9 @@
 		B112310E25392F750024DD7D /* SleepTwoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B112310D25392F750024DD7D /* SleepTwoViewController.swift */; };
 		B1123113253937A40024DD7D /* SleepActivitiesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1123112253937A40024DD7D /* SleepActivitiesViewController.swift */; };
 		B135FAD82547838500D45AD1 /* SignUpTwoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B135FAD72547838500D45AD1 /* SignUpTwoViewController.swift */; };
+		B13639522555B42C004EBBF8 /* Stories.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13639512555B42C004EBBF8 /* Stories.swift */; };
+		B13639582555B466004EBBF8 /* StoriesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13639562555B466004EBBF8 /* StoriesCell.swift */; };
+		B13639592555B466004EBBF8 /* StoriesCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B13639572555B466004EBBF8 /* StoriesCell.xib */; };
 		B13CC2CB251BAE5600A25D60 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13CC2CA251BAE5600A25D60 /* AppDelegate.swift */; };
 		B13CC2CD251BAE5600A25D60 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13CC2CC251BAE5600A25D60 /* SceneDelegate.swift */; };
 		B13CC2CF251BAE5600A25D60 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13CC2CE251BAE5600A25D60 /* LoginViewController.swift */; };
@@ -95,6 +98,9 @@
 		B112310D25392F750024DD7D /* SleepTwoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SleepTwoViewController.swift; sourceTree = "<group>"; };
 		B1123112253937A40024DD7D /* SleepActivitiesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SleepActivitiesViewController.swift; sourceTree = "<group>"; };
 		B135FAD72547838500D45AD1 /* SignUpTwoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpTwoViewController.swift; sourceTree = "<group>"; };
+		B13639512555B42C004EBBF8 /* Stories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stories.swift; sourceTree = "<group>"; };
+		B13639562555B466004EBBF8 /* StoriesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoriesCell.swift; sourceTree = "<group>"; };
+		B13639572555B466004EBBF8 /* StoriesCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StoriesCell.xib; sourceTree = "<group>"; };
 		B13CC2C7251BAE5600A25D60 /* Somnia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Somnia.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B13CC2CA251BAE5600A25D60 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B13CC2CC251BAE5600A25D60 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -288,6 +294,8 @@
 				B1746B81254A209300A434B2 /* AlarmCell.xib */,
 				B15BA5A82554B8D900209897 /* SleepSoundCell.swift */,
 				B15BA5A92554B8D900209897 /* SleepSoundCell.xib */,
+				B13639562555B466004EBBF8 /* StoriesCell.swift */,
+				B13639572555B466004EBBF8 /* StoriesCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -300,6 +308,7 @@
 				B19F98CB2549E86600AB52A0 /* NetworkMonitor.swift */,
 				B1B244D625538B75004942EA /* Analysis.swift */,
 				B15BA5A32554B41600209897 /* SleepSound.swift */,
+				B13639512555B42C004EBBF8 /* Stories.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -440,6 +449,7 @@
 				B1770954251D2769006CEEF7 /* GoogleService-Info.plist in Resources */,
 				B1803818253501ED00D03B19 /* HaboroSoft-NorExBIt.ttf in Resources */,
 				B180381B253501ED00D03B19 /* HaboroSoft-NorMedIt.ttf in Resources */,
+				B13639592555B466004EBBF8 /* StoriesCell.xib in Resources */,
 				B1803817253501ED00D03B19 /* HaboroSoft-NorRegIt.ttf in Resources */,
 				B13CC2D4251BAE5700A25D60 /* Assets.xcassets in Resources */,
 				B1803814253501ED00D03B19 /* HaboroSoft-NorExB.ttf in Resources */,
@@ -599,12 +609,14 @@
 				B19F98CC2549E86600AB52A0 /* NetworkMonitor.swift in Sources */,
 				B13CC2CD251BAE5600A25D60 /* SceneDelegate.swift in Sources */,
 				B103D21B2534D1F200F5F301 /* GradientView.swift in Sources */,
+				B13639522555B42C004EBBF8 /* Stories.swift in Sources */,
 				B135FAD82547838500D45AD1 /* SignUpTwoViewController.swift in Sources */,
 				378630F525355CBC00773BFA /* SignUpViewController.swift in Sources */,
 				B1746B82254A209300A434B2 /* AlarmCell.swift in Sources */,
 				37F462DA251C1E76004A16EF /* User.swift in Sources */,
 				B15BA5A42554B41600209897 /* SleepSound.swift in Sources */,
 				B1123113253937A40024DD7D /* SleepActivitiesViewController.swift in Sources */,
+				B13639582555B466004EBBF8 /* StoriesCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

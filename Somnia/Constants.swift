@@ -12,10 +12,15 @@ struct K {
     static let alarmTriggered = "AlarmTriggeredViewController"
     static let tabBar = "tabBar"
     static let loginVC = "LoginVC"
-    static let cellIdentifier = "alarmCell"
+    
     static let cellNibName = "AlarmCell"
     static let cellNibName2 = "SleepSoundCell"
+    static let cellNibName3 = "StoriesCell"
+    
+    static let cellIdentifier = "alarmCell"
     static let sleepSoundcell = "SleepSoundCell"
+    static let storiesCell = "StoryCell"
+    
     static let feedbackVC = "FeedbackVC"
     static let sleepTwoVC = "SleepTwoViewController"
     
@@ -31,6 +36,8 @@ struct K {
         static let usersCollection = "users"
         static let alarmsCollection = "alarms"
         static let analysisCollection = "analysis"
+        static let soundsCollection = "sounds"
+        static let storiesCollection = "stories"
         static let userKey = "email"
         static let lat = "lat"
         static let lon = "lon"
