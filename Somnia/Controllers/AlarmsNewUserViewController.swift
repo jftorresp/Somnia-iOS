@@ -39,9 +39,7 @@ class AlarmsNewUserViewController: UIViewController {
     }
         
     override func viewDidAppear(_ animated: Bool) {
-        
-        print("Alarms Appear: \(alarms.count)")
-        
+                
         let formatter = DateFormatter()
         let formatter2 = DateFormatter()
         formatter.dateFormat = "HH:mm" // "a" prints "pm" or "am"
@@ -57,7 +55,6 @@ class AlarmsNewUserViewController: UIViewController {
             tomorrowLabel.isHidden = true
             editButLabel.isHidden = true
             labelOne.text = "You don't have any alarms yet. Press the + button to create a new one."
-            print("entre true appear")
         } else {
             stackViewAlarms.isHidden = false
             tomorrowLabel.isHidden = false
@@ -70,8 +67,6 @@ class AlarmsNewUserViewController: UIViewController {
             labelOne.textAlignment = .left
             labelOne.font = UIFont(name: "HaboroSoft-NorMed",size: 24.0)
             
-            print("entre false appear")
-            print(AlarmsNewUserViewController.closest)
         }
         
     }
@@ -84,14 +79,11 @@ class AlarmsNewUserViewController: UIViewController {
         tableView.dataSource = self
         
         tableView.register(UINib(nibName: K.cellNibName, bundle: nil), forCellReuseIdentifier: K.cellIdentifier)
-         
-        print("Ejecuto loadAlarms: \(alarms.count)")
-        
+                 
         if(AlarmsNewUserViewController.closest.description == "not" && alarms.count == 0) {
             stackViewAlarms.isHidden = true
             tomorrowLabel.isHidden = true
             labelOne.text = "You don't have any alarms yet. Press the + button to create a new one."
-            print("entre true load")
         } else {
             stackViewAlarms.isHidden = false
             tomorrowLabel.isHidden = false
@@ -101,8 +93,6 @@ class AlarmsNewUserViewController: UIViewController {
 
             bedtimeView.layer.cornerRadius = 10
             expectedView.layer.cornerRadius = 10
-
-            print("entre false load")
         }
     
     }
@@ -152,7 +142,6 @@ class AlarmsNewUserViewController: UIViewController {
                             
                         }
                         AlarmsNewUserViewController.closest = self.closer()
-                        print("CLOSER: \(self.closer())")
                     }
                 }
         }
@@ -170,7 +159,6 @@ class AlarmsNewUserViewController: UIViewController {
                 rta = alarm
             }
         }
-        print("Closest Alarm: \(rta)")
         return rta
     }
     

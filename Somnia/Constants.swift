@@ -14,7 +14,10 @@ struct K {
     static let loginVC = "LoginVC"
     static let cellIdentifier = "alarmCell"
     static let cellNibName = "AlarmCell"
+    static let cellNibName2 = "SleepSoundCell"
+    static let sleepSoundcell = "SleepSoundCell"
     static let feedbackVC = "FeedbackVC"
+    static let sleepTwoVC = "SleepTwoViewController"
     
     struct BrandColors {
         static let darkBlue = "Darkblue"

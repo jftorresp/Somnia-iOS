@@ -34,6 +34,9 @@
 		B13E13D1254CDCA200208EA8 /* FeedbackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13E13D0254CDCA200208EA8 /* FeedbackViewController.swift */; };
 		B146080C253A6422004AE54D /* NewAlarmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B146080B253A6422004AE54D /* NewAlarmViewController.swift */; };
 		B146082C253A66C9004AE54D /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B146082B253A66C9004AE54D /* ProfileViewController.swift */; };
+		B15BA5A42554B41600209897 /* SleepSound.swift in Sources */ = {isa = PBXBuildFile; fileRef = B15BA5A32554B41600209897 /* SleepSound.swift */; };
+		B15BA5AA2554B8D900209897 /* SleepSoundCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B15BA5A82554B8D900209897 /* SleepSoundCell.swift */; };
+		B15BA5AB2554B8D900209897 /* SleepSoundCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B15BA5A92554B8D900209897 /* SleepSoundCell.xib */; };
 		B1746B82254A209300A434B2 /* AlarmCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1746B80254A209300A434B2 /* AlarmCell.swift */; };
 		B1746B83254A209300A434B2 /* AlarmCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B1746B81254A209300A434B2 /* AlarmCell.xib */; };
 		B1770954251D2769006CEEF7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B1770953251D2769006CEEF7 /* GoogleService-Info.plist */; };
@@ -110,6 +113,9 @@
 		B13E13D0254CDCA200208EA8 /* FeedbackViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackViewController.swift; sourceTree = "<group>"; };
 		B146080B253A6422004AE54D /* NewAlarmViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewAlarmViewController.swift; sourceTree = "<group>"; };
 		B146082B253A66C9004AE54D /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		B15BA5A32554B41600209897 /* SleepSound.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SleepSound.swift; sourceTree = "<group>"; };
+		B15BA5A82554B8D900209897 /* SleepSoundCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SleepSoundCell.swift; sourceTree = "<group>"; };
+		B15BA5A92554B8D900209897 /* SleepSoundCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SleepSoundCell.xib; sourceTree = "<group>"; };
 		B1746B80254A209300A434B2 /* AlarmCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmCell.swift; sourceTree = "<group>"; };
 		B1746B81254A209300A434B2 /* AlarmCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AlarmCell.xib; sourceTree = "<group>"; };
 		B1770953251D2769006CEEF7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -280,6 +286,8 @@
 				B103D21A2534D1F200F5F301 /* GradientView.swift */,
 				B1746B80254A209300A434B2 /* AlarmCell.swift */,
 				B1746B81254A209300A434B2 /* AlarmCell.xib */,
+				B15BA5A82554B8D900209897 /* SleepSoundCell.swift */,
+				B15BA5A92554B8D900209897 /* SleepSoundCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -291,6 +299,7 @@
 				B111B316253BC1B700D1C00E /* Alarm.swift */,
 				B19F98CB2549E86600AB52A0 /* NetworkMonitor.swift */,
 				B1B244D625538B75004942EA /* Analysis.swift */,
+				B15BA5A32554B41600209897 /* SleepSound.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -424,6 +433,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B15BA5AB2554B8D900209897 /* SleepSoundCell.xib in Resources */,
 				B180381C253501ED00D03B19 /* HaboroSoft-NorBolIt.ttf in Resources */,
 				B13CC2D7251BAE5700A25D60 /* LaunchScreen.storyboard in Resources */,
 				B180381A253501ED00D03B19 /* HaboroSoft-NorBol.ttf in Resources */,
@@ -572,6 +582,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B1123109253925C20024DD7D /* SleepViewController.swift in Sources */,
+				B15BA5AA2554B8D900209897 /* SleepSoundCell.swift in Sources */,
 				3799660C2538934D00503213 /* AlarmsNewUserViewController.swift in Sources */,
 				3742C96A254B53DF001DEF67 /* AlarmTriggeredViewController.swift in Sources */,
 				B1E48D6E25392145003AC54F /* StatsViewController.swift in Sources */,
@@ -592,6 +603,7 @@
 				378630F525355CBC00773BFA /* SignUpViewController.swift in Sources */,
 				B1746B82254A209300A434B2 /* AlarmCell.swift in Sources */,
 				37F462DA251C1E76004A16EF /* User.swift in Sources */,
+				B15BA5A42554B41600209897 /* SleepSound.swift in Sources */,
 				B1123113253937A40024DD7D /* SleepActivitiesViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

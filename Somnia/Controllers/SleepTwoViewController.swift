@@ -15,6 +15,11 @@ class SleepTwoViewController: UIViewController {
     @IBOutlet weak var sleepActButton: UIButton!
     @IBOutlet weak var hourLabel: UILabel!
     @IBOutlet weak var hour2Label: UILabel!
+    @IBOutlet weak var soundName: UILabel!
+    @IBOutlet weak var playButon: UIButton!
+    @IBOutlet weak var playMusicSV: UIStackView!
+    @IBOutlet weak var soundImage: UIImageView!
+    @IBOutlet weak var soundView: UIView!
     
     static var alarmSound: AVAudioPlayer!
     
@@ -41,6 +46,8 @@ class SleepTwoViewController: UIViewController {
     var hourEvents: [String: Int] = [:]
     var analysis: Analysis?
     
+    var isTime = false
+    
     // Network
     
     let networkMonitor = NetworkMonitor()
@@ -56,13 +63,56 @@ class SleepTwoViewController: UIViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        alarmShouldSound()
+                
         print("Esta es la closest en sleep view APPEAR: \(AlarmsNewUserViewController.closest)")
+        
+        if let meditation =  SleepActivitiesViewController.sleepSounds.first(where: { $0.name == "meditation.mp3" }),
+           let guitar =  SleepActivitiesViewController.sleepSounds.first(where: { $0.name == "guitar.mp3" }),
+           let background =  SleepActivitiesViewController.sleepSounds.first(where: { $0.name == "background.mp3" }),
+           let art =  SleepActivitiesViewController.sleepSounds.first(where: { $0.name == "art.mp3" }) {
+            
+            if meditation.audio.isPlaying == true {
+                
+                playMusicSV.isHidden = false
+                let nameFull = meditation.name.replacingOccurrences(of: ".mp3", with: "").capitalized
+                soundName.text = nameFull
+                                
+            }
+            else if guitar.audio.isPlaying == true {
+                
+                playMusicSV.isHidden = false
+                let nameFull = guitar.name.replacingOccurrences(of: ".mp3", with: "").capitalized
+                soundName.text = nameFull
+                
+            }
+            else if background.audio.isPlaying == true {
+                
+                playMusicSV.isHidden = false
+                let nameFull = background.name.replacingOccurrences(of: ".mp3", with: "").capitalized
+                soundName.text = nameFull
+            }
+            else if art.audio.isPlaying == true {
+                
+                playMusicSV.isHidden = false
+                let nameFull = art.name.replacingOccurrences(of: ".mp3", with: "").capitalized
+                soundName.text = nameFull
+                
+            }
+        } else {
+            print("Element not found")
+        }
         
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        playMusicSV.isHidden = true
+        
+        soundName.layer.cornerRadius = 12
+        soundView.layer.cornerRadius = 12
+        soundImage.layer.cornerRadius = 12
+        playMusicSV.layer.cornerRadius = 12
         
         recordingSession = AVAudioSession.sharedInstance()
         
@@ -85,10 +135,13 @@ class SleepTwoViewController: UIViewController {
         startRecording()
         
         networkMonitor.startMonitoring()
-        print("Esta es la closest en sleep two view LOAD: \(AlarmsNewUserViewController.closest)")
         
-        _ = Timer.scheduledTimer(timeInterval: 0.4, target: self, selector: #selector(alarmShouldSound), userInfo: nil, repeats: true)
+        _ = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(alarmShouldSound), userInfo: nil, repeats: true)
         
+//        if SleepTwoViewController.alarmSound.isPlaying == true {
+//            persistAnalysis()
+//        }
+                
         let storageRef = storage.reference()
         let alarmSoundsRef = storageRef.child("alarm_sounds/relaxing_birds.mp3")
         
@@ -132,11 +185,6 @@ class SleepTwoViewController: UIViewController {
         
         hourLabel.text = dateString2
         hour2Label.text = dateString
-        
-        // Do any additional setup after loading the view.
-    }
-    
-    func getAlarmSoundCache() {
         
     }
     
@@ -192,8 +240,8 @@ class SleepTwoViewController: UIViewController {
         if let recorder = recorder {
             recorder.updateMeters()
             let decibels = recorder.averagePower(forChannel: 0)
-            print("decibels: \(decibels) dB")
             
+            print("decibels: \(decibels) dB")
             if decibels > -100 {
                 // Breathing event
                 totalEvents += 1
@@ -234,7 +282,7 @@ class SleepTwoViewController: UIViewController {
         eventsPerHour = 0
     }
     
-    func downloadAlarms(reference: StorageReference){
+    func downloadAlarms(reference: StorageReference) {
         
         let localURL = URL(string: "\(documentsURL.absoluteString)alarm_sounds/relaxing_birds.mp3")!
         print("La URL ES: \(localURL)")
@@ -249,63 +297,126 @@ class SleepTwoViewController: UIViewController {
         }
     }
     
-    func persistAnalysis(date: Date, duration: Double, events: Int, snores: Int, percentage: Double, wake: Double, light: Double, deep: Double, rem: Double, hourStage: [String: String]) {
+    func persistAnalysis() {
         
-        if let id = Auth.auth().currentUser?.uid {
-            db.collection(K.FStore.analysisCollection).addDocument(data: ["createdBy": id, "deep": deep, "duration": duration, "hourStage": duration, "light": light, "nightDate": date, "rem": rem, "snorePercentage": percentage, "totalEvents": events, "totalSnores": snores, "wake": wake, "score": 0, "mood": ""]) { (error) in
-                
-                if let e = error {
-                    print("Error adding the score to the user analysis, \(e.localizedDescription)")
-                } else {
-                    print("Successfully saved score data")
+        let path = Bundle.main.path(forResource: "relaxing_birds.mp3", ofType: nil)!
+        let url = URL(fileURLWithPath: path)
+        print("Alarm should sound now!")
+        
+        do {
+            SleepTwoViewController.alarmSound = try AVAudioPlayer(contentsOf: url)
+            SleepTwoViewController.alarmSound.play()
+            SleepTwoViewController.alarmSound.numberOfLoops = -1
+            
+            finishRecording(success: true)
+            timeFinish = Date()
+            let durationSec = timeFinish?.timeIntervalSince(timeStart!) ?? 0
+            let durationHours = durationSec / 3600
+            let percentage = (Double(totalSnores)/Double(totalEvents))
+            
+            analysis = Analysis(nightDate: timeStart!, duration: durationHours, totalEvents: totalEvents, totalSnores: totalSnores, snorePercentage: percentage, wake: totalWake, light: totalLight, deep: totalDeep, rem: totalREM, hourStage: hourStage)
+            
+            if let id = Auth.auth().currentUser?.uid {
+                db.collection(K.FStore.analysisCollection).addDocument(data: ["createdBy": id, "deep": totalDeep, "duration": durationHours, "hourStage": hourStage, "light": totalLight, "nightDate": timeStart!, "rem": totalREM, "snorePercentage": percentage, "totalEvents": totalEvents, "totalSnores": totalSnores, "wake": totalWake, "score": 0, "mood": ""]) { (error) in
+                    
+                    if let e = error {
+                        print("Error adding the score to the user analysis, \(e.localizedDescription)")
+                    } else {
+                        print("Successfully saved analysis data!!!")
+                    }
                 }
             }
+
+            print("Sleep Analysis:")
+            print("hourcounter: \(hourCounter)")
+            print("hourStage: \(hourStage)")
+                            
+            let alarmTriggeredVC = storyboard?.instantiateViewController(identifier: K.alarmTriggered) as? AlarmTriggeredViewController
+            
+            view.window?.rootViewController = alarmTriggeredVC
+            view.window?.makeKeyAndVisible()
+        } catch {
+            print("couldn't load file :(")
         }
+        
+
     }
     
-    @objc func alarmShouldSound(){
+    @objc func alarmShouldSound() -> Bool {
         let date = Date()
 
-        if date.timeIntervalSince1970.rounded() == AlarmsNewUserViewController.closest.alarm_date.timeIntervalSince1970.rounded() {
-//            let path = "\(documentsURL.absoluteString )alarm_sounds/relaxing_birds.mp3"
+        if date.timeIntervalSince1970.rounded() == AlarmsNewUserViewController.closest.alarm_date.timeIntervalSince1970.rounded() && isTime == false{
             checkSleepState()
-            let path = Bundle.main.path(forResource: "relaxing_birds.mp3", ofType: nil)!
-            let url = URL(fileURLWithPath: path)
-            print("Alarm should sound now!")
-            do {
-                SleepTwoViewController.alarmSound = try AVAudioPlayer(contentsOf: url)
-                SleepTwoViewController.alarmSound.play()
-                SleepTwoViewController.alarmSound.numberOfLoops = -1
-                
-                
-                finishRecording(success: true)
-                timeFinish = Date()
-                let durationSec = timeFinish?.timeIntervalSince(timeStart!) ?? 0
-                let durationHours = durationSec / 3600
-                let percentage = (Double(totalSnores)/Double(totalEvents))
-                
-                analysis = Analysis(nightDate: timeStart!, duration: durationHours, totalEvents: totalEvents, totalSnores: totalSnores, snorePercentage: percentage, wake: totalWake, light: totalLight, deep: totalDeep, rem: totalREM, hourStage: hourStage)
-
-                persistAnalysis(date: timeStart!, duration: durationHours, events: totalEvents, snores: totalSnores, percentage: percentage, wake: totalWake, light: totalLight, deep: totalDeep, rem: totalREM, hourStage: hourStage)
-                                
-                print("Sleep Analysis:")
-                print("hourcounter: \(hourCounter)")
-                print("hourStage: \(hourStage)")
-                                
-                let alarmTriggeredVC = storyboard?.instantiateViewController(identifier: K.alarmTriggered) as? AlarmTriggeredViewController
-                
-                view.window?.rootViewController = alarmTriggeredVC
-                view.window?.makeKeyAndVisible()
-            } catch {
-                print("couldn't load file :(")
-            }
+            isTime = true
+            persistAnalysis()
         }
+        print("isTime: \(isTime)")
+        return isTime
     }
     
     @IBAction func sleepActPressed(_ sender: Any) {
         
     }
+    
+    @IBAction func reproducePressed(_ sender: UIButton) {
+        
+        
+        if let meditation =  SleepActivitiesViewController.sleepSounds.first(where: { $0.name == "meditation.mp3" }),
+           let guitar =  SleepActivitiesViewController.sleepSounds.first(where: { $0.name == "guitar.mp3" }),
+           let background =  SleepActivitiesViewController.sleepSounds.first(where: { $0.name == "background.mp3" }),
+           let art =  SleepActivitiesViewController.sleepSounds.first(where: { $0.name == "art.mp3" }) {
             
+            if soundName.text == "Meditation" {
+                if meditation.audio.isPlaying == true {
+                    meditation.audio.stop()
+                    playButon.setImage(UIImage(systemName: "play.fill"), for: .normal)
+                } else {
+                    meditation.audio.play()
+                    
+                    guitar.audio.stop()
+                    background.audio.stop()
+                    art.audio.stop()
+                    playButon.setImage(UIImage(systemName: "pause.fill"), for: .normal)
+                }
+            } else if soundName.text == "Guitar" {
+                if guitar.audio.isPlaying == true {
+                    guitar.audio.stop()
+                    playButon.setImage(UIImage(systemName: "play.fill"), for: .normal)
+                } else {
+                    guitar.audio.play()
+                    
+                    meditation.audio.stop()
+                    background.audio.stop()
+                    art.audio.stop()
+                    playButon.setImage(UIImage(systemName: "pause.fill"), for: .normal)
+                }
+            } else if soundName.text == "Background" {
+                if background.audio.isPlaying == true {
+                    background.audio.stop()
+                    playButon.setImage(UIImage(systemName: "play.fill"), for: .normal)
+                } else {
+                    background.audio.play()
+                    
+                    meditation.audio.stop()
+                    guitar.audio.stop()
+                    art.audio.stop()
+                    playButon.setImage(UIImage(systemName: "pause.fill"), for: .normal)
+                }
+            } else if soundName.text == "Art" {
+                if art.audio.isPlaying == true  {
+                    art.audio.stop()
+                    playButon.setImage(UIImage(systemName: "play.fill"), for: .normal)
+                } else {
+                    art.audio.play()
+                    
+                    meditation.audio.stop()
+                    guitar.audio.stop()
+                    background.audio.stop()
+                    playButon.setImage(UIImage(systemName: "pause.fill"), for: .normal)
+                }
+            }
+        }
+    }
 }
 
 extension SleepTwoViewController: AVAudioRecorderDelegate {

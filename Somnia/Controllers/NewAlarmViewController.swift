@@ -93,12 +93,27 @@ class NewAlarmViewController: UIViewController{
         if beforeExact.titleForSegment(at: beforeExact.selectedSegmentIndex)! == "Exact"{
             isExact = true
         }
+        
         let targetDate = datePicker.date
+        
+        var finalDate = Date()
         
         let newDate = startOfHour(myDate: targetDate)!
         
+        var dateComponent = DateComponents()
+        dateComponent.day = 1
+        
+        if newDate.timeIntervalSinceNow < Date().timeIntervalSinceNow {
+            
+            if let newDate2 = Calendar.current.date(byAdding: dateComponent, to: newDate) {
+                finalDate = newDate2
+            }
+        } else {
+            finalDate = newDate
+        }
+        
         if let id = Auth.auth().currentUser?.uid{
-            db.collection(K.FStore.alarmsCollection).addDocument(data: ["alarm_date": newDate, "createdBy": id, "description": descriptionTxt.text!, "exact": isExact, "isActive": true, "repeat": repeatDic]) { (error) in
+            db.collection(K.FStore.alarmsCollection).addDocument(data: ["alarm_date": finalDate, "createdBy": id, "description": descriptionTxt.text!, "exact": isExact, "isActive": true, "repeat": repeatDic]) { (error) in
                 
                 if let e = error {
                     print("Error adding the user to the database, \(e.localizedDescription)")
