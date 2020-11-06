@@ -141,11 +141,6 @@ class LoginViewController: UIViewController, UNUserNotificationCenterDelegate {
                         UserDefaults.standard.set(Auth.auth().currentUser!.uid, forKey: "user_uid_key")
                         UserDefaults.standard.synchronize()
                         
-                        self.getUsernickName()
-
-                        UserDefaults.standard.set(self.nickname, forKey: "nickname")
-                        UserDefaults.standard.synchronize()
-                        
                     }
                 }
             }
@@ -222,26 +217,6 @@ class LoginViewController: UIViewController, UNUserNotificationCenterDelegate {
             view.window?.makeKeyAndVisible()
             // tell the app that we have finished processing the user’s action / response
             completionHandler()
-        }
-    }
-    
-    func getUsernickName() {
-        
-        if let email = Auth.auth().currentUser?.email {
-            db.collection(K.FStore.usersCollection)
-                .whereField("email", isEqualTo: email)
-                .addSnapshotListener { (querySnapshot, error) in
-                    
-                    if let e = error {
-                        print("There was an issue retrieving data from Firestore. \(e)")
-                    } else {
-                        for document in querySnapshot!.documents {
-                            
-                            let data = document.data()
-                            self.nickname = (data["nickname"] as? String)!
-                        }
-                    }
-                }
         }
     }
 }

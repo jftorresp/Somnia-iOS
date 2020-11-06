@@ -23,6 +23,7 @@ class AlarmsNewUserViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var editButLabel: UIButton!
     
+    static var user: User?
     
     var alarms: [Alarm] = []
     let cachesDirectory = FileManager.default.urls(for: .cachesDirectory, in: .allDomainsMask).first
@@ -50,6 +51,13 @@ class AlarmsNewUserViewController: UIViewController {
         let hourString = formatter.string(from:AlarmsNewUserViewController.closest.alarm_date)
         let amString = formatter2.string(from: AlarmsNewUserViewController.closest.alarm_date)
         
+        var dateComponent = DateComponents()
+        dateComponent.hour = -8
+        let newDate2 = Calendar.current.date(byAdding: dateComponent, to: AlarmsNewUserViewController.closest.alarm_date)
+        
+        let hourString2 = formatter.string(from: newDate2!)
+        let amString2 = formatter2.string(from: newDate2!)
+        
         if(AlarmsNewUserViewController.closest.description == "not" && alarms.count == 0) {
             stackViewAlarms.isHidden = true
             tomorrowLabel.isHidden = true
@@ -67,6 +75,9 @@ class AlarmsNewUserViewController: UIViewController {
             labelOne.textAlignment = .left
             labelOne.font = UIFont(name: "HaboroSoft-NorMed",size: 24.0)
             
+            bedtimeHourLabel.text = hourString2
+            amBedtimeLabel.text = amString2
+            
         }
         
     }
@@ -74,6 +85,8 @@ class AlarmsNewUserViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         loadAlarms()
+        
+        getUsernickName()
 
         tableView.delegate = self
         tableView.dataSource = self
@@ -160,6 +173,34 @@ class AlarmsNewUserViewController: UIViewController {
             }
         }
         return rta
+    }
+    
+    func getUsernickName() {
+        
+        if let email = Auth.auth().currentUser?.email {
+            db.collection(K.FStore.usersCollection)
+                .whereField("email", isEqualTo: email)
+                .addSnapshotListener { (querySnapshot, error) in
+                    
+                    if let e = error {
+                        print("There was an issue retrieving data from Firestore. \(e)")
+                    } else {
+                        for document in querySnapshot!.documents {
+                            
+                            let data = document.data()
+                            
+                            if let email = data["email"] as? String,
+                            let age = data["age"] as? Int,
+                            let fullname = data["fullname"] as? String,
+                            let nickname = data["nickname"] as? String,
+                            let gender = data["gender"] as? String,
+                            let occupation = data["occupation"] as? String {
+                                AlarmsNewUserViewController.user = User(email: email, a: age, f: fullname, n: nickname, g: gender, o: occupation)
+                            }
+                        }
+                    }
+                }
+        }
     }
     
 }

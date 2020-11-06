@@ -58,16 +58,27 @@ class FeedbackViewController: UIViewController {
     
     func sendScoreDB(mood: String) {
         
-        if let id = Auth.auth().currentUser?.uid {
-            db.collection(K.FStore.analysisCollection).addDocument(data: ["createdBy": id, "deep": 0, "duration": 0, "hourStage": ["1": "", "2": ""], "light": 0, "nightDate": Date(), "rem": 0, "snorePercentage": 0, "totalEvents": 0, "totalSnores": 0, "wake": 0, "score": GameViewController.scoreGame, "mood": mood]) { (error) in
-                
-                if let e = error {
-                    print("Error adding the score to the user analysis, \(e.localizedDescription)")
-                } else {
-                    print("Successfully saved score data")
+            if let id = Auth.auth().currentUser?.uid,
+               let totalDeep = SleepTwoViewController.analysis?.deep,
+               let durationHours = SleepTwoViewController.analysis?.duration,
+               let hourStage = SleepTwoViewController.analysis?.hourStage,
+               let totalLight = SleepTwoViewController.analysis?.light,
+               let timeStart = SleepTwoViewController.analysis?.nightDate,
+               let totalREM = SleepTwoViewController.analysis?.rem,
+               let percentage = SleepTwoViewController.analysis?.snorePercentage,
+               let totalEvents = SleepTwoViewController.analysis?.totalEvents,
+               let totalSnores = SleepTwoViewController.analysis?.totalSnores,
+               let totalWake = SleepTwoViewController.analysis?.wake
+                {
+                    db.collection(K.FStore.analysisCollection).addDocument(data: ["createdBy": id, "deep": totalDeep, "duration": durationHours, "hourStage": hourStage, "light": totalLight, "nightDate": timeStart, "rem": totalREM, "snorePercentage": percentage, "totalEvents": totalEvents, "totalSnores": totalSnores, "wake": totalWake, "score": GameViewController.scoreGame, "mood": mood]) { (error) in
+                    
+                    if let e = error {
+                        print("Error adding the score to the user analysis, \(e.localizedDescription)")
+                    } else {
+                        print("Successfully saved analysis data!!!")
+                    }
                 }
             }
-        }
     }
     
     /*

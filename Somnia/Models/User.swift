@@ -10,8 +10,18 @@ import Foundation
 class User {
     
     let email: String
+    let age: Int
+    let fullname: String
+    let nickname: String
+    let gender: String
+    let occupation: String
     
-    init(email user: String) {
+    init(email user: String, a: Int, f: String, n: String, g: String, o: String) {
         self.email = user
+        age = a
+        fullname = f
+        nickname = n
+        gender = g
+        occupation = o
     }
 }

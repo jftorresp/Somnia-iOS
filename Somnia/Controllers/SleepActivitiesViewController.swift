@@ -14,8 +14,14 @@ class SleepActivitiesViewController: UIViewController {
     let storage = Storage.storage()
     let db = Firestore.firestore()
     
+    // Network
+    
+    let networkMonitor = NetworkMonitor()
+    
     @IBOutlet weak var soundsTableView: UITableView!
     @IBOutlet weak var storiesTableView: UITableView!
+    @IBOutlet weak var yourSoundsLabel: UILabel!
+    @IBOutlet weak var bedtimeLoadLabel: UILabel!
     
     static var sleepSounds: [SleepSound] = []
     static var sleepStories: [Stories] = []
@@ -27,8 +33,13 @@ class SleepActivitiesViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        loadSleepSounds()
-        loadSleepStories()
+        DispatchQueue.global(qos: .background).async {
+            self.loadSleepStories()
+        }
+        
+        DispatchQueue.main.async {
+            self.loadSleepSounds()
+        }
         
         soundsTableView.register(UINib(nibName: K.cellNibName2, bundle: nil), forCellReuseIdentifier: K.sleepSoundcell)
         storiesTableView.register(UINib(nibName: K.cellNibName3, bundle: nil), forCellReuseIdentifier: K.storiesCell)
@@ -36,6 +47,17 @@ class SleepActivitiesViewController: UIViewController {
         soundsTableView.dataSource = self
         storiesTableView.delegate = self
         storiesTableView.dataSource = self
+        
+        networkMonitor.startMonitoring()
+        
+        if NetworkMonitor.connected == false {
+            soundsTableView.isHidden = true
+            storiesTableView.isHidden = true
+            yourSoundsLabel.isHidden = true
+            bedtimeLoadLabel.font = UIFont(name: "HaboroSoft-NorLig",size: 18.0)
+            bedtimeLoadLabel.text = "You don´t have internet connection. Come back later when you regain connectivity."
+            bedtimeLoadLabel.textAlignment = .center
+        }
     }
     
     func loadSleepSounds() {

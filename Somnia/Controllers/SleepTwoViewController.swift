@@ -44,13 +44,15 @@ class SleepTwoViewController: UIViewController {
     var hourStage: [String: String] = [:]
     var hourSnores: [String: Int] = [:]
     var hourEvents: [String: Int] = [:]
-    var analysis: Analysis?
+    static var analysis: Analysis?
     
     var isTime = false
     
     // Network
     
     let networkMonitor = NetworkMonitor()
+    
+    var count: Int = 0
     
     let storage = Storage.storage()
     let db = Firestore.firestore()
@@ -237,7 +239,6 @@ class SleepTwoViewController: UIViewController {
         recorder.stop()
         
         if success {
-            print("succesfully recorded data")
             timer?.invalidate()
             hourTimer?.invalidate()
             timeFinish = Date()
@@ -312,29 +313,21 @@ class SleepTwoViewController: UIViewController {
         print("Alarm should sound now!")
         
         do {
-            SleepTwoViewController.alarmSound = try AVAudioPlayer(contentsOf: url)
-            SleepTwoViewController.alarmSound.play()
-            SleepTwoViewController.alarmSound.numberOfLoops = -1
-            
-            finishRecording(success: true)
-            timeFinish = Date()
-            let durationSec = timeFinish?.timeIntervalSince(timeStart!) ?? 0
-            let durationHours = durationSec / 3600
-            let percentage = (Double(totalSnores)/Double(totalEvents))
-            
-            analysis = Analysis(nightDate: timeStart!, duration: durationHours, totalEvents: totalEvents, totalSnores: totalSnores, snorePercentage: percentage, wake: totalWake, light: totalLight, deep: totalDeep, rem: totalREM, hourStage: hourStage)
-            
-            if let id = Auth.auth().currentUser?.uid {
-                db.collection(K.FStore.analysisCollection).addDocument(data: ["createdBy": id, "deep": totalDeep, "duration": durationHours, "hourStage": hourStage, "light": totalLight, "nightDate": timeStart!, "rem": totalREM, "snorePercentage": percentage, "totalEvents": totalEvents, "totalSnores": totalSnores, "wake": totalWake, "score": 0, "mood": ""]) { (error) in
-                    
-                    if let e = error {
-                        print("Error adding the score to the user analysis, \(e.localizedDescription)")
-                    } else {
-                        print("Successfully saved analysis data!!!")
-                    }
-                }
+            if count < 1 {
+                count += 1
+                SleepTwoViewController.alarmSound = try AVAudioPlayer(contentsOf: url)
+                SleepTwoViewController.alarmSound.play()
+                SleepTwoViewController.alarmSound.numberOfLoops = -1
+                
+                finishRecording(success: true)
+                timeFinish = Date()
+                let durationSec = timeFinish?.timeIntervalSince(timeStart!) ?? 0
+                let durationHours = durationSec / 3600
+                let percentage = (Double(totalSnores)/Double(totalEvents))
+                
+                SleepTwoViewController.analysis = Analysis(nightDate: timeStart!, duration: durationHours, totalEvents: totalEvents, totalSnores: totalSnores, snorePercentage: percentage, wake: totalWake, light: totalLight, deep: totalDeep, rem: totalREM, hourStage: hourStage)
             }
-                        
+            
             let alarmTriggeredVC = storyboard?.instantiateViewController(identifier: K.alarmTriggered) as? AlarmTriggeredViewController
             
             view.window?.rootViewController = alarmTriggeredVC
@@ -349,12 +342,26 @@ class SleepTwoViewController: UIViewController {
     @objc func alarmShouldSound() -> Bool {
         let date = Date()
         
-        if date.timeIntervalSince1970.rounded() == AlarmsNewUserViewController.closest.alarm_date.timeIntervalSince1970.rounded() && isTime == false{
-            checkSleepState()
+        if date.timeIntervalSince1970.rounded() == AlarmsNewUserViewController.closest.alarm_date.timeIntervalSince1970.rounded() && isTime == false {
             isTime = true
+            checkSleepState()
             persistAnalysis()
+            
+            if let meditation =  SleepActivitiesViewController.sleepSounds.first(where: { $0.fileName == "meditation.mp3" }),
+               let guitar =  SleepActivitiesViewController.sleepSounds.first(where: { $0.fileName == "guitar.mp3" }),
+               let background =  SleepActivitiesViewController.sleepSounds.first(where: { $0.fileName == "background.mp3" }),
+               let art =  SleepActivitiesViewController.sleepSounds.first(where: { $0.fileName == "art.mp3" }),
+               let blueGold =  SleepActivitiesViewController.sleepStories.first(where: { $0.fileName == "blue_gold.mp3" }){
+                if meditation.audio?.isPlaying == true || guitar.audio?.isPlaying == true || background.audio?.isPlaying == true || art.audio?.isPlaying == true || blueGold.audio?.isPlaying == true {
+                    meditation.audio?.stop()
+                    guitar.audio?.stop()
+                    background.audio?.stop()
+                    art.audio?.stop()
+                    blueGold.audio?.stop()
+                }
+            }
         }
-
+        
         return isTime
     }
     

@@ -645,7 +645,6 @@
                                 </state>
                                 <connections>
                                     <action selector="sleepPressed:" destination="RpM-Q7-Adm" eventType="touchUpInside" id="DMh-Vv-dN4"/>
-                                    <segue destination="wLJ-NV-Wb2" kind="presentation" modalPresentationStyle="fullScreen" id="Mod-ig-cve"/>
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g9p-hb-KEp">
@@ -994,12 +993,12 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="QEr-5K-CW8">
-                                <rect key="frame" x="20" y="166" width="374" height="273.5"/>
+                                <rect key="frame" x="20" y="166" width="374" height="306"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="separatorColor" name="Darkblue"/>
                             </tableView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bedtime Stories" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a1i-iR-qql">
-                                <rect key="frame" x="20" y="469.5" width="195" height="65.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bedtime Stories" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a1i-iR-qql">
+                                <rect key="frame" x="20" y="502" width="374" height="33"/>
                                 <fontDescription key="fontDescription" name="HaboroSoft-NorDem" family="HaboroSoft-NorDem" pointSize="28"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -1029,7 +1028,7 @@
                             <constraint firstItem="qcu-r4-is5" firstAttribute="leading" secondItem="WPx-WJ-jVh" secondAttribute="trailing" constant="8.5" id="och-xc-uLl"/>
                             <constraint firstAttribute="bottomMargin" secondItem="tlx-Mr-bog" secondAttribute="bottom" constant="31" id="p6Z-VL-qva"/>
                             <constraint firstItem="qcu-r4-is5" firstAttribute="top" secondItem="BAk-D4-3Eg" secondAttribute="top" constant="24" id="pTy-FR-tik"/>
-                            <constraint firstItem="BAk-D4-3Eg" firstAttribute="trailing" secondItem="a1i-iR-qql" secondAttribute="trailing" constant="199" id="qaH-gO-pGt"/>
+                            <constraint firstItem="BAk-D4-3Eg" firstAttribute="trailing" secondItem="a1i-iR-qql" secondAttribute="trailing" constant="20" id="qaH-gO-pGt"/>
                             <constraint firstItem="tlx-Mr-bog" firstAttribute="leading" secondItem="BAk-D4-3Eg" secondAttribute="leading" constant="20" id="rI3-et-ane"/>
                             <constraint firstItem="QEr-5K-CW8" firstAttribute="top" secondItem="kO1-uc-Sgc" secondAttribute="bottom" constant="15" id="sjZ-bc-3WW"/>
                             <constraint firstItem="WPx-WJ-jVh" firstAttribute="top" secondItem="BAk-D4-3Eg" secondAttribute="top" constant="24" id="v8b-FD-b5T"/>
@@ -1037,8 +1036,10 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="bedtimeLoadLabel" destination="a1i-iR-qql" id="ks3-oV-JWz"/>
                         <outlet property="soundsTableView" destination="QEr-5K-CW8" id="CLc-kV-fHD"/>
                         <outlet property="storiesTableView" destination="tlx-Mr-bog" id="9BZ-h4-eR1"/>
+                        <outlet property="yourSoundsLabel" destination="kO1-uc-Sgc" id="9Bq-Wv-aR8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iDB-3i-4qf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -1723,7 +1724,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="A94-j7-NwZ"/>
+        <segue reference="Uf4-18-gCE"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="alarm" catalog="system" width="124" height="128"/>

@@ -28,7 +28,7 @@ class StoriesCell: UITableViewCell {
     func fetchPlaySound(fileName: String) {
         let sleepStoriesRef = storage.reference().child("sleeping_stories/\(fileName)")
         
-        sleepStoriesRef.getData(maxSize: 34 * 1024 * 1024) { data, error in
+        sleepStoriesRef.getData(maxSize: 40 * 1024 * 1024) { data, error in
             if let error = error {
                 // Uh-oh, an error occurred!
                 print("ERROR, \(error.localizedDescription)")
@@ -59,12 +59,13 @@ class StoriesCell: UITableViewCell {
         
         cellDelegate?.launchVC()
         
-        if let blueGold =  SleepActivitiesViewController.sleepSounds.first(where: { $0.fileName == "blue_gold.mp3" }) {
+        if let blueGold =  SleepActivitiesViewController.sleepStories.first(where: { $0.fileName == "blue_gold.mp3" }) {
             
             if storyName.text == "Blue Gold" {
                 
-                fetchPlaySound(fileName: blueGold.fileName)
-                                
+                DispatchQueue.global(qos: .background).async {
+                    self.fetchPlaySound(fileName: blueGold.fileName)
+                }
             }
 
         } else {
