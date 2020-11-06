@@ -110,6 +110,7 @@ class SleepTwoViewController: UIViewController {
         playMusicSV.isHidden = true
         
         soundName.layer.cornerRadius = 12
+        soundName.layer.masksToBounds = true
         soundView.layer.cornerRadius = 12
         soundImage.layer.cornerRadius = 12
         playMusicSV.layer.cornerRadius = 12
