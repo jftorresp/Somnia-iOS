@@ -107,6 +107,9 @@ class AlarmsNewUserViewController: UIViewController {
             bedtimeView.layer.cornerRadius = 10
             expectedView.layer.cornerRadius = 10
         }
+        
+        let uid = UserDefaults.standard.object(forKey: "user_uid_key")
+        
     
     }
     

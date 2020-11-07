@@ -276,11 +276,12 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="7XM-xi-emq">
                                         <rect key="frame" x="20" y="20" width="314" height="531"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Somnia can use this information to give you a more detailed analysis and to customize your experience" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lp7-vL-aJY">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lp7-vL-aJY">
                                                 <rect key="frame" x="0.0" y="0.0" width="314" height="63"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="70" id="3hv-fu-hCV"/>
+                                                    <constraint firstAttribute="height" constant="190" id="3hv-fu-hCV"/>
                                                 </constraints>
+                                                <string key="text">Somnia can use this information to give you a more detailed analysis and to customize your experience. If you are signing up away from home, you can set your home location in edit profile info.</string>
                                                 <fontDescription key="fontDescription" name="HaboroSoft-NorReg" family="HaboroSoft-NorReg" pointSize="18"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
@@ -355,7 +356,7 @@
                         <constraints>
                             <constraint firstItem="EOA-cv-X7x" firstAttribute="top" secondItem="WBp-iS-MbX" secondAttribute="top" constant="158" id="NdS-yu-ggC"/>
                             <constraint firstItem="EOA-cv-X7x" firstAttribute="leading" secondItem="WBp-iS-MbX" secondAttribute="leading" constant="30" id="Roi-qo-vM1"/>
-                            <constraint firstItem="WBp-iS-MbX" firstAttribute="bottom" secondItem="EOA-cv-X7x" secondAttribute="bottom" constant="160" id="bRo-bC-yXF"/>
+                            <constraint firstItem="WBp-iS-MbX" firstAttribute="bottom" secondItem="EOA-cv-X7x" secondAttribute="bottom" constant="150" id="bRo-bC-yXF"/>
                             <constraint firstItem="WBp-iS-MbX" firstAttribute="trailing" secondItem="EOA-cv-X7x" secondAttribute="trailing" constant="30" id="slP-Fj-tCO"/>
                         </constraints>
                     </view>
@@ -1742,36 +1743,33 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZTE-gd-uQR">
-                                <rect key="frame" x="30" y="158" width="354" height="571"/>
+                                <rect key="frame" x="30" y="158" width="354" height="490"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="5gK-5n-jRI">
-                                        <rect key="frame" x="20" y="20" width="314" height="531"/>
+                                        <rect key="frame" x="20" y="20" width="314" height="450"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Somnia can use this information to give you a more detailed analysis and to customize your experience" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="29a-Zh-m8R">
-                                                <rect key="frame" x="0.0" y="0.0" width="314" height="63"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="70" id="eqh-DW-3DB"/>
-                                                </constraints>
+                                                <rect key="frame" x="0.0" y="0.0" width="314" height="51.5"/>
                                                 <fontDescription key="fontDescription" name="HaboroSoft-NorReg" family="HaboroSoft-NorReg" pointSize="18"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Full Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VA1-zI-zcL">
-                                                <rect key="frame" x="0.0" y="78" width="314" height="63"/>
+                                                <rect key="frame" x="0.0" y="66.5" width="314" height="51.5"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <color key="textColor" name="Darkblue"/>
                                                 <fontDescription key="fontDescription" name="HaboroSoft-NorReg" family="HaboroSoft-NorReg" pointSize="18"/>
                                                 <textInputTraits key="textInputTraits" textContentType="name"/>
                                             </textField>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter a nickname or alias" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uA1-Vj-f11">
-                                                <rect key="frame" x="0.0" y="156" width="314" height="63"/>
+                                                <rect key="frame" x="0.0" y="133" width="314" height="51.5"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <color key="textColor" name="Darkblue"/>
                                                 <fontDescription key="fontDescription" name="HaboroSoft-NorReg" family="HaboroSoft-NorReg" pointSize="18"/>
                                                 <textInputTraits key="textInputTraits" textContentType="nickname"/>
                                             </textField>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vWl-Kn-8Kl">
-                                                <rect key="frame" x="0.0" y="234" width="314" height="63"/>
+                                                <rect key="frame" x="0.0" y="199.5" width="314" height="51"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <state key="normal" title="I identify my gender as ...">
                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1781,7 +1779,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xUM-yM-chq">
-                                                <rect key="frame" x="0.0" y="312" width="314" height="63"/>
+                                                <rect key="frame" x="0.0" y="265.5" width="314" height="51.5"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <state key="normal" title="I am currently a ...">
                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1791,18 +1789,23 @@
                                                 </connections>
                                             </button>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter your age" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nhW-hw-9Qe">
-                                                <rect key="frame" x="0.0" y="390" width="314" height="63"/>
+                                                <rect key="frame" x="0.0" y="332" width="314" height="51.5"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <color key="textColor" name="Darkblue"/>
                                                 <fontDescription key="fontDescription" name="HaboroSoft-NorReg" family="HaboroSoft-NorReg" pointSize="18"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7jo-Ia-sBw">
-                                                <rect key="frame" x="0.0" y="468" width="314" height="63"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vrC-K2-PZj">
+                                                <rect key="frame" x="0.0" y="398.5" width="314" height="51.5"/>
+                                                <color key="backgroundColor" name="Green"/>
+                                                <fontDescription key="fontDescription" name="HaboroSoft-NorMed" family="HaboroSoft-NorMed" pointSize="18"/>
+                                                <state key="normal" title="Set my home location">
+                                                    <color key="titleColor" name="Darkblue"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="setHomeAction:" destination="hQG-K7-8WR" eventType="touchUpInside" id="D3F-ae-teJ"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                     </stackView>
                                 </subviews>
@@ -1861,6 +1864,7 @@
                         <outlet property="nameTxt" destination="VA1-zI-zcL" id="eCL-FQ-oLi"/>
                         <outlet property="nicknameTxt" destination="uA1-Vj-f11" id="qK1-es-qS2"/>
                         <outlet property="occupationButton" destination="xUM-yM-chq" id="f6n-hk-4tX"/>
+                        <outlet property="setHomeButton" destination="vrC-K2-PZj" id="aAh-ee-L4Z"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JUh-jy-tWs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

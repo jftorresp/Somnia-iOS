@@ -9,6 +9,8 @@ import Foundation
 import UIKit
 import Firebase
 import UserNotifications
+import CoreLocation
+
 
 class CellClass2: UITableViewCell {
     
@@ -26,10 +28,18 @@ class EditInfoViewController: UIViewController{
     @IBOutlet weak var ageTxt: UITextField!
     @IBOutlet weak var occupationButton: UIButton!
     @IBOutlet weak var genderButton: UIButton!
+    @IBOutlet weak var setHomeButton: UIButton!
     
     let transparentView = UIView()
     let tableView = UITableView()
     var selectedButton = UIButton()
+    let networkMonitor = NetworkMonitor()
+    
+    let locationManager = CLLocationManager()
+    static var currentLocation : CLLocation!
+    static var lat: Double?
+    static var lon: Double?
+    var nickname = ""
         
     let db = Firestore.firestore()
     
@@ -41,6 +51,14 @@ class EditInfoViewController: UIViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        if CLLocationManager.locationServicesEnabled() {
+            locationManager.delegate = self
+            locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
+            locationManager.startUpdatingLocation()
+        }
+        
+        var usuario = AlarmsNewUserViewController.user
+        
         
         tableView.delegate = self
         tableView.dataSource = self
@@ -55,6 +73,14 @@ class EditInfoViewController: UIViewController{
         
         genderButton.layer.cornerRadius = 10
         occupationButton.layer.cornerRadius = 10
+        
+        nameTxt.text=usuario?.fullname
+        nicknameTxt.text=usuario?.nickname
+        ageTxt.text=String(usuario!.age)
+        occupationButton.setTitle(usuario?.occupation, for: .normal)
+        genderButton.setTitle(usuario?.gender, for: .normal)
+        
+        
     }
     
     
@@ -62,6 +88,30 @@ class EditInfoViewController: UIViewController{
         dismiss(animated: true, completion: nil)
     }
     @IBAction func confirmAction(_ sender: UIBarButtonItem) {
+        
+        if  let fullName = nameTxt.text,
+            let id = Auth.auth().currentUser?.uid,
+            let nicknameE = nicknameTxt.text,
+            let gender = genderButton.titleLabel?.text,
+            let age = Int(ageTxt.text ?? "N/A"),
+            let occupation = occupationButton.titleLabel?.text {
+            
+            self.db.collection(K.FStore.usersCollection)
+                .document(id)
+                .updateData(["fullname" : fullName, "nickname" : nicknameE, "gender" : gender, "age" : age, "occupation" : occupation  ]) { (error) in
+                    if let e = error {
+                        print("Error updating the user to the database, \(e.localizedDescription)")
+                    } else {
+                        print("Successfully updated data")
+                        UserDefaults.standard.set(nicknameE, forKey: "nickname")
+                        UserDefaults.standard.synchronize()
+                        ProfileViewController.nick=nicknameE
+                       
+                    }
+                }
+        }
+       
+        dismiss(animated: true, completion: nil)
     }
     
     @IBAction func genderAction(_ sender: UIButton) {
@@ -104,6 +154,31 @@ class EditInfoViewController: UIViewController{
             self.tableView.frame = CGRect(x: frames.origin.x + 20, y: frames.origin.y + frames.height + 10, width: frames.width, height: 0)
         }, completion: nil)
     }
+    
+    
+    @IBAction func setHomeAction(_ sender: UIButton) {
+        
+        if  let id = Auth.auth().currentUser?.uid{
+            self.db.collection(K.FStore.usersCollection)
+                .document(id)
+                .updateData(["lat" : EditInfoViewController.lat, "lon" : EditInfoViewController.lon  ]) { (error) in
+                    if let e = error {
+                        print("Error updating the user to the database, \(e.localizedDescription)")
+                    } else {
+                        print("Successfully updated data")
+                        let dialogMessage = UIAlertController(title: "Location succesfully set!", message: "Now we'll double check when you start an sleep analysis when not at home.", preferredStyle: .alert)
+                        let ok = UIAlertAction(title: "Great!", style: .default, handler: { (action) -> Void in
+                            print("Great button tapped")
+                        })
+                        //Add OK button to a dialog message
+                        dialogMessage.addAction(ok)
+                        // Present Alert to
+                        self.present(dialogMessage, animated: true, completion: nil)
+                        
+                    }
+                }
+        }
+    }
 }
 
 extension EditInfoViewController: UITableViewDelegate, UITableViewDataSource {
@@ -127,6 +202,19 @@ extension EditInfoViewController: UITableViewDelegate, UITableViewDataSource {
             occupationButton.setTitle(dataSource[indexPath.row], for: .normal)
         }
         removeTransparentView()
+    }
+    
+}
+extension EditInfoViewController: CLLocationManagerDelegate {
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        guard let locValue: CLLocationCoordinate2D = manager.location?.coordinate else { return }
+        EditInfoViewController.lat = locValue.latitude
+        EditInfoViewController.lon = locValue.longitude
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        print(error)
     }
     
 }

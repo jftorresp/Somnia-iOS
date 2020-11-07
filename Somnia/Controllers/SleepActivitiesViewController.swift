@@ -15,7 +15,6 @@ class SleepActivitiesViewController: UIViewController {
     let db = Firestore.firestore()
     
     // Network
-    
     let networkMonitor = NetworkMonitor()
     
     @IBOutlet weak var soundsTableView: UITableView!

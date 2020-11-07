@@ -20,13 +20,15 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var helloNicknameLabel: UILabel!
     @IBOutlet weak var editButton: UIButton!
     
+    static var nick:String=""
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if let nickname = AlarmsNewUserViewController.user?.nickname {
-            helloNicknameLabel.text = "Hello \(nickname)!"
-        }
+        let salute = "Hello \(UserDefaults.standard.string(forKey: "nickname") ?? "Hello")"+"!"
+        print("El salute es \(salute)")
+        helloNicknameLabel!.text = salute
+        
         
         award1View.layer.cornerRadius = 15
         award2View.layer.cornerRadius = 15
@@ -36,6 +38,11 @@ class ProfileViewController: UIViewController {
         profileBannerView.layer.cornerRadius = 15
         profileBannerImage.layer.cornerRadius = 15
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        helloNicknameLabel.text = "Hello \(UserDefaults.standard.string(forKey: "nickname") ?? "Hello")"+"!"
+    }
+   
     
     @IBAction func logOutPressed(_ sender: UIButton) {
         do {
