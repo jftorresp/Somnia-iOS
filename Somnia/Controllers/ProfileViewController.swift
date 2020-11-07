@@ -18,6 +18,7 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var profileBannerView: UIView!
     @IBOutlet weak var profileBannerImage: UIImageView!
     @IBOutlet weak var helloNicknameLabel: UILabel!
+    @IBOutlet weak var editButton: UIButton!
     
     
     override func viewDidLoad() {
@@ -53,5 +54,9 @@ class ProfileViewController: UIViewController {
             print("Unable to log out")
             
         }
+    }
+    
+    
+    @IBAction func editAction(_ sender: UIButton) {
     }
 }

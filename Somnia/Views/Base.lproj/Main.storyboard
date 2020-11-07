@@ -270,8 +270,8 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EOA-cv-X7x">
-                                <rect key="frame" x="30" y="202" width="354" height="571"/>
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EOA-cv-X7x">
+                                <rect key="frame" x="30" y="202" width="354" height="529"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="7XM-xi-emq">
                                         <rect key="frame" x="20" y="20" width="314" height="531"/>
@@ -299,15 +299,8 @@
                                                 <fontDescription key="fontDescription" name="HaboroSoft-NorReg" family="HaboroSoft-NorReg" pointSize="18"/>
                                                 <textInputTraits key="textInputTraits" textContentType="nickname"/>
                                             </textField>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter your age" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ice-76-PGJ">
-                                                <rect key="frame" x="0.0" y="234" width="314" height="63"/>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <color key="textColor" name="Darkblue"/>
-                                                <fontDescription key="fontDescription" name="HaboroSoft-NorReg" family="HaboroSoft-NorReg" pointSize="18"/>
-                                                <textInputTraits key="textInputTraits"/>
-                                            </textField>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vgp-0l-IM5">
-                                                <rect key="frame" x="0.0" y="312" width="314" height="63"/>
+                                                <rect key="frame" x="0.0" y="234" width="314" height="63"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <state key="normal" title="I identify my gender as ...">
                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -317,7 +310,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iSR-zI-jIE">
-                                                <rect key="frame" x="0.0" y="390" width="314" height="63"/>
+                                                <rect key="frame" x="0.0" y="312" width="314" height="63"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <state key="normal" title="I am currently a ...">
                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -326,6 +319,13 @@
                                                     <action selector="occupationPressed:" destination="3re-b3-EvW" eventType="touchUpInside" id="ihk-cZ-xfp"/>
                                                 </connections>
                                             </button>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter your age" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ice-76-PGJ">
+                                                <rect key="frame" x="0.0" y="390" width="314" height="63"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <color key="textColor" name="Darkblue"/>
+                                                <fontDescription key="fontDescription" name="HaboroSoft-NorReg" family="HaboroSoft-NorReg" pointSize="18"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9A9-Np-Gb6">
                                                 <rect key="frame" x="0.0" y="468" width="314" height="63"/>
                                                 <color key="backgroundColor" name="Green"/>
@@ -1138,6 +1138,19 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="apK-9M-yoU">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="573"/>
                                         <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Basic Info" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ymd-Fc-X71">
+                                                <rect key="frame" x="20" y="482" width="128" height="35"/>
+                                                <fontDescription key="fontDescription" name="HaboroSoft-NorDem" family="HaboroSoft-NorDem" pointSize="30"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="i9v-vC-AAn">
+                                                <rect key="frame" x="20" y="525" width="374" height="128"/>
+                                                <color key="backgroundColor" name="MedBlue"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="128" id="wPR-1Q-V92"/>
+                                                </constraints>
+                                            </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Awards" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8kb-4l-EaY">
                                                 <rect key="frame" x="20" y="14" width="98" height="35"/>
                                                 <fontDescription key="fontDescription" name="HaboroSoft-NorDem" family="HaboroSoft-NorDem" pointSize="30"/>
@@ -1162,19 +1175,6 @@
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Basic Info" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ymd-Fc-X71">
-                                                <rect key="frame" x="20" y="482" width="128" height="35"/>
-                                                <fontDescription key="fontDescription" name="HaboroSoft-NorDem" family="HaboroSoft-NorDem" pointSize="30"/>
-                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="i9v-vC-AAn">
-                                                <rect key="frame" x="20" y="525" width="374" height="128"/>
-                                                <color key="backgroundColor" name="MedBlue"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="128" id="wPR-1Q-V92"/>
-                                                </constraints>
-                                            </view>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="uWb-Mf-DkZ">
                                                 <rect key="frame" x="20" y="77" width="374" height="162"/>
                                                 <subviews>
@@ -1248,6 +1248,16 @@
                                                     </view>
                                                 </subviews>
                                             </stackView>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ztv-Uu-SjY">
+                                                <rect key="frame" x="353" y="471" width="30" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" name="HaboroSoft-NorBoo" family="HaboroSoft-NorBoo" pointSize="17"/>
+                                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <state key="normal" title="Edit"/>
+                                                <connections>
+                                                    <segue destination="hQG-K7-8WR" kind="show" id="B4n-KU-Cl5"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" name="Darkblue"/>
                                         <constraints>
@@ -1318,6 +1328,7 @@
                     <connections>
                         <outlet property="award1View" destination="yrS-W7-Frj" id="qZ9-tA-gyz"/>
                         <outlet property="award2View" destination="csT-GQ-Xp9" id="G7j-tG-MNp"/>
+                        <outlet property="editButton" destination="Ztv-Uu-SjY" id="XSg-QD-I7J"/>
                         <outlet property="helloNicknameLabel" destination="S5u-0P-EAu" id="auV-kZ-ecH"/>
                         <outlet property="log1View" destination="DRU-IC-qCd" id="b21-zX-eAC"/>
                         <outlet property="log2View" destination="hSw-Zc-Ytr" id="jmY-fh-bsT"/>
@@ -1722,9 +1733,143 @@
             </objects>
             <point key="canvasLocation" x="6565" y="850"/>
         </scene>
+        <!--Edit info-->
+        <scene sceneID="8mu-wr-ovp">
+            <objects>
+                <viewController storyboardIdentifier="EditInfo" id="hQG-K7-8WR" userLabel="Edit info" customClass="EditInfoViewController" customModule="Somnia" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="1dC-sC-6qP">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZTE-gd-uQR">
+                                <rect key="frame" x="30" y="158" width="354" height="571"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="5gK-5n-jRI">
+                                        <rect key="frame" x="20" y="20" width="314" height="531"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Somnia can use this information to give you a more detailed analysis and to customize your experience" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="29a-Zh-m8R">
+                                                <rect key="frame" x="0.0" y="0.0" width="314" height="63"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="70" id="eqh-DW-3DB"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="HaboroSoft-NorReg" family="HaboroSoft-NorReg" pointSize="18"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Full Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VA1-zI-zcL">
+                                                <rect key="frame" x="0.0" y="78" width="314" height="63"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <color key="textColor" name="Darkblue"/>
+                                                <fontDescription key="fontDescription" name="HaboroSoft-NorReg" family="HaboroSoft-NorReg" pointSize="18"/>
+                                                <textInputTraits key="textInputTraits" textContentType="name"/>
+                                            </textField>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter a nickname or alias" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uA1-Vj-f11">
+                                                <rect key="frame" x="0.0" y="156" width="314" height="63"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <color key="textColor" name="Darkblue"/>
+                                                <fontDescription key="fontDescription" name="HaboroSoft-NorReg" family="HaboroSoft-NorReg" pointSize="18"/>
+                                                <textInputTraits key="textInputTraits" textContentType="nickname"/>
+                                            </textField>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vWl-Kn-8Kl">
+                                                <rect key="frame" x="0.0" y="234" width="314" height="63"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <state key="normal" title="I identify my gender as ...">
+                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="genderAction:" destination="hQG-K7-8WR" eventType="touchUpInside" id="coS-6v-PeI"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xUM-yM-chq">
+                                                <rect key="frame" x="0.0" y="312" width="314" height="63"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <state key="normal" title="I am currently a ...">
+                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="occupationAction:" destination="hQG-K7-8WR" eventType="touchUpInside" id="dE3-ft-Oon"/>
+                                                </connections>
+                                            </button>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter your age" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nhW-hw-9Qe">
+                                                <rect key="frame" x="0.0" y="390" width="314" height="63"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <color key="textColor" name="Darkblue"/>
+                                                <fontDescription key="fontDescription" name="HaboroSoft-NorReg" family="HaboroSoft-NorReg" pointSize="18"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7jo-Ia-sBw">
+                                                <rect key="frame" x="0.0" y="468" width="314" height="63"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" name="Blue"/>
+                                <constraints>
+                                    <constraint firstItem="5gK-5n-jRI" firstAttribute="top" secondItem="ZTE-gd-uQR" secondAttribute="top" constant="20" id="O65-i9-S0l"/>
+                                    <constraint firstAttribute="bottom" secondItem="5gK-5n-jRI" secondAttribute="bottom" constant="20" id="VAN-fq-YTt"/>
+                                    <constraint firstItem="5gK-5n-jRI" firstAttribute="leading" secondItem="ZTE-gd-uQR" secondAttribute="leading" constant="20" id="ZhJ-cs-8NJ"/>
+                                    <constraint firstAttribute="trailing" secondItem="5gK-5n-jRI" secondAttribute="trailing" constant="20" id="gLs-PZ-nFD"/>
+                                </constraints>
+                            </view>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bzE-vt-bzh">
+                                <rect key="frame" x="0.0" y="18" width="414" height="56"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" name="Darkblue"/>
+                                <color key="tintColor" name="Darkblue"/>
+                                <color key="barTintColor" name="Darkblue"/>
+                                <textAttributes key="titleTextAttributes">
+                                    <fontDescription key="fontDescription" name="HaboroSoft-NorBol" family="HaboroSoft-NorBol" pointSize="18"/>
+                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </textAttributes>
+                                <items>
+                                    <navigationItem title="Edit info" id="ddf-tA-H2q">
+                                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="LQ6-Lz-9S1">
+                                            <color key="tintColor" name="Green"/>
+                                            <connections>
+                                                <action selector="cancelAction:" destination="hQG-K7-8WR" id="8Bs-T9-WFa"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" title="Confirm" id="xqe-qc-Il4">
+                                            <color key="tintColor" name="Green"/>
+                                            <connections>
+                                                <action selector="confirmAction:" destination="hQG-K7-8WR" id="QzI-3E-04f"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="nUK-lv-Z5S"/>
+                        <color key="backgroundColor" name="Darkblue"/>
+                        <constraints>
+                            <constraint firstItem="ZTE-gd-uQR" firstAttribute="leading" secondItem="nUK-lv-Z5S" secondAttribute="leading" constant="30" id="8DY-qV-yHf"/>
+                            <constraint firstItem="nUK-lv-Z5S" firstAttribute="trailing" secondItem="ZTE-gd-uQR" secondAttribute="trailing" constant="30" id="LYl-je-MmB"/>
+                            <constraint firstItem="ZTE-gd-uQR" firstAttribute="top" secondItem="nUK-lv-Z5S" secondAttribute="top" constant="158" id="phl-fu-Ld9"/>
+                            <constraint firstItem="nUK-lv-Z5S" firstAttribute="bottom" secondItem="ZTE-gd-uQR" secondAttribute="bottom" constant="160" id="uXg-LD-Frc"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="uSV-1k-XXl"/>
+                    <connections>
+                        <outlet property="ageTxt" destination="nhW-hw-9Qe" id="P6h-Lk-O3u"/>
+                        <outlet property="cancelButton" destination="LQ6-Lz-9S1" id="2v1-cz-czh"/>
+                        <outlet property="confirmButton" destination="xqe-qc-Il4" id="upN-rU-QCe"/>
+                        <outlet property="editView" destination="ZTE-gd-uQR" id="ySO-GO-Nim"/>
+                        <outlet property="genderButton" destination="vWl-Kn-8Kl" id="LYz-TB-vOJ"/>
+                        <outlet property="nameTxt" destination="VA1-zI-zcL" id="eCL-FQ-oLi"/>
+                        <outlet property="nicknameTxt" destination="uA1-Vj-f11" id="qK1-es-qS2"/>
+                        <outlet property="occupationButton" destination="xUM-yM-chq" id="f6n-hk-4tX"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JUh-jy-tWs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3676.811594202899" y="1569.6428571428571"/>
+        </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="Uf4-18-gCE"/>
+        <segue reference="A94-j7-NwZ"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="alarm" catalog="system" width="124" height="128"/>

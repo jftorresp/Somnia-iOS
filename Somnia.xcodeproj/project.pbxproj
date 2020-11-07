@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3716A225253CCEE30037D976 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3716A224253CCEE30037D976 /* GameViewController.swift */; };
+		372C996B255659A300AB0147 /* EditInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 372C996A255659A300AB0147 /* EditInfoViewController.swift */; };
 		3742C96A254B53DF001DEF67 /* AlarmTriggeredViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3742C969254B53DF001DEF67 /* AlarmTriggeredViewController.swift */; };
 		378630F525355CBC00773BFA /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 378630F425355CBC00773BFA /* SignUpViewController.swift */; };
 		3799660C2538934D00503213 /* AlarmsNewUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3799660B2538934D00503213 /* AlarmsNewUserViewController.swift */; };
@@ -85,6 +86,7 @@
 		1EA3600F0826C5774342D385 /* Pods-Somnia.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Somnia.debug.xcconfig"; path = "Target Support Files/Pods-Somnia/Pods-Somnia.debug.xcconfig"; sourceTree = "<group>"; };
 		20DB3C103468AFC94F75271E /* Pods-SomniaTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SomniaTests.debug.xcconfig"; path = "Target Support Files/Pods-SomniaTests/Pods-SomniaTests.debug.xcconfig"; sourceTree = "<group>"; };
 		3716A224253CCEE30037D976 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		372C996A255659A300AB0147 /* EditInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditInfoViewController.swift; sourceTree = "<group>"; };
 		3742C969254B53DF001DEF67 /* AlarmTriggeredViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmTriggeredViewController.swift; sourceTree = "<group>"; };
 		378630F425355CBC00773BFA /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		3799660B2538934D00503213 /* AlarmsNewUserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmsNewUserViewController.swift; sourceTree = "<group>"; };
@@ -281,6 +283,7 @@
 				B135FAD72547838500D45AD1 /* SignUpTwoViewController.swift */,
 				3742C969254B53DF001DEF67 /* AlarmTriggeredViewController.swift */,
 				B13E13D0254CDCA200208EA8 /* FeedbackViewController.swift */,
+				372C996A255659A300AB0147 /* EditInfoViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -607,6 +610,7 @@
 				B1B244D725538B75004942EA /* Analysis.swift in Sources */,
 				B103D2202534DF5D00F5F301 /* Constants.swift in Sources */,
 				B19F98CC2549E86600AB52A0 /* NetworkMonitor.swift in Sources */,
+				372C996B255659A300AB0147 /* EditInfoViewController.swift in Sources */,
 				B13CC2CD251BAE5600A25D60 /* SceneDelegate.swift in Sources */,
 				B103D21B2534D1F200F5F301 /* GradientView.swift in Sources */,
 				B13639522555B42C004EBBF8 /* Stories.swift in Sources */,
