@@ -154,7 +154,7 @@ class SleepTwoViewController: UIViewController {
     }
     
     @objc func showPlayerandManage() {
-        print("Entro al showplayer y el filename es: \(SleepActivitiesViewController.sleepSounds.first?.fileName)")
+
         if let meditation =  SleepActivitiesViewController.sleepSounds.first(where: { $0.fileName == "meditation.mp3" }),
            let guitar =  SleepActivitiesViewController.sleepSounds.first(where: { $0.fileName == "guitar.mp3" }),
            let background =  SleepActivitiesViewController.sleepSounds.first(where: { $0.fileName == "background.mp3" }),
@@ -351,7 +351,7 @@ class SleepTwoViewController: UIViewController {
                let guitar =  SleepActivitiesViewController.sleepSounds.first(where: { $0.fileName == "guitar.mp3" }),
                let background =  SleepActivitiesViewController.sleepSounds.first(where: { $0.fileName == "background.mp3" }),
                let art =  SleepActivitiesViewController.sleepSounds.first(where: { $0.fileName == "art.mp3" }),
-               let blueGold =  SleepActivitiesViewController.sleepStories.first(where: { $0.fileName == "blue_gold.mp3" }){
+               let blueGold =  SleepActivitiesViewController.sleepStories.first(where: { $0.fileName == "blue_gold.mp3" }) {
                 if meditation.audio?.isPlaying == true || guitar.audio?.isPlaying == true || background.audio?.isPlaying == true || art.audio?.isPlaying == true || blueGold.audio?.isPlaying == true {
                     meditation.audio?.stop()
                     guitar.audio?.stop()

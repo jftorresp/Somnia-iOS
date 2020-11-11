@@ -39,7 +39,8 @@ class EditInfoViewController: UIViewController{
     static var currentLocation : CLLocation!
     static var lat: Double?
     static var lon: Double?
-   
+    
+    var callbackClosure: (() -> Void)?
         
     let db = Firestore.firestore()
     
@@ -48,7 +49,7 @@ class EditInfoViewController: UIViewController{
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
     }
-    
+        
     override func viewDidLoad() {
         super.viewDidLoad()
         if CLLocationManager.locationServicesEnabled() {
@@ -57,8 +58,7 @@ class EditInfoViewController: UIViewController{
             locationManager.startUpdatingLocation()
         }
         
-        var usuario = AlarmsNewUserViewController.user
-        
+        let usuario = AlarmsNewUserViewController.user
         
         tableView.delegate = self
         tableView.dataSource = self
@@ -73,20 +73,21 @@ class EditInfoViewController: UIViewController{
         
         genderButton.layer.cornerRadius = 10
         occupationButton.layer.cornerRadius = 10
+        setHomeButton.layer.cornerRadius = 10
         
-        nameTxt.text=usuario?.fullname
-        nicknameTxt.text=usuario?.nickname
-        ageTxt.text=String(usuario!.age)
+        nameTxt.text = usuario?.fullname
+        nicknameTxt.text = usuario?.nickname
+        ageTxt.text = String(usuario!.age)
         occupationButton.setTitle(usuario?.occupation, for: .normal)
         genderButton.setTitle(usuario?.gender, for: .normal)
         
         
     }
     
-    
     @IBAction func cancelAction(_ sender: UIBarButtonItem) {
         dismiss(animated: true, completion: nil)
     }
+    
     @IBAction func confirmAction(_ sender: UIBarButtonItem) {
         
         if  let fullName = nameTxt.text,
@@ -103,13 +104,19 @@ class EditInfoViewController: UIViewController{
                         print("Error updating the user to the database, \(e.localizedDescription)")
                     } else {
                         print("Successfully updated data")
-//                        AlarmsNewUserViewController.user?.nickname = nicknameE
-                       
+                        AlarmsNewUserViewController.user?.nickname = nicknameE
+                        AlarmsNewUserViewController.user?.fullname = fullName
+                        AlarmsNewUserViewController.user?.age = age
+                        AlarmsNewUserViewController.user?.occupation = occupation
+                        AlarmsNewUserViewController.user?.gender = gender
                     }
                 }
         }
        
-        dismiss(animated: true, completion: nil)
+        dismiss(animated: true) { [weak self] in
+            self?.callbackClosure?()
+        }
+
     }
     
     @IBAction func genderAction(_ sender: UIButton) {

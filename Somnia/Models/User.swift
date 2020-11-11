@@ -9,14 +9,14 @@ import Foundation
 
 class User {
     
-    let email: String
-    let age: Int
-    let fullname: String
-    let nickname: String
-    let gender: String
-    let occupation: String
-    let lat: Double
-    let lon: Double
+    var email: String
+    var age: Int
+    var fullname: String
+    var nickname: String
+    var gender: String
+    var occupation: String
+    var lat: Double
+    var lon: Double
     
     init(email user: String, a: Int, f: String, n: String, g: String, o: String, la: Double, lo: Double) {
         self.email = user
