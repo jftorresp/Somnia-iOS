@@ -7,8 +7,9 @@
 
 import UIKit
 import Firebase
+import CoreLocation
 
-class SleepViewController: UIViewController {
+class SleepViewController: UIViewController{
     
     @IBOutlet weak var sleepLabel: UILabel!
     @IBOutlet weak var sleepButton: UIButton!
@@ -21,6 +22,12 @@ class SleepViewController: UIViewController {
     
     var alarms = [String]()
     let db = Firestore.firestore()
+    
+    let locationManager = CLLocationManager()
+    static var currentLocation : CLLocation!
+    var latactual: Double?
+    var lonactual: Double?
+    var nickname = ""
     
         
     override var preferredStatusBarStyle: UIStatusBarStyle {
@@ -51,6 +58,11 @@ class SleepViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        if CLLocationManager.locationServicesEnabled() {
+            locationManager.delegate = self
+            locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
+            locationManager.startUpdatingLocation()
+        }
         
         print("Esta es la closest en sleep view: \(AlarmsNewUserViewController.closest)")
         
@@ -80,8 +92,45 @@ class SleepViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-    @IBAction func sleepPressed(_ sender: UIButton) {
+    func goToSleep()
+    {
+        let sleepTwoVC = storyboard?.instantiateViewController(identifier: K.sleepTwoVC) as? SleepTwoViewController
         
+        view.window?.rootViewController = sleepTwoVC
+        view.window?.makeKeyAndVisible()
+    }
+    
+    @IBAction func sleepPressed(_ sender: UIButton) {
+        print("Entré al botón de la alerta")
+        if abs(AlarmsNewUserViewController.user!.lat-latactual!)>0 || abs(AlarmsNewUserViewController.user!.lon-lonactual!)>0{
+           
+            let dialogMessage = UIAlertController(title: "You don't seem to be at home", message: "Are you sure that you want to start a sleep analysis?", preferredStyle: .alert)
+            let wait = UIAlertAction(title: "Let's wait", style: .default, handler: { (action) -> Void in
+                print("Great button tapped")})
+            let ok = UIAlertAction(title: "Yes, go!", style: .default, handler: { (action) -> Void in self.goToSleep()})
+            //Add OK button to a dialog message
+            dialogMessage.addAction(wait)
+            dialogMessage.addAction(ok)
+            // Present Alert to
+            self.present(dialogMessage, animated: true, completion: nil)
+            
+        }
+        else{
+            goToSleep()
+        }
         
     }
+}
+extension SleepViewController: CLLocationManagerDelegate {
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        guard let locValue: CLLocationCoordinate2D = manager.location?.coordinate else { return }
+        latactual = locValue.latitude
+        lonactual = locValue.longitude
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        print(error)
+    }
+    
 }

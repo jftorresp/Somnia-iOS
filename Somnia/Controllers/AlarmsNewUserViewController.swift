@@ -197,8 +197,10 @@ class AlarmsNewUserViewController: UIViewController {
                             let fullname = data["fullname"] as? String,
                             let nickname = data["nickname"] as? String,
                             let gender = data["gender"] as? String,
+                            let lat = data["lat"] as? Double,
+                            let lon = data["lon"] as? Double,
                             let occupation = data["occupation"] as? String {
-                                AlarmsNewUserViewController.user = User(email: email, a: age, f: fullname, n: nickname, g: gender, o: occupation)
+                                AlarmsNewUserViewController.user = User(email: email, a: age, f: fullname, n: nickname, g: gender, o: occupation, la: lat, lo: lon)
                             }
                         }
                     }
