@@ -107,10 +107,6 @@ class AlarmsNewUserViewController: UIViewController {
             bedtimeView.layer.cornerRadius = 10
             expectedView.layer.cornerRadius = 10
         }
-        
-        let uid = UserDefaults.standard.object(forKey: "user_uid_key")
-        
-    
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
@@ -195,7 +191,7 @@ class AlarmsNewUserViewController: UIViewController {
                             if let email = data["email"] as? String,
                             let age = data["age"] as? Int,
                             let fullname = data["fullname"] as? String,
-                            var nickname = data["nickname"] as? String,
+                            let nickname = data["nickname"] as? String,
                             let gender = data["gender"] as? String,
                             let lat = data["lat"] as? Double,
                             let lon = data["lon"] as? Double,

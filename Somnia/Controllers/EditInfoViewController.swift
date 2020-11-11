@@ -163,10 +163,10 @@ class EditInfoViewController: UIViewController{
     
     @IBAction func setHomeAction(_ sender: UIButton) {
         
-        if  let id = Auth.auth().currentUser?.uid{
+        if  let id = Auth.auth().currentUser?.uid, let lat = EditInfoViewController.lat, let lon = EditInfoViewController.lon{
             self.db.collection(K.FStore.usersCollection)
                 .document(id)
-                .updateData(["lat" : EditInfoViewController.lat, "lon" : EditInfoViewController.lon  ]) { (error) in
+                .updateData(["lat" : lat , "lon" : lon  ]) { (error) in
                     if let e = error {
                         print("Error updating the user to the database, \(e.localizedDescription)")
                     } else {
