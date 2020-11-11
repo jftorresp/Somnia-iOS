@@ -195,7 +195,7 @@ class AlarmsNewUserViewController: UIViewController {
                             if let email = data["email"] as? String,
                             let age = data["age"] as? Int,
                             let fullname = data["fullname"] as? String,
-                            let nickname = data["nickname"] as? String,
+                            var nickname = data["nickname"] as? String,
                             let gender = data["gender"] as? String,
                             let lat = data["lat"] as? Double,
                             let lon = data["lon"] as? Double,
@@ -206,6 +206,8 @@ class AlarmsNewUserViewController: UIViewController {
                     }
                 }
         }
+        
+        UserDefaults.standard.set(AlarmsNewUserViewController.user?.nickname, forKey: "nickname")
     }
     
 }

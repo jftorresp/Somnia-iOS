@@ -25,9 +25,7 @@ class ProfileViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let salute = "Hello \(UserDefaults.standard.string(forKey: "nickname") ?? "Hello")"+"!"
-        print("El salute es \(salute)")
-        helloNicknameLabel!.text = salute
+        helloNicknameLabel.text = "Hello \(AlarmsNewUserViewController.user?.nickname ?? "Hello")"+"!"
         
         
         award1View.layer.cornerRadius = 15
@@ -40,7 +38,7 @@ class ProfileViewController: UIViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        helloNicknameLabel.text = "Hello \(UserDefaults.standard.string(forKey: "nickname") ?? "Hello")"+"!"
+        helloNicknameLabel.text = "Hello \(AlarmsNewUserViewController.user?.nickname ?? "Hello")"+"!"
     }
    
     

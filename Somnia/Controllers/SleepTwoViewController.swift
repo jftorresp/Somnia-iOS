@@ -154,7 +154,7 @@ class SleepTwoViewController: UIViewController {
     }
     
     @objc func showPlayerandManage() {
-        
+        print("Entro al showplayer y el filename es: \(SleepActivitiesViewController.sleepSounds.first?.fileName)")
         if let meditation =  SleepActivitiesViewController.sleepSounds.first(where: { $0.fileName == "meditation.mp3" }),
            let guitar =  SleepActivitiesViewController.sleepSounds.first(where: { $0.fileName == "guitar.mp3" }),
            let background =  SleepActivitiesViewController.sleepSounds.first(where: { $0.fileName == "background.mp3" }),

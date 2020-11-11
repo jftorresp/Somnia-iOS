@@ -121,7 +121,7 @@ class SleepActivitiesViewController: UIViewController {
                             let newStory = Stories(n: nameR, f: fileN, img: img, d: descrip, dur: dur, a: nil)
                             
                             SleepActivitiesViewController.sleepStories.append(newStory)
-                            
+                            print("Encontré una historia")
                             DispatchQueue.main.async {
                                 self.storiesTableView.reloadData()
                                 let indexPath = IndexPath(row: SleepActivitiesViewController.sleepStories.count - 1, section: 0)

@@ -39,7 +39,7 @@ class EditInfoViewController: UIViewController{
     static var currentLocation : CLLocation!
     static var lat: Double?
     static var lon: Double?
-    var nickname = ""
+   
         
     let db = Firestore.firestore()
     
@@ -103,9 +103,7 @@ class EditInfoViewController: UIViewController{
                         print("Error updating the user to the database, \(e.localizedDescription)")
                     } else {
                         print("Successfully updated data")
-                        UserDefaults.standard.set(nicknameE, forKey: "nickname")
-                        UserDefaults.standard.synchronize()
-                        ProfileViewController.nick=nicknameE
+//                        AlarmsNewUserViewController.user?.nickname = nicknameE
                        
                     }
                 }
