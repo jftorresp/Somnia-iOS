@@ -23,6 +23,8 @@ class AlarmsNewUserViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var editButLabel: UIButton!
     
+    var editMode:Bool = false
+    
     static var user: User?
     
     var alarms: [Alarm] = []
@@ -85,7 +87,7 @@ class AlarmsNewUserViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         loadAlarms()
-        
+        editMode = false
         getUsernickName()
 
         tableView.delegate = self
@@ -114,6 +116,22 @@ class AlarmsNewUserViewController: UIViewController {
     }
         
     @IBAction func editPressed(_ sender: UIButton) {
+        if(!editMode){
+            editButLabel.setImage(nil, for: .normal)
+            editButLabel.setTitle("Cancel", for: .normal)
+            editButLabel.titleLabel?.font = UIFont(name: "HaboroSoft-NorMed",size: 15.0)
+            editMode = true
+            tableView.setEditing(true, animated: true)
+        }
+        else{
+            editButLabel.setImage(UIImage(systemName: "pencil"), for: .normal)
+            editButLabel.setTitle("", for: .normal)
+            editMode = false
+            tableView.setEditing(false, animated: true)
+        }
+        
+       
+        
     }
     
     func loadAlarms() {
@@ -232,11 +250,15 @@ extension AlarmsNewUserViewController: UITableViewDelegate, UITableViewDataSourc
         cell.hourLabel.text = hourString
         cell.amLabel.text = amString
         cell.descriptionLabel.text = "\(alarm.description), \(alarm.getRepeatDays())"
+        cell.goButton.isHidden=false
 
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+    }
+    func hola(){
         
     }
         

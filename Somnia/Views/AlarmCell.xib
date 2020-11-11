@@ -33,8 +33,18 @@
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="4Z5-2G-0NG">
                                 <rect key="frame" x="10" y="10" width="381" height="50"/>
                                 <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rXC-ap-APh">
+                                        <rect key="frame" x="0.0" y="14" width="19.5" height="22"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="19.5" id="Afn-fG-lWK"/>
+                                        </constraints>
+                                        <state key="normal" image="trash" catalog="system">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                    </button>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="xlw-gO-HUK">
-                                        <rect key="frame" x="0.0" y="0.0" width="300" height="50"/>
+                                        <rect key="frame" x="27.5" y="0.0" width="300" height="50"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="-138" translatesAutoresizingMaskIntoConstraints="NO" id="7XD-Ya-4AT">
                                                 <rect key="frame" x="0.0" y="0.0" width="300" height="36"/>
@@ -64,8 +74,17 @@
                                             </label>
                                         </subviews>
                                     </stackView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="89e-l0-XvG">
+                                        <rect key="frame" x="335.5" y="10" width="30" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="30" id="dgD-kp-OWy"/>
+                                        </constraints>
+                                        <state key="normal" title="&gt;H">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                    </button>
                                     <switch opaque="NO" contentMode="right" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="right" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gj0-qc-uxL">
-                                        <rect key="frame" x="332" y="9.5" width="51" height="31"/>
+                                        <rect key="frame" x="373.5" y="9.5" width="9.5" height="31"/>
                                         <color key="onTintColor" name="Green"/>
                                     </switch>
                                 </subviews>
@@ -96,13 +115,16 @@
                 <outlet property="alarmView" destination="vqE-kf-20k" id="eZj-77-wIy"/>
                 <outlet property="amLabel" destination="mcB-jH-Z7Y" id="cF7-zk-6MS"/>
                 <outlet property="descriptionLabel" destination="DN7-rO-Edy" id="ktF-yV-P2R"/>
+                <outlet property="goButton" destination="89e-l0-XvG" id="Dmf-93-1UN"/>
                 <outlet property="hourLabel" destination="Yar-N3-jWO" id="baA-vh-hZn"/>
                 <outlet property="isActive" destination="gj0-qc-uxL" id="Ycz-ZH-rRj"/>
+                <outlet property="trashButton" destination="rXC-ap-APh" id="iXB-uG-Akf"/>
             </connections>
-            <point key="canvasLocation" x="196.37681159420291" y="88.392857142857139"/>
+            <point key="canvasLocation" x="169" y="76"/>
         </tableViewCell>
     </objects>
     <resources>
+        <image name="trash" catalog="system" width="121" height="128"/>
         <namedColor name="Darkblue">
             <color red="0.086000002920627594" green="0.075000002980232239" blue="0.34900000691413879" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

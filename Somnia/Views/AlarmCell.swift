@@ -14,10 +14,15 @@ class AlarmCell: UITableViewCell {
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var isActive: UISwitch!
     @IBOutlet weak var alarmView: UIView!
+    @IBOutlet weak var goButton: UIButton!
+    
+    @IBOutlet weak var trashButton: UIButton!
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        
+        trashButton.isHidden=true
+        goButton.isHidden=true
+        trashButton.tintColor = UIColor.red
         alarmView.layer.cornerRadius = 10
     }
 
@@ -30,6 +35,10 @@ class AlarmCell: UITableViewCell {
     override func layoutSubviews() {
         super.layoutSubviews()
 
+    }
+    func hola()
+    {
+        
     }
     
 }
