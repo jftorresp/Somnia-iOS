@@ -35,6 +35,8 @@ class EditAlarmViewController: UIViewController {
             button?.setTitleColor(UIColor(named: "Green"), for: UIControl.State.selected)
             button?.setTitleColor(UIColor.white, for: UIControl.State.normal)
             button?.layer.cornerRadius=25
+            UISegmentedControl.appearance().setTitleTextAttributes([NSAttributedString.Key.foregroundColor:UIColor.white], for: .normal)
+            UISegmentedControl.appearance().setTitleTextAttributes([NSAttributedString.Key.foregroundColor:UIColor.black], for: .selected)
         }
         
         if let currentAlarm = AlarmsNewUserViewController.selectedAlarm {
@@ -97,13 +99,33 @@ class EditAlarmViewController: UIViewController {
 //        }
         
         let dateEdited = date.date
+        let currentDate = Date()
+        let calendar = Calendar.current
+        var components2 = calendar.dateComponents([.year, .month, .day, .hour, .minute, .second], from: dateEdited)
+        var componentsCurrent = calendar.dateComponents([.year, .month, .day, .hour, .minute, .second], from: currentDate)
+        components2.second = 0
+        components2.day = componentsCurrent.day
+        components2.month = componentsCurrent.month
+        var dateOk = calendar.date(from: components2)!
+        var dateComponent = DateComponents()
+        dateComponent.day = 1
+        
+        if dateOk.timeIntervalSinceNow < Date().timeIntervalSinceNow {
+            
+            if let newDate2 = Calendar.current.date(byAdding: dateComponent, to: dateOk) {
+                dateOk = newDate2
+            }
+        } else{
+            
+        }
+        
         let repeatEdited = ["1": mondayButton.isSelected, "2": tuesdayButton.isSelected, "3": wednesdayButton.isSelected, "4": thursdayButton.isSelected, "5": fridayButton.isSelected, "6": saturdayButton.isSelected, "7": sundayButton.isSelected]
         
         if let alarmId = AlarmsNewUserViewController.currenAlarmId, let id = Auth.auth().currentUser?.uid, let descriptionEdited = descriptionButton.text {
             
             self.db.collection(K.FStore.alarmsCollection)
                 .document(alarmId)
-                .updateData(["alarm_date": dateEdited, "createdBy": id, "description": descriptionEdited, "exact": isExact, "isActive": true, "repeat": repeatEdited]) { (error) in
+                .updateData(["alarm_date": dateOk, "createdBy": id, "description": descriptionEdited, "exact": isExact, "isActive": true, "repeat": repeatEdited]) { (error) in
                     if let e = error {
                         print("Error updating the user to the database, \(e.localizedDescription)")
                     } else {
