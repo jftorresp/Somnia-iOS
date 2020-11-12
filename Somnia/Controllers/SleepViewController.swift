@@ -55,6 +55,7 @@ class SleepViewController: UIViewController{
         
 
     }
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -90,6 +91,10 @@ class SleepViewController: UIViewController{
             sleepView.layer.masksToBounds = false
     
         // Do any additional setup after loading the view.
+    }
+    
+    @IBAction func crashPressed(_ sender: UIButton) {
+        fatalError()
     }
     
     func goToSleep()

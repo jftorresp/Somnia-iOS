@@ -6,7 +6,7 @@ target 'Somnia' do
   use_frameworks!
 
   # Pods for Somnia
-
+  
   pod 'Firebase/Analytics'
   pod 'Firebase/Auth'
   pod 'Firebase/Firestore'
@@ -14,6 +14,7 @@ target 'Somnia' do
   pod 'IQKeyboardManagerSwift'
   pod 'Firebase/Storage'
   pod 'Charts'
+  pod 'Firebase/Crashlytics'
 
   target 'SomniaTests' do
     inherit! :search_paths
