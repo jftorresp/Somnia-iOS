@@ -25,6 +25,11 @@ class AlarmsNewUserViewController: UIViewController {
     
     var editMode:Bool = false
     
+    var alarmsId: [AlarmsId] = []
+    static var currenAlarmId : String?
+    
+    static var selectedAlarm: Alarm?
+    
     static var user: User?
     
     var alarms: [Alarm] = []
@@ -42,7 +47,9 @@ class AlarmsNewUserViewController: UIViewController {
     }
         
     override func viewDidAppear(_ animated: Bool) {
-                
+        
+        tableView.allowsSelectionDuringEditing = true
+                        
         let formatter = DateFormatter()
         let formatter2 = DateFormatter()
         formatter.dateFormat = "HH:mm" // "a" prints "pm" or "am"
@@ -116,12 +123,14 @@ class AlarmsNewUserViewController: UIViewController {
     }
         
     @IBAction func editPressed(_ sender: UIButton) {
+                
         if(!editMode){
             editButLabel.setImage(nil, for: .normal)
             editButLabel.setTitle("Cancel", for: .normal)
             editButLabel.titleLabel?.font = UIFont(name: "HaboroSoft-NorMed",size: 15.0)
             editMode = true
             tableView.setEditing(true, animated: true)
+            
         }
         else{
             editButLabel.setImage(UIImage(systemName: "pencil"), for: .normal)
@@ -129,9 +138,6 @@ class AlarmsNewUserViewController: UIViewController {
             editMode = false
             tableView.setEditing(false, animated: true)
         }
-        
-       
-        
     }
     
     func loadAlarms() {
@@ -161,6 +167,10 @@ class AlarmsNewUserViewController: UIViewController {
                                 
                                 let newAlarm = Alarm(alarm_date: dateCorrect, createdBy: userIdCorrect, description: descriptionCorrect, exact: exactCorrect, repeat_day: repeatedCorrect)
                                 self.alarms.append(newAlarm)
+                                
+                                let alarmId = AlarmsId(id: document.documentID, date: dateCorrect, description: descriptionCorrect)
+                                
+                                self.alarmsId.append(alarmId)
                                 
                                 DispatchQueue.main.async {
                                     self.tableView.reloadData()
@@ -224,6 +234,36 @@ class AlarmsNewUserViewController: UIViewController {
         UserDefaults.standard.set(AlarmsNewUserViewController.user?.nickname, forKey: "nickname")
     }
     
+    func deleteAlarm(position: Int) {
+        
+        let currentId = getAlarmIdDelete(position: position)
+        db.collection(K.FStore.alarmsCollection).document(currentId).delete() { err in
+            if let err = err {
+                print("Error removing document: \(err)")
+            } else {
+                print("Document successfully removed!")
+            }
+        }
+    }
+    
+    func getAlarmIdDelete(position: Int) -> String{
+        var current = ""
+        for (index, alarm) in alarmsId.enumerated() {
+            if index == position {
+                current = alarm.id
+            }
+        }
+        return current
+    }
+    
+    func getCurrentAlarmId(selectedDate: Date?, selectedDescription: String?){
+        for alarm in alarmsId {
+            if alarm.date == selectedDate && alarm.description == selectedDescription {
+                AlarmsNewUserViewController.currenAlarmId = alarm.id
+            }
+        }
+    }
+    
 }
 
 extension AlarmsNewUserViewController: UITableViewDelegate, UITableViewDataSource {
@@ -248,20 +288,54 @@ extension AlarmsNewUserViewController: UITableViewDelegate, UITableViewDataSourc
         
         let cell = tableView.dequeueReusableCell(withIdentifier: K.cellIdentifier, for: indexPath) as! AlarmCell
         cell.hourLabel.text = hourString
+        cell.selectionStyle = .none
+        
+        let smallConf = UIImage.SymbolConfiguration(scale: .small)
+        let isActive = UISwitch()
+        let editBut = UIButton()
+        editBut.setImage(UIImage(systemName: "chevron.right", withConfiguration: smallConf), for: .normal)
+        editBut.sizeToFit()
+        isActive.isOn = true
+        isActive.onTintColor = UIColor(named: "Green")
+        cell.accessoryView = isActive
+        
+        cell.editingAccessoryView = editBut
         cell.amLabel.text = amString
         cell.descriptionLabel.text = "\(alarm.description), \(alarm.getRepeatDays())"
-        cell.goButton.isHidden=false
 
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
+        if self.tableView.isEditing == true {
+            print("Alarms: \(alarmsId)")
+            
+            AlarmsNewUserViewController.selectedAlarm = alarms[indexPath.row]
+            
+            getCurrentAlarmId(selectedDate: AlarmsNewUserViewController.selectedAlarm?.alarm_date, selectedDescription: AlarmsNewUserViewController.selectedAlarm?.description)
+            
+            if let editAlarmVC = storyboard?.instantiateViewController(identifier: "EditAlarmVC") as EditAlarmViewController? {
+                self.present(editAlarmVC, animated: true, completion: nil)
+            }
+        }
     }
-    func hola(){
         
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        
+        if editingStyle == .delete {
+            
+            alarms.remove(at: indexPath.row)
+            deleteAlarm(position: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .none)
+        }
     }
-        
+}
+
+struct AlarmsId {
+    var id: String
+    var date: Date
+    var description: String
 }
 
 

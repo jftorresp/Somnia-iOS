@@ -59,7 +59,7 @@ class NewAlarmViewController: UIViewController{
         UISegmentedControl.appearance().setTitleTextAttributes([NSAttributedString.Key.foregroundColor:UIColor.black], for: .selected)
         
         for button in [mondayButton, tuesdayButton, wednesdayButton, thursdayButton, fridayButton, saturdayButton, sundayButton] {
-            button?.setTitleColor(UIColor.green, for: UIControl.State.selected)
+            button?.setTitleColor(UIColor(named: "Green"), for: UIControl.State.selected)
             button?.setTitleColor(UIColor.white, for: UIControl.State.normal)
             button?.layer.cornerRadius=25
         }

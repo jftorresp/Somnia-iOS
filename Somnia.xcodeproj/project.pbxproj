@@ -59,6 +59,7 @@
 		B180381D253501ED00D03B19 /* HaboroSoft-NorBoo.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B180380F253501ED00D03B19 /* HaboroSoft-NorBoo.ttf */; };
 		B180381E253501ED00D03B19 /* HaboroSoft-NorBooIt.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B1803810253501ED00D03B19 /* HaboroSoft-NorBooIt.ttf */; };
 		B19F98CC2549E86600AB52A0 /* NetworkMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B19F98CB2549E86600AB52A0 /* NetworkMonitor.swift */; };
+		B1AA18C1255C918600C6102A /* EditAlarmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1AA18C0255C918600C6102A /* EditAlarmViewController.swift */; };
 		B1B244D725538B75004942EA /* Analysis.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1B244D625538B75004942EA /* Analysis.swift */; };
 		B1E48D6E25392145003AC54F /* StatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E48D6D25392145003AC54F /* StatsViewController.swift */; };
 /* End PBXBuildFile section */
@@ -143,6 +144,7 @@
 		B180380F253501ED00D03B19 /* HaboroSoft-NorBoo.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "HaboroSoft-NorBoo.ttf"; sourceTree = "<group>"; };
 		B1803810253501ED00D03B19 /* HaboroSoft-NorBooIt.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "HaboroSoft-NorBooIt.ttf"; sourceTree = "<group>"; };
 		B19F98CB2549E86600AB52A0 /* NetworkMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkMonitor.swift; sourceTree = "<group>"; };
+		B1AA18C0255C918600C6102A /* EditAlarmViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditAlarmViewController.swift; sourceTree = "<group>"; };
 		B1B244D625538B75004942EA /* Analysis.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Analysis.swift; sourceTree = "<group>"; };
 		B1E48D6D25392145003AC54F /* StatsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsViewController.swift; sourceTree = "<group>"; };
 		CBC8E9626382781048A94BE5 /* Pods-Somnia.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Somnia.debug.xcconfig"; path = "Target Support Files/Pods-Somnia/Pods-Somnia.debug.xcconfig"; sourceTree = "<group>"; };
@@ -284,6 +286,7 @@
 				3742C969254B53DF001DEF67 /* AlarmTriggeredViewController.swift */,
 				B13E13D0254CDCA200208EA8 /* FeedbackViewController.swift */,
 				372C996A255659A300AB0147 /* EditInfoViewController.swift */,
+				B1AA18C0255C918600C6102A /* EditAlarmViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -596,6 +599,7 @@
 			files = (
 				B1123109253925C20024DD7D /* SleepViewController.swift in Sources */,
 				B15BA5AA2554B8D900209897 /* SleepSoundCell.swift in Sources */,
+				B1AA18C1255C918600C6102A /* EditAlarmViewController.swift in Sources */,
 				3799660C2538934D00503213 /* AlarmsNewUserViewController.swift in Sources */,
 				3742C96A254B53DF001DEF67 /* AlarmTriggeredViewController.swift in Sources */,
 				B1E48D6E25392145003AC54F /* StatsViewController.swift in Sources */,

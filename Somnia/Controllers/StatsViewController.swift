@@ -34,6 +34,8 @@ class StatsViewController: UIViewController {
     
     let db = Firestore.firestore()
     
+    var analysis: Analysis?
+    
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
     }
@@ -60,31 +62,30 @@ class StatsViewController: UIViewController {
             db.collection(K.FStore.analysisCollection)
                 .whereField(K.FStore.createdByField, isEqualTo: id)
                 .getDocuments { (querySnapshot, error) in
-                    
-                    SleepActivitiesViewController.sleepStories = []
-                    
+                                        
                     if let e = error {
                         print("There was an issue retrieving data from Firestore. \(e)")
                     } else {
                         for document in querySnapshot!.documents {
                             
                             let data = document.data()
-                            
+                                                                                    
                             let deep = data["deep"] as? Double
                             let duration = data["duration"] as? Double
                             let hourStage = data["hourStage"] as? [String: String]
                             let light = data["light"] as? Double
-                            let nightDate = data["nightDate"] as? Date
+                            let nightDate = data["nightDate"] as? Timestamp
                             let rem = data["rem"] as? Double
                             let snorePer = data["snorePercentage"] as? Double
                             let totalEvents = data["totalEvents"] as? Int
                             let totalSnores = data["totalSnores"] as? Int
                             let wake = data["wake"] as? Double
-                            
-                            if let d = deep, let dur = duration, let hour = hourStage, let l = light, let n = nightDate, let r = rem, let per = snorePer, let events = totalEvents, let snores = totalSnores, let w = wake {
                                 
-                                let analysis = Analysis(nightDate: n, duration: dur, totalEvents: events, totalSnores: snores, snorePercentage: per, wake: w, light: l, deep: d, rem: r, hourStage: hour)
-                                print("Analysis: \(analysis)")
+                            if let date = nightDate?.dateValue() {
+                                
+                                self.analysis = Analysis(nightDate: date, duration: duration!, totalEvents: totalEvents!, totalSnores: totalSnores!, snorePercentage: snorePer!, wake: wake!, light: light!, deep: deep!, rem: rem!, hourStage: hourStage!)
+                                
+                                print("Analysis: \(self.analysis)")
                             }
                         }
                     }

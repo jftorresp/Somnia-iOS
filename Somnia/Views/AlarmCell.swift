@@ -20,9 +20,9 @@ class AlarmCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        trashButton.isHidden=true
-        goButton.isHidden=true
-        trashButton.tintColor = UIColor.red
+//        trashButton.isHidden=true
+//        goButton.isHidden=true
+//        trashButton.tintColor = UIColor.red
         alarmView.layer.cornerRadius = 10
     }
 
