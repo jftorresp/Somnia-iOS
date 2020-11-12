@@ -96,7 +96,7 @@ class AlarmsNewUserViewController: UIViewController {
         loadAlarms()
         editMode = false
         getUsernickName()
-
+        
         tableView.delegate = self
         tableView.dataSource = self
         

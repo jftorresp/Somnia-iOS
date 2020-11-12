@@ -402,8 +402,38 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xtN-v3-chB">
-                                <rect key="frame" x="20" y="144" width="374" height="290"/>
+                                <rect key="frame" x="20" y="144" width="374" height="296"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="17" translatesAutoresizingMaskIntoConstraints="NO" id="TuK-Df-2PR">
+                                        <rect key="frame" x="5" y="8" width="364" height="23.5"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Wed Nov 4" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WCS-YE-WGv">
+                                                <rect key="frame" x="0.0" y="0.0" width="116.5" height="23.5"/>
+                                                <fontDescription key="fontDescription" name="HaboroSoft-NorBol" family="HaboroSoft-NorBol" pointSize="20"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Total Sleep Time" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="652-lX-sne">
+                                                <rect key="frame" x="133.5" y="0.0" width="103.5" height="23.5"/>
+                                                <fontDescription key="fontDescription" name="HaboroSoft-NorBol" family="HaboroSoft-NorBol" pointSize="14"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="7.2 hours" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9xF-az-twz">
+                                                <rect key="frame" x="254" y="0.0" width="110" height="23.5"/>
+                                                <fontDescription key="fontDescription" name="HaboroSoft-NorBol" family="HaboroSoft-NorBol" pointSize="20"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
                                 <color key="backgroundColor" name="Blue"/>
+                                <constraints>
+                                    <constraint firstItem="TuK-Df-2PR" firstAttribute="top" secondItem="xtN-v3-chB" secondAttribute="top" constant="8" id="MeM-Vm-nFU"/>
+                                    <constraint firstAttribute="trailing" secondItem="TuK-Df-2PR" secondAttribute="trailing" constant="5" id="rS3-mW-CuV"/>
+                                    <constraint firstItem="TuK-Df-2PR" firstAttribute="leading" secondItem="xtN-v3-chB" secondAttribute="leading" constant="5" id="soM-9E-b6t"/>
+                                </constraints>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="14" translatesAutoresizingMaskIntoConstraints="NO" id="6Ox-1Y-EBK">
                                 <rect key="frame" x="20" y="460" width="374" height="353"/>
@@ -509,7 +539,7 @@
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="Dab-E9-Bw5">
                                                         <rect key="frame" x="8" y="8" width="162.5" height="86"/>
                                                         <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Light Sleep" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bvr-TE-Wea">
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time Awake" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bvr-TE-Wea">
                                                                 <rect key="frame" x="0.0" y="0.0" width="162.5" height="43"/>
                                                                 <fontDescription key="fontDescription" name="HaboroSoft-NorBol" family="HaboroSoft-NorBol" pointSize="22"/>
                                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -619,7 +649,7 @@
                             <constraint firstItem="xtN-v3-chB" firstAttribute="top" secondItem="CXJ-nl-q42" secondAttribute="bottom" constant="8" id="M3r-PV-lsg"/>
                             <constraint firstItem="e7k-yh-8dz" firstAttribute="trailing" secondItem="6Ox-1Y-EBK" secondAttribute="trailing" constant="20" id="NhN-xg-4v7"/>
                             <constraint firstItem="e7k-yh-8dz" firstAttribute="trailing" secondItem="CXJ-nl-q42" secondAttribute="trailing" constant="20" id="SKY-eQ-2kp"/>
-                            <constraint firstItem="6Ox-1Y-EBK" firstAttribute="top" secondItem="xtN-v3-chB" secondAttribute="bottom" constant="26" id="bPe-Bg-yyC"/>
+                            <constraint firstItem="6Ox-1Y-EBK" firstAttribute="top" secondItem="xtN-v3-chB" secondAttribute="bottom" constant="20" id="bPe-Bg-yyC"/>
                             <constraint firstItem="6Ox-1Y-EBK" firstAttribute="leading" secondItem="e7k-yh-8dz" secondAttribute="leading" constant="20" id="j7W-5F-O5T"/>
                             <constraint firstItem="8bA-g4-YIw" firstAttribute="centerY" secondItem="hBC-NU-r4R" secondAttribute="centerY" id="mP3-lt-Yxh"/>
                             <constraint firstItem="CXJ-nl-q42" firstAttribute="leading" secondItem="e7k-yh-8dz" secondAttribute="leading" constant="20" id="ma7-vL-0S6"/>
@@ -633,12 +663,15 @@
                         <outlet property="dailyAnalysisView" destination="xtN-v3-chB" id="Daq-h4-BUd"/>
                         <outlet property="deepHrsLabel" destination="Tu6-fn-Ryn" id="aoP-uh-nYi"/>
                         <outlet property="deepView" destination="OVJ-c2-a9u" id="Elc-2z-YD8"/>
+                        <outlet property="durationLabel" destination="9xF-az-twz" id="eqW-4O-pSv"/>
                         <outlet property="firstLabel" destination="CXJ-nl-q42" id="yKs-1G-u1v"/>
                         <outlet property="lightHrsLabel" destination="7qv-WS-ejy" id="v1B-Hh-VXk"/>
                         <outlet property="lightView" destination="jrr-gX-Chn" id="ED0-3l-BGR"/>
+                        <outlet property="nightDateLabel" destination="WCS-YE-WGv" id="TWz-Tb-j14"/>
                         <outlet property="noAnalysisLabel" destination="8bA-g4-YIw" id="lHP-Lw-ZML"/>
                         <outlet property="remHrsLabel" destination="20v-Uf-Ezm" id="vd9-qm-Mfd"/>
                         <outlet property="remView" destination="ZH1-xf-636" id="3id-EJ-h31"/>
+                        <outlet property="sleepTimeLabel" destination="652-lX-sne" id="zBd-Nb-LvA"/>
                         <outlet property="snorePerLabel" destination="jK4-tY-uzY" id="IH4-cN-yGu"/>
                         <outlet property="snoreView" destination="QlJ-jr-LSd" id="QnD-I5-8b1"/>
                         <outlet property="timeHrsLabel" destination="kQh-5h-zsK" id="rXk-1U-OMI"/>
@@ -920,14 +953,6 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1qQ-1E-RDz">
-                                <rect key="frame" x="187" y="686" width="41" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Crash"/>
-                                <connections>
-                                    <action selector="crashPressed:" destination="RpM-Q7-Adm" eventType="touchUpInside" id="eUV-Mx-bWy"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="FjC-mc-i7S"/>
                         <constraints>

@@ -90,11 +90,6 @@ class SleepViewController: UIViewController{
             sleepView.layer.shadowRadius = 0.0
             sleepView.layer.masksToBounds = false
     
-        // Do any additional setup after loading the view.
-    }
-    
-    @IBAction func crashPressed(_ sender: UIButton) {
-        fatalError()
     }
     
     func goToSleep()
