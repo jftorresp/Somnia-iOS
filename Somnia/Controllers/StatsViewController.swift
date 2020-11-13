@@ -23,7 +23,7 @@ class StatsViewController: UIViewController {
         chartView.xAxis.labelPosition = .bottom
         chartView.xAxis.labelTextColor = .white
         chartView.xAxis.axisLineColor = .white
-        chartView.xAxis.setLabelCount(3, force: true)
+        chartView.xAxis.setLabelCount(6, force: false)
         chartView.animate(xAxisDuration: 1.0)
         chartView.legend.textColor = .white
         return chartView
@@ -109,7 +109,7 @@ class StatsViewController: UIViewController {
             nightDateLabel.isHidden = false
             
             let formatter = DateFormatter()
-            formatter.dateFormat = "E MMM d"
+            formatter.dateFormat = "E, MMM d"
             
             let hourString = formatter.string(from: StatsViewController.closerAnalysis.nightDate)
             nightDateLabel.text = hourString
@@ -255,25 +255,7 @@ class StatsViewController: UIViewController {
             arreglo.append(Int(i.key)!)
         }
         arreglo.sort()
-        
-        
-//        for i in StatsViewController.closerAnalysis.hourStage {
-//            var value = 20.0
-//            var hour = Double(Calendar.current.component(.hour, from: StatsViewController.closerAnalysis.nightDate)) + Double(i.key)! - 1
-//
-//            if i.value == "WAKE" {
-//                value = 80.0
-//            }
-//            else if i.value == "LIGHT" {
-//                value = 60.0
-//            } else if i.value == "DEEP" {
-//                value = 40.0
-//            }
-//
-//            if hour >= 24{
-//                hour = hour - 24
-//            }
-        
+                
         for i in arreglo {
             var value = 20.0
             var hour = Double(Calendar.current.component(.hour, from: StatsViewController.closerAnalysis.nightDate)) + Double(i) - 1
@@ -294,6 +276,7 @@ class StatsViewController: UIViewController {
             }
             
             yValues.append(ChartDataEntry(x: hour, y: value))
+            yValues.append(ChartDataEntry(x: hour + 1, y: value))
         }
     }
     
