@@ -30,6 +30,8 @@ class AlarmsNewUserViewController: UIViewController {
     
     static var selectedAlarm: Alarm?
     
+    static var listAnalysis: [Analysis] = []
+    
     static var user: User?
     
     var alarms: [Alarm] = []
@@ -99,6 +101,8 @@ class AlarmsNewUserViewController: UIViewController {
         
         tableView.delegate = self
         tableView.dataSource = self
+        
+        loadAnalysis()
         
         tableView.register(UINib(nibName: K.cellNibName, bundle: nil), forCellReuseIdentifier: K.cellIdentifier)
                  
@@ -262,6 +266,72 @@ class AlarmsNewUserViewController: UIViewController {
                 AlarmsNewUserViewController.currenAlarmId = alarm.id
             }
         }
+    }
+    
+    
+    func loadAnalysis() {
+        
+        if let id = Auth.auth().currentUser?.uid {
+            
+            db.collection(K.FStore.analysisCollection)
+                .whereField(K.FStore.createdByField, isEqualTo: id)
+                .getDocuments { (querySnapshot, error) in
+                    
+                    AlarmsNewUserViewController.listAnalysis = []
+                                        
+                    if let e = error {
+                        print("There was an issue retrieving data from Firestore. \(e)")
+                    } else {
+                        for document in querySnapshot!.documents {
+                            
+                            let data = document.data()
+                                                                                    
+                            let deep = data["deep"] as? Double
+                            let duration = data["duration"] as? Double
+                            let hourStage = data["hourStage"] as? [String: String]
+                            let light = data["light"] as? Double
+                            let nightDate = data["nightDate"] as? Timestamp
+                            let rem = data["rem"] as? Double
+                            let snorePer = data["snorePercentage"] as? Double
+                            let totalEvents = data["totalEvents"] as? Int
+                            let totalSnores = data["totalSnores"] as? Int
+                            let wake = data["wake"] as? Double
+                                
+                            if let date = nightDate?.dateValue() {
+                                
+                                let newAnalysis = Analysis(nightDate: date, duration: duration!, totalEvents: totalEvents!, totalSnores: totalSnores!, snorePercentage: snorePer!, wake: wake!, light: light!, deep: deep!, rem: rem!, hourStage: hourStage!)
+                                
+                                AlarmsNewUserViewController.listAnalysis.append(newAnalysis)
+                                                                
+                            }
+                        }
+                        StatsViewController.closerAnalysis = self.getCloserAnalysis()
+                        print(StatsViewController.closerAnalysis)
+                    }
+                }
+        }
+    }
+    
+    func getCloserAnalysis()-> Analysis {
+//        var menor = Double.infinity
+//        var analisis = Analysis(nightDate: Date().addingTimeInterval(-10000000000000), duration: 0.0, totalEvents: 0, totalSnores: 0, snorePercentage: 0.0, wake: 0.0, light: 0.0, deep: 0.0, rem: 0.0, hourStage: [:])
+//        for i in AlarmsNewUserViewController.listAnalysis {
+//            if(menor > i.nightDate.timeIntervalSinceNow) {
+//                menor = i.nightDate.timeIntervalSinceNow
+//                analisis = i
+//            }
+//        }
+//        return analisis
+        
+        var menor = -1.0
+        var analisis = Analysis(nightDate: Date().addingTimeInterval(-10000000000000), duration: 0.0, totalEvents: 0, totalSnores: 0, snorePercentage: 0.0, wake: 0.0, light: 0.0, deep: 0.0, rem: 0.0, hourStage: [:])
+        for i in AlarmsNewUserViewController.listAnalysis {
+            if(menor < i.nightDate.timeIntervalSince1970) {
+                menor = i.nightDate.timeIntervalSince1970
+                analisis = i
+            }
+        }
+        return analisis
     }
     
 }

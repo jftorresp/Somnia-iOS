@@ -23,7 +23,7 @@ class StatsViewController: UIViewController {
         chartView.xAxis.labelPosition = .bottom
         chartView.xAxis.labelTextColor = .white
         chartView.xAxis.axisLineColor = .white
-        chartView.xAxis.setLabelCount(6, force: false)
+        chartView.xAxis.setLabelCount(3, force: true)
         chartView.animate(xAxisDuration: 1.0)
         chartView.legend.textColor = .white
         return chartView
@@ -134,7 +134,7 @@ class StatsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        loadAnalysis()
+       // loadAnalysis()
             
         print("closer analysis: \(StatsViewController.closerAnalysis)")
         
@@ -237,11 +237,11 @@ class StatsViewController: UIViewController {
     }
     
     func getCloserAnalysis()-> Analysis {
-        var menor = Double.infinity
+        var menor = -1.0
         var analisis = Analysis(nightDate: Date().addingTimeInterval(-10000000000000), duration: 0.0, totalEvents: 0, totalSnores: 0, snorePercentage: 0.0, wake: 0.0, light: 0.0, deep: 0.0, rem: 0.0, hourStage: [:])
         for i in listAnalysis {
-            if(menor > i.nightDate.timeIntervalSinceNow) {
-                menor = i.nightDate.timeIntervalSinceNow
+            if(menor < i.nightDate.timeIntervalSince1970) {
+                menor = i.nightDate.timeIntervalSince1970
                 analisis = i
             }
         }
@@ -250,16 +250,42 @@ class StatsViewController: UIViewController {
     
     func transformData() {
         
+        var arreglo = [Int]()
         for i in StatsViewController.closerAnalysis.hourStage {
+            arreglo.append(Int(i.key)!)
+        }
+        arreglo.sort()
+        
+        
+//        for i in StatsViewController.closerAnalysis.hourStage {
+//            var value = 20.0
+//            var hour = Double(Calendar.current.component(.hour, from: StatsViewController.closerAnalysis.nightDate)) + Double(i.key)! - 1
+//
+//            if i.value == "WAKE" {
+//                value = 80.0
+//            }
+//            else if i.value == "LIGHT" {
+//                value = 60.0
+//            } else if i.value == "DEEP" {
+//                value = 40.0
+//            }
+//
+//            if hour >= 24{
+//                hour = hour - 24
+//            }
+        
+        for i in arreglo {
             var value = 20.0
-            var hour = Double(Calendar.current.component(.hour, from: StatsViewController.closerAnalysis.nightDate)) + Double(i.key)! - 1
+            var hour = Double(Calendar.current.component(.hour, from: StatsViewController.closerAnalysis.nightDate)) + Double(i) - 1
             
-            if i.value == "WAKE" {
+            let llave = StatsViewController.closerAnalysis.hourStage[String(i)]
+            
+            if llave == "WAKE" {
                 value = 80.0
             }
-            else if i.value == "LIGHT" {
+            else if llave == "LIGHT" {
                 value = 60.0
-            } else if i.value == "DEEP" {
+            } else if llave == "DEEP" {
                 value = 40.0
             }
             
