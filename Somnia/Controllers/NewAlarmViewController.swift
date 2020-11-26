@@ -24,9 +24,7 @@ class NewAlarmViewController: UIViewController{
     @IBOutlet weak var dayStack: UIStackView!
     @IBOutlet weak var descriptionTxt: UITextField!
     @IBOutlet weak var iWantToLabel: UILabel!
-    
-    weak var delegate : NewAlarmViewControllerDelegate?
-    
+        
     var currentId: String = ""
     
     let db = Firestore.firestore()
@@ -83,8 +81,6 @@ class NewAlarmViewController: UIViewController{
             return calendar.date(from: components)
     }
 
-    
-    
     @IBAction func addAction(_ sender: UIBarButtonItem) {
         
         let repeatDic = ["1": mondayButton.isSelected, "2": tuesdayButton.isSelected, "3": wednesdayButton.isSelected, "4": thursdayButton.isSelected, "5": fridayButton.isSelected, "6": saturdayButton.isSelected, "7": sundayButton.isSelected]
@@ -142,11 +138,6 @@ class NewAlarmViewController: UIViewController{
         
         dismiss(animated: true, completion: nil)
         
-        
-        
-        if let delegate = delegate{
-            delegate.doSomethingWith(date: datePicker.date, description: descriptionTxt.text!, repeatWhen: repeatDic, exact: isExact, createdBy: currentId)
-        }
     }
     
     @IBAction func mondayAction(_ sender: UIButton) {
@@ -212,6 +203,3 @@ class NewAlarmViewController: UIViewController{
     
 }
 
-protocol NewAlarmViewControllerDelegate : NSObjectProtocol{
-    func doSomethingWith(date: Date, description: String, repeatWhen: [String: Bool], exact: Bool, createdBy: String)
-}

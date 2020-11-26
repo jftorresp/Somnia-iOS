@@ -34,7 +34,7 @@ class AlarmsNewUserViewController: UIViewController {
     
     static var user: User?
     
-    var alarms: [Alarm] = []
+    static var alarms: [Alarm] = []
     let cachesDirectory = FileManager.default.urls(for: .cachesDirectory, in: .allDomainsMask).first
     
     static var closest : Alarm = Alarm(alarm_date: Date().addingTimeInterval(-10000000000000), createdBy: "", description: "not", exact: false, repeat_day: [:])
@@ -69,11 +69,14 @@ class AlarmsNewUserViewController: UIViewController {
         let hourString2 = formatter.string(from: newDate2!)
         let amString2 = formatter2.string(from: newDate2!)
         
-        if(AlarmsNewUserViewController.closest.description == "not" && alarms.count == 0) {
+        if(AlarmsNewUserViewController.closest.description == "not" && AlarmsNewUserViewController.alarms.count == 0) {
             stackViewAlarms.isHidden = true
             tomorrowLabel.isHidden = true
             editButLabel.isHidden = true
+            labelOne.textAlignment = .center
+            labelOne.font = UIFont(name: "HaboroSoft-NorMed",size: 18.0)
             labelOne.text = "You don't have any alarms yet. Press the + button to create a new one."
+            tableView.separatorStyle = .none
         } else {
             stackViewAlarms.isHidden = false
             tomorrowLabel.isHidden = false
@@ -88,6 +91,7 @@ class AlarmsNewUserViewController: UIViewController {
             
             bedtimeHourLabel.text = hourString2
             amBedtimeLabel.text = amString2
+            tableView.separatorStyle = .singleLine
             
         }
         
@@ -106,10 +110,12 @@ class AlarmsNewUserViewController: UIViewController {
         
         tableView.register(UINib(nibName: K.cellNibName, bundle: nil), forCellReuseIdentifier: K.cellIdentifier)
                  
-        if(AlarmsNewUserViewController.closest.description == "not" && alarms.count == 0) {
+        if(AlarmsNewUserViewController.closest.description == "not" && AlarmsNewUserViewController.alarms.count == 0) {
             stackViewAlarms.isHidden = true
             tomorrowLabel.isHidden = true
             labelOne.text = "You don't have any alarms yet. Press the + button to create a new one."
+            tableView.separatorStyle = .none
+
         } else {
             stackViewAlarms.isHidden = false
             tomorrowLabel.isHidden = false
@@ -119,6 +125,8 @@ class AlarmsNewUserViewController: UIViewController {
 
             bedtimeView.layer.cornerRadius = 10
             expectedView.layer.cornerRadius = 10
+            tableView.separatorStyle = .singleLine
+
         }
     }
     
@@ -152,7 +160,7 @@ class AlarmsNewUserViewController: UIViewController {
                 .order(by: K.FStore.dateField, descending: true)
                 .addSnapshotListener { (querySnapshot, error) in
                     
-                    self.alarms = []
+                    AlarmsNewUserViewController.alarms = []
                     
                     if let e = error {
                         print("There was an issue retrieving data from Firestore. \(e)")
@@ -170,7 +178,7 @@ class AlarmsNewUserViewController: UIViewController {
                             if let dateCorrect = date?.dateValue(), let descriptionCorrect = description, let repeatedCorrect = repeated, let exactCorrect = exact, let userIdCorrect = userId {
                                 
                                 let newAlarm = Alarm(alarm_date: dateCorrect, createdBy: userIdCorrect, description: descriptionCorrect, exact: exactCorrect, repeat_day: repeatedCorrect)
-                                self.alarms.append(newAlarm)
+                                AlarmsNewUserViewController.alarms.append(newAlarm)
                                 
                                 let alarmId = AlarmsId(id: document.documentID, date: dateCorrect, description: descriptionCorrect)
                                 
@@ -178,7 +186,7 @@ class AlarmsNewUserViewController: UIViewController {
                                 
                                 DispatchQueue.main.async {
                                     self.tableView.reloadData()
-                                    let indexPath = IndexPath(row: self.alarms.count - 1, section: 0)
+                                    let indexPath = IndexPath(row: AlarmsNewUserViewController.alarms.count - 1, section: 0)
                                     self.tableView.scrollToRow(at: indexPath, at: .top, animated: true)
                                     self.viewDidAppear(true)
                                 }
@@ -186,6 +194,7 @@ class AlarmsNewUserViewController: UIViewController {
                             
                         }
                         AlarmsNewUserViewController.closest = self.closer()
+                        print("Alarms: \(AlarmsNewUserViewController.alarms)")
                     }
                 }
         }
@@ -196,7 +205,7 @@ class AlarmsNewUserViewController: UIViewController {
     func closer() -> Alarm {
         var menor = Double.infinity
         var rta = Alarm(alarm_date: Date().addingTimeInterval(-10000000000000), createdBy: "", description: "not", exact: false, repeat_day: [:])
-        for alarm in alarms {
+        for alarm in AlarmsNewUserViewController.alarms {
             if(menor > alarm.alarm_date.timeIntervalSinceNow && alarm.alarm_date.timeIntervalSinceNow > 0  ) {
                 menor = alarm.alarm_date.timeIntervalSinceNow
                 print("Encontré el menor")
@@ -339,12 +348,12 @@ class AlarmsNewUserViewController: UIViewController {
 extension AlarmsNewUserViewController: UITableViewDelegate, UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return alarms.count
+        return AlarmsNewUserViewController.alarms.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
                 
-        let alarm = alarms[indexPath.row]
+        let alarm = AlarmsNewUserViewController.alarms[indexPath.row]
         
         let formatter = DateFormatter()
         let formatter2 = DateFormatter()
@@ -378,10 +387,10 @@ extension AlarmsNewUserViewController: UITableViewDelegate, UITableViewDataSourc
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        if self.tableView.isEditing == true {
+        if self.tableView.isEditing == true && AlarmsNewUserViewController.alarms.isEmpty == false {
             print("Alarms: \(alarmsId)")
             
-            AlarmsNewUserViewController.selectedAlarm = alarms[indexPath.row]
+            AlarmsNewUserViewController.selectedAlarm = AlarmsNewUserViewController.alarms[indexPath.row]
             
             getCurrentAlarmId(selectedDate: AlarmsNewUserViewController.selectedAlarm?.alarm_date, selectedDescription: AlarmsNewUserViewController.selectedAlarm?.description)
             
@@ -389,18 +398,28 @@ extension AlarmsNewUserViewController: UITableViewDelegate, UITableViewDataSourc
                 self.present(editAlarmVC, animated: true, completion: nil)
             }
         }
+        
+        editButLabel.setImage(UIImage(systemName: "pencil"), for: .normal)
+        editButLabel.setTitle("", for: .normal)
+        self.tableView.setEditing(false, animated: true)
     }
         
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         
         if editingStyle == .delete {
             
-            alarms.remove(at: indexPath.row)
+            AlarmsNewUserViewController.alarms.remove(at: indexPath.row)
+            self.tableView.beginUpdates()
             deleteAlarm(position: indexPath.row)
-            tableView.deleteRows(at: [indexPath], with: .none)
+            self.tableView.deleteRows(at: [indexPath], with: .none)
+            self.tableView.endUpdates()
+            
         }
     }
+    
 }
+
+
 
 struct AlarmsId {
     var id: String

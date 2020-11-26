@@ -23,7 +23,7 @@ class EditInfoViewController: UIViewController{
     @IBOutlet weak var confirmButton: UIBarButtonItem!
     
     @IBOutlet weak var editView: UIView!
-    @IBOutlet weak var nameTxt: UITextField!
+    @IBOutlet weak var nameTxt: UITextField! 
     @IBOutlet weak var nicknameTxt: UITextField!
     @IBOutlet weak var ageTxt: UITextField!
     @IBOutlet weak var occupationButton: UIButton!

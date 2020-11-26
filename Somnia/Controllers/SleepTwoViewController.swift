@@ -86,6 +86,14 @@ class SleepTwoViewController: UIViewController {
         recordingSession = AVAudioSession.sharedInstance()
         
         do {
+            try recordingSession.overrideOutputAudioPort(AVAudioSession.PortOverride.speaker)
+        }
+        catch {
+            print("Error")
+        }
+
+        
+        do {
             try recordingSession.setCategory(.playAndRecord, mode: .default)
             try recordingSession.setActive(true)
             recordingSession.requestRecordPermission() { [unowned self] allowed in
@@ -316,6 +324,8 @@ class SleepTwoViewController: UIViewController {
             if count < 1 {
                 count += 1
                 SleepTwoViewController.alarmSound = try AVAudioPlayer(contentsOf: url)
+                
+                SleepTwoViewController.alarmSound.volume = 1.0
                 SleepTwoViewController.alarmSound.play()
                 SleepTwoViewController.alarmSound.numberOfLoops = -1
                 

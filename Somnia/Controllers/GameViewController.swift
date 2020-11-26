@@ -22,6 +22,8 @@ class GameViewController: UIViewController{
     var count = 15
 
     override func viewDidLoad() {
+        scoreLabel.text = "0"
+        score = 0
         super.viewDidLoad()
         countDownLabel.text = String(count)
         timerCountDown = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(fireTimer), userInfo: nil, repeats: true)
@@ -56,8 +58,10 @@ class GameViewController: UIViewController{
     }
     
     func startTimer(){
+    score = 0
     timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.updateScore), userInfo: nil, repeats: true)
     }
+    
     var a = ""
     @objc func updateScore(){
     score += 1

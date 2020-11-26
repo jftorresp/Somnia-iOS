@@ -10,9 +10,30 @@ import Firebase
 
 class SignUpViewController: UIViewController {
     
-    @IBOutlet weak var emailTextField: UITextField!
-    @IBOutlet weak var passwordTextField: UITextField!
-    @IBOutlet weak var repeatPassTextField: UITextField!
+    @IBOutlet weak var emailTextField: UITextField! {
+        didSet {
+            let grayPlaceholderText = NSAttributedString(string: "Email",
+                                                        attributes: [NSAttributedString.Key.foregroundColor: UIColor.lightGray])
+            
+            emailTextField.attributedPlaceholder = grayPlaceholderText
+        }
+    }
+    @IBOutlet weak var passwordTextField: UITextField! {
+        didSet {
+            let grayPlaceholderText = NSAttributedString(string: "Password",
+                                                        attributes: [NSAttributedString.Key.foregroundColor: UIColor.lightGray])
+            
+            passwordTextField.attributedPlaceholder = grayPlaceholderText
+        }
+    }
+    @IBOutlet weak var repeatPassTextField: UITextField! {
+        didSet {
+            let grayPlaceholderText = NSAttributedString(string: "Repeat password",
+                                                        attributes: [NSAttributedString.Key.foregroundColor: UIColor.lightGray])
+            
+            repeatPassTextField.attributedPlaceholder = grayPlaceholderText
+        }
+    }
     @IBOutlet weak var signUpButton: UIButton!
     @IBOutlet weak var verticalStackView: UIStackView!
     

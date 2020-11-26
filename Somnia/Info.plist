@@ -2,8 +2,6 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>NSMicrophoneUsageDescription</key>
-	<string>Access to microphone is needed to detect noice level only</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleExecutable</key>
@@ -57,6 +55,8 @@
 	<true/>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>We need your location to know when to trigger your alarms.</string>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>Access to microphone is needed to detect noice level only</string>
 	<key>UIAppFonts</key>
 	<array>
 		<string>HaboroSoft-NorBol.ttf</string>

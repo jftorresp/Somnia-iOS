@@ -14,8 +14,22 @@ class LoginViewController: UIViewController, UNUserNotificationCenterDelegate {
     
     // Outlets
     
-    @IBOutlet weak var emailTextField: UITextField!
-    @IBOutlet weak var passwordTextField: UITextField!
+    @IBOutlet weak var emailTextField: UITextField! {
+        didSet {
+            let grayPlaceholderText = NSAttributedString(string: "Email",
+                                                        attributes: [NSAttributedString.Key.foregroundColor: UIColor.lightGray])
+            
+            emailTextField.attributedPlaceholder = grayPlaceholderText
+        }
+    }
+    @IBOutlet weak var passwordTextField: UITextField! {
+        didSet {
+            let grayPlaceholderText = NSAttributedString(string: "Password",
+                                                        attributes: [NSAttributedString.Key.foregroundColor: UIColor.lightGray])
+            
+            passwordTextField.attributedPlaceholder = grayPlaceholderText
+        }
+    }
     @IBOutlet weak var loginButton: UIButton!
     @IBOutlet weak var verticalStackView: UIStackView!
     @IBOutlet weak var fbButton: UIButton!

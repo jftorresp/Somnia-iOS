@@ -57,7 +57,7 @@ class FeedbackViewController: UIViewController {
     }
     
     func sendScoreDB(mood: String) {
-        
+                
             if let id = Auth.auth().currentUser?.uid,
                let totalDeep = SleepTwoViewController.analysis?.deep,
                let durationHours = SleepTwoViewController.analysis?.duration,

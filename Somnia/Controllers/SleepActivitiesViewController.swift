@@ -57,6 +57,9 @@ class SleepActivitiesViewController: UIViewController {
             bedtimeLoadLabel.text = "You don´t have internet connection. Come back later when you regain connectivity."
             bedtimeLoadLabel.textAlignment = .center
         }
+        
+        Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(loadAlarmTriggeredVC), userInfo: nil, repeats: true)
+
     }
     
     func loadSleepSounds() {
@@ -131,6 +134,19 @@ class SleepActivitiesViewController: UIViewController {
                     }
                 }
             }
+    }
+    
+    @objc func loadAlarmTriggeredVC() {
+        
+        if let sound = SleepTwoViewController.alarmSound {
+            
+            if sound.isPlaying == true {
+                let alarmTriggeredVC = storyboard?.instantiateViewController(identifier: K.alarmTriggered) as? AlarmTriggeredViewController
+                
+                view.window?.rootViewController = alarmTriggeredVC
+                view.window?.makeKeyAndVisible()
+            }
+        }
     }
 }
 

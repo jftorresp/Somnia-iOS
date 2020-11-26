@@ -148,6 +148,7 @@ class EditAlarmViewController: UIViewController {
                 }
             }
         }
+        AlarmsNewUserViewController.alarms.filter { $0.alarm_date != date.date }
 
         dismiss(animated: true, completion: nil)
     }
