@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		3716A225253CCEE30037D976 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3716A224253CCEE30037D976 /* GameViewController.swift */; };
+		371D599E257F2C2C001C8A31 /* BeforeDreamsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 371D599D257F2C2C001C8A31 /* BeforeDreamsViewController.swift */; };
+		371D59A3257F33F7001C8A31 /* RecordDreamsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 371D59A2257F33F7001C8A31 /* RecordDreamsViewController.swift */; };
 		372C996B255659A300AB0147 /* EditInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 372C996A255659A300AB0147 /* EditInfoViewController.swift */; };
 		3742C96A254B53DF001DEF67 /* AlarmTriggeredViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3742C969254B53DF001DEF67 /* AlarmTriggeredViewController.swift */; };
 		378630F525355CBC00773BFA /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 378630F425355CBC00773BFA /* SignUpViewController.swift */; };
@@ -86,6 +88,8 @@
 		18FA628F9188F0A752A21FC8 /* Pods-SomniaTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SomniaTests.release.xcconfig"; path = "Target Support Files/Pods-SomniaTests/Pods-SomniaTests.release.xcconfig"; sourceTree = "<group>"; };
 		27B89729442CECDE9FC97267 /* Pods-SomniaTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SomniaTests.debug.xcconfig"; path = "Target Support Files/Pods-SomniaTests/Pods-SomniaTests.debug.xcconfig"; sourceTree = "<group>"; };
 		3716A224253CCEE30037D976 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		371D599D257F2C2C001C8A31 /* BeforeDreamsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeforeDreamsViewController.swift; sourceTree = "<group>"; };
+		371D59A2257F33F7001C8A31 /* RecordDreamsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordDreamsViewController.swift; sourceTree = "<group>"; };
 		372C996A255659A300AB0147 /* EditInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditInfoViewController.swift; sourceTree = "<group>"; };
 		3742C969254B53DF001DEF67 /* AlarmTriggeredViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmTriggeredViewController.swift; sourceTree = "<group>"; };
 		378630F425355CBC00773BFA /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
@@ -287,6 +291,8 @@
 				B13E13D0254CDCA200208EA8 /* FeedbackViewController.swift */,
 				372C996A255659A300AB0147 /* EditInfoViewController.swift */,
 				B1AA18C0255C918600C6102A /* EditAlarmViewController.swift */,
+				371D599D257F2C2C001C8A31 /* BeforeDreamsViewController.swift */,
+				371D59A2257F33F7001C8A31 /* RecordDreamsViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -623,6 +629,7 @@
 				3799660C2538934D00503213 /* AlarmsNewUserViewController.swift in Sources */,
 				3742C96A254B53DF001DEF67 /* AlarmTriggeredViewController.swift in Sources */,
 				B1E48D6E25392145003AC54F /* StatsViewController.swift in Sources */,
+				371D59A3257F33F7001C8A31 /* RecordDreamsViewController.swift in Sources */,
 				B146080C253A6422004AE54D /* NewAlarmViewController.swift in Sources */,
 				3716A225253CCEE30037D976 /* GameViewController.swift in Sources */,
 				B112310E25392F750024DD7D /* SleepTwoViewController.swift in Sources */,
@@ -630,6 +637,7 @@
 				B13E13D1254CDCA200208EA8 /* FeedbackViewController.swift in Sources */,
 				B13CC2CF251BAE5600A25D60 /* LoginViewController.swift in Sources */,
 				B111B317253BC1B700D1C00E /* Alarm.swift in Sources */,
+				371D599E257F2C2C001C8A31 /* BeforeDreamsViewController.swift in Sources */,
 				B13CC2CB251BAE5600A25D60 /* AppDelegate.swift in Sources */,
 				B1B244D725538B75004942EA /* Analysis.swift in Sources */,
 				B103D2202534DF5D00F5F301 /* Constants.swift in Sources */,

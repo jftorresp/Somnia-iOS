@@ -275,13 +275,13 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EOA-cv-X7x">
-                                <rect key="frame" x="30" y="164" width="354" height="548"/>
+                                <rect key="frame" x="30" y="164" width="354" height="865"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="7XM-xi-emq">
-                                        <rect key="frame" x="20" y="20" width="314" height="508"/>
+                                        <rect key="frame" x="20" y="20" width="314" height="825"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lp7-vL-aJY">
-                                                <rect key="frame" x="0.0" y="0.0" width="314" height="59.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="314" height="105"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="190" id="3hv-fu-hCV"/>
                                                 </constraints>
@@ -291,21 +291,21 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Full Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wkr-4M-hH9">
-                                                <rect key="frame" x="0.0" y="74.5" width="314" height="60"/>
+                                                <rect key="frame" x="0.0" y="120" width="314" height="105"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <color key="textColor" name="Darkblue"/>
                                                 <fontDescription key="fontDescription" name="HaboroSoft-NorReg" family="HaboroSoft-NorReg" pointSize="18"/>
                                                 <textInputTraits key="textInputTraits" textContentType="name"/>
                                             </textField>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter a nickname or alias" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3lW-t3-CqZ">
-                                                <rect key="frame" x="0.0" y="149.5" width="314" height="59.5"/>
+                                                <rect key="frame" x="0.0" y="240" width="314" height="105"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <color key="textColor" name="Darkblue"/>
                                                 <fontDescription key="fontDescription" name="HaboroSoft-NorReg" family="HaboroSoft-NorReg" pointSize="18"/>
                                                 <textInputTraits key="textInputTraits" textContentType="nickname"/>
                                             </textField>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vgp-0l-IM5">
-                                                <rect key="frame" x="0.0" y="224" width="314" height="60"/>
+                                                <rect key="frame" x="0.0" y="360" width="314" height="105"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <state key="normal" title="I identify my gender as ...">
                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -315,7 +315,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iSR-zI-jIE">
-                                                <rect key="frame" x="0.0" y="299" width="314" height="59.5"/>
+                                                <rect key="frame" x="0.0" y="480" width="314" height="105"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <state key="normal" title="I am currently a ...">
                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -325,14 +325,14 @@
                                                 </connections>
                                             </button>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter your age" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ice-76-PGJ">
-                                                <rect key="frame" x="0.0" y="373.5" width="314" height="60"/>
+                                                <rect key="frame" x="0.0" y="600" width="314" height="105"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <color key="textColor" name="Darkblue"/>
                                                 <fontDescription key="fontDescription" name="HaboroSoft-NorReg" family="HaboroSoft-NorReg" pointSize="18"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9A9-Np-Gb6">
-                                                <rect key="frame" x="0.0" y="448.5" width="314" height="59.5"/>
+                                                <rect key="frame" x="0.0" y="720" width="314" height="105"/>
                                                 <color key="backgroundColor" name="Green"/>
                                                 <fontDescription key="fontDescription" name="HaboroSoft-NorMed" family="HaboroSoft-NorMed" pointSize="18"/>
                                                 <state key="normal" title="Sign up">
@@ -411,13 +411,13 @@
                                         <rect key="frame" x="5" y="8" width="364" height="23.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Wed Nov 4" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WCS-YE-WGv">
-                                                <rect key="frame" x="0.0" y="0.0" width="116.5" height="23.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="98.5" height="23.5"/>
                                                 <fontDescription key="fontDescription" name="HaboroSoft-NorBol" family="HaboroSoft-NorBol" pointSize="20"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Total Sleep Time" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="652-lX-sne">
-                                                <rect key="frame" x="133.5" y="0.0" width="103.5" height="23.5"/>
+                                                <rect key="frame" x="115.5" y="0.0" width="121.5" height="23.5"/>
                                                 <fontDescription key="fontDescription" name="HaboroSoft-NorBol" family="HaboroSoft-NorBol" pointSize="14"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
@@ -2117,6 +2117,188 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5uz-BN-kaE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="6565" y="850"/>
+        </scene>
+        <!--Before Dreams View Controller-->
+        <scene sceneID="qaW-ch-yDZ">
+            <objects>
+                <viewController id="zLd-Iu-nju" customClass="BeforeDreamsViewController" customModule="Somnia" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="9tf-4D-WS2">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Any dreams you " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jYr-yh-LQ8">
+                                <rect key="frame" x="92" y="307" width="230" height="60"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="HaboroSoft-NorDem" family="HaboroSoft-NorDem" pointSize="32"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="want to remember?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XaQ-Mt-Ckw">
+                                <rect key="frame" x="70" y="362" width="274" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="HaboroSoft-NorDem" family="HaboroSoft-NorDem" pointSize="32"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Let's not forget those " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0i6-vD-2Hf">
+                                <rect key="frame" x="129" y="434" width="157" height="18"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="HaboroSoft-NorBoo" family="HaboroSoft-NorBoo" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="crazy dreams." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TQa-46-mui">
+                                <rect key="frame" x="157" y="454" width="100" height="18"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="HaboroSoft-NorBoo" family="HaboroSoft-NorBoo" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v7h-nt-FkE">
+                                <rect key="frame" x="70" y="520" width="100" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" name="Green"/>
+                                <fontDescription key="fontDescription" name="HaboroSoft-NorDem" family="HaboroSoft-NorDem" pointSize="19"/>
+                                <state key="normal" title="Yes!">
+                                    <color key="titleColor" name="Darkblue"/>
+                                </state>
+                                <connections>
+                                    <action selector="yesAction:" destination="zLd-Iu-nju" eventType="touchUpInside" id="8l5-8x-Zf1"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SWD-Uh-8HF">
+                                <rect key="frame" x="244" y="520" width="100" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" name="Green"/>
+                                <fontDescription key="fontDescription" name="HaboroSoft-NorDem" family="HaboroSoft-NorDem" pointSize="17"/>
+                                <state key="normal" title="Not really...">
+                                    <color key="titleColor" name="Darkblue"/>
+                                </state>
+                                <connections>
+                                    <action selector="noAction:" destination="zLd-Iu-nju" eventType="touchUpInside" id="vQH-AW-Apg"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="afU-fw-seS"/>
+                        <color key="backgroundColor" name="Darkblue"/>
+                    </view>
+                    <connections>
+                        <outlet property="noButton" destination="SWD-Uh-8HF" id="oIm-wY-Dpp"/>
+                        <outlet property="yesButton" destination="v7h-nt-FkE" id="Tr0-qe-Bnv"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZUD-t4-c8V" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="7382.6086956521749" y="849.77678571428567"/>
+        </scene>
+        <!--Record Dreams View Controller-->
+        <scene sceneID="bdN-hj-Bfg">
+            <objects>
+                <viewController id="7ph-22-ZEY" customClass="RecordDreamsViewController" customModule="Somnia" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="EXh-Nm-9Hc">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Record yourself!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vpu-hj-gbO">
+                                <rect key="frame" x="86" y="254" width="243" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="HaboroSoft-NorDem" family="HaboroSoft-NorDem" pointSize="34"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="don't go too deep into details :)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hE7-yg-6wb">
+                                <rect key="frame" x="88" y="349" width="239" height="18"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="HaboroSoft-NorBoo" family="HaboroSoft-NorBoo" pointSize="18"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Remember you only have 2 minutes," textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h3v-xw-TaX">
+                                <rect key="frame" x="80" y="323" width="274" height="18"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="HaboroSoft-NorBoo" family="HaboroSoft-NorBoo" pointSize="18"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LiK-kC-IYS">
+                                <rect key="frame" x="84" y="495" width="246" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" name="Green"/>
+                                <fontDescription key="fontDescription" name="HaboroSoft-NorBoo" family="HaboroSoft-NorBoo" pointSize="17"/>
+                                <state key="normal" title="Start recording">
+                                    <color key="titleColor" name="Darkblue"/>
+                                </state>
+                                <connections>
+                                    <action selector="startAction:" destination="7ph-22-ZEY" eventType="touchUpInside" id="a9Y-eN-vA4"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pup-xb-qV9">
+                                <rect key="frame" x="84" y="591" width="246" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" name="Green"/>
+                                <fontDescription key="fontDescription" name="HaboroSoft-NorBoo" family="HaboroSoft-NorBoo" pointSize="17"/>
+                                <state key="normal" title="Stop recording and save it">
+                                    <color key="titleColor" name="Darkblue"/>
+                                </state>
+                                <connections>
+                                    <action selector="saveAction:" destination="7ph-22-ZEY" eventType="touchUpInside" id="Zsx-g6-Wtv"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b9Z-bu-bAT">
+                                <rect key="frame" x="187" y="433" width="10" height="16"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="HaboroSoft-NorBoo" family="HaboroSoft-NorBoo" pointSize="16"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text=":" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zgg-js-Y0T">
+                                <rect key="frame" x="201" y="432" width="4" height="16"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="HaboroSoft-NorBoo" family="HaboroSoft-NorBoo" pointSize="16"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yk0-C4-iaU">
+                                <rect key="frame" x="208" y="433" width="20" height="16"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="HaboroSoft-NorBoo" family="HaboroSoft-NorBoo" pointSize="16"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Time elapsed" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gpH-YF-vSN">
+                                <rect key="frame" x="159" y="407" width="96" height="18"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="HaboroSoft-NorBoo" family="HaboroSoft-NorBoo" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cZ8-NB-S0A">
+                                <rect key="frame" x="84" y="655" width="246" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" name="Green"/>
+                                <fontDescription key="fontDescription" name="HaboroSoft-NorBoo" family="HaboroSoft-NorBoo" pointSize="17"/>
+                                <state key="normal" title="Stop recording and start over">
+                                    <color key="titleColor" name="Darkblue"/>
+                                </state>
+                                <connections>
+                                    <action selector="repeatButton:" destination="7ph-22-ZEY" eventType="touchUpInside" id="oTo-VA-FSP"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="kAl-GF-lM2"/>
+                        <color key="backgroundColor" name="Darkblue"/>
+                    </view>
+                    <connections>
+                        <outlet property="minutesLabel" destination="b9Z-bu-bAT" id="jkY-m6-Be6"/>
+                        <outlet property="repeatButton" destination="cZ8-NB-S0A" id="zoT-Mh-fea"/>
+                        <outlet property="saveButton" destination="Pup-xb-qV9" id="NXH-eU-0Z8"/>
+                        <outlet property="secondsLabel" destination="Yk0-C4-iaU" id="wJN-fB-Gh7"/>
+                        <outlet property="startButton" destination="LiK-kC-IYS" id="Gnf-kw-CZy"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tF5-23-834" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="8223.188405797102" y="849.77678571428567"/>
         </scene>
         <!--Edit info-->
         <scene sceneID="8mu-wr-ovp">
