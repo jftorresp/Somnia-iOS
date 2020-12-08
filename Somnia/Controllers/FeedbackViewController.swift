@@ -34,7 +34,7 @@ class FeedbackViewController: UIViewController {
     
     @IBAction func goodMoodPressed(_ sender: UIButton) {
         sendScoreDB(mood: "GOOD")
-        let homeViewController = storyboard?.instantiateViewController(identifier: K.tabBar) as? UITabBarController
+        let homeViewController = storyboard?.instantiateViewController(identifier: "BeforeDreamsViewController") as? BeforeDreamsViewController
         
         view.window?.rootViewController = homeViewController
         view.window?.makeKeyAndVisible()
@@ -42,7 +42,7 @@ class FeedbackViewController: UIViewController {
     
     @IBAction func medMoodPressed(_ sender: UIButton) {
         sendScoreDB(mood: "GRUMPY")
-        let homeViewController = storyboard?.instantiateViewController(identifier: K.tabBar) as? UITabBarController
+        let homeViewController = storyboard?.instantiateViewController(identifier: "BeforeDreamsViewController") as? BeforeDreamsViewController
         
         view.window?.rootViewController = homeViewController
         view.window?.makeKeyAndVisible()
@@ -50,7 +50,7 @@ class FeedbackViewController: UIViewController {
     
     @IBAction func badMoodPressed(_ sender: UIButton) {
         sendScoreDB(mood: "BAD")
-        let homeViewController = storyboard?.instantiateViewController(identifier: K.tabBar) as? UITabBarController
+        let homeViewController = storyboard?.instantiateViewController(identifier: "BeforeDreamsViewController") as? BeforeDreamsViewController
         
         view.window?.rootViewController = homeViewController
         view.window?.makeKeyAndVisible()

@@ -13,9 +13,18 @@ class BeforeDreamsViewController: UIViewController {
     
     @IBOutlet weak var yesButton: UIButton!
     @IBOutlet weak var noButton: UIButton!
+    
     @IBAction func yesAction(_ sender: UIButton) {
+        let homeViewController = storyboard?.instantiateViewController(identifier: "RecordDreamsViewController") as? RecordDreamsViewController
+        
+        view.window?.rootViewController = homeViewController
+        view.window?.makeKeyAndVisible()
     }
     @IBAction func noAction(_ sender: UIButton) {
+        let homeViewController = storyboard?.instantiateViewController(identifier: K.tabBar) as? UITabBarController
+        
+        view.window?.rootViewController = homeViewController
+        view.window?.makeKeyAndVisible()
     }
     
     override func viewDidLoad() {

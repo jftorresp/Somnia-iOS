@@ -411,13 +411,13 @@
                                         <rect key="frame" x="5" y="8" width="364" height="23.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Wed Nov 4" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WCS-YE-WGv">
-                                                <rect key="frame" x="0.0" y="0.0" width="98.5" height="23.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="116.5" height="23.5"/>
                                                 <fontDescription key="fontDescription" name="HaboroSoft-NorBol" family="HaboroSoft-NorBol" pointSize="20"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Total Sleep Time" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="652-lX-sne">
-                                                <rect key="frame" x="115.5" y="0.0" width="121.5" height="23.5"/>
+                                                <rect key="frame" x="133.5" y="0.0" width="103.5" height="23.5"/>
                                                 <fontDescription key="fontDescription" name="HaboroSoft-NorBol" family="HaboroSoft-NorBol" pointSize="14"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
@@ -2121,7 +2121,7 @@
         <!--Before Dreams View Controller-->
         <scene sceneID="qaW-ch-yDZ">
             <objects>
-                <viewController id="zLd-Iu-nju" customClass="BeforeDreamsViewController" customModule="Somnia" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="BeforeDreamsViewController" id="zLd-Iu-nju" customClass="BeforeDreamsViewController" customModule="Somnia" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="9tf-4D-WS2">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -2194,7 +2194,7 @@
         <!--Record Dreams View Controller-->
         <scene sceneID="bdN-hj-Bfg">
             <objects>
-                <viewController id="7ph-22-ZEY" customClass="RecordDreamsViewController" customModule="Somnia" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="RecordDreamsViewController" id="7ph-22-ZEY" customClass="RecordDreamsViewController" customModule="Somnia" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="EXh-Nm-9Hc">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

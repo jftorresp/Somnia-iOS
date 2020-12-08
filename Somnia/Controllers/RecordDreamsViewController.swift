@@ -26,7 +26,15 @@ class RecordDreamsViewController: UIViewController {
     }
     
     @IBAction func saveAction(_ sender: UIButton) {
+        let homeViewController = storyboard?.instantiateViewController(identifier: K.tabBar) as? UITabBarController
+        
+        view.window?.rootViewController = homeViewController
+        view.window?.makeKeyAndVisible()
     }
     @IBAction func repeatButton(_ sender: UIButton) {
+        let homeViewController = storyboard?.instantiateViewController(identifier: K.tabBar) as? UITabBarController
+        
+        view.window?.rootViewController = homeViewController
+        view.window?.makeKeyAndVisible()
     }
 }
