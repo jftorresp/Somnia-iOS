@@ -38,6 +38,7 @@ struct K {
         static let analysisCollection = "analysis"
         static let soundsCollection = "sounds"
         static let storiesCollection = "stories"
+        static let dreamLogCollection = "dreamlogs"
         static let userKey = "email"
         static let lat = "lat"
         static let lon = "lon"

@@ -204,7 +204,6 @@ class SleepTwoViewController: UIViewController {
                 }
             }
         } else {
-            print("Element not found")
         }
     }
     

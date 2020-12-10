@@ -27,6 +27,10 @@ class BeforeDreamsViewController: UIViewController {
         view.window?.makeKeyAndVisible()
     }
     
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+    
     override func viewDidLoad() {
         yesButton.layer.cornerRadius = 12
         noButton.layer.cornerRadius = 12

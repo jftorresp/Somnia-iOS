@@ -53,7 +53,6 @@ class SleepSoundCell: UITableViewCell {
 
             }
         } else {
-            print("Element not found")
         }
     }
     

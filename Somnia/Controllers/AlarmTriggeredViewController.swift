@@ -24,7 +24,7 @@ class AlarmTriggeredViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let date = Date()
+        let date = AlarmsNewUserViewController.closest.alarm_date
         let formatter = DateFormatter()
         let formatter2 = DateFormatter()
         formatter.dateFormat = "HH:mm " // "a" prints "pm" or "am"

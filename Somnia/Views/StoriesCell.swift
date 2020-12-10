@@ -69,7 +69,6 @@ class StoriesCell: UITableViewCell {
             }
 
         } else {
-            print("Element not found")
         }
     }
 }
