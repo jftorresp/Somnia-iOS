@@ -18,6 +18,7 @@ class SleepSoundCell: UITableViewCell {
     var cellDelegate : SleepSoundCellDelegate? = nil
 
     var storage = Storage.storage()
+
     
     override func awakeFromNib() {
         super.awakeFromNib()

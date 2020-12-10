@@ -137,18 +137,21 @@
                                     </stackView>
                                 </subviews>
                             </stackView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Somnia" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ipt-Of-6n9">
-                                <rect key="frame" x="142.5" y="197.5" width="129" height="44.5"/>
-                                <fontDescription key="fontDescription" name="HaboroSoft-NorDem" family="HaboroSoft-NorDem" pointSize="38"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="appicon-nobg" translatesAutoresizingMaskIntoConstraints="NO" id="7wy-3b-KBG">
+                                <rect key="frame" x="140" y="222" width="134" height="72"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Somnia" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2SG-aP-zAH">
+                                <rect key="frame" x="166" y="306" width="83" height="25"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="HaboroSoft-NorBol" family="HaboroSoft-NorBol" pointSize="25"/>
+                                <color key="textColor" name="Green"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="unk-tk-xXG" firstAttribute="top" secondItem="ipt-Of-6n9" secondAttribute="bottom" constant="138" id="KPq-IP-IQN"/>
-                            <constraint firstItem="ipt-Of-6n9" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Spe-rt-T9l"/>
                             <constraint firstItem="unk-tk-xXG" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="gMr-8v-97u"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="unk-tk-xXG" secondAttribute="bottom" constant="150" id="qjJ-hy-cmF"/>
                         </constraints>
@@ -166,7 +169,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-732" y="291"/>
+            <point key="canvasLocation" x="-733.33333333333337" y="290.625"/>
         </scene>
         <!--Sign Up View Controller-->
         <scene sceneID="V6S-8H-Ap4">
@@ -233,10 +236,16 @@
                                     </button>
                                 </subviews>
                             </stackView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Somnia" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MYD-8h-12d">
-                                <rect key="frame" x="142.5" y="266.5" width="129" height="44.5"/>
-                                <fontDescription key="fontDescription" name="HaboroSoft-NorDem" family="HaboroSoft-NorDem" pointSize="38"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="appicon-nobg" translatesAutoresizingMaskIntoConstraints="NO" id="zeh-oe-rfp">
+                                <rect key="frame" x="140" y="266" width="134" height="72"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="default"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Somnia" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oLp-ew-ixr">
+                                <rect key="frame" x="165" y="350" width="83" height="25"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="HaboroSoft-NorBol" family="HaboroSoft-NorBol" pointSize="25"/>
+                                <color key="textColor" name="Green"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -244,9 +253,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="1Ut-ke-1zS" firstAttribute="bottom" secondItem="wzA-Pv-zD6" secondAttribute="bottom" constant="159" id="D98-tP-qNw"/>
-                            <constraint firstItem="MYD-8h-12d" firstAttribute="centerX" secondItem="ZB8-jD-BZJ" secondAttribute="centerX" id="DNV-lh-4ds"/>
                             <constraint firstItem="wzA-Pv-zD6" firstAttribute="centerX" secondItem="ZB8-jD-BZJ" secondAttribute="centerX" id="JSb-xQ-hsU"/>
-                            <constraint firstItem="wzA-Pv-zD6" firstAttribute="top" secondItem="MYD-8h-12d" secondAttribute="bottom" constant="138" id="mfZ-9c-tlF"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="3e3-5g-17P"/>
@@ -275,13 +282,13 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EOA-cv-X7x">
-                                <rect key="frame" x="30" y="164" width="354" height="548"/>
+                                <rect key="frame" x="30" y="164" width="354" height="865"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="7XM-xi-emq">
-                                        <rect key="frame" x="20" y="20" width="314" height="508"/>
+                                        <rect key="frame" x="20" y="20" width="314" height="825"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lp7-vL-aJY">
-                                                <rect key="frame" x="0.0" y="0.0" width="314" height="59.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="314" height="105"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="190" id="3hv-fu-hCV"/>
                                                 </constraints>
@@ -291,21 +298,21 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Full Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wkr-4M-hH9">
-                                                <rect key="frame" x="0.0" y="74.5" width="314" height="60"/>
+                                                <rect key="frame" x="0.0" y="120" width="314" height="105"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <color key="textColor" name="Darkblue"/>
                                                 <fontDescription key="fontDescription" name="HaboroSoft-NorReg" family="HaboroSoft-NorReg" pointSize="18"/>
                                                 <textInputTraits key="textInputTraits" textContentType="name"/>
                                             </textField>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter a nickname or alias" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3lW-t3-CqZ">
-                                                <rect key="frame" x="0.0" y="149.5" width="314" height="59.5"/>
+                                                <rect key="frame" x="0.0" y="240" width="314" height="105"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <color key="textColor" name="Darkblue"/>
                                                 <fontDescription key="fontDescription" name="HaboroSoft-NorReg" family="HaboroSoft-NorReg" pointSize="18"/>
                                                 <textInputTraits key="textInputTraits" textContentType="nickname"/>
                                             </textField>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vgp-0l-IM5">
-                                                <rect key="frame" x="0.0" y="224" width="314" height="60"/>
+                                                <rect key="frame" x="0.0" y="360" width="314" height="105"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <state key="normal" title="I identify my gender as ...">
                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -315,7 +322,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iSR-zI-jIE">
-                                                <rect key="frame" x="0.0" y="299" width="314" height="59.5"/>
+                                                <rect key="frame" x="0.0" y="480" width="314" height="105"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <state key="normal" title="I am currently a ...">
                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -325,14 +332,14 @@
                                                 </connections>
                                             </button>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter your age" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ice-76-PGJ">
-                                                <rect key="frame" x="0.0" y="373.5" width="314" height="60"/>
+                                                <rect key="frame" x="0.0" y="600" width="314" height="105"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <color key="textColor" name="Darkblue"/>
                                                 <fontDescription key="fontDescription" name="HaboroSoft-NorReg" family="HaboroSoft-NorReg" pointSize="18"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9A9-Np-Gb6">
-                                                <rect key="frame" x="0.0" y="448.5" width="314" height="59.5"/>
+                                                <rect key="frame" x="0.0" y="720" width="314" height="105"/>
                                                 <color key="backgroundColor" name="Green"/>
                                                 <fontDescription key="fontDescription" name="HaboroSoft-NorMed" family="HaboroSoft-NorMed" pointSize="18"/>
                                                 <state key="normal" title="Sign up">
@@ -411,13 +418,13 @@
                                         <rect key="frame" x="5" y="8" width="364" height="23.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Wed Nov 4" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WCS-YE-WGv">
-                                                <rect key="frame" x="0.0" y="0.0" width="116.5" height="23.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="98.5" height="23.5"/>
                                                 <fontDescription key="fontDescription" name="HaboroSoft-NorBol" family="HaboroSoft-NorBol" pointSize="20"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Total Sleep Time" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="652-lX-sne">
-                                                <rect key="frame" x="133.5" y="0.0" width="103.5" height="23.5"/>
+                                                <rect key="frame" x="115.5" y="0.0" width="121.5" height="23.5"/>
                                                 <fontDescription key="fontDescription" name="HaboroSoft-NorBol" family="HaboroSoft-NorBol" pointSize="14"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
@@ -1165,17 +1172,17 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="jxm-b0-2ap">
                                 <rect key="frame" x="20" y="327" width="374" height="242"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="t7V-qj-gYa">
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="t7V-qj-gYa">
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="82"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="right" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="11:30" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mlO-OO-s5b">
-                                                <rect key="frame" x="0.0" y="0.0" width="181" height="82"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="187" height="82"/>
                                                 <fontDescription key="fontDescription" name="HaboroSoft-NorBol" family="HaboroSoft-NorBol" pointSize="70"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="AM" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vkh-DD-xnS">
-                                                <rect key="frame" x="193" y="0.0" width="181" height="82"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="AM" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vkh-DD-xnS">
+                                                <rect key="frame" x="187" y="0.0" width="187" height="82"/>
                                                 <fontDescription key="fontDescription" name="HaboroSoft-NorBol" family="HaboroSoft-NorBol" pointSize="70"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
@@ -1412,232 +1419,226 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="apK-9M-yoU">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="573"/>
                                         <subviews>
-                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="205" translatesAutoresizingMaskIntoConstraints="NO" id="Wnq-dq-vFs">
-                                                <rect key="frame" x="20" y="394" width="374" height="35"/>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="22" translatesAutoresizingMaskIntoConstraints="NO" id="Lvb-VZ-tTg">
+                                                <rect key="frame" x="20" y="14" width="374" height="500"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Basic Info" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ymd-Fc-X71">
-                                                        <rect key="frame" x="0.0" y="0.0" width="133.5" height="35"/>
-                                                        <fontDescription key="fontDescription" name="HaboroSoft-NorDem" family="HaboroSoft-NorDem" pointSize="30"/>
-                                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ztv-Uu-SjY">
-                                                        <rect key="frame" x="338.5" y="0.0" width="35.5" height="35"/>
-                                                        <fontDescription key="fontDescription" name="HaboroSoft-NorBoo" family="HaboroSoft-NorBoo" pointSize="17"/>
-                                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        <state key="normal" title="Edit"/>
-                                                        <connections>
-                                                            <action selector="editAction:" destination="E8N-2y-auq" eventType="touchUpInside" id="SJx-D6-0NZ"/>
-                                                        </connections>
-                                                    </button>
-                                                </subviews>
-                                            </stackView>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="i9v-vC-AAn">
-                                                <rect key="frame" x="20" y="437" width="374" height="220"/>
-                                                <subviews>
-                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="9" translatesAutoresizingMaskIntoConstraints="NO" id="US9-Y4-vBb">
-                                                        <rect key="frame" x="12" y="10" width="350" height="200"/>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="TrZ-wZ-U9f">
+                                                        <rect key="frame" x="0.0" y="0.0" width="193.5" height="55"/>
                                                         <subviews>
-                                                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" alignment="top" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="HMz-SX-eCp">
-                                                                <rect key="frame" x="0.0" y="0.0" width="350" height="37.5"/>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Awards" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8kb-4l-EaY">
+                                                                <rect key="frame" x="0.0" y="0.0" width="100" height="35"/>
+                                                                <fontDescription key="fontDescription" name="HaboroSoft-NorDem" family="HaboroSoft-NorDem" pointSize="30"/>
+                                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You don't have awards yet!" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3hk-08-1qX">
+                                                                <rect key="frame" x="0.0" y="36" width="193.5" height="19"/>
+                                                                <fontDescription key="fontDescription" name="HaboroSoft-NorReg" family="HaboroSoft-NorReg" pointSize="16"/>
+                                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                    </stackView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="yw5-gG-kBz">
+                                                        <rect key="frame" x="0.0" y="77" width="374" height="138"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dream Log" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q8u-Yl-flg">
+                                                                <rect key="frame" x="0.0" y="0.0" width="148" height="35"/>
+                                                                <fontDescription key="fontDescription" name="HaboroSoft-NorDem" family="HaboroSoft-NorDem" pointSize="30"/>
+                                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Last Entry" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eNz-Wn-9Rw">
+                                                                <rect key="frame" x="0.0" y="39" width="72.5" height="19"/>
+                                                                <fontDescription key="fontDescription" name="HaboroSoft-NorReg" family="HaboroSoft-NorReg" pointSize="16"/>
+                                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="cwx-nm-WbT">
+                                                                <rect key="frame" x="0.0" y="62" width="374" height="76"/>
                                                                 <subviews>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Full name" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ud0-eB-pFd">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="43.5" height="12"/>
-                                                                        <fontDescription key="fontDescription" name="HaboroSoft-NorReg" family="HaboroSoft-NorReg" pointSize="10"/>
-                                                                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                        <nil key="highlightedColor"/>
-                                                                    </label>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Juan Felipe Torres" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lpT-gb-VOH">
-                                                                        <rect key="frame" x="0.0" y="15" width="154.5" height="22.5"/>
-                                                                        <fontDescription key="fontDescription" name="HaboroSoft-NorReg" family="HaboroSoft-NorReg" pointSize="19"/>
-                                                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                        <nil key="highlightedColor"/>
-                                                                    </label>
-                                                                </subviews>
-                                                            </stackView>
-                                                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" distribution="fillEqually" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="25n-gk-F22">
-                                                                <rect key="frame" x="0.0" y="46.5" width="350" height="27"/>
-                                                                <subviews>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Nickname" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zct-ZZ-o4x">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="350" height="12"/>
-                                                                        <fontDescription key="fontDescription" name="HaboroSoft-NorReg" family="HaboroSoft-NorReg" pointSize="10"/>
-                                                                        <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                        <nil key="highlightedColor"/>
-                                                                    </label>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Fercho" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7to-Pp-9k0">
-                                                                        <rect key="frame" x="0.0" y="15" width="350" height="12"/>
-                                                                        <fontDescription key="fontDescription" name="HaboroSoft-NorReg" family="HaboroSoft-NorReg" pointSize="19"/>
-                                                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                        <nil key="highlightedColor"/>
-                                                                    </label>
-                                                                </subviews>
-                                                            </stackView>
-                                                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" alignment="top" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="Zx3-x0-Kkz">
-                                                                <rect key="frame" x="0.0" y="82.5" width="350" height="37.5"/>
-                                                                <subviews>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Age" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HCa-aG-RCY">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="18" height="12"/>
-                                                                        <fontDescription key="fontDescription" name="HaboroSoft-NorReg" family="HaboroSoft-NorReg" pointSize="10"/>
-                                                                        <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                        <nil key="highlightedColor"/>
-                                                                    </label>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="20 years" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ad6-Nv-3C6">
-                                                                        <rect key="frame" x="0.0" y="15" width="72.5" height="22.5"/>
-                                                                        <fontDescription key="fontDescription" name="HaboroSoft-NorReg" family="HaboroSoft-NorReg" pointSize="19"/>
-                                                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                        <nil key="highlightedColor"/>
-                                                                    </label>
-                                                                </subviews>
-                                                            </stackView>
-                                                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" alignment="top" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="iPb-yy-byK">
-                                                                <rect key="frame" x="0.0" y="129" width="350" height="37.5"/>
-                                                                <subviews>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Gender" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sHn-Mh-LcN">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="33.5" height="12"/>
-                                                                        <fontDescription key="fontDescription" name="HaboroSoft-NorReg" family="HaboroSoft-NorReg" pointSize="10"/>
-                                                                        <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                        <nil key="highlightedColor"/>
-                                                                    </label>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Male" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZNj-Sz-Bue">
-                                                                        <rect key="frame" x="0.0" y="15" width="41.5" height="22.5"/>
-                                                                        <fontDescription key="fontDescription" name="HaboroSoft-NorReg" family="HaboroSoft-NorReg" pointSize="19"/>
-                                                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                        <nil key="highlightedColor"/>
-                                                                    </label>
-                                                                </subviews>
-                                                            </stackView>
-                                                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" alignment="top" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="zjT-Ra-wZf">
-                                                                <rect key="frame" x="0.0" y="175.5" width="350" height="24.5"/>
-                                                                <subviews>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Occupation" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dTo-ri-lhc">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="52" height="12"/>
-                                                                        <fontDescription key="fontDescription" name="HaboroSoft-NorReg" family="HaboroSoft-NorReg" pointSize="10"/>
-                                                                        <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                        <nil key="highlightedColor"/>
-                                                                    </label>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Student" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8kb-rQ-Y5C">
-                                                                        <rect key="frame" x="0.0" y="15" width="67" height="9.5"/>
-                                                                        <fontDescription key="fontDescription" name="HaboroSoft-NorReg" family="HaboroSoft-NorReg" pointSize="19"/>
-                                                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                        <nil key="highlightedColor"/>
-                                                                    </label>
+                                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DRU-IC-qCd">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="374" height="76"/>
+                                                                        <subviews>
+                                                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalCentering" alignment="center" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="1p7-Qv-3Up">
+                                                                                <rect key="frame" x="8" y="8" width="358" height="60"/>
+                                                                                <subviews>
+                                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LES-SS-RCd">
+                                                                                        <rect key="frame" x="0.0" y="0.0" width="358" height="22"/>
+                                                                                        <fontDescription key="fontDescription" name="HaboroSoft-NorReg" family="HaboroSoft-NorReg" pointSize="18"/>
+                                                                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                                        <nil key="highlightedColor"/>
+                                                                                    </label>
+                                                                                    <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="b6K-Vh-rt0">
+                                                                                        <rect key="frame" x="15" y="28" width="328" height="4"/>
+                                                                                        <color key="tintColor" name="Green"/>
+                                                                                    </progressView>
+                                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CKR-9T-zbx">
+                                                                                        <rect key="frame" x="171.5" y="38" width="15" height="22"/>
+                                                                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                                        <state key="normal" image="play.fill" catalog="system"/>
+                                                                                        <connections>
+                                                                                            <action selector="playPressed:" destination="E8N-2y-auq" eventType="touchUpInside" id="5Fj-QH-Mrq"/>
+                                                                                        </connections>
+                                                                                    </button>
+                                                                                </subviews>
+                                                                                <constraints>
+                                                                                    <constraint firstItem="b6K-Vh-rt0" firstAttribute="leading" secondItem="1p7-Qv-3Up" secondAttribute="leading" constant="15" id="9Qy-GJ-5V9"/>
+                                                                                    <constraint firstAttribute="trailing" secondItem="b6K-Vh-rt0" secondAttribute="trailing" constant="15" id="pF4-KL-RsD"/>
+                                                                                </constraints>
+                                                                            </stackView>
+                                                                        </subviews>
+                                                                        <color key="backgroundColor" name="MedBlue"/>
+                                                                        <constraints>
+                                                                            <constraint firstAttribute="trailing" secondItem="1p7-Qv-3Up" secondAttribute="trailing" constant="8" id="NK4-sb-WR8"/>
+                                                                            <constraint firstAttribute="width" constant="374" id="flz-fP-FGJ"/>
+                                                                            <constraint firstAttribute="height" constant="76" id="hKT-HU-asB"/>
+                                                                            <constraint firstItem="1p7-Qv-3Up" firstAttribute="top" secondItem="DRU-IC-qCd" secondAttribute="top" constant="8" id="khq-1x-dmk"/>
+                                                                            <constraint firstAttribute="bottom" secondItem="1p7-Qv-3Up" secondAttribute="bottom" constant="8" id="qfV-l2-Vei"/>
+                                                                            <constraint firstItem="1p7-Qv-3Up" firstAttribute="leading" secondItem="DRU-IC-qCd" secondAttribute="leading" constant="8" id="vTW-Ub-oo2"/>
+                                                                        </constraints>
+                                                                    </view>
                                                                 </subviews>
                                                             </stackView>
                                                         </subviews>
                                                     </stackView>
-                                                </subviews>
-                                                <color key="backgroundColor" name="MedBlue"/>
-                                                <constraints>
-                                                    <constraint firstItem="US9-Y4-vBb" firstAttribute="top" secondItem="i9v-vC-AAn" secondAttribute="top" constant="10" id="KB5-Ue-Vjv"/>
-                                                    <constraint firstAttribute="trailing" secondItem="US9-Y4-vBb" secondAttribute="trailing" constant="12" id="Thg-2t-X70"/>
-                                                    <constraint firstItem="US9-Y4-vBb" firstAttribute="leading" secondItem="i9v-vC-AAn" secondAttribute="leading" constant="12" id="hi3-zJ-jmW"/>
-                                                    <constraint firstAttribute="bottom" secondItem="US9-Y4-vBb" secondAttribute="bottom" constant="10" id="nZN-pZ-RRX"/>
-                                                    <constraint firstAttribute="height" constant="220" id="wPR-1Q-V92"/>
-                                                </constraints>
-                                            </view>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Awards" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8kb-4l-EaY">
-                                                <rect key="frame" x="20" y="14" width="98" height="35"/>
-                                                <fontDescription key="fontDescription" name="HaboroSoft-NorDem" family="HaboroSoft-NorDem" pointSize="30"/>
-                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You are doing great!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3hk-08-1qX">
-                                                <rect key="frame" x="20" y="50" width="139" height="19"/>
-                                                <fontDescription key="fontDescription" name="HaboroSoft-NorReg" family="HaboroSoft-NorReg" pointSize="16"/>
-                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dream Log" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q8u-Yl-flg">
-                                                <rect key="frame" x="20" y="247" width="144" height="35"/>
-                                                <fontDescription key="fontDescription" name="HaboroSoft-NorDem" family="HaboroSoft-NorDem" pointSize="30"/>
-                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your dreams are the best inspiration" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eNz-Wn-9Rw">
-                                                <rect key="frame" x="20" y="283" width="247" height="19"/>
-                                                <fontDescription key="fontDescription" name="HaboroSoft-NorReg" family="HaboroSoft-NorReg" pointSize="16"/>
-                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="uWb-Mf-DkZ">
-                                                <rect key="frame" x="20" y="77" width="374" height="162"/>
-                                                <subviews>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yrS-W7-Frj">
-                                                        <rect key="frame" x="0.0" y="0.0" width="162" height="162"/>
-                                                        <color key="backgroundColor" name="MedBlue"/>
-                                                    </view>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="csT-GQ-Xp9">
-                                                        <rect key="frame" x="212" y="0.0" width="162" height="162"/>
-                                                        <color key="backgroundColor" name="MedBlue"/>
-                                                    </view>
-                                                </subviews>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="162" id="ch3-CP-ZCh"/>
-                                                </constraints>
-                                            </stackView>
-                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="cwx-nm-WbT">
-                                                <rect key="frame" x="20" y="310" width="374" height="76"/>
-                                                <subviews>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DRU-IC-qCd">
-                                                        <rect key="frame" x="0.0" y="0.0" width="374" height="76"/>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="W3k-6P-dv8">
+                                                        <rect key="frame" x="0.0" y="237" width="374" height="263"/>
                                                         <subviews>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CKR-9T-zbx">
-                                                                <rect key="frame" x="179.5" y="51" width="15" height="22"/>
-                                                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                <state key="normal" image="play.fill" catalog="system"/>
-                                                            </button>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sLp-zY-ilQ">
-                                                                <rect key="frame" x="151.5" y="51" width="25" height="22"/>
-                                                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                <state key="normal" image="backward.fill" catalog="system"/>
-                                                            </button>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e6A-pv-JFf">
-                                                                <rect key="frame" x="199.5" y="51" width="25" height="22"/>
-                                                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                <state key="normal" image="forward.fill" catalog="system"/>
-                                                            </button>
+                                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="205" translatesAutoresizingMaskIntoConstraints="NO" id="Wnq-dq-vFs">
+                                                                <rect key="frame" x="0.0" y="0.0" width="374" height="35"/>
+                                                                <subviews>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Basic Info" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ymd-Fc-X71">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="133.5" height="35"/>
+                                                                        <fontDescription key="fontDescription" name="HaboroSoft-NorDem" family="HaboroSoft-NorDem" pointSize="30"/>
+                                                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ztv-Uu-SjY">
+                                                                        <rect key="frame" x="338.5" y="0.0" width="35.5" height="35"/>
+                                                                        <fontDescription key="fontDescription" name="HaboroSoft-NorBoo" family="HaboroSoft-NorBoo" pointSize="17"/>
+                                                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                        <state key="normal" title="Edit"/>
+                                                                        <connections>
+                                                                            <action selector="editAction:" destination="E8N-2y-auq" eventType="touchUpInside" id="SJx-D6-0NZ"/>
+                                                                        </connections>
+                                                                    </button>
+                                                                </subviews>
+                                                            </stackView>
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="i9v-vC-AAn">
+                                                                <rect key="frame" x="0.0" y="43" width="374" height="220"/>
+                                                                <subviews>
+                                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="9" translatesAutoresizingMaskIntoConstraints="NO" id="US9-Y4-vBb">
+                                                                        <rect key="frame" x="12" y="10" width="350" height="200"/>
+                                                                        <subviews>
+                                                                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" alignment="top" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="HMz-SX-eCp">
+                                                                                <rect key="frame" x="0.0" y="0.0" width="350" height="37.5"/>
+                                                                                <subviews>
+                                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Full name" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ud0-eB-pFd">
+                                                                                        <rect key="frame" x="0.0" y="0.0" width="43.5" height="12"/>
+                                                                                        <fontDescription key="fontDescription" name="HaboroSoft-NorReg" family="HaboroSoft-NorReg" pointSize="10"/>
+                                                                                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                                        <nil key="highlightedColor"/>
+                                                                                    </label>
+                                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Juan Felipe Torres" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lpT-gb-VOH">
+                                                                                        <rect key="frame" x="0.0" y="15" width="154.5" height="22.5"/>
+                                                                                        <fontDescription key="fontDescription" name="HaboroSoft-NorReg" family="HaboroSoft-NorReg" pointSize="19"/>
+                                                                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                                        <nil key="highlightedColor"/>
+                                                                                    </label>
+                                                                                </subviews>
+                                                                            </stackView>
+                                                                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" distribution="fillEqually" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="25n-gk-F22">
+                                                                                <rect key="frame" x="0.0" y="46.5" width="350" height="27"/>
+                                                                                <subviews>
+                                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Nickname" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zct-ZZ-o4x">
+                                                                                        <rect key="frame" x="0.0" y="0.0" width="350" height="12"/>
+                                                                                        <fontDescription key="fontDescription" name="HaboroSoft-NorReg" family="HaboroSoft-NorReg" pointSize="10"/>
+                                                                                        <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                                        <nil key="highlightedColor"/>
+                                                                                    </label>
+                                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Fercho" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7to-Pp-9k0">
+                                                                                        <rect key="frame" x="0.0" y="15" width="350" height="12"/>
+                                                                                        <fontDescription key="fontDescription" name="HaboroSoft-NorReg" family="HaboroSoft-NorReg" pointSize="19"/>
+                                                                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                                        <nil key="highlightedColor"/>
+                                                                                    </label>
+                                                                                </subviews>
+                                                                            </stackView>
+                                                                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" alignment="top" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="Zx3-x0-Kkz">
+                                                                                <rect key="frame" x="0.0" y="82.5" width="350" height="37.5"/>
+                                                                                <subviews>
+                                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Age" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HCa-aG-RCY">
+                                                                                        <rect key="frame" x="0.0" y="0.0" width="18" height="12"/>
+                                                                                        <fontDescription key="fontDescription" name="HaboroSoft-NorReg" family="HaboroSoft-NorReg" pointSize="10"/>
+                                                                                        <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                                        <nil key="highlightedColor"/>
+                                                                                    </label>
+                                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="20 years" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ad6-Nv-3C6">
+                                                                                        <rect key="frame" x="0.0" y="15" width="72.5" height="22.5"/>
+                                                                                        <fontDescription key="fontDescription" name="HaboroSoft-NorReg" family="HaboroSoft-NorReg" pointSize="19"/>
+                                                                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                                        <nil key="highlightedColor"/>
+                                                                                    </label>
+                                                                                </subviews>
+                                                                            </stackView>
+                                                                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" alignment="top" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="iPb-yy-byK">
+                                                                                <rect key="frame" x="0.0" y="129" width="350" height="37.5"/>
+                                                                                <subviews>
+                                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Gender" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sHn-Mh-LcN">
+                                                                                        <rect key="frame" x="0.0" y="0.0" width="33.5" height="12"/>
+                                                                                        <fontDescription key="fontDescription" name="HaboroSoft-NorReg" family="HaboroSoft-NorReg" pointSize="10"/>
+                                                                                        <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                                        <nil key="highlightedColor"/>
+                                                                                    </label>
+                                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Male" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZNj-Sz-Bue">
+                                                                                        <rect key="frame" x="0.0" y="15" width="41.5" height="22.5"/>
+                                                                                        <fontDescription key="fontDescription" name="HaboroSoft-NorReg" family="HaboroSoft-NorReg" pointSize="19"/>
+                                                                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                                        <nil key="highlightedColor"/>
+                                                                                    </label>
+                                                                                </subviews>
+                                                                            </stackView>
+                                                                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" alignment="top" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="zjT-Ra-wZf">
+                                                                                <rect key="frame" x="0.0" y="175.5" width="350" height="24.5"/>
+                                                                                <subviews>
+                                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Occupation" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dTo-ri-lhc">
+                                                                                        <rect key="frame" x="0.0" y="0.0" width="52" height="12"/>
+                                                                                        <fontDescription key="fontDescription" name="HaboroSoft-NorReg" family="HaboroSoft-NorReg" pointSize="10"/>
+                                                                                        <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                                        <nil key="highlightedColor"/>
+                                                                                    </label>
+                                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Student" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8kb-rQ-Y5C">
+                                                                                        <rect key="frame" x="0.0" y="15" width="67" height="9.5"/>
+                                                                                        <fontDescription key="fontDescription" name="HaboroSoft-NorReg" family="HaboroSoft-NorReg" pointSize="19"/>
+                                                                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                                        <nil key="highlightedColor"/>
+                                                                                    </label>
+                                                                                </subviews>
+                                                                            </stackView>
+                                                                        </subviews>
+                                                                    </stackView>
+                                                                </subviews>
+                                                                <color key="backgroundColor" name="MedBlue"/>
+                                                                <constraints>
+                                                                    <constraint firstItem="US9-Y4-vBb" firstAttribute="top" secondItem="i9v-vC-AAn" secondAttribute="top" constant="10" id="KB5-Ue-Vjv"/>
+                                                                    <constraint firstAttribute="trailing" secondItem="US9-Y4-vBb" secondAttribute="trailing" constant="12" id="Thg-2t-X70"/>
+                                                                    <constraint firstItem="US9-Y4-vBb" firstAttribute="leading" secondItem="i9v-vC-AAn" secondAttribute="leading" constant="12" id="hi3-zJ-jmW"/>
+                                                                    <constraint firstAttribute="bottom" secondItem="US9-Y4-vBb" secondAttribute="bottom" constant="10" id="nZN-pZ-RRX"/>
+                                                                    <constraint firstAttribute="height" constant="220" id="wPR-1Q-V92"/>
+                                                                </constraints>
+                                                            </view>
                                                         </subviews>
-                                                        <color key="backgroundColor" name="MedBlue"/>
-                                                        <constraints>
-                                                            <constraint firstItem="sLp-zY-ilQ" firstAttribute="baseline" secondItem="CKR-9T-zbx" secondAttribute="baseline" id="0IT-bC-YZk"/>
-                                                            <constraint firstItem="CKR-9T-zbx" firstAttribute="leading" secondItem="sLp-zY-ilQ" secondAttribute="trailing" constant="3" id="Kp1-jY-CHb"/>
-                                                            <constraint firstItem="e6A-pv-JFf" firstAttribute="leading" secondItem="CKR-9T-zbx" secondAttribute="trailing" constant="5" id="M4i-Gy-Mhd"/>
-                                                            <constraint firstItem="CKR-9T-zbx" firstAttribute="baseline" secondItem="e6A-pv-JFf" secondAttribute="baseline" id="Yj6-uy-JGY"/>
-                                                            <constraint firstAttribute="width" constant="374" id="flz-fP-FGJ"/>
-                                                            <constraint firstAttribute="height" constant="76" id="hKT-HU-asB"/>
-                                                            <constraint firstItem="sLp-zY-ilQ" firstAttribute="top" secondItem="DRU-IC-qCd" secondAttribute="top" constant="51" id="kSw-Te-6nH"/>
-                                                            <constraint firstItem="CKR-9T-zbx" firstAttribute="centerX" secondItem="DRU-IC-qCd" secondAttribute="centerX" id="uPz-ym-SzH"/>
-                                                        </constraints>
-                                                    </view>
+                                                    </stackView>
                                                 </subviews>
                                             </stackView>
                                         </subviews>
                                         <color key="backgroundColor" name="Darkblue"/>
                                         <constraints>
-                                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="q8u-Yl-flg" secondAttribute="trailing" constant="250" id="0hK-3G-aSF"/>
-                                            <constraint firstAttribute="trailing" secondItem="8kb-4l-EaY" secondAttribute="trailing" constant="296" id="3Zz-ne-BbF"/>
-                                            <constraint firstItem="8kb-4l-EaY" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="apK-9M-yoU" secondAttribute="leading" constant="20" id="5v7-xx-oxP"/>
-                                            <constraint firstItem="3hk-08-1qX" firstAttribute="top" secondItem="8kb-4l-EaY" secondAttribute="bottom" constant="1" id="6eB-gg-qKi"/>
-                                            <constraint firstItem="3hk-08-1qX" firstAttribute="leading" secondItem="apK-9M-yoU" secondAttribute="leading" constant="20" id="8uI-Ut-g9z"/>
-                                            <constraint firstItem="uWb-Mf-DkZ" firstAttribute="leading" secondItem="apK-9M-yoU" secondAttribute="leading" constant="20" id="ACN-BN-oVe"/>
-                                            <constraint firstAttribute="trailing" secondItem="i9v-vC-AAn" secondAttribute="trailing" constant="20" id="Ckq-aC-WkG"/>
-                                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="eNz-Wn-9Rw" secondAttribute="trailing" constant="147" id="GCO-Es-VdL"/>
-                                            <constraint firstItem="eNz-Wn-9Rw" firstAttribute="leading" secondItem="apK-9M-yoU" secondAttribute="leading" constant="20" id="GQu-sr-kFb"/>
-                                            <constraint firstItem="Wnq-dq-vFs" firstAttribute="top" secondItem="cwx-nm-WbT" secondAttribute="bottom" constant="8" id="I0L-6f-f45"/>
-                                            <constraint firstItem="i9v-vC-AAn" firstAttribute="leading" secondItem="apK-9M-yoU" secondAttribute="leading" constant="20" id="LmX-YG-8Pp"/>
-                                            <constraint firstItem="8kb-4l-EaY" firstAttribute="top" secondItem="apK-9M-yoU" secondAttribute="top" constant="14" id="Mdk-da-RrW"/>
-                                            <constraint firstItem="uWb-Mf-DkZ" firstAttribute="top" secondItem="3hk-08-1qX" secondAttribute="bottom" constant="8" id="MhO-77-mMg"/>
-                                            <constraint firstAttribute="trailing" secondItem="cwx-nm-WbT" secondAttribute="trailing" constant="20" id="R6w-HS-wFe"/>
-                                            <constraint firstItem="cwx-nm-WbT" firstAttribute="leading" secondItem="apK-9M-yoU" secondAttribute="leading" constant="20" id="YDQ-eZ-QfG"/>
-                                            <constraint firstItem="cwx-nm-WbT" firstAttribute="top" secondItem="eNz-Wn-9Rw" secondAttribute="bottom" constant="8" id="aVI-nK-ppJ"/>
-                                            <constraint firstAttribute="trailing" secondItem="Wnq-dq-vFs" secondAttribute="trailing" constant="20" id="cQg-TR-1D7"/>
-                                            <constraint firstItem="i9v-vC-AAn" firstAttribute="top" secondItem="Wnq-dq-vFs" secondAttribute="bottom" constant="8" id="fae-gu-yOZ"/>
-                                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="3hk-08-1qX" secondAttribute="trailing" constant="255" id="ji4-eA-60e"/>
-                                            <constraint firstItem="eNz-Wn-9Rw" firstAttribute="top" secondItem="q8u-Yl-flg" secondAttribute="bottom" constant="1" id="kdF-A5-Nh4"/>
-                                            <constraint firstItem="Wnq-dq-vFs" firstAttribute="leading" secondItem="apK-9M-yoU" secondAttribute="leading" constant="20" id="lRU-F5-mqN"/>
-                                            <constraint firstAttribute="trailing" secondItem="uWb-Mf-DkZ" secondAttribute="trailing" constant="20" id="p6Z-Tv-rgz"/>
-                                            <constraint firstItem="q8u-Yl-flg" firstAttribute="leading" secondItem="apK-9M-yoU" secondAttribute="leading" constant="20" id="sJ2-fO-D4i"/>
-                                            <constraint firstItem="q8u-Yl-flg" firstAttribute="top" secondItem="uWb-Mf-DkZ" secondAttribute="bottom" constant="8" id="x2m-FW-gQy"/>
+                                            <constraint firstAttribute="trailing" secondItem="Lvb-VZ-tTg" secondAttribute="trailing" constant="20" id="1cD-7I-h1a"/>
+                                            <constraint firstItem="Lvb-VZ-tTg" firstAttribute="leading" secondItem="apK-9M-yoU" secondAttribute="leading" constant="20" id="VpR-fQ-5nq"/>
+                                            <constraint firstItem="Lvb-VZ-tTg" firstAttribute="top" secondItem="apK-9M-yoU" secondAttribute="top" constant="14" id="Vy5-0H-v2k"/>
+                                            <constraint firstItem="Lvb-VZ-tTg" firstAttribute="centerX" secondItem="apK-9M-yoU" secondAttribute="centerX" id="b0w-U4-kt1"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -1680,9 +1681,8 @@
                     <tabBarItem key="tabBarItem" title="Profile" image="person.circle" catalog="system" id="kO5-UI-jrb"/>
                     <connections>
                         <outlet property="ageLabel" destination="Ad6-Nv-3C6" id="g4u-wX-IBP"/>
-                        <outlet property="award1View" destination="yrS-W7-Frj" id="qZ9-tA-gyz"/>
-                        <outlet property="award2View" destination="csT-GQ-Xp9" id="G7j-tG-MNp"/>
                         <outlet property="contentView" destination="apK-9M-yoU" id="DOS-i1-B5Z"/>
+                        <outlet property="dateDreamLogLabel" destination="LES-SS-RCd" id="cgk-UF-Y8K"/>
                         <outlet property="editButton" destination="Ztv-Uu-SjY" id="XSg-QD-I7J"/>
                         <outlet property="fullNameLabel" destination="lpT-gb-VOH" id="dNc-2Y-Qei"/>
                         <outlet property="genderLabel" destination="ZNj-Sz-Bue" id="YKt-ry-D4i"/>
@@ -1690,15 +1690,17 @@
                         <outlet property="log1View" destination="DRU-IC-qCd" id="b21-zX-eAC"/>
                         <outlet property="nicknameLabel" destination="7to-Pp-9k0" id="B7g-dk-Fv4"/>
                         <outlet property="occupationLabel" destination="8kb-rQ-Y5C" id="yWJ-5i-sRm"/>
+                        <outlet property="playButton" destination="CKR-9T-zbx" id="R6G-eG-AzH"/>
                         <outlet property="profileBannerImage" destination="9Xm-mW-Gk1" id="aiQ-38-7g4"/>
                         <outlet property="profileBannerView" destination="tqY-bs-xPh" id="Q7H-Il-2hP"/>
                         <outlet property="profileInfoView" destination="i9v-vC-AAn" id="fsE-Ow-f6m"/>
+                        <outlet property="progressBar" destination="b6K-Vh-rt0" id="sgk-Tt-DY1"/>
                         <outlet property="scrollView" destination="34q-4S-8Y5" id="UCL-Oj-AFP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xu6-rr-CjZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3435" y="808"/>
+            <point key="canvasLocation" x="3434.7826086956525" y="807.58928571428567"/>
         </scene>
         <!--NewAlarm-->
         <scene sceneID="r9J-iU-YhU">
@@ -2705,18 +2707,17 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="A94-j7-NwZ"/>
+        <segue reference="Uf4-18-gCE"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="alarm" catalog="system" width="124" height="128"/>
+        <image name="appicon-nobg" width="1057" height="1355"/>
         <image name="arrow.right.to.line.alt" catalog="system" width="128" height="89"/>
         <image name="background-2" width="1125" height="2436"/>
-        <image name="backward.fill" catalog="system" width="128" height="79"/>
         <image name="chart.bar" catalog="system" width="128" height="90"/>
         <image name="chevron.left" catalog="system" width="96" height="128"/>
         <image name="face.smiling.fill" catalog="system" width="128" height="121"/>
         <image name="facebook" width="25" height="25"/>
-        <image name="forward.fill" catalog="system" width="128" height="79"/>
         <image name="minus" catalog="system" width="128" height="24"/>
         <image name="moon.fill" catalog="system" width="128" height="121"/>
         <image name="moon_asset" width="235" height="196"/>

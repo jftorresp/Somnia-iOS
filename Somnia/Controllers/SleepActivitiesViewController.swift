@@ -183,13 +183,7 @@ extension SleepActivitiesViewController: UITableViewDelegate, UITableViewDataSou
             let durationMin = story.duration / 60
             cell.storyDuration.text = "\(durationMin) mins."
             cell.storyDescription.text = story.description
-            //                let imageUrl = URL(fileURLWithPath: story.image)
-            //                do {
-            //                    let imageData = try Data(contentsOf: imageUrl)
-            //                    cell.storyImage = UIImageView(image: UIImage(data: imageData))
-            //                } catch {
-            //                    print("error")
-            //                }
+
             return cell
         }
         
