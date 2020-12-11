@@ -249,21 +249,7 @@ class RecordDreamsViewController: UIViewController, AVAudioRecorderDelegate {
     
     @IBAction func saveAction(_ sender: UIButton) {
         
-        networkMonitor.startMonitoring()
-        
-        if NetworkMonitor.connected == false {
-            let dialogMessage = UIAlertController(title: "No connection", message: "It seems that you don´t have connection, try later.", preferredStyle: .alert)
-            
-            // Create OK button with action handler
-            let ok = UIAlertAction(title: "OK", style: .default, handler: { (action) -> Void in
-                print("Ok button tapped")
-            })
-            
-            //Add OK button to a dialog message
-            dialogMessage.addAction(ok)
-            // Present Alert to
-            self.present(dialogMessage, animated: true, completion: nil)
-        } else {
+       
             
             stopSaveTapped()
             timerSec.invalidate()
@@ -273,7 +259,7 @@ class RecordDreamsViewController: UIViewController, AVAudioRecorderDelegate {
             
             view.window?.rootViewController = homeViewController
             view.window?.makeKeyAndVisible()
-        }
+        
     }
         
         

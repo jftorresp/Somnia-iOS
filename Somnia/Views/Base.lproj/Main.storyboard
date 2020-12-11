@@ -418,13 +418,13 @@
                                         <rect key="frame" x="5" y="8" width="364" height="23.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Wed Nov 4" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WCS-YE-WGv">
-                                                <rect key="frame" x="0.0" y="0.0" width="98.5" height="23.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="116.5" height="23.5"/>
                                                 <fontDescription key="fontDescription" name="HaboroSoft-NorBol" family="HaboroSoft-NorBol" pointSize="20"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Total Sleep Time" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="652-lX-sne">
-                                                <rect key="frame" x="115.5" y="0.0" width="121.5" height="23.5"/>
+                                                <rect key="frame" x="133.5" y="0.0" width="103.5" height="23.5"/>
                                                 <fontDescription key="fontDescription" name="HaboroSoft-NorBol" family="HaboroSoft-NorBol" pointSize="14"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
@@ -1420,7 +1420,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="573"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="22" translatesAutoresizingMaskIntoConstraints="NO" id="Lvb-VZ-tTg">
-                                                <rect key="frame" x="20" y="14" width="374" height="500"/>
+                                                <rect key="frame" x="20" y="14" width="374" height="542"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="TrZ-wZ-U9f">
                                                         <rect key="frame" x="0.0" y="0.0" width="193.5" height="55"/>
@@ -1502,8 +1502,14 @@
                                                             </stackView>
                                                         </subviews>
                                                     </stackView>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="It seems that you don't have connection" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AyI-mq-MlX">
+                                                        <rect key="frame" x="0.0" y="237" width="305" height="20"/>
+                                                        <fontDescription key="fontDescription" name="HaboroSoft-NorBoo" family="HaboroSoft-NorBoo" pointSize="17"/>
+                                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="W3k-6P-dv8">
-                                                        <rect key="frame" x="0.0" y="237" width="374" height="263"/>
+                                                        <rect key="frame" x="0.0" y="279" width="374" height="263"/>
                                                         <subviews>
                                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="205" translatesAutoresizingMaskIntoConstraints="NO" id="Wnq-dq-vFs">
                                                                 <rect key="frame" x="0.0" y="0.0" width="374" height="35"/>
@@ -1681,6 +1687,7 @@
                     <tabBarItem key="tabBarItem" title="Profile" image="person.circle" catalog="system" id="kO5-UI-jrb"/>
                     <connections>
                         <outlet property="ageLabel" destination="Ad6-Nv-3C6" id="g4u-wX-IBP"/>
+                        <outlet property="connectionLabel" destination="AyI-mq-MlX" id="5C3-Xu-GvV"/>
                         <outlet property="contentView" destination="apK-9M-yoU" id="DOS-i1-B5Z"/>
                         <outlet property="dateDreamLogLabel" destination="LES-SS-RCd" id="cgk-UF-Y8K"/>
                         <outlet property="editButton" destination="Ztv-Uu-SjY" id="XSg-QD-I7J"/>
@@ -1696,6 +1703,7 @@
                         <outlet property="profileInfoView" destination="i9v-vC-AAn" id="fsE-Ow-f6m"/>
                         <outlet property="progressBar" destination="b6K-Vh-rt0" id="sgk-Tt-DY1"/>
                         <outlet property="scrollView" destination="34q-4S-8Y5" id="UCL-Oj-AFP"/>
+                        <outlet property="stackEsconder" destination="cwx-nm-WbT" id="myI-9P-AoS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xu6-rr-CjZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

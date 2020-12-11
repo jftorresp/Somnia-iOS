@@ -21,6 +21,8 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var dateDreamLogLabel: UILabel!
     @IBOutlet weak var progressBar: UIProgressView!
     
+    let networkMonitor = NetworkMonitor()
+    
     
     // Profile Basic Info Outlets
     
@@ -30,6 +32,9 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var genderLabel: UILabel!
     @IBOutlet weak var occupationLabel: UILabel!
     
+    @IBOutlet weak var stackEsconder: UIStackView!
+    
+    @IBOutlet weak var connectionLabel: UILabel!
     // Scroll
     
     @IBOutlet weak var scrollView: UIScrollView!
@@ -56,9 +61,20 @@ class ProfileViewController: UIViewController {
     static var nick:String=""
     
     override func viewDidLoad() {
+        networkMonitor.startMonitoring()
         progressBar.setProgress(0, animated: false)
         super.viewDidLoad()
         loadDreamlogCloser()
+        
+        
+        if NetworkMonitor.connected == false {
+            print("entré 1")
+            stackEsconder.isHidden=true
+        } else {
+            print("entré 2")
+           
+            connectionLabel.isHidden=true
+        }
         
         let formatter = DateFormatter()
         formatter.dateFormat = "E, MMM d"
