@@ -175,7 +175,7 @@ class RecordDreamsViewController: UIViewController, AVAudioRecorderDelegate {
         let dreamLogFile = storageRef.child("dreamlog/\(userId!)/\(file)")
         
         // Upload the file to the path "images/rivers.jpg"
-        let uploadTask = dreamLogFile.putFile(from: localFile, metadata: nil) { metadata, error in
+        _ = dreamLogFile.putFile(from: localFile, metadata: nil) { metadata, error in
             guard let metadata = metadata else {
                 // Uh-oh, an error occurred!
                 return
