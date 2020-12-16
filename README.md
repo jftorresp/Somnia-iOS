@@ -48,6 +48,7 @@ use_frameworks!
   pod 'FBSDKLoginKit'
   pod 'IQKeyboardManagerSwift'
   pod 'Firebase/Storage'
+  pod 'Charts'
 
 ```
 
